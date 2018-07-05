@@ -1,10 +1,11 @@
 #!/bin/bash
-#SBATCH --time=1:00:00   # walltime
-#SBATCH --ntasks=1      # limit to one node
-#SBATCH --cpus-per-task=4  # number of processor cores (i.e. threads)
-#SBATCH --partition=haswell,sandy,west
-#SBATCH --mem-per-cpu=1000M   # memory per CPU core
-#SBATCH -A p_adm
+#SBATCH --time=4:00:00   # walltime
+#SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
+#SBATCH -p gpu2    # K80 GPUs on Haswell node
+#SBATCH -J "nmt_tutorial"   # job name
+#SBATCH --mem=10000   # minimum amount of real memory
+#SBATCH -A p_adm # name of the project
+#SBATCH --output "slurm-nmt.out" # output file name
 
 module purge
 module load modenv/eb
