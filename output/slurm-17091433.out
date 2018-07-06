@@ -1,0 +1,850 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) modenv/eb
+Module TensorFlow/1.7.0-goolfc-2018a-Python-3.6.4 and 23 dependencies unloaded.
+Module TensorFlow/1.7.0-goolfc-2018a-Python-3.6.4 and 23 dependencies loaded.
+mkdir: created directory `/tmp/nmt_data'
+Download training dataset train.en and train.vi.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 12.9M    0 81920    0     0  47162      0  0:04:48  0:00:01  0:04:47 93729  2 12.9M    2  368k    0     0   141k      0  0:01:33  0:00:02  0:01:31  212k 10 12.9M   10 1408k    0     0   388k      0  0:00:34  0:00:03  0:00:31  510k 29 12.9M   29 3872k    0     0   832k      0  0:00:15  0:00:04  0:00:11 1021k 65 12.9M   65 8752k    0     0  1540k      0  0:00:08  0:00:05  0:00:03 1816k100 12.9M  100 12.9M    0     0  2140k      0  0:00:06  0:00:06 --:--:-- 2954k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 17.2M    0 49152    0     0  34812      0  0:08:39  0:00:01  0:08:38 71234  1 17.2M    1  304k    0     0   124k      0  0:02:21  0:00:02  0:02:19  176k  5 17.2M    5 1056k    0     0   304k      0  0:00:58  0:00:03  0:00:55  384k 16 17.2M   16 2992k    0     0   684k      0  0:00:25  0:00:04  0:00:21  820k 39 17.2M   39 6992k    0     0  1302k      0  0:00:13  0:00:05  0:00:08 1505k 78 17.2M   78 13.5M    0     0  2166k      0  0:00:08  0:00:06  0:00:02 2771k100 17.2M  100 17.2M    0     0  2617k      0  0:00:06  0:00:06 --:--:-- 4033k
+Download dev dataset tst2012.en and tst2012.vi.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 81  136k   81  112k    0     0  65213      0  0:00:02  0:00:01  0:00:01  108k100  136k  100  136k    0     0  79710      0  0:00:01  0:00:01 --:--:--  132k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  183k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  183k  100  183k    0     0   102k      0  0:00:01  0:00:01 --:--:--  171k
+Download test dataset tst2013.en and tst2013.vi.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 12  129k   12 16384    0     0  15393      0  0:00:08  0:00:01  0:00:07 47216100  129k  100  129k    0     0  75542      0  0:00:01  0:00:01 --:--:--  125k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 26  179k   26 49152    0     0  34901      0  0:00:05  0:00:01  0:00:04 71234100  179k  100  179k    0     0  95576      0  0:00:01  0:00:01 --:--:--  149k
+Download vocab file vocab.en and vocab.vi.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 35  136k   35 49152    0     0  34885      0  0:00:04  0:00:01  0:00:03 71234100  136k  100  136k    0     0  72629      0  0:00:01  0:00:01 --:--:--  113k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 46767  100 46767    0     0  38019      0  0:00:01  0:00:01 --:--:-- 90458
+mkdir: cannot create directory `/scratch/p_adm/nmt_model': File exists
+WARNING:tensorflow:From /sw/taurus/eb/TensorFlow/1.7.0-goolfc-2018a-Python-3.6.4/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+# Job id 0
+# Loading hparams from /scratch/p_adm/nmt_model/hparams
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  saving hparams to /scratch/p_adm/nmt_model/best_bleu/hparams
+  attention=
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=/scratch/p_adm/nmt_model/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  decay_scheme=
+  dev_prefix=/tmp/nmt_data/tst2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  init_op=uniform
+  init_weight=0.1
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_layers=2
+  num_train_steps=12000
+  num_translations_per_input=1
+  num_units=128
+  optimizer=sgd
+  out_dir=/scratch/p_adm/nmt_model
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=vi
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/tmp/nmt_data/vocab.vi
+  src_vocab_size=7709
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/tmp/nmt_data/tst2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/tmp/nmt_data/vocab.en
+  tgt_vocab_size=17191
+  time_major=True
+  train_prefix=/tmp/nmt_data/train
+  unit_type=lstm
+  vocab_prefix=/tmp/nmt_data/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# creating train graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=12000, decay_steps 0, decay_factor 1
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (7709, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 17191), 
+# creating eval graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (7709, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 17191), 
+# creating infer graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (7709, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 17191), 
+# log_file=/scratch/p_adm/nmt_model/log_1530828871
+2018-07-06 00:14:31.438827: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX
+2018-07-06 00:14:33.245364: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla K20Xm major: 3 minor: 5 memoryClockRate(GHz): 0.732
+pciBusID: 0000:02:00.0
+totalMemory: 5.57GiB freeMemory: 5.49GiB
+2018-07-06 00:14:33.245402: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0
+2018-07-06 00:14:36.723954: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-07-06 00:14:36.723986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 
+2018-07-06 00:14:36.723995: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N 
+2018-07-06 00:14:36.724272: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5287 MB memory) -> physical GPU (device: 0, name: Tesla K20Xm, pci bus id: 0000:02:00.0, compute capability: 3.5)
+2018-07-06 00:14:36.726492: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0
+2018-07-06 00:14:36.726522: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-07-06 00:14:36.726529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 
+2018-07-06 00:14:36.726536: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N 
+2018-07-06 00:14:36.726741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5287 MB memory) -> physical GPU (device: 0, name: Tesla K20Xm, pci bus id: 0000:02:00.0, compute capability: 3.5)
+2018-07-06 00:14:36.727044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0
+2018-07-06 00:14:36.727068: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-07-06 00:14:36.727075: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 
+2018-07-06 00:14:36.727081: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N 
+2018-07-06 00:14:36.727285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5287 MB memory) -> physical GPU (device: 0, name: Tesla K20Xm, pci bus id: 0000:02:00.0, compute capability: 3.5)
+  created train model with fresh parameters, time 0.42s
+  created infer model with fresh parameters, time 0.11s
+  # 1340
+    src: Chúng ta thậm chí còn có nó trong điện thoại .
+    ref: We maybe even &#91; have &#93; it in our cellphone .
+    nmt: cub cub scouts scouts TiVo TiVo TiVo descend horns horns clicker prosperity prosperity continue HyperCard Woman Woman gracefully gracefully drew manifests manifests
+  created eval model with fresh parameters, time 0.14s
+  eval dev: perplexity 17190.35, time 1s, Fri Jul  6 00:14:42 2018.
+  eval test: perplexity 17189.78, time 1s, Fri Jul  6 00:14:43 2018.
+2018-07-06 00:14:43.959423: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:14:43.959933: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:14:43.960075: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  created infer model with fresh parameters, time 0.08s
+# Start step 0, lr 1, Fri Jul  6 00:14:44 2018
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 0.27s wps 20.49K ppl 1587.29 gN 12.34 bleu 0.00, Fri Jul  6 00:15:11 2018
+  step 200 lr 1 step-time 0.18s wps 30.95K ppl 552.44 gN 6.04 bleu 0.00, Fri Jul  6 00:15:29 2018
+  step 300 lr 1 step-time 0.18s wps 30.82K ppl 350.94 gN 4.79 bleu 0.00, Fri Jul  6 00:15:47 2018
+  step 400 lr 1 step-time 0.18s wps 30.74K ppl 261.57 gN 3.80 bleu 0.00, Fri Jul  6 00:16:06 2018
+  step 500 lr 1 step-time 0.18s wps 30.80K ppl 214.92 gN 3.62 bleu 0.00, Fri Jul  6 00:16:24 2018
+  step 600 lr 1 step-time 0.18s wps 30.69K ppl 189.87 gN 3.29 bleu 0.00, Fri Jul  6 00:16:42 2018
+  step 700 lr 1 step-time 0.18s wps 30.90K ppl 174.46 gN 3.25 bleu 0.00, Fri Jul  6 00:17:00 2018
+  step 800 lr 1 step-time 0.18s wps 30.91K ppl 158.82 gN 2.86 bleu 0.00, Fri Jul  6 00:17:18 2018
+  step 900 lr 1 step-time 0.18s wps 30.96K ppl 150.04 gN 3.02 bleu 0.00, Fri Jul  6 00:17:37 2018
+  step 1000 lr 1 step-time 0.18s wps 31.01K ppl 144.45 gN 2.98 bleu 0.00, Fri Jul  6 00:17:55 2018
+# Save eval, global step 1000
+2018-07-06 00:17:55.897727: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:17:55.898213: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:17:55.898242: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-1000, time 0.06s
+  # 333
+    src: Thi thoảng , khi tôi mất cân bằng , tôi sẽ kết thúc tình trạng ấy bằng câu chuyện này .
+    ref: I sometimes get out of balance . I &apos;ll end with this story .
+    nmt: And I &apos;m going to do that , I &apos;m going to do you to do it .
+2018-07-06 00:17:56.022422: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:17:56.022943: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-1000, time 0.07s
+  eval dev: perplexity 110.70, time 1s, Fri Jul  6 00:17:57 2018.
+  eval test: perplexity 126.93, time 1s, Fri Jul  6 00:17:58 2018.
+# Finished an epoch, step 1043. Perform external evaluation
+2018-07-06 00:18:06.257724: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:18:06.258278: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:18:06.258287: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-1000, time 0.09s
+  # 1472
+    src: Đối với những người không phải kĩ sư , littleBits đã trở thành một dạng vật liệu khác , điện tử đã trở thành một vật liệu mới .
+    ref: To these non-engineers , littleBits became another material , electronics became just another material .
+    nmt: And I &apos;m going to do that , I &apos;m going to do that , and I &apos;m going to do you to do it .
+2018-07-06 00:18:06.376649: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:18:06.377226: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:18:06.377234: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-1000, time 0.05s
+# External evaluation, global step 1000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 24s, Fri Jul  6 00:18:31 2018.
+  bleu dev: 0.9
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 9s, Fri Jul  6 00:18:43 2018.
+  bleu test: 0.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 1100 lr 1 step-time 0.26s wps 20.96K ppl 137.96 gN 3.13 bleu 0.93, Fri Jul  6 00:19:05 2018
+  step 1200 lr 1 step-time 0.18s wps 31.01K ppl 127.92 gN 2.85 bleu 0.93, Fri Jul  6 00:19:24 2018
+  step 1300 lr 1 step-time 0.18s wps 30.99K ppl 123.59 gN 2.84 bleu 0.93, Fri Jul  6 00:19:42 2018
+  step 1400 lr 1 step-time 0.18s wps 30.75K ppl 120.27 gN 2.96 bleu 0.93, Fri Jul  6 00:20:00 2018
+  step 1500 lr 1 step-time 0.18s wps 30.83K ppl 116.05 gN 2.88 bleu 0.93, Fri Jul  6 00:20:18 2018
+  step 1600 lr 1 step-time 0.18s wps 30.74K ppl 112.76 gN 2.86 bleu 0.93, Fri Jul  6 00:20:36 2018
+  step 1700 lr 1 step-time 0.18s wps 30.82K ppl 108.67 gN 2.87 bleu 0.93, Fri Jul  6 00:20:55 2018
+  step 1800 lr 1 step-time 0.18s wps 30.88K ppl 103.66 gN 2.74 bleu 0.93, Fri Jul  6 00:21:13 2018
+  step 1900 lr 1 step-time 0.18s wps 30.81K ppl 101.15 gN 2.83 bleu 0.93, Fri Jul  6 00:21:31 2018
+  step 2000 lr 1 step-time 0.18s wps 30.97K ppl 97.64 gN 2.87 bleu 0.93, Fri Jul  6 00:21:49 2018
+# Save eval, global step 2000
+2018-07-06 00:21:50.960507: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:21:50.960846: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:21:50.961340: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-2000, time 0.05s
+  # 1181
+    src: Tôi nghĩ rằng chúng ta sẽ quá là tự cao nếu cho rằng chúng ta là sản phẩm cuối cùng của quá trình tiến hoá .
+    ref: I think it &apos;s very haughty of us to think that we &apos;re the end product of evolution .
+    nmt: I think that the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk>
+2018-07-06 00:21:51.098393: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:21:51.098947: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-2000, time 0.06s
+  eval dev: perplexity 90.63, time 1s, Fri Jul  6 00:21:52 2018.
+  eval test: perplexity 103.96, time 1s, Fri Jul  6 00:21:53 2018.
+# Finished an epoch, step 2086. Perform external evaluation
+2018-07-06 00:22:08.813982: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:22:08.814543: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:22:08.814590: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-2000, time 0.05s
+  # 1434
+    src: LEGO đã lấy khối gạch bê tông , những khối gạch xây nên thế giới , và làm nó thành những viên gạch của trí tưởng tượng .
+    ref: LEGO has essentially taken the concrete block , the building block of the world , and made it into the building block of our imagination .
+    nmt: The <unk> <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk>
+2018-07-06 00:22:08.934877: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:22:08.935411: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:22:08.935453: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-2000, time 0.05s
+# External evaluation, global step 2000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:22:19 2018.
+  bleu dev: 0.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 9s, Fri Jul  6 00:22:35 2018.
+  bleu test: 0.6
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 2100 lr 1 step-time 0.25s wps 21.70K ppl 95.00 gN 3.07 bleu 0.93, Fri Jul  6 00:22:50 2018
+  step 2200 lr 1 step-time 0.19s wps 29.77K ppl 89.82 gN 2.81 bleu 0.93, Fri Jul  6 00:23:08 2018
+  step 2300 lr 1 step-time 0.18s wps 30.85K ppl 87.48 gN 2.81 bleu 0.93, Fri Jul  6 00:23:27 2018
+  step 2400 lr 1 step-time 0.18s wps 30.80K ppl 85.33 gN 2.86 bleu 0.93, Fri Jul  6 00:23:45 2018
+  step 2500 lr 1 step-time 0.18s wps 30.71K ppl 84.73 gN 2.95 bleu 0.93, Fri Jul  6 00:24:03 2018
+  step 2600 lr 1 step-time 0.18s wps 30.88K ppl 82.01 gN 2.86 bleu 0.93, Fri Jul  6 00:24:22 2018
+  step 2700 lr 1 step-time 0.18s wps 30.78K ppl 81.19 gN 2.94 bleu 0.93, Fri Jul  6 00:24:40 2018
+  step 2800 lr 1 step-time 0.18s wps 30.84K ppl 80.51 gN 2.95 bleu 0.93, Fri Jul  6 00:24:58 2018
+  step 2900 lr 1 step-time 0.18s wps 30.66K ppl 75.83 gN 2.89 bleu 0.93, Fri Jul  6 00:25:16 2018
+  step 3000 lr 1 step-time 0.18s wps 30.93K ppl 76.67 gN 2.97 bleu 0.93, Fri Jul  6 00:25:35 2018
+# Save eval, global step 3000
+2018-07-06 00:25:35.645744: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:25:35.646151: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:25:35.646173: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-3000, time 0.06s
+  # 1414
+    src: Phần dưới nước thì được chụp trong một hố đá .
+    ref: The underwater part was captured in a stone pit .
+    nmt: <unk> and <unk> and <unk> .
+2018-07-06 00:25:35.751381: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:25:35.751957: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-3000, time 0.07s
+  eval dev: perplexity 61.71, time 1s, Fri Jul  6 00:25:36 2018.
+  eval test: perplexity 73.08, time 1s, Fri Jul  6 00:25:37 2018.
+  step 3100 lr 1 step-time 0.18s wps 30.88K ppl 75.54 gN 2.97 bleu 0.93, Fri Jul  6 00:25:56 2018
+# Finished an epoch, step 3129. Perform external evaluation
+2018-07-06 00:26:01.473196: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:26:01.473747: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:26:01.473778: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-3000, time 0.06s
+  # 882
+    src: với gần 200 triệu lượt xem .
+    ref: It &apos;s been seen nearly 200 million times this year .
+    nmt: <unk> and <unk> .
+2018-07-06 00:26:01.557188: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:26:01.557741: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:26:01.557754: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-3000, time 0.05s
+# External evaluation, global step 3000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 9s, Fri Jul  6 00:26:11 2018.
+  bleu dev: 2.4
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 8s, Fri Jul  6 00:26:21 2018.
+  bleu test: 1.4
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 3200 lr 1 step-time 0.26s wps 20.92K ppl 71.43 gN 3.08 bleu 2.45, Fri Jul  6 00:26:44 2018
+  step 3300 lr 1 step-time 0.18s wps 30.59K ppl 68.85 gN 2.86 bleu 2.45, Fri Jul  6 00:27:02 2018
+  step 3400 lr 1 step-time 0.18s wps 30.84K ppl 69.52 gN 2.93 bleu 2.45, Fri Jul  6 00:27:20 2018
+  step 3500 lr 1 step-time 0.18s wps 30.77K ppl 69.21 gN 2.93 bleu 2.45, Fri Jul  6 00:27:39 2018
+  step 3600 lr 1 step-time 0.18s wps 30.86K ppl 66.54 gN 2.82 bleu 2.45, Fri Jul  6 00:27:57 2018
+  step 3700 lr 1 step-time 0.18s wps 30.71K ppl 66.96 gN 3.00 bleu 2.45, Fri Jul  6 00:28:15 2018
+  step 3800 lr 1 step-time 0.18s wps 30.80K ppl 67.09 gN 3.01 bleu 2.45, Fri Jul  6 00:28:33 2018
+  step 3900 lr 1 step-time 0.18s wps 30.83K ppl 65.20 gN 2.96 bleu 2.45, Fri Jul  6 00:28:52 2018
+  step 4000 lr 1 step-time 0.18s wps 30.88K ppl 64.92 gN 2.94 bleu 2.45, Fri Jul  6 00:29:10 2018
+# Save eval, global step 4000
+2018-07-06 00:29:11.131755: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:29:11.132286: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:29:11.132318: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-4000, time 0.06s
+  # 472
+    src: Sự khác biệt sau đó là họ nhận thức đó như là một sự mất mát
+    ref: And the difference then , they perceive as a loss .
+    nmt: The other thing that they do is they &apos;re going to be able to do .
+2018-07-06 00:29:11.248281: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:29:11.248863: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-4000, time 0.07s
+  eval dev: perplexity 50.91, time 1s, Fri Jul  6 00:29:12 2018.
+  eval test: perplexity 59.13, time 1s, Fri Jul  6 00:29:13 2018.
+  step 4100 lr 1 step-time 0.18s wps 30.97K ppl 62.82 gN 2.83 bleu 2.45, Fri Jul  6 00:29:31 2018
+# Finished an epoch, step 4172. Perform external evaluation
+2018-07-06 00:29:44.790846: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:29:44.791368: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:29:44.791407: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-4000, time 0.05s
+  # 1492
+    src: Từ những tội phạm mạng
+    ref: We have online criminals .
+    nmt: <unk> .
+2018-07-06 00:29:44.870283: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:29:44.870809: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:29:44.870817: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-4000, time 0.05s
+# External evaluation, global step 4000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 11s, Fri Jul  6 00:29:56 2018.
+  bleu dev: 3.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 00:30:10 2018.
+  bleu test: 2.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 4200 lr 1 step-time 0.25s wps 21.26K ppl 61.10 gN 3.05 bleu 3.79, Fri Jul  6 00:30:25 2018
+  step 4300 lr 1 step-time 0.19s wps 30.29K ppl 60.67 gN 3.08 bleu 3.79, Fri Jul  6 00:30:43 2018
+  step 4400 lr 1 step-time 0.18s wps 30.65K ppl 58.65 gN 3.02 bleu 3.79, Fri Jul  6 00:31:01 2018
+  step 4500 lr 1 step-time 0.18s wps 30.87K ppl 59.07 gN 2.95 bleu 3.79, Fri Jul  6 00:31:20 2018
+  step 4600 lr 1 step-time 0.18s wps 30.76K ppl 58.20 gN 2.98 bleu 3.79, Fri Jul  6 00:31:38 2018
+  step 4700 lr 1 step-time 0.18s wps 30.85K ppl 57.21 gN 2.98 bleu 3.79, Fri Jul  6 00:31:57 2018
+  step 4800 lr 1 step-time 0.18s wps 30.69K ppl 56.69 gN 2.92 bleu 3.79, Fri Jul  6 00:32:15 2018
+  step 4900 lr 1 step-time 0.18s wps 30.82K ppl 56.97 gN 2.89 bleu 3.79, Fri Jul  6 00:32:33 2018
+  step 5000 lr 1 step-time 0.18s wps 30.70K ppl 55.43 gN 3.00 bleu 3.79, Fri Jul  6 00:32:52 2018
+# Save eval, global step 5000
+2018-07-06 00:32:52.603047: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:32:52.603706: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:32:52.603716: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.06s
+  # 920
+    src: Những người tạo ra trào lưu , những cộng đồng tham gia sáng tạo , những điều hoàn toàn bất giờ , là những đặc điểm của một loại hình truyền thông và văn hoá mới nơi bất cứ ai cũng có thể tiếp cận và khán giả quyết định sự phổ biến .
+    ref: Tastemakers , creative participating communities , complete unexpectedness , these are characteristics of a new kind of media and a new kind of culture where anyone has access and the audience defines the popularity .
+    nmt: The <unk> of the world , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> and the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> .
+2018-07-06 00:32:52.785239: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:32:52.785784: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.06s
+  eval dev: perplexity 45.56, time 1s, Fri Jul  6 00:32:53 2018.
+  eval test: perplexity 52.84, time 1s, Fri Jul  6 00:32:55 2018.
+2018-07-06 00:32:55.533272: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:32:55.533711: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:32:55.533713: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.06s
+  # 287
+    src: Vaclav Havel , một vị lãnh tụ vĩ đại của Séc , đã nói về điều này .
+    ref: Vaclav Havel , the great Czech leader , talked about this .
+    nmt: <unk> <unk> , <unk> , <unk> , <unk> .
+2018-07-06 00:32:55.627630: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:32:55.628146: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:32:55.628163: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.05s
+# External evaluation, global step 5000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 9s, Fri Jul  6 00:33:05 2018.
+  bleu dev: 4.2
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 5000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 13s, Fri Jul  6 00:33:21 2018.
+  bleu test: 3.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 5100 lr 1 step-time 0.18s wps 30.83K ppl 55.24 gN 2.95 bleu 4.23, Fri Jul  6 00:33:43 2018
+  step 5200 lr 1 step-time 0.18s wps 31.04K ppl 54.75 gN 2.90 bleu 4.23, Fri Jul  6 00:34:01 2018
+# Finished an epoch, step 5215. Perform external evaluation
+2018-07-06 00:34:04.742801: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:34:04.743320: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:34:04.743342: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.05s
+  # 860
+    src: Và trong số đó , chỉ có một tỉ lệ ít ỏi trở nên phổ biến , nhận được nhiều lượt xem , và trở thành một hiện tượng về văn hoá .
+    ref: And of that , only a tiny percentage ever goes viral and gets tons of views and becomes a cultural moment .
+    nmt: And in fact , there &apos;s a lot of things that are going to be able to do this , and the <unk> , the <unk> , the <unk> .
+2018-07-06 00:34:04.873546: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:34:04.874079: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:34:04.874090: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-5000, time 0.05s
+# External evaluation, global step 5000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:34:15 2018.
+  bleu dev: 4.2
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 5000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 00:34:34 2018.
+  bleu test: 3.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 5300 lr 1 step-time 0.26s wps 20.86K ppl 51.70 gN 3.14 bleu 4.23, Fri Jul  6 00:34:58 2018
+  step 5400 lr 1 step-time 0.18s wps 30.88K ppl 51.58 gN 2.98 bleu 4.23, Fri Jul  6 00:35:16 2018
+  step 5500 lr 1 step-time 0.18s wps 30.75K ppl 51.25 gN 2.93 bleu 4.23, Fri Jul  6 00:35:34 2018
+  step 5600 lr 1 step-time 0.18s wps 30.95K ppl 52.12 gN 2.94 bleu 4.23, Fri Jul  6 00:35:53 2018
+  step 5700 lr 1 step-time 0.18s wps 30.63K ppl 50.31 gN 2.95 bleu 4.23, Fri Jul  6 00:36:11 2018
+  step 5800 lr 1 step-time 0.18s wps 30.85K ppl 51.57 gN 3.00 bleu 4.23, Fri Jul  6 00:36:29 2018
+  step 5900 lr 1 step-time 0.18s wps 30.79K ppl 50.42 gN 2.99 bleu 4.23, Fri Jul  6 00:36:48 2018
+  step 6000 lr 1 step-time 0.18s wps 30.84K ppl 50.95 gN 3.02 bleu 4.23, Fri Jul  6 00:37:06 2018
+# Save eval, global step 6000
+2018-07-06 00:37:07.020815: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:37:07.021446: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:37:07.021702: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-6000, time 0.05s
+  # 897
+    src: Nó chỉ như thế này .
+    ref: It &apos;s this , just like this .
+    nmt: It &apos;s like this .
+2018-07-06 00:37:07.110344: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:37:07.110876: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-6000, time 0.06s
+  eval dev: perplexity 41.88, time 1s, Fri Jul  6 00:37:08 2018.
+  eval test: perplexity 48.31, time 1s, Fri Jul  6 00:37:09 2018.
+  step 6100 lr 1 step-time 0.18s wps 30.97K ppl 50.40 gN 2.96 bleu 4.23, Fri Jul  6 00:37:27 2018
+  step 6200 lr 1 step-time 0.18s wps 30.79K ppl 47.84 gN 2.83 bleu 4.23, Fri Jul  6 00:37:45 2018
+# Finished an epoch, step 6258. Perform external evaluation
+2018-07-06 00:37:56.313840: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:37:56.314407: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:37:56.314418: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-6000, time 0.05s
+  # 784
+    src: Hoá ra là , anh ta không bị viêm họng thường .
+    ref: Well it turns out , he didn &apos;t have a strep throat .
+    nmt: It &apos;s not , you &apos;re not <unk> .
+2018-07-06 00:37:56.405953: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:37:56.406507: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:37:56.406547: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-6000, time 0.06s
+# External evaluation, global step 6000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 11s, Fri Jul  6 00:38:07 2018.
+  bleu dev: 4.6
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 6000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 00:38:21 2018.
+  bleu test: 3.7
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 6300 lr 1 step-time 0.26s wps 20.92K ppl 48.30 gN 3.15 bleu 4.59, Fri Jul  6 00:38:42 2018
+  step 6400 lr 1 step-time 0.18s wps 30.50K ppl 46.38 gN 2.98 bleu 4.59, Fri Jul  6 00:39:00 2018
+  step 6500 lr 1 step-time 0.18s wps 30.89K ppl 46.59 gN 3.03 bleu 4.59, Fri Jul  6 00:39:19 2018
+  step 6600 lr 1 step-time 0.18s wps 30.69K ppl 46.66 gN 3.00 bleu 4.59, Fri Jul  6 00:39:37 2018
+  step 6700 lr 1 step-time 0.18s wps 30.69K ppl 46.84 gN 3.00 bleu 4.59, Fri Jul  6 00:39:55 2018
+  step 6800 lr 1 step-time 0.18s wps 30.93K ppl 46.10 gN 3.01 bleu 4.59, Fri Jul  6 00:40:14 2018
+  step 6900 lr 1 step-time 0.18s wps 30.68K ppl 46.02 gN 3.05 bleu 4.59, Fri Jul  6 00:40:32 2018
+  step 7000 lr 1 step-time 0.18s wps 31.02K ppl 46.46 gN 3.00 bleu 4.59, Fri Jul  6 00:40:50 2018
+# Save eval, global step 7000
+2018-07-06 00:40:51.489677: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:40:51.490331: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:40:51.490392: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-7000, time 0.05s
+  # 31
+    src: Không như những vùng ngoại ô ổn định cho giai cấp trung lưu , mà tôi không hề biết là có tồn tại , chẳng có tí quyền lợi nào ở Footscray .
+    ref: Unlike the settled middle-class suburbs , whose existence I was oblivious of , there was no sense of entitlement in Footscray .
+    nmt: It &apos;s not the only way that I &apos;m not going to be the most <unk> , but the most important thing is that the <unk> of the world .
+2018-07-06 00:40:51.631094: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:40:51.631509: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-7000, time 0.06s
+  eval dev: perplexity 39.43, time 1s, Fri Jul  6 00:40:52 2018.
+  eval test: perplexity 45.19, time 1s, Fri Jul  6 00:40:53 2018.
+  step 7100 lr 1 step-time 0.18s wps 30.69K ppl 45.80 gN 2.91 bleu 4.59, Fri Jul  6 00:41:12 2018
+  step 7200 lr 1 step-time 0.18s wps 30.96K ppl 45.71 gN 3.04 bleu 4.59, Fri Jul  6 00:41:30 2018
+  step 7300 lr 1 step-time 0.18s wps 30.76K ppl 45.44 gN 2.98 bleu 4.59, Fri Jul  6 00:41:48 2018
+# Finished an epoch, step 7301. Perform external evaluation
+2018-07-06 00:41:48.746595: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:41:48.747113: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:41:48.747129: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-7000, time 0.05s
+  # 1065
+    src: Bằng cách nào đó mà chúng ta không hiểu được , những giọt nhỏ ấy học cách để lại thông tin .
+    ref: Somehow by ways that we don &apos;t quite understand , these little drops learned to write down information .
+    nmt: And to make that happen , we can &apos;t do this .
+2018-07-06 00:41:48.845626: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:41:48.846173: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:41:48.846221: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-7000, time 0.05s
+# External evaluation, global step 7000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:41:59 2018.
+  bleu dev: 4.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 7000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 12s, Fri Jul  6 00:42:16 2018.
+  bleu test: 4.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 7400 lr 1 step-time 0.26s wps 20.98K ppl 43.18 gN 3.28 bleu 4.84, Fri Jul  6 00:42:47 2018
+  step 7500 lr 1 step-time 0.18s wps 30.70K ppl 43.16 gN 3.06 bleu 4.84, Fri Jul  6 00:43:05 2018
+  step 7600 lr 1 step-time 0.18s wps 30.86K ppl 42.61 gN 3.03 bleu 4.84, Fri Jul  6 00:43:23 2018
+  step 7700 lr 1 step-time 0.18s wps 30.87K ppl 43.02 gN 3.02 bleu 4.84, Fri Jul  6 00:43:42 2018
+  step 7800 lr 1 step-time 0.18s wps 30.70K ppl 42.22 gN 3.04 bleu 4.84, Fri Jul  6 00:44:00 2018
+  step 7900 lr 1 step-time 0.18s wps 30.71K ppl 43.11 gN 3.07 bleu 4.84, Fri Jul  6 00:44:18 2018
+  step 8000 lr 1 step-time 0.18s wps 30.86K ppl 43.02 gN 3.01 bleu 4.84, Fri Jul  6 00:44:36 2018
+# Save eval, global step 8000
+2018-07-06 00:44:37.473267: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:44:37.473817: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:44:37.473834: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-8000, time 0.05s
+  # 763
+    src: Anh nói chuyện với gia đình bệnh nhân , và tôi khá chắc chắn là anh dàn xếp ổn mọi chuyện và đảm bảo là tôi không bị kiện .
+    ref: He talked to the family , and I &apos;m quite sure that he smoothed things over and made sure that I didn &apos;t get sued .
+    nmt: He told me my mother , and I &apos;m not going to be able to do that , and I &apos;m not sure that I &apos;m not going to do it .
+2018-07-06 00:44:37.612983: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:44:37.613527: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-8000, time 0.06s
+  eval dev: perplexity 38.05, time 1s, Fri Jul  6 00:44:38 2018.
+  eval test: perplexity 43.54, time 1s, Fri Jul  6 00:44:39 2018.
+  step 8100 lr 1 step-time 0.18s wps 30.60K ppl 41.95 gN 3.00 bleu 4.84, Fri Jul  6 00:44:57 2018
+  step 8200 lr 1 step-time 0.18s wps 30.82K ppl 42.31 gN 3.07 bleu 4.84, Fri Jul  6 00:45:16 2018
+  step 8300 lr 1 step-time 0.18s wps 30.90K ppl 42.51 gN 3.03 bleu 4.84, Fri Jul  6 00:45:34 2018
+# Finished an epoch, step 8344. Perform external evaluation
+2018-07-06 00:45:42.509926: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:45:42.510527: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:45:42.510536: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-8000, time 0.05s
+  # 450
+    src: Tôi dùng nó để làm các cuộc khảo sát xuyên suốt vùng phía Nam của biển Nam Hải Trung Quốc và đặc biệt vùng biển Java .
+    ref: And I went sailing on it , and we did surveys throughout the southern South China sea and especially the Java Sea .
+    nmt: I decided to do that with the <unk> <unk> <unk> and the <unk> <unk> <unk> in the <unk> <unk> .
+2018-07-06 00:45:42.634451: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:45:42.634980: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:45:42.635002: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-8000, time 0.06s
+# External evaluation, global step 8000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 23s, Fri Jul  6 00:46:06 2018.
+  bleu dev: 4.6
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 8000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 00:46:18 2018.
+  bleu test: 3.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 8400 lr 1 step-time 0.26s wps 20.98K ppl 40.93 gN 3.30 bleu 4.84, Fri Jul  6 00:46:39 2018
+  step 8500 lr 1 step-time 0.18s wps 30.83K ppl 40.26 gN 3.16 bleu 4.84, Fri Jul  6 00:46:58 2018
+  step 8600 lr 1 step-time 0.18s wps 30.79K ppl 39.36 gN 3.07 bleu 4.84, Fri Jul  6 00:47:16 2018
+  step 8700 lr 1 step-time 0.18s wps 30.90K ppl 40.50 gN 3.10 bleu 4.84, Fri Jul  6 00:47:34 2018
+  step 8800 lr 1 step-time 0.18s wps 30.86K ppl 40.08 gN 3.09 bleu 4.84, Fri Jul  6 00:47:52 2018
+  step 8900 lr 1 step-time 0.18s wps 30.91K ppl 40.36 gN 3.08 bleu 4.84, Fri Jul  6 00:48:11 2018
+  step 9000 lr 1 step-time 0.18s wps 30.76K ppl 40.13 gN 3.00 bleu 4.84, Fri Jul  6 00:48:29 2018
+# Save eval, global step 9000
+2018-07-06 00:48:30.009765: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:48:30.010310: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:48:30.010333: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-9000, time 0.06s
+  # 172
+    src: Đến khi tôi 14 , 15 tuổi một ngày kia , anh tôi về nhà và mang về 6 chai bia Tôi không biết anh ấy có nó từ đâu anh ấy kéo tôi và đứa em gái cùng đi vào rừng
+    ref: When I was about 14 or 15 , one day my brother came home and he had this six-pack of beer -- I don &apos;t know where he got it -- and he grabbed me and my sister and we went out in the woods .
+    nmt: And when I went to the <unk> , and he was sitting in my house , and he was going to go to my house , and he was a <unk> , and I was going to go back to her
+2018-07-06 00:48:30.176021: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:48:30.176653: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-9000, time 0.07s
+  eval dev: perplexity 35.90, time 1s, Fri Jul  6 00:48:31 2018.
+  eval test: perplexity 41.23, time 1s, Fri Jul  6 00:48:32 2018.
+  step 9100 lr 1 step-time 0.18s wps 30.67K ppl 39.17 gN 3.07 bleu 4.84, Fri Jul  6 00:48:50 2018
+  step 9200 lr 1 step-time 0.18s wps 30.73K ppl 39.40 gN 3.04 bleu 4.84, Fri Jul  6 00:49:08 2018
+  step 9300 lr 1 step-time 0.19s wps 30.81K ppl 40.27 gN 3.11 bleu 4.84, Fri Jul  6 00:49:27 2018
+# Finished an epoch, step 9387. Perform external evaluation
+2018-07-06 00:49:43.099152: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:49:43.099716: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:49:43.099826: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-9000, time 0.06s
+  # 674
+    src: Thế , hãy áp dụng câu chuyện này vào thế giới y học của tôi một chủ đề dễ chịu nhiều hơn đối với tôi , mà có lẽ lại kém dễ chịu hơn một chút sau những gì tôi sắp trình bày với các bạn đây .
+    ref: Now let &apos;s take this back into my world of medicine where I &apos;m a lot more comfortable , or perhaps a bit less comfortable after what I &apos;m going to talk to you about .
+    nmt: So , let me tell you a story about a lot of my life , and I &apos;m going to show you a lot of time , and it &apos;s not a little bit more than I &apos;m going to go to you .
+2018-07-06 00:49:43.262254: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:49:43.262788: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:49:43.262831: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-9000, time 0.06s
+# External evaluation, global step 9000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:49:53 2018.
+  bleu dev: 5.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 9000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 00:50:09 2018.
+  bleu test: 4.2
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 9400 lr 1 step-time 0.25s wps 21.38K ppl 38.74 gN 3.20 bleu 5.06, Fri Jul  6 00:50:21 2018
+  step 9500 lr 1 step-time 0.19s wps 29.53K ppl 37.18 gN 3.11 bleu 5.06, Fri Jul  6 00:50:40 2018
+  step 9600 lr 1 step-time 0.18s wps 30.64K ppl 37.53 gN 3.24 bleu 5.06, Fri Jul  6 00:50:58 2018
+  step 9700 lr 1 step-time 0.18s wps 30.84K ppl 37.88 gN 3.14 bleu 5.06, Fri Jul  6 00:51:16 2018
+  step 9800 lr 1 step-time 0.18s wps 30.73K ppl 37.05 gN 3.07 bleu 5.06, Fri Jul  6 00:51:35 2018
+  step 9900 lr 1 step-time 0.18s wps 30.55K ppl 37.07 gN 3.03 bleu 5.06, Fri Jul  6 00:51:53 2018
+  step 10000 lr 1 step-time 0.18s wps 30.71K ppl 37.69 gN 3.13 bleu 5.06, Fri Jul  6 00:52:11 2018
+# Save eval, global step 10000
+2018-07-06 00:52:12.091363: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:52:12.091933: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:52:12.092083: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.06s
+  # 996
+    src: Và điều xảy ra là bạn sẽ tạo ra một bộ sưu tập ảnh kĩ thuật số mà bạn có thể trưng lên mạng .
+    ref: And what happens is that you actually create a digital collection of photographs that you can then put up online .
+    nmt: And what you can do is you have to create a new model of the computer .
+2018-07-06 00:52:12.210649: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:52:12.211221: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.06s
+  eval dev: perplexity 33.62, time 1s, Fri Jul  6 00:52:13 2018.
+  eval test: perplexity 38.53, time 1s, Fri Jul  6 00:52:14 2018.
+2018-07-06 00:52:15.001102: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:52:15.001668: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:52:15.001724: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.06s
+  # 1076
+    src: Vậy bước tiếp theo là gì ?
+    ref: So what was the next step ?
+    nmt: So what &apos;s the next step ?
+2018-07-06 00:52:15.090301: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:52:15.090511: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:52:15.090540: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.05s
+# External evaluation, global step 10000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:52:25 2018.
+  bleu dev: 5.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 10000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 11s, Fri Jul  6 00:52:38 2018.
+  bleu test: 4.9
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 10100 lr 1 step-time 0.18s wps 30.93K ppl 37.84 gN 3.09 bleu 5.81, Fri Jul  6 00:52:59 2018
+  step 10200 lr 1 step-time 0.18s wps 30.77K ppl 37.38 gN 3.14 bleu 5.81, Fri Jul  6 00:53:17 2018
+  step 10300 lr 1 step-time 0.18s wps 30.81K ppl 37.38 gN 3.08 bleu 5.81, Fri Jul  6 00:53:36 2018
+  step 10400 lr 1 step-time 0.18s wps 30.92K ppl 37.54 gN 3.05 bleu 5.81, Fri Jul  6 00:53:54 2018
+# Finished an epoch, step 10430. Perform external evaluation
+2018-07-06 00:53:59.980365: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:53:59.980901: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:53:59.980958: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.06s
+  # 687
+    src: Không bao giờ , tuyệt đối không được phạm sai lầm , nhưng anh lo lắng về từng chi tiết nhỏ , về việc làm thế nào để không phạm sai lầm .
+    ref: Never ever , ever make a mistake , but you worry about the details , about how that &apos;s going to happen .
+    nmt: Not only , but no , no , no , no , no , no , no , no , no , no , no .
+2018-07-06 00:54:00.110291: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:54:00.110805: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:54:00.110830: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-10000, time 0.05s
+# External evaluation, global step 10000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 10s, Fri Jul  6 00:54:10 2018.
+  bleu dev: 5.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 10000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 9s, Fri Jul  6 00:54:22 2018.
+  bleu test: 4.9
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 10500 lr 1 step-time 0.26s wps 20.92K ppl 36.05 gN 3.32 bleu 5.81, Fri Jul  6 00:54:44 2018
+  step 10600 lr 1 step-time 0.18s wps 30.78K ppl 34.73 gN 3.09 bleu 5.81, Fri Jul  6 00:55:02 2018
+  step 10700 lr 1 step-time 0.18s wps 30.86K ppl 35.95 gN 3.12 bleu 5.81, Fri Jul  6 00:55:20 2018
+  step 10800 lr 1 step-time 0.18s wps 30.79K ppl 35.68 gN 3.18 bleu 5.81, Fri Jul  6 00:55:39 2018
+  step 10900 lr 1 step-time 0.18s wps 30.64K ppl 35.27 gN 3.08 bleu 5.81, Fri Jul  6 00:55:57 2018
+  step 11000 lr 1 step-time 0.18s wps 30.65K ppl 35.29 gN 3.21 bleu 5.81, Fri Jul  6 00:56:15 2018
+# Save eval, global step 11000
+2018-07-06 00:56:16.230724: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:56:16.231257: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:56:16.231265: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-11000, time 0.06s
+  # 294
+    src: Bà Park từng đến Montgomery rất nhiều lần và bà đi cùng với 2 người bạn thân nhất của mình Họ là Johnnie Carr , người tổ chức chiến dịch tẩy chay trên xe buýt tại Montgomery bà là người phụ nữ Mỹ gốc Phi tuyệt vời và Virginia Durr , một phụ nữ da trắng mà chồng bà chính là Clifford Durr , luật sư đại diện cho Tiến sĩ King
+    ref: And Ms. Parks used to come back to Montgomery every now and then , and she would get together with two of her dearest friends , these older women , Johnnie Carr who was the organizer of the Montgomery bus boycott -- amazing African-American woman -- and Virginia Durr , a white woman , whose husband , Clifford Durr , represented Dr. King .
+    nmt: She was <unk> by <unk> , and she was <unk> in the <unk> <unk> <unk> and the <unk> <unk> <unk> <unk> <unk> . He &apos;s a <unk> <unk> <unk> <unk> who was <unk> in the <unk> <unk> <unk> <unk> , and he &apos;s going to be able to get a <unk> <unk> , and the <unk> of <unk> <unk> <unk> <unk> <unk> .
+2018-07-06 00:56:16.443609: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:56:16.444201: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-11000, time 0.06s
+  eval dev: perplexity 32.64, time 1s, Fri Jul  6 00:56:17 2018.
+  eval test: perplexity 37.14, time 1s, Fri Jul  6 00:56:18 2018.
+  step 11100 lr 1 step-time 0.18s wps 30.84K ppl 35.93 gN 3.15 bleu 5.81, Fri Jul  6 00:56:36 2018
+  step 11200 lr 1 step-time 0.18s wps 31.07K ppl 35.53 gN 3.09 bleu 5.81, Fri Jul  6 00:56:55 2018
+  step 11300 lr 1 step-time 0.18s wps 30.81K ppl 36.11 gN 3.12 bleu 5.81, Fri Jul  6 00:57:13 2018
+  step 11400 lr 1 step-time 0.18s wps 30.91K ppl 35.88 gN 3.17 bleu 5.81, Fri Jul  6 00:57:31 2018
+# Finished an epoch, step 11473. Perform external evaluation
+2018-07-06 00:57:45.175016: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:57:45.175600: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:57:45.175637: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-11000, time 0.05s
+  # 1310
+    src: Hơn thế , chúng ta là những công dân .
+    ref: We &apos;re more than that , we &apos;re citizens .
+    nmt: More , we are <unk> .
+2018-07-06 00:57:45.259192: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:57:45.259732: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:57:45.259734: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-11000, time 0.05s
+# External evaluation, global step 11000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 9s, Fri Jul  6 00:57:54 2018.
+  bleu dev: 6.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 11000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 12s, Fri Jul  6 00:58:11 2018.
+  bleu test: 5.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+  step 11500 lr 1 step-time 0.26s wps 21.28K ppl 34.78 gN 3.30 bleu 6.07, Fri Jul  6 00:58:25 2018
+  step 11600 lr 1 step-time 0.18s wps 30.03K ppl 32.94 gN 3.10 bleu 6.07, Fri Jul  6 00:58:44 2018
+  step 11700 lr 1 step-time 0.18s wps 31.03K ppl 33.99 gN 3.17 bleu 6.07, Fri Jul  6 00:59:02 2018
+  step 11800 lr 1 step-time 0.18s wps 30.64K ppl 33.55 gN 3.16 bleu 6.07, Fri Jul  6 00:59:21 2018
+  step 11900 lr 1 step-time 0.18s wps 30.68K ppl 33.54 gN 3.11 bleu 6.07, Fri Jul  6 00:59:39 2018
+  step 12000 lr 1 step-time 0.18s wps 30.80K ppl 34.27 gN 3.13 bleu 6.07, Fri Jul  6 00:59:57 2018
+# Save eval, global step 12000
+2018-07-06 00:59:58.270248: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:59:58.270823: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 00:59:58.270936: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-12000, time 0.05s
+  # 89
+    src: Bà lớn lên trong thời kì mà đạo Khổng là chuẩn mực xã hội và quan lại địa phương có quyền sinh quyền sát .
+    ref: She grew up at a time when Confucianism was the social norm and the local Mandarin was the person who mattered .
+    nmt: She &apos;s a big problem in the <unk> of the <unk> and the <unk> of the <unk> of the <unk> .
+2018-07-06 00:59:58.394914: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 00:59:58.395279: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-12000, time 0.06s
+  eval dev: perplexity 33.39, time 1s, Fri Jul  6 00:59:59 2018.
+  eval test: perplexity 38.43, time 1s, Fri Jul  6 01:00:00 2018.
+2018-07-06 01:00:01.093957: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:01.094572: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 01:00:01.094575: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-12000, time 0.05s
+  # 1138
+    src: Hay nói cách khác , &quot; Máy tính , liệu bạn có thể đưa ra hàng trăm triệu dãy câu lệnh ngẫu nhiên .
+    ref: Say , &quot; Computer , would you please make a hundred million random sequences of instructions .
+    nmt: Or the more you can say , the number of <unk> , the number of people who are able to do the data of the <unk> .
+2018-07-06 01:00:01.224855: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:01.225432: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/translate.ckpt-12000, time 0.06s
+  eval dev: perplexity 33.39, time 1s, Fri Jul  6 01:00:02 2018.
+  eval test: perplexity 38.43, time 1s, Fri Jul  6 01:00:03 2018.
+2018-07-06 01:00:03.501787: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:03.502191: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 01:00:03.502205: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/translate.ckpt-12000, time 0.05s
+# External evaluation, global step 12000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 15s, Fri Jul  6 01:00:19 2018.
+  bleu dev: 5.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 12000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 8s, Fri Jul  6 01:00:29 2018.
+  bleu test: 4.8
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# Final, step 12000 lr 1 step-time 0.18s wps 30.80K ppl 34.27 gN 3.13 dev ppl 33.39, dev bleu 5.8, test ppl 38.43, test bleu 4.8, Fri Jul  6 01:00:30 2018
+# Done training!, time 2746s, Fri Jul  6 01:00:30 2018.
+# Start evaluating saved best models.
+2018-07-06 01:00:30.922172: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:30.922726: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 01:00:30.922735: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/best_bleu/translate.ckpt-11000, time 0.06s
+  # 681
+    src: Rõ là thế này vẫn chưa ổn .
+    ref: Somehow this isn &apos;t working .
+    nmt: This is not the same .
+2018-07-06 01:00:31.016971: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:31.017516: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded eval model parameters from /scratch/p_adm/nmt_model/best_bleu/translate.ckpt-11000, time 0.06s
+  eval dev: perplexity 32.64, time 1s, Fri Jul  6 01:00:32 2018.
+  eval test: perplexity 37.14, time 1s, Fri Jul  6 01:00:33 2018.
+2018-07-06 01:00:33.300800: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2018-07-06 01:00:33.301217: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2018-07-06 01:00:33.301229: I tensorflow/core/kernels/lookup_util.cc:362] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+  loaded infer model parameters from /scratch/p_adm/nmt_model/best_bleu/translate.ckpt-11000, time 0.05s
+# External evaluation, global step 11000
+  decoding to output /scratch/p_adm/nmt_model/output_dev.
+  done, num sentences 1553, num translations per input 1, time 9s, Fri Jul  6 01:00:42 2018.
+  bleu dev: 6.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# External evaluation, global step 11000
+  decoding to output /scratch/p_adm/nmt_model/output_test.
+  done, num sentences 1268, num translations per input 1, time 10s, Fri Jul  6 01:00:58 2018.
+  bleu test: 5.1
+  saving hparams to /scratch/p_adm/nmt_model/hparams
+# Best bleu, step 11000 lr 1 step-time 0.18s wps 30.80K ppl 34.27 gN 3.13 dev ppl 32.64, dev bleu 6.1, test ppl 37.14, test bleu 5.1, Fri Jul  6 01:00:59 2018

@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --time=4:00:00   # walltime
+#SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
-#SBATCH -p gpu2    # K80 GPUs on Haswell node
+#SBATCH -p gpu1    # K80 GPUs on Haswell node
 #SBATCH -J "nmt_tutorial"   # job name
 #SBATCH --mem=10000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
-#SBATCH --output "slurm-nmt.out" # output file name
 
 module purge
 module load modenv/eb
