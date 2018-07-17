@@ -1,0 +1,62 @@
+\documentclass[hyperref,masterofscience]{cgvpub}
+%weitere Optionen zum Erg�?nzen (in eckigen Klammern):
+%
+% bibnum	numerische Literaturschl�?ssel
+% final 	f�?r Abgabe
+% lof			Abbildungsverzeichis
+% lot			Tabellenverzeichnis
+% noproblem	keine Aufgabenstellung
+% notoc			kein Inhaltsverzeichnis
+% twoside		zweiseitig
+\author{Xiaoyu Yin}
+\title{Translating Natural Language to SPARQL}
+\birthday{13. June 1994}
+\placeofbirth{Zhumadian}
+\matno{4572954}
+\betreuer{Dr. Dagmar Gromann}
+\bibfiles{literatur}
+\problem{Text der Aufgabenstellung...}
+\copyrighterklaerung{Hier soll jeder Autor die von ihm eingeholten
+Zustimmungen der Copyright-Besitzer angeben bzw. die in Web Press
+Rooms angegebenen generellen Konditionen seiner Text- und
+Bild"ubernahmen zitieren.}
+\acknowledgments{Die Danksagung...}
+\abstracten{abstract text english}
+\abstractde{ Zusammenfassung Text Deutsch}
+\begin{document}
+\chapter{ein kapitel}
+\section{eine Grafik}
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{test.png}
+	\caption{beschriftung}
+	\label{fig:diplominf}
+\end{figure}
+
+
+\subsection{Etwas Mathe}
+
+\[
+\sum_{i=1}^{100}x_i
+\]
+noch mehr text
+\subsubsection{Verweise auf Literatur}
+So kann ich Literatur aus literatur.bib zitieren: \cite{kochbuch}.
+
+\paragraph{etwas quelltext}
+
+
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=trbl]
+//comment
+for(int i = 0; i < 100;i++)
+{
+test(i);
+}
+\end{lstlisting}
+\end{figure}
+
+text
+
+\cite*{}
+\end{document}

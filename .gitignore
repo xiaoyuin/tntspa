@@ -102,3 +102,20 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# IDE settings
+.vscode
+.idea
+
+# data
+/data
+
+# thesis output
+/thesis/*.aux
+/thesis/*.bbl
+/thesis/*.blg
+/thesis/*.fls
+/thesis/*.toc
+/thesis/*.out
+/thesis/*.synctex.gz
+/thesis/*.fdb_latexmk

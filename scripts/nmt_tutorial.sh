@@ -6,6 +6,8 @@
 #SBATCH -J "nmt_tutorial"   # job name
 #SBATCH --mem=10000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
+#SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
+#SBATCH --mail-type END
 
 module purge
 module load modenv/eb
