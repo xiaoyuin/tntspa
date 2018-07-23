@@ -114,8 +114,14 @@ venv.bak/
 /thesis/*.aux
 /thesis/*.bbl
 /thesis/*.blg
+/thesis/*.blg
+/thesis/*.lof
+/thesis/*.lot
 /thesis/*.fls
 /thesis/*.toc
 /thesis/*.out
 /thesis/*.synctex.gz
 /thesis/*.fdb_latexmk
+
+# Tensorflow logs
+/logs

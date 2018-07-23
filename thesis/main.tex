@@ -1,4 +1,4 @@
-\documentclass[hyperref,masterofscience]{cgvpub}
+\documentclass[hyperref, lof, lot, noproblem, masterofscience]{cgvpub}
 %weitere Optionen zum Erg�?nzen (in eckigen Klammern):
 %
 % bibnum	numerische Literaturschl�?ssel
@@ -14,49 +14,58 @@
 \placeofbirth{Zhumadian}
 \matno{4572954}
 \betreuer{Dr. Dagmar Gromann}
-\bibfiles{literatur}
+\bibfiles{literature}
 \problem{Text der Aufgabenstellung...}
-\copyrighterklaerung{Hier soll jeder Autor die von ihm eingeholten
-Zustimmungen der Copyright-Besitzer angeben bzw. die in Web Press
-Rooms angegebenen generellen Konditionen seiner Text- und
-Bild"ubernahmen zitieren.}
-\acknowledgments{Die Danksagung...}
-\abstracten{abstract text english}
-\abstractde{ Zusammenfassung Text Deutsch}
+\copyrighterklaerung{Copyright information here}
+\acknowledgments{Acknowledgments here}
+\abstracten{English abstract here}
+\abstractde{Zusammenfassung Text Deutsch?}
 \begin{document}
-\chapter{ein kapitel}
-\section{eine Grafik}
-\begin{figure}[htbp]
-	\centering
-		\includegraphics{test.png}
-	\caption{beschriftung}
-	\label{fig:diplominf}
-\end{figure}
 
 
-\subsection{Etwas Mathe}
 
-\[
-\sum_{i=1}^{100}x_i
-\]
-noch mehr text
-\subsubsection{Verweise auf Literatur}
-So kann ich Literatur aus literatur.bib zitieren: \cite{kochbuch}.
+\chapter{Introduction}
 
-\paragraph{etwas quelltext}
+\section{Motivation}
+\section{Thesis Outline}
 
 
-\begin{figure}[htbp]
-\begin{lstlisting}[frame=trbl]
-//comment
-for(int i = 0; i < 100;i++)
-{
-test(i);
-}
-\end{lstlisting}
-\end{figure}
 
-text
+\chapter{Background}
 
-\cite*{}
+\section{Semantic Web Technologies}
+\subsection{OWL}
+\subsection{Linked Data}
+\subsection{SPARQL}
+
+\section{Neural Machine Translation}
+\subsection{Recurrent Neural Network}
+\subsection{Long Short-Term Memory}
+\subsection{Sequence to Sequence Learning}
+
+\section{Related Work}
+
+
+
+\chapter{Model}
+
+
+
+\chapter{Experiments}
+
+\section{Implementation}
+\section{Training}
+\section{Testing}
+\section{Results}
+
+
+\chapter{Analysis}
+
+
+
+\chapter{Conclusion}
+
+
+
+
 \end{document}
