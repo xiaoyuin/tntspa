@@ -17,7 +17,7 @@ def load_vectors(fname):
     for line in fin:
         tokens = line.rstrip().split(' ')
         data[tokens[0]] = map(float, tokens[1:])
-    return data
+    return n, d, data
 
 def read_qald_json(file_path, lang='en', written_to_file=True):
     """

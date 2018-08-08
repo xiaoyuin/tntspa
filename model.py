@@ -32,6 +32,41 @@ class MyVector:
         raise NotImplementedError
 
 
+class NaiveVector(MyVector):
+
+    def __init__(self, file_path):
+        self.size, self.dimension, self.vectors = self.__load_vectors(file_path)
+        self.vocabulary = list(self.vectors.keys())
+        self.word2index = {w: i for i, w in enumerate(self.vocabulary)}
+
+    def get_vocabulary(self):
+        return self.vocabulary
+
+    def get_vocabulary_size(self):
+        return self.size
+
+    def get_dimension(self):
+        return self.dimension
+
+    def get_word_vector(self, word):
+        return self.vectors[word]
+
+    def get_word_id(self, word):
+        return self.word2index[word]
+
+    def __load_vectors(self, fname):
+        """
+        Load word embeddings from a pre-trained vector file
+        """
+        fin = open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
+        # number of words and dimensions
+        n, d = map(int, fin.readline().split())
+        data = {}
+        for line in fin:
+            tokens = line.rstrip().split(' ')
+            data[tokens[0]] = map(float, tokens[1:])
+        return n, d, data
+
 class MyModel:
     """MyModel"""
 
