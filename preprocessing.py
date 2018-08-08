@@ -1,5 +1,3 @@
-import tensorflow as tf
-import fastText
 import re
 
 def preprocess_sentence(w):

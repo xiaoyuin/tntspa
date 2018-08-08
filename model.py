@@ -10,10 +10,8 @@ from keras.initializers import Orthogonal
 from keras.callbacks import EarlyStopping
 from keras import metrics
 
-import fastText
-from preprocessing import preprocess_sentence
-from gensim.models import KeyedVectors
 import utils
+from preprocessing import preprocess_sentence
 
 
 class MyVector:
@@ -32,50 +30,6 @@ class MyVector:
 
     def get_word_id(self, word):
         raise NotImplementedError
-
-
-class FastTextVector(MyVector):
-
-    def __init__(self, file_path):
-        # Use fastText to load fastText vector models
-        self.vectors = fastText.load_model(file_path)
-
-    def get_vocabulary(self):
-        return self.vectors.get_words()
-
-    def get_vocabulary_size(self):
-        return len(self.vectors.get_words())
-
-    def get_dimension(self):
-        return self.vectors.get_dimension()
-
-    def get_word_vector(self, word):
-        return self.vectors.get_word_vector(word)
-
-    def get_word_id(self, word):
-        return self.vectors.get_word_id(word)
-
-
-class GensimKeyedVector(MyVector):
-
-    def __init__(self, file_path):
-        # Use fastText to load fastText vector models
-        self.vectors = KeyedVectors.load(file_path)
-
-    def get_vocabulary(self):
-        return self.vectors.get_words()
-
-    def get_vocabulary_size(self):
-        return len(self.vectors.get_words())
-
-    def get_dimension(self):
-        return self.vectors.get_dimension()
-
-    def get_word_vector(self, word):
-        return self.vectors.get_vector(word)
-
-    def get_word_id(self, word):
-        return self.vectors.get_word_id(word)
 
 
 class MyModel:
@@ -230,6 +184,8 @@ class MyModel:
 
     def inference(self, input_sequence):
 
+        input_sequence = preprocess_sentence(input_sequence)
+
         encoder_model = Model(self.encoder_inputs, self.encoder_states)
         decoder_state_input_hidden = Input(shape=(self.hidden_units,))
         decoder_state_input_cell = Input(shape=(self.hidden_units,))
@@ -269,13 +225,3 @@ class MyModel:
             states_value = [h, c]
 
         return decoded_sentence
-
-
-input_texts = utils.read_lines("data/monument_600/train.en")
-target_texts = utils.read_lines("data/monument_600/train.sparql")
-
-model = MyModel(input_word_vector=FastTextVector("data/wiki.en.bin"))
-model.train(input_texts, target_texts)
-model.visualize()
-model.save('output/my_model.h5')
-print(model.inference("I have a dream"))
