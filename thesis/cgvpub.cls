@@ -331,8 +331,13 @@
 \def\@faculty{Informatik}
 \fi
 
+% \if@masterofscience%
+% \renewcommand{\titleheader}[0]{Masterarbeit \\[1cm]\large zur Erlangung des akademischen Grades\\ Master of Science}
+% \def\@faculty{Informatik}
+% \fi
+
 \if@masterofscience%
-\renewcommand{\titleheader}[0]{Masterarbeit \\[1cm]\large zur Erlangung des akademischen Grades\\ Master of Science}
+\renewcommand{\titleheader}[0]{Master Thesis \\[1cm]\large Master Computational Logic}
 \def\@faculty{Informatik}
 \fi
 
@@ -406,7 +411,7 @@
   \fi
   \@copyrighterklaerung}
   \ifx\@empty\@isplain
-    \renewcommand{\betreuerlabel}[0]{Tutor: }
+    \renewcommand{\betreuerlabel}[0]{Supervisor: }
 		\renewcommand{\matnostart}[0]{(}
     \renewcommand{\matnolabel}[0]{Mat.-No.: }
     \renewcommand{\matnoclosing}[0]{)}
@@ -563,9 +568,7 @@
 	    \bigskip
 	    \Large
      \textsc{Faculty of Computer Science\\
-	    Institute of Software and Multimedia Technology\\
-	    Chair of Computer Graphics and Visualization\\
-	    Prof. Dr. Stefan Gumhold}
+	    International Center For Computational Logic}
 	    \end{center}
 	  }
 	  \fi
@@ -724,11 +727,8 @@
 \ifx\@empty\@isdiploma
 \else
   \renewcommand{\baselinestretch}{1.0}
-  {\vspace*{2cm}
-  \minisec{Kurzfassung}
-  \@abstractde
-  \vspace{2cm}
-  \minisec{Abstract}
+  {
+  \chapter*{Abstract}
   \@abstracten
   }
   \if@final
