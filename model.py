@@ -12,7 +12,7 @@ from keras import metrics
 from keras.utils import plot_model
 
 import utils
-from preprocessing import preprocess_sentence
+from preprocessing import preprocess_sentence, preprocess_sparql
 
 
 class MyVector:
@@ -142,23 +142,27 @@ class MyModel:
             else:
                 self.encoder_outputs, state_hidden, state_cell = encoder_lstm(self.encoder_outputs)
             encoder_states = [state_hidden, state_cell]
-            self.encoder_states_layered.append(encoder_states)
+            self.encoder_states_layered.extend(encoder_states)
 
         # Decoder
         self.decoder_inputs = Input(shape=(None,))
         self.decoder_embedding = Embedding(
             self.decoder_vocab_size, self.decoder_embedding_size)(self.decoder_inputs)
-        
+        self.decoder_layers = []
+
         for i in range(self.num_layers):
 
             decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
                                     recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            initial_state = [self.encoder_states_layered[2*i], self.encoder_states_layered[2*i+1]]
+
             if i == 0:
                 self.decoder_outputs, _, _ = decoder_lstm(
-                    self.decoder_embedding, initial_state=self.encoder_states_layered[i])
+                    self.decoder_embedding, initial_state=initial_state)
             else:
                 self.decoder_outputs, _, _ = decoder_lstm(
-                    self.decoder_outputs, initial_state=self.encoder_states_layered[i])
+                    self.decoder_outputs, initial_state=initial_state)
+            self.decoder_layers.append(decoder_lstm)
         
         self.decoder_dense = Dense(
                 self.decoder_vocab_size, activation='softmax')
@@ -167,7 +171,22 @@ class MyModel:
         self.model = Model(
             [self.encoder_inputs, self.decoder_inputs], self.decoder_outputs)
 
-    def __prepare_data(self, input_texts, target_texts, reversed_input=False):
+    def __preprocess_data(self, input_texts, target_texts, reversed_input=False):
+        preprocessed_inputs = []
+        for input_text in input_texts:
+            if reversed_input:
+                reversed_input_text = " ".join(input_text.split()[::-1])
+                preprocessed_inputs.append(preprocess_sentence(reversed_input_text))
+            else:
+                preprocessed_inputs.append(preprocess_sentence(input_text))
+        
+        preprocessed_targets = []
+        for target_text in target_texts:
+            preprocessed_targets.append(preprocess_sparql(target_text))
+
+        return preprocessed_inputs, preprocessed_targets
+
+    def __prepare_data(self, input_texts, target_texts):
         num_of_samples = len(input_texts)
 
         # Data declaration
@@ -223,6 +242,7 @@ class MyModel:
 
         self.epochs = epochs
         self.batch_size = batch_size
+        input_texts, target_texts = self.__preprocess_data(input_texts, target_texts)
         self.__build_vocabulary(input_texts, target_texts)
         self.__build_model()
         encoder_input_data, decoder_input_data, decoder_target_data = self.__prepare_data(
@@ -262,34 +282,45 @@ class MyModel:
     def inference(self, input_sequence):
 
         input_sequence = preprocess_sentence(input_sequence)
+        input_sequence_parts = input_sequence.split()
+        _encoder_input_data = np.zeros((1, len(input_sequence_parts), self.encoder_embedding_size), dtype='float32')
+        for t, word in enumerate(input_sequence_parts):
+            _word_vector = self.input_word_vector.get_word_vector(word)
+            for j in range(self.encoder_embedding_size):
+                _encoder_input_data[0, t, j] = _word_vector[j]
 
         encoder_model = Model(self.encoder_inputs, self.encoder_states_layered)
-        decoder_state_input_hidden = Input(shape=(self.hidden_units,))
-        decoder_state_input_cell = Input(shape=(self.hidden_units,))
-        decoder_states_inputs = [
-            decoder_state_input_hidden, decoder_state_input_cell]
-        
-        decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
-                                    recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+        decoder_states_inputs_layered = []
+        for _ in range(self.num_layers):
+            decoder_states_inputs_layered.extend([Input(shape=(self.hidden_units,)), Input(shape=(self.hidden_units,))])
+        decoder_states_layered = []
+
+        for i in range(self.num_layers):
+
+            decoder_lstm = self.decoder_layers[i]
+            initial_state = [decoder_states_inputs_layered[2*i], decoder_states_inputs_layered[2*i+1]]
+            if i == 0:
+                decoder_outputs, state_hidden, state_cell = decoder_lstm(self.decoder_embedding, initial_state=initial_state)
+            else:
+                decoder_outputs, state_hidden, state_cell = decoder_lstm(decoder_outputs, initial_state=initial_state)
+            decoder_states = [state_hidden, state_cell]
+            decoder_states_layered.extend(decoder_states)
             
-        decoder_outputs, state_hidden, state_cell = decoder_lstm(
-            self.decoder_embedding, initial_state=decoder_states_inputs)
-        decoder_states = [state_hidden, state_cell]
         decoder_outputs = self.decoder_dense(decoder_outputs)
         decoder_model = Model(
-            [self.decoder_inputs] + decoder_states_inputs,
-            [decoder_outputs] + decoder_states
+            [self.decoder_inputs] + decoder_states_inputs_layered,
+            [decoder_outputs] + decoder_states_layered
         )
 
-        states_value = encoder_model.predict(input_sequence)
+        states_value_layered = encoder_model.predict(_encoder_input_data)
         target_seq = np.zeros((1,))
         target_seq[0] = self.target_word_index[self.sos_symbol]
 
         stop_condition = False
         decoded_sentence = []
         while not stop_condition:
-            decoder_output, h, c = decoder_model.predict(
-                [target_seq] + states_value)
+            decoder_output, *decoder_state_layered = decoder_model.predict(
+                [target_seq] + states_value_layered)
 
             sampled_word_index = np.argmax(decoder_output[0, -1, :])
             sampled_word = self.reverse_target_word_index[sampled_word_index]
@@ -302,6 +333,6 @@ class MyModel:
             target_seq = np.zeros((1,))
             target_seq[0] = sampled_word_index
 
-            states_value = [h, c]
+            states_value_layered = decoder_state_layered
 
         return decoded_sentence

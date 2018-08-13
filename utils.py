@@ -107,7 +107,7 @@ def read_lines(file_path):
     input_texts = []
     with open(file_path) as file:
         for line in file:
-            input_texts.append(preprocess_sentence(line))
+            input_texts.append(line)
     return input_texts
 
 def build_vocabulary_from_texts(texts):
