@@ -4,11 +4,12 @@ from matplotlib import pyplot
 
 import keras
 from keras.models import Model
-from keras.layers import Input, LSTM, Dense, Embedding
+from keras.layers import Input, LSTM, Dense, Embedding, GRU
 from keras.optimizers import RMSprop
 from keras.initializers import Orthogonal
 from keras.callbacks import EarlyStopping
 from keras import metrics
+from keras.utils import plot_model
 
 import utils
 from preprocessing import preprocess_sentence
@@ -35,7 +36,8 @@ class MyVector:
 class NaiveVector(MyVector):
 
     def __init__(self, file_path):
-        self.size, self.dimension, self.vectors = self.__load_vectors(file_path)
+        self.size, self.dimension, self.vectors = self.__load_vectors(
+            file_path)
         self.vocabulary = list(self.vectors.keys())
         self.word2index = {w: i for i, w in enumerate(self.vocabulary)}
 
@@ -67,6 +69,7 @@ class NaiveVector(MyVector):
             data[tokens[0]] = map(float, tokens[1:])
         return n, d, data
 
+
 class MyModel:
     """MyModel"""
 
@@ -77,15 +80,30 @@ class MyModel:
     hidden_units = 128
     encoder_embedding_size = 300
     decoder_embedding_size = 300
+    num_layers = 1
+    use_attention = False
+    beam_size = 1
 
     sos_symbol = '<s>'
     eos_symbol = '</s>'
     unk_symbol = '<unk>'
 
-    def __init__(self, input_word_vector, target_word_vector=None):
+    def __init__(self,
+                 input_word_vector,
+                 target_word_vector=None,
+                 hidden_units=128,
+                 num_layers=1,
+                 dropout=0.2,
+                 use_attention=False,
+                 beam_size=1):
         """Creates a model"""
         self.input_word_vector = input_word_vector
         self.target_word_vector = target_word_vector
+        self.hidden_units = hidden_units
+        self.num_layers = num_layers
+        self.dropout = dropout
+        self.use_attention = use_attention
+        self.beam_size = beam_size
 
     def __build_vocabulary(self, input_texts, target_texts):
         if self.input_word_vector is not None:
@@ -106,31 +124,50 @@ class MyModel:
 
     def __build_model(self):
 
+        self.encoder_states_layered = []
+
         # Encoder
         self.encoder_inputs = Input(shape=(None, self.encoder_embedding_size))
-        # encoder_embedding = Embedding(num_input_words+1, embedding_size, weights=[embedding_matrix], trainable=False)(encoder_inputs)
-        self.encoder = LSTM(self.hidden_units, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
-                            kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
-        _, self.state_hidden, self.state_cell = self.encoder(
-            self.encoder_inputs)
-        self.encoder_states = [self.state_hidden, self.state_cell]
+
+        return_sequences = True
+
+        for i in range(self.num_layers):
+            if i == self.num_layers-1:
+                return_sequences = False
+            # encoder_embedding = Embedding(num_input_words+1, embedding_size, weights=[embedding_matrix], trainable=False)(encoder_inputs)
+            encoder_lstm = LSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
+                                kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            if i == 0:
+                self.encoder_outputs, state_hidden, state_cell = encoder_lstm(self.encoder_inputs)
+            else:
+                self.encoder_outputs, state_hidden, state_cell = encoder_lstm(self.encoder_outputs)
+            encoder_states = [state_hidden, state_cell]
+            self.encoder_states_layered.append(encoder_states)
 
         # Decoder
         self.decoder_inputs = Input(shape=(None,))
         self.decoder_embedding = Embedding(
             self.decoder_vocab_size, self.decoder_embedding_size)(self.decoder_inputs)
-        self.decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
-                                 recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
-        self.decoder_outputs, _, _ = self.decoder_lstm(
-            self.decoder_embedding, initial_state=self.encoder_states)
+        
+        for i in range(self.num_layers):
+
+            decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
+                                    recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            if i == 0:
+                self.decoder_outputs, _, _ = decoder_lstm(
+                    self.decoder_embedding, initial_state=self.encoder_states_layered[i])
+            else:
+                self.decoder_outputs, _, _ = decoder_lstm(
+                    self.decoder_outputs, initial_state=self.encoder_states_layered[i])
+        
         self.decoder_dense = Dense(
-            self.decoder_vocab_size, activation='softmax')
+                self.decoder_vocab_size, activation='softmax')
         self.decoder_outputs = self.decoder_dense(self.decoder_outputs)
 
         self.model = Model(
             [self.encoder_inputs, self.decoder_inputs], self.decoder_outputs)
 
-    def __prepare_data(self, input_texts, target_texts):
+    def __prepare_data(self, input_texts, target_texts, reversed_input=False):
         num_of_samples = len(input_texts)
 
         # Data declaration
@@ -182,8 +219,10 @@ class MyModel:
 
         return encoder_input_data, decoder_input_data, decoder_target_data
 
-    def train(self, input_texts, target_texts, early_stopping=False):
+    def train(self, input_texts, target_texts, early_stopping=False, reversed_input=False, epochs=100, batch_size=64):
 
+        self.epochs = epochs
+        self.batch_size = batch_size
         self.__build_vocabulary(input_texts, target_texts)
         self.__build_model()
         encoder_input_data, decoder_input_data, decoder_target_data = self.__prepare_data(
@@ -214,6 +253,9 @@ class MyModel:
         if self.model is not None:
             self.model.save(file_location)
 
+    def plot_model(self, img_location):
+        plot_model(self.model, to_file=img_location)
+
     def load_model(self, model_location):
         self.model = keras.models.load_model(model_location)
 
@@ -221,13 +263,16 @@ class MyModel:
 
         input_sequence = preprocess_sentence(input_sequence)
 
-        encoder_model = Model(self.encoder_inputs, self.encoder_states)
+        encoder_model = Model(self.encoder_inputs, self.encoder_states_layered)
         decoder_state_input_hidden = Input(shape=(self.hidden_units,))
         decoder_state_input_cell = Input(shape=(self.hidden_units,))
         decoder_states_inputs = [
             decoder_state_input_hidden, decoder_state_input_cell]
-
-        decoder_outputs, state_hidden, state_cell = self.decoder_lstm(
+        
+        decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
+                                    recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            
+        decoder_outputs, state_hidden, state_cell = decoder_lstm(
             self.decoder_embedding, initial_state=decoder_states_inputs)
         decoder_states = [state_hidden, state_cell]
         decoder_outputs = self.decoder_dense(decoder_outputs)
