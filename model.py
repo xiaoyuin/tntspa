@@ -136,7 +136,7 @@ class MyModel:
                 return_sequences = False
             # encoder_embedding = Embedding(num_input_words+1, embedding_size, weights=[embedding_matrix], trainable=False)(encoder_inputs)
             if tf.test.is_gpu_available():
-                encoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
+                encoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=return_sequences, return_state=True,
                                 kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
             else:
                 encoder_lstm = LSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
@@ -157,8 +157,7 @@ class MyModel:
         for i in range(self.num_layers):
             
             if tf.test.is_gpu_available():
-                decoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
-                                    recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+                decoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=True, return_state=True, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
             else:
                 decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
                                     recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
