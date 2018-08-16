@@ -1,6 +1,5 @@
 import numpy as np
 import h5py
-from matplotlib import pyplot
 
 import tensorflow as tf
 import keras
@@ -268,16 +267,6 @@ class MyModel:
                                       batch_size=self.batch_size, epochs=self.epochs, validation_split=0.2, shuffle=True, callbacks=callbacks)
 
         return self.history
-
-    def visualize(self):
-
-        pyplot.plot(self.history.history['loss'])
-        pyplot.plot(self.history.history['val_loss'])
-        pyplot.title('model train vs validation loss')
-        pyplot.ylabel('loss')
-        pyplot.xlabel('epoch')
-        pyplot.legend(['train', 'validation'], loc='upper right')
-        pyplot.show()
 
     def save(self, file_location):
         if self.model is not None:
