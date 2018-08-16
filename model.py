@@ -2,9 +2,10 @@ import numpy as np
 import h5py
 from matplotlib import pyplot
 
+import tensorflow as tf
 import keras
 from keras.models import Model
-from keras.layers import Input, LSTM, Dense, Embedding, GRU
+from keras.layers import Input, LSTM, Dense, Embedding, GRU, CuDNNLSTM, CuDNNGRU
 from keras.optimizers import RMSprop
 from keras.initializers import Orthogonal
 from keras.callbacks import EarlyStopping
@@ -135,7 +136,11 @@ class MyModel:
             if i == self.num_layers-1:
                 return_sequences = False
             # encoder_embedding = Embedding(num_input_words+1, embedding_size, weights=[embedding_matrix], trainable=False)(encoder_inputs)
-            encoder_lstm = LSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
+            if tf.test.is_gpu_available():
+                encoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
+                                kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            else:
+                encoder_lstm = LSTM(self.hidden_units, return_sequences=return_sequences, return_state=True, dropout=self.dropout, recurrent_dropout=self.dropout,
                                 kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
             if i == 0:
                 self.encoder_outputs, state_hidden, state_cell = encoder_lstm(self.encoder_inputs)
@@ -151,9 +156,14 @@ class MyModel:
         self.decoder_layers = []
 
         for i in range(self.num_layers):
-
-            decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
+            
+            if tf.test.is_gpu_available():
+                decoder_lstm = CuDNNLSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
                                     recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            else:
+                decoder_lstm = LSTM(self.hidden_units, return_sequences=True, return_state=True, dropout=self.dropout,
+                                    recurrent_dropout=self.dropout, kernel_initializer=Orthogonal(), recurrent_regularizer=keras.regularizers.l2())
+            
             initial_state = [self.encoder_states_layered[2*i], self.encoder_states_layered[2*i+1]]
 
             if i == 0:
@@ -242,7 +252,7 @@ class MyModel:
 
         self.epochs = epochs
         self.batch_size = batch_size
-        input_texts, target_texts = self.__preprocess_data(input_texts, target_texts)
+        input_texts, target_texts = self.__preprocess_data(input_texts, target_texts, reversed_input=reversed_input)
         self.__build_vocabulary(input_texts, target_texts)
         self.__build_model()
         encoder_input_data, decoder_input_data, decoder_target_data = self.__prepare_data(
