@@ -8,7 +8,7 @@ from preprocessing import preprocess_sentence
 
 def load_vectors(fname):
     """
-    Load word embeddings from a pre-trained vector file
+    Load word embeddings from a pre-trained vector file using local python 
     """
     fin = io.open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
     # number of words and dimensions
@@ -72,6 +72,10 @@ def read_qald_csv(file_path, written_to_file=True):
 
     return data
 
+def tokenize(sentence):
+    """Split the given sentence into a list of tokens"""
+    return sentence.split('')
+
 def build_vocabulary(file_path):
     """
     Build a vocabulary from given file path, and output a vocabulary file?
@@ -115,3 +119,16 @@ def build_vocabulary_from_texts(texts):
     for text in texts:
         vocab.update(text.split())
     return vocab
+
+def write_history(history, file_location):
+    file = open(file_location, 'w')
+    json.dump({
+        "history": history.history,
+        "params": history.params,
+        "epoch": history.epoch
+    }, file)
+
+def read_history(file_location):
+    file = open(file_location, 'r')
+    history = json.load(file)
+    return history
