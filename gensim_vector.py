@@ -1,11 +1,16 @@
 from gensim.models import KeyedVectors, FastText
 from model import MyVector
+import time
 
 class GensimKeyedVector(MyVector):
 
     def __init__(self, file_path):
+        start_time = time.time()
+        print("Gensim KeyedVector model loading...")
         self.vectors = KeyedVectors.load_word2vec_format(file_path)
         self.vocabulary = self.vectors.vocab
+        e = int(time.time() - start_time)
+        print("Gensim KeyedVector model loaded! Elapsed time: ", '{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
 
     def get_vocabulary(self):
         return self.vectors.index2word
@@ -26,8 +31,12 @@ class GensimFastTextVector(MyVector):
 
     def __init__(self, file_path):
         # Use fastText to load fastText vector models
+        start_time = time.time()
+        print("Gensim FastText model loading...")
         self.model = FastText.load_fasttext_format(file_path)
         self.vocabulary = self.model.wv.index2word
+        e = int(time.time() - start_time)
+        print("Gensim FastText model loaded! Elapsed time: ", '{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
 
     def get_vocabulary(self):
         return self.vocabulary
