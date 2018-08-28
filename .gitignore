@@ -127,3 +127,4 @@ venv.bak/
 /logs
 
 /nmt_model
+/output
