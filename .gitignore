@@ -125,3 +125,5 @@ venv.bak/
 
 # Tensorflow logs
 /logs
+
+/nmt_model
