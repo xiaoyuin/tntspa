@@ -2,7 +2,7 @@
 #SBATCH --time=8:00:00   # walltime
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
-#SBATCH -p gpu1    # K80 GPUs on Haswell node
+#SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "hpc_nsm"   # job name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
