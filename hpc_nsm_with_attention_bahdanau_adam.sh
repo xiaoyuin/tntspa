@@ -11,9 +11,8 @@
 
 srun python3 -m nmt.nmt.nmt \
     --src=en --tgt=sparql \
-    --hparams_path=nmt_hparams/neural_sparql_machine_attention_bahdanau.json \
-    --out_dir=output/models/neural_sparql_machine_attention_bahdanau_with_embedding \
-    --embed_prefix=data/wiki-news-300d-1M.vec \
+    --hparams_path=nmt_hparams/neural_sparql_machine_attention_bahdanau_adam.json \
+    --out_dir=output/models/neural_sparql_machine_attention_bahdanau_adam \
     --vocab_prefix=data/monument_600/vocab \
     --train_prefix=data/monument_600/train \
     --dev_prefix=data/monument_600/dev \
