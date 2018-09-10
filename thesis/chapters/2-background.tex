@@ -1,10 +1,24 @@
-\section{Semantic Web Technologies}
-\subsection{Linked Data}
-\subsection{SPARQL}
 
-\section{Neural Machine Translation}
+% Chapter Background
+This chapter introduces the background knowledge involved in this thesis. Semantic Web Technologies is briefly introduced in section \ref{section:semantic web technologies}, including the notion of Linked Data in section \ref{subsection:linked data} and SPARQL in section \ref{subsection:sparql}. Section \ref{section:neural machine translation} introduces the field of neural machine translation. Related research is discussed in section \ref{section:related work}.
+
+\section{Semantic Web Technologies} \label{section:semantic web technologies}
+
+\subsection{Linked Data} \label{subsection:linked data}
+% What is Linked Data? What is the use of Linked Data? 
+
+
+\subsection{SPARQL} \label{subsection:sparql}
+% What is SPARQL
+
+
+\section{Neural Machine Translation} \label{section:neural machine translation}
 \subsection{Sequence to Sequence Learning}
 \subsection{Recurrent Neural Network}
 \subsection{Long Short-Term Memory}
 
-\section{Related Work}
+\section{Related Work} \label{section:related work}
+
+\cite{Cai2017} proposed an enhanced encoder-decoder framework for the task of translating natural language to SQL, a similar query language with SPARQL but targeting structured databases instead of knowledge bases. They used not only bleu, but also query accuracy, tuple recall, and tuple precision for measuring the quality of output queries, and achieved good results.
+
+\cite{Soru2018a,Soru2018} proposed a generator-learner-interpreter architecture, namely Neural SPARQL Machines to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence2sequence learner model as the training data. The model was able to predict on unseen natural language sentence, and generate encoding sequence of SPARQL for interpreter to decode. 
