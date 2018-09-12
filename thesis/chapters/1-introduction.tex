@@ -2,23 +2,25 @@
 % Chapter Introduction
 
 % What would be included in this chapter?
-This chapter provides an introduction of the thesis. We introduce the motivation of this thesis in section \ref{section:motivation}, and the outline of this thesis in section \ref{section:thesis outline}.
+This chapter provides an introduction about the motivation of this thesis in section \ref{section:motivation}. Moreover, an outline is listed in section \ref{section:thesis outline}.
 
 % Section Motivation
 
 \section{Motivation} \label{section:motivation}
 % Short description of what is Linked Data, Question Answering, SPARQL. What is the relationship between these concepts? What is the current situation and what are the current demands? What is the (goal) task of this thesis? Why is it important to realize this goal? why is it useful to translate natural language to SPARQL? Who can benefit from it and how can they benefit from it?
-In recent years, numerous documents have been published onto the web in a fast-growing speed, forming a global information space which worldwide people have access to. 
+The World Wide Web is quickly evolving nowadays and has contributed to an enormous change of human lives in various areas. However, due to the design principles in early stages, a majority of the documents on the web serves as the content for human reading, thus lacking the description of a shared semantics for the computers to handle. The Semantic Web is the concept of a Web containing data and information that can be manipulated by machines automatically \cite{Shadbolt2006}. In order to help achieve the potential of the current web, a series of technologies including Resource Description Framework (RDF) and Ontology, have been introduced. With the help of these tools, a increasing number of documents containing uniform organized data have been gathered on the web. One notable example of this is Linked Dataset such as DBpedia \cite{Auer2007}. 
+
+SPARQL is a language designed to query and manipulate the information sources contained in an RDF store or online RDF graph content, and is by far the recommended standard \cite{Harris2013}. Though the data queried by SPARQL is made for publicity and openness, the use of it has yet been spreaded out of a group of experts with prior knowledge specific to certain domains. The root of this problem is the gap between the natural language used by non-experts and the domain-specific query language specified in different syntax, semantic and vocabulary. The motivation of this thesis is to bridge this gap by investigating into the past and future methods, notably in the field of neural machine translation to fulfill the task of translating natural language to the expressions in SPARQL, and make comparisons between different methodology. 
 
 \section{Thesis Outline} \label{section:thesis outline}
 % How many chapters does this thesis have? What are the main contents that would be described in each chapter? 
 
-Chapter \ref{chapter:background} presents the background of this thesis.
+Chapter \ref{chapter:background} presents the notion of Semantic Web and its corresponding technologies, research in the subject of neural machine translation under the area of deep learning, and the past work closely related to this thesis. 
 
-Chapter \ref{chapter:methodology} describes the research method used in this thesis.
+(TBD) Chapter \ref{chapter:methodology} describes the research method used in this thesis.
 
-Chapter \ref{chapter:experiments} shows the experiments conducted during this thesis.
+Chapter \ref{chapter:experiments} shows the experiments carried out to investigate better neural network models on the task of translating natural language to SPARQL, the datasets applied, and the corresponding results in textual and tablular form.
 
-Chapter \ref{chapter:analysis} depicts the analysis derived from the experiment results.
+Chapter \ref{chapter:analysis} depicts the analysis derived from the experiment results exhibited in chapter \ref{chapter:experiments}.
 
-Chapter \ref{chapter:conclusion} concludes the whole thesis and provides potential directions for the future work.
+Chapter \ref{chapter:conclusion} brings a summary in general and points out potential directions for the future work.

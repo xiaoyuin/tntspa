@@ -4,20 +4,29 @@ This chapter introduces the background knowledge involved in this thesis. Semant
 
 \section{Semantic Web Technologies} \label{section:semantic web technologies}
 
+The World Wide Web has changed the livings of people dramatically. It enables people from all over the world to browse, share, and communicate large amount of information in an unprecedented speed. This communication is based on the exchange of distributively stored documents of different kinds and formats. For a client-side user, the most common way of establishing such communication is by entering keywords, phrases, or sentences into a chosen search engine, and retrieving desired information from the result list of websites. 
+
 \subsection{Linked Data} \label{subsection:linked data}
 % What is Linked Data? What is the use of Linked Data? 
-
 
 \subsection{SPARQL} \label{subsection:sparql}
 % What is SPARQL
 
 
 \section{Neural Machine Translation} \label{section:neural machine translation}
+
 \subsection{Sequence to Sequence Learning}
+
+
 \subsection{Recurrent Neural Network}
+
+
 \subsection{Long Short-Term Memory}
 
+
 \section{Related Work} \label{section:related work}
+
+The primary focus of the investigation in this thesis is the neural network models that can be used to map natural language statements to SPARQL expressions. Despite that such models usually just perform the role of sequence to sequence learning, the specialty of SPARQL as a structured language with strictly defined syntax and vocabulary often lead to highly different experiment results compared to the common machine translation tasks where the source and target sequence are both unstructured. Therefore, we only consider all the research which deployed machine learning methods to map unstructured sequences to structured sequences as the most related work.
 
 \cite{Cai2017} proposed an enhanced encoder-decoder framework for the task of translating natural language to SQL, a similar query language with SPARQL but targeting structured databases instead of knowledge bases. They used not only bleu, but also query accuracy, tuple recall, and tuple precision for measuring the quality of output queries, and achieved good results.
 
