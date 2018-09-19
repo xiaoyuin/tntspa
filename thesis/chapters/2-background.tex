@@ -1,6 +1,6 @@
 
 % Chapter Background
-This chapter gives an introduction to the background technologies and subfields involved in this thesis. First, Semantic Web Technologies is briefly introduced in section \ref{section:semantic web technologies}, including the notion of RDF in section \ref{subsection:rdf} Linked Data in section \ref{subsection:linked data} and SPARQL in section \ref{subsection:sparql}. Second, section \ref{section:neural machine translation} describes the notion of neural machine translation and involved models and components. Finally, related research is discussed in section \ref{section:related work}.
+This chapter gives an introduction to the background technologies and subfields involved in this thesis. First, Semantic Web Technologies is briefly introduced in section \ref{section:semantic web technologies}, including the notion of RDF in section \ref{subsection:rdf}, Linked Data in section \ref{subsection:linked data} and SPARQL in section \ref{subsection:sparql}. Second, section \ref{section:neural machine translation} describes the notion of neural machine translation and involved models and components. Finally, related research is discussed in section \ref{section:related work}.
 
 \section{Semantic Web Technologies} \label{section:semantic web technologies}
 
@@ -31,9 +31,25 @@ A set of technologies are already here to provide a preliminary environment for 
 The development of standardized technologies for the Semantic Web has promoted the integration of semantics into existing documents and linking of common data across different application domains and even regions. This enables a web of data where the data is connected with typed links, known as Linked Data \cite{Bizer2009}. It uses RDF to link arbitrary entites in the world by making typed statements, and allows complicated queries to be asked in SPARQL. The applications of Linked Data are able to work upon a global and unbound data space, whereas the conventional Web applications normally operate on top of a fixed set of data sources \cite{Bizer2009}. Further information on Linked Data is provided in section \ref{subsection:linked data}.
 
 \subsection{RDF} \label{subsection:rdf}
-\% What is RDF? example
 
-\% technical details perhaps
+The Resource Description Framework (RDF) is a representation language for defining information on the Web. In Semantic Web Technology Stack (figure \ref{figure:semantic web stack}), it provides the infrastructure to express the meaning of concepts and terms in an organized way that machines can easily process. In 1997, the first RDF specification was defined by the W3C and then it became a W3C recommendation in 1999. Currently, the latest version is RDF 1.1 \cite{Cyganiak2014} published in 2014.
+
+In RDF, meanings are expressed in triples. A set of triples constitute an RDF graph, which can be visualized via a diagram containing nodes and directed arcs. Figure \ref{figure:rdf example} demonstrates a simple RDF graph with merely two nodes and one arrow connecting them, which also indicates three components of a triple: subject, predicate, and object. The subject and object represent some resource in the world, and the predicate denotes some relationship. Thus, an RDF triple makes assertions on some relationship of the things it identifies. An RDF graph claims the conjunction of statements encoded by its triples \cite{Cyganiak2014}.
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{rdf-graph}
+\centering
+\caption{An RDF graph with one triple}
+\label{figure:rdf example}
+\end{figure}
+
+In Semantic Web, anything in the world can be referred to by IRI (Internationalized Resource Identifier) or Literal. Datatypes are used additionaly to define the possible value range of literals. When no specific resources are identified but implicitly naming some relationship is needed, Blank Node is used \cite{Cyganiak2014}. In terms of an RDF triple, it means: 
+\medskip
+\begin{itemize}
+\item the subject is an IRI or a blank node
+\item the predicate is an IRI
+\item the object is an IRI, a literal or a blank node
+\end{itemize}
 
 \subsection{Linked Data} \label{subsection:linked data}
 \% What is Linked Data? What is the use of Linked Data? 
@@ -53,12 +69,12 @@ As a global information space, the World Wide Web contains billions of web pages
 However, due to the complexity of structures, semantics and vocabularies of natural languages, translation is considered a difficulty task for machines. According to \cite{Popovic2012}, the errors occurred in the machine translation output are mainly classified into five base categories: inflectional error, incorrect reordering, missing word, extra word, and lexical ambiguity. There is also debate whether fully high-quality machine translation systems can be achieved \cite{bar1964language}. In addition, lack of context, incomplete common sense knowledge, and ineffectiveness in translating rare words have been major issues that affect the quality of the machine translation systems \cite{okpor2014machine} \cite{Wu2016}.
 
 There have been a large number of approaches in Machine Translation developed over the last years. Currently, the architectures of existing MT systems can be divided into the following categories: 
-
+\medskip  
 \begin{itemize}
 \item \textbf{Rule-based Machine Translation} (RBMT). RBMT systems usually generate target language text based on an intermediary linguistic representation of the source text and a large set of rules that contain morphological, syntactic, and semantic bilingual mappings. They can be further subdivided into direct, transfer-based, and interlingua-based methods. The performance of RBMT systems, to a certain extent, relies on carefully designed linguistic rules and vast amount of lexicons \cite{Moussallem2017}.
 \item \textbf{Statistical Machine Translation} (SMT). SMT systems are developed on the basis of splitting a bilingual text corpora into respective source and translation text pairs. They apply Machine Learning algorithms that compute a statistical model from the corpus given and the model translates each phrase or word at a time based on a probability distribution \cite{Moussallem2017}. In SMT approaches, it usually requires an alignment between source sentence and several target sentences found in each text corpora and vice versa. Such methods suffer in performance when the languages involved have significantly different word orders \cite{okpor2014machine}.
 \item \textbf{Example-based Machine Translation} (EBMT). EBMT utilize bilingual corpora like SMT but they translate the text by example sentences. The major limitation of EBMT systems is translation of unknown words \cite{Moussallem2017}. 
-\item \textbf{Neural Machine Translation} (NMT). Some argues that NMT is also a statistical approach \cite{Moussallem2017}. In NMT systems, they normally consist of a model based on deep neural networks to perform end-to-end translation by words or characters in the given sentence \cite{Moussallem2017}. During the training of the model, the system steadily learns a representation of both languages in a continuous vector space and the ability to predict a combination of words with higher probability. The approaches in this category currently achieve the state-of-the-art results on several benchmark tests. Their relevant models are the primary focus of the investigation by this thesis.
+\item \textbf{Neural Machine Translation} (NMT). Some argues that NMT is also a statistical approach \cite{Moussallem2017}. In NMT systems, they commonly consist of a model based on deep neural networks to perform end-to-end translation by words or characters in the given sentence \cite{Moussallem2017}. During the training of the model, the system steadily learns a representation of both languages in a continuous vector space and the ability to predict a combination of words with higher probability. The approaches in this category currently achieve the state-of-the-art results on several benchmark tests. Their relevant models are the primary focus of the investigation by this thesis.
 \item \textbf{Hybrid Machine Translation}. Hybrid approaches essentially leverage the advantages of the methods mentioned above to address their respective limitations and achieve better translation quality. In applications under this category, the hybridization of MT approaches are normally guided by either rule-based or corpus-based statistical systems \cite{costa2015latest}.
 \end{itemize}
 
@@ -87,12 +103,18 @@ So far, many different architectures have been explored in NMT and new methods a
 
 \section{Related Work} \label{section:related work}
 
-The primary focus of the investigation in this thesis is the neural network models that can be used to map natural language statements to SPARQL expressions. Despite that such models usually just perform the role of sequence to sequence learning, the specialty of SPARQL as a structured language with strictly defined syntax and vocabulary often lead to highly different experiment results compared to the common machine translation tasks where the source and target sequence are both unstructured. Therefore, we only consider all the research which deployed machine learning methods to map unstructured sequences to structured sequences as the most related work.
+The primary focus of the investigation in this thesis is the neural network models that can be used to map natural language statements to SPARQL expressions. Regarding the related work, we consider two main categories: the systems that integrate with NMT approaches and the systems without NMT. In the first, we broaden the range on papers which have deployed machine learning methods to map unstructured sequences to structured sequences for the reason that we observe these methodologies sharing similar principles in learning the prediction of structured sequences like SPARQL. In terms of the second, we narrow down the choices to those which translate natural language to SPARQL using merely non-NMT approaches on account of referencing their employed datasets, evaluation metrics, and experiment results for parallel comparison. 
+
+\subsection{Systems with NMT} \label{subsection:related work with nmt}
 
 Cai et al. proposed in \cite{Cai2017} an enhanced encoder-decoder framework for the task of translating natural language to SQL, a similar query language with SPARQL but targeting structured databases instead of knowledge bases. They used not only BLEU \cite{Papineni2002}, but also query accuracy, tuple recall, and tuple precision for measuring the quality of output queries, and achieved good results.
 
-\cite{dong2016language} presented a method based on encoder-decoder model with attention mechanism aimed at translating the input utterances to their logical forms with minimum domain knowledge. Apart from that, they proposed another sequence-to-tree model that has a special decoder better able to capture the hierarchical structure of logical forms. Then, they tested their model on four different datasets and evaluated the results with accuracy as the metric. 
+Dong et al. \cite{dong2016language} presented a method based on encoder-decoder model with attention mechanism aimed at translating the input utterances to their logical forms with minimum domain knowledge. Moreover, they proposed another sequence-to-tree model that has a special decoder better able to capture the hierarchical structure of logical forms. Then, they tested their model on four different datasets and evaluated the results with accuracy as the metric.
+
+Zhong et al. \cite{DBLP:journals/corr/abs-1709-00103} proposed a framework called Seq2SQL for translating natural language questions to SQL. They took LSTM-based encoder-decoder networks as the core model. In order to leverage the structure of SQL language, they augmented the input question with addition of column names of the queried table and split the decoder into three components, respectively predicting aggregation classifier, column names, and where clause part of a SQL query. As opposed to conventional teacher forcing, they trained the model with Reinforcement Learning to deal with the problem that queries that execute correct results but does not have exact string match would be wrongly penalized. To address this issue in evaluation, they performed analysis with measuring execution accuracy and logical form accuracy of generated queries.
 
 Luz et al. also used a LSTM encoder-decoder model but the purpose is to encode natural language and decode into SPARQL \cite{Luz2018}. Furthermore, they employed a neural probabilistic language model to learn a word vector representation for SPARQL, and used the attention mechanism to associate a vocabulary mapping between natural language and SPARQL. For the experiment, they transformed the logical queries in the traditional Geo880 dataset into equivalent SPARQL form. In terms of evaluation, they adopted two metrics: accuracy and syntactical errors. They further compared their method with several other similar approaches \cite{alagha2015using} \cite{Kaufmann06querix:a} and the comparison showed that they obtained better accuracy results. However, they did not deal with the "out of vocabulary" (OOV) problem and the issue of lexical disambiguation.
 
 In \cite{Soru2018a,Soru2018} Soru et al. proposed a generator-learner-interpreter architecture, namely Neural SPARQL Machines to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to predict on unseen natural language sentence, and generate encoding sequence of SPARQL for interpreter to decode. 
+
+\subsection{Systems without NMT}
