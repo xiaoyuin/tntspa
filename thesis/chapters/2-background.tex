@@ -32,24 +32,54 @@ The development of standardized technologies for the Semantic Web has promoted t
 
 \subsection{RDF} \label{subsection:rdf}
 
+% What is RDF in general? What is the use of it in Semantic Web?
 The Resource Description Framework (RDF) is a representation language for defining information on the Web. In Semantic Web Technology Stack (figure \ref{figure:semantic web stack}), it provides the infrastructure to express the meaning of concepts and terms in an organized way that machines can easily process. In 1997, the first RDF specification was defined by the W3C and then it became a W3C recommendation in 1999. Currently, the latest version is RDF 1.1 \cite{Cyganiak2014} published in 2014.
 
+% How does RDF express meanings? i.e. abstract syntax
 In RDF, meanings are expressed in triples. A set of triples constitute an RDF graph, which can be visualized via a diagram containing nodes and directed arcs. Figure \ref{figure:rdf example} demonstrates a simple RDF graph with merely two nodes and one arrow connecting them, which also indicates three components of a triple: subject, predicate, and object. The subject and object represent some resource in the world, and the predicate denotes some relationship. Thus, an RDF triple makes assertions on some relationship of the things it identifies. An RDF graph claims the conjunction of statements encoded by its triples \cite{Cyganiak2014}.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{rdf-graph}
 \centering
-\caption{An RDF graph with one triple}
+\caption{An RDF graph with one triple consisting of a subject, a predicate and an object}
 \label{figure:rdf example}
 \end{figure}
 
-In Semantic Web, anything in the world can be referred to by IRI (Internationalized Resource Identifier) or Literal. Datatypes are used additionaly to define the possible value range of literals. When no specific resources are identified but implicitly naming some relationship is needed, Blank Node is used \cite{Cyganiak2014}. In terms of an RDF triple, it means: 
+% What does RDF triple consists of specifically?
+In Semantic Web, arbitrary things in the world are denoted as resource and can be referred to by IRI (Internationalized Resource Identifier) or Literal. Datatype is used additionaly with Literal to specify its ranges of value. When no specific resources are identified but implicitly naming some relationship is needed, Blank Node is used \cite{Cyganiak2014}. In terms of an RDF triple, the following restriction is defined: 
 \medskip
 \begin{itemize}
 \item the subject is an IRI or a blank node
 \item the predicate is an IRI
 \item the object is an IRI, a literal or a blank node
 \end{itemize}
+
+With the above introduced notions, we show an example how RDF can specify the concepts, properties, relations, and corresponding entities existed in the real world. We define the following IRIs\footnote{The IRIs in this example are from \url{https://www.w3.org/TR/rdf11-primer}}: \textit{<http://example.org/bob\#me>} referring to a human entity named Bob, \textit{<http://www.w3.org/1999/02/22-rdf-syntax-ns\#type>} representing "is a" relation, \textit{<http://xmlns.com/foaf/0.1/Person>} specifying a concept denoting the class of person, \textit{<http://schema.org/birthDate>} as a property representing date of birth, and \textit{<http://www.w3.org/2001/XMLSchema\#date>} referring to a data type of date. To express such information: "Bob is a person who is born in 1990-07-04", the following triples are needed:
+
+\begin{center}
+\begin{tabular}{c|c|c}
+triple 1 & subject & \textit{<http://example.org/bob\#me>}\\
+& predicate & \textit{<http://www.w3.org/1999/02/22-rdf-syntax-ns\#type>}\\
+& object & \textit{<http://xmlns.com/foaf/0.1/Person>}\\
+\hline
+triple 2 & subject & \textit{<http://example.org/bob\#me>}\\
+& predicate & \textit{<http://schema.org/birthDate>}\\
+& object & \textit{"1990-07-04"\textasciicircum\textasciicircum<http://www.w3.org/2001/XMLSchema\#date>}
+\end{tabular}
+\end{center}
+
+It is noticeable that these IRIs do not share the same prefixes because in an RDF document concepts defined from different sources can be incorporated collaboratively. As a result, the existing knowledge sources are readily combined or extended with new information. Joining the above triples and replacing some IRIs with shorter prefixes we obtain a graph shown in figure \ref{figure:rdf example2}.
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{placeholder}
+\centering
+\caption{An example RDF graph representing "Bob is a person who is born in 1990-07-04"}
+\label{figure:rdf example2}
+\end{figure}
+
+% What are the tools or specifications for writing and publishing RDF?
+RDF graph provides an abstract representation for the knowledge demanded to be expressed. To write it down in a document, there exists a variety of serialization formats. The most used ones are: Turtle \cite{rdfturtle2014}, JSON-LD \cite{jsonld2014}, RDFa \cite{rdfaprimer2013}, and RDF/XML \cite{rdfxml2014}. Referring to the same RDF graph, the documents written in different serialization formats are logically equivalent \cite{schreiber2014rdf}.
+
 
 \subsection{Linked Data} \label{subsection:linked data}
 \% What is Linked Data? What is the use of Linked Data? 
