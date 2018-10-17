@@ -25,4 +25,4 @@ eval:
   eval_delay: 600
   save_eval_predictions: true
   external_evaluators: BLEU
-  exporters: best
+  exporters: last
