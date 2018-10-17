@@ -1,0 +1,14 @@
+{
+    "dropout": 0.2,
+    "num_units": 128,
+    "metrics": ["bleu", "accuracy", "rouge"],
+    "num_encoder_layers": 2,
+    "num_decoder_layers": 2,
+    "num_train_steps": 50000,
+    "steps_per_stats": 100,
+    "attention": "bahdanau",
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "infer_mode": "beam_search",
+    "beam_width": 5
+}
