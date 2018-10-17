@@ -1,4 +1,4 @@
-model_dir: output/models/onmt_nmtsmall
+model_dir: output/models/onmt_nmtbig
 
 data:
   train_features_file: data/monument_600/train.en
