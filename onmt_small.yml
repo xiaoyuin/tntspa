@@ -1,0 +1,27 @@
+model_dir: output/models/onmt_nmtsmall
+
+data:
+  train_features_file: data/monument_600/train.en
+  train_labels_file: data/monument_600/train.sparql
+  eval_features_file: data/monument_600/dev.en
+  eval_labels_file: data/monument_600/dev.sparql
+  source_words_vocabulary: data/monument_600/vocab.en
+  target_words_vocabulary: data/monument_600/vocab.sparql
+
+params:
+  # (optional) Width of the beam search (default: 1).
+  beam_width: 5
+
+train:
+  # (optional) Save a checkpoint every this many steps.
+  save_checkpoints_steps: 5000
+  # (optional) How many checkpoints to keep on disk.
+  keep_checkpoint_max: 3
+  # (optional) Train for this many steps. If not set, train forever.
+  train_steps: 100000
+
+eval:
+  # (optional) Evaluate every this many seconds (default: 18000).
+  eval_delay: 600
+  save_eval_predictions: true
+  external_evaluators: BLEU
