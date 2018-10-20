@@ -3,4 +3,4 @@
 	url = https://github.com/tensorflow/nmt
 [submodule "fairseq"]
 	path = fairseq
-	url = https://github.com/facebookresearch/fairseq.git
+	url = https://github.com/pytorch/fairseq
