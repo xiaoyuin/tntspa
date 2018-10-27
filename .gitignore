@@ -129,3 +129,14 @@ venv.bak/
 /nmt_model
 /output
 thesis/chapters/__latexindent_temp.tex
+presentation/main.toc
+presentation/__latexindent_temp.tex
+presentation/main.aux
+presentation/main.bbl
+presentation/main.blg
+presentation/main.fdb_latexmk
+presentation/main.fls
+presentation/main.nav
+presentation/main.out
+presentation/main.snm
+presentation/main.synctex.gz

@@ -67,6 +67,8 @@ REPLACEMENTS = [
     ['dbp:', 'http://dbpedia.org/property/', 'dbp_'],
     ['dbc:', 'http://dbpedia.org/resource/Category:', 'dbc_'],
     ['dbr:', 'res:', 'http://dbpedia.org/resource/', 'dbr_'],
+    ['rdf:', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'rdf_'],
+    ['rdfs:', 'http://www.w3.org/2000/01/rdf-schema#', 'rdfs_'],
     ['dct:', 'dct_'],
     ['geo:', 'geo_'],
     ['georss:', 'georss_'],

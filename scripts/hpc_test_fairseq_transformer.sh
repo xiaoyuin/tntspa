@@ -11,7 +11,16 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../tntspa/data/monument_600
+DDIR=../data/monument_600
+MDIR=../output/models
+
+if [ -n "$1" ]
+    then DDIR=$1
+fi
+
+if [ -n "$2" ]
+    then MDIR=$2
+fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
@@ -24,5 +33,5 @@ DDIR=../tntspa/data/monument_600
 # --adam-betas '(0.9, 0.98)' --save-dir /lustre/ssd/p_adm/models/transformer_iwslt_de_en
 
 srun python3 generate.py $DDIR/fairseq-data-bin \
-  --path /lustre/ssd/p_adm/models/transformer_iwslt_de_en/checkpoint_best.pt \
+  --path $MDIR/transformer_iwslt_de_en/checkpoint_best.pt \
   --batch-size 128 --beam 5

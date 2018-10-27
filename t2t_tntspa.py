@@ -53,13 +53,16 @@ class TranslateEnsparql(translate.TranslateProblem):
     @property
     def dataset_splits(self):
         """Splits of data to produce and number of output shards for each."""
-        # 20% evaluation data
+        # 10% evaluation data 10% test data
         return [{
             "split": problem.DatasetSplit.TRAIN,
             "shards": 8,
         }, {
             "split": problem.DatasetSplit.EVAL,
-            "shards": 2,
+            "shards": 1,
+        },{
+            "split": problem.DatasetSplit.TEST,
+            "shards": 1,
         }]
 
     def generate_samples(self, data_dir, tmp_dir, dataset_split):

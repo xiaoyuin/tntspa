@@ -11,7 +11,16 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../tntspa/data/monument_600
+DDIR=../data/monument_600
+MDIR=../output/models
+
+if [ -n "$1" ]
+    then DDIR=$1
+fi
+
+if [ -n "$2" ]
+    then MDIR=$2
+fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
@@ -20,5 +29,5 @@ srun python3 train.py $DDIR/fairseq-data-bin \
 --max-epoch 500 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
 --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \
 --save-interval 20 \
---save-dir /lustre/ssd/p_adm/models/fairseq_fconv_wmt_en_de
+--save-dir $MDIR/fairseq_fconv_wmt_en_de
 

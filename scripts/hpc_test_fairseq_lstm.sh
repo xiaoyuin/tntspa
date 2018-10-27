@@ -3,7 +3,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
-#SBATCH -J "fairseq_fconv_test"   # job name
+#SBATCH -J "fairseq_lstm_test"   # job name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
@@ -11,17 +11,27 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../tntspa/data/monument_600
+DDIR=../data/monument_600
+MDIR=../output/models
+
+if [ -n "$1" ]
+    then DDIR=$1
+fi
+
+if [ -n "$2" ]
+    then MDIR=$2
+fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
 # srun python3 train.py $DDIR/fairseq-data-bin \
-# --lr 0.5 --clip-norm 0.1 --dropout 0.2 --max-tokens 4000 \
-# --max-epoch 500 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
-# --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \
-# --save-interval 10 \
-# --save-dir /lustre/ssd/p_adm/models/fairseq_fconv_wmt_en_de
+# -a lstm_luong_wmt_en_de --optimizer adam --lr 0.001 -s en -t sparql \
+# --label-smoothing 0.1 --dropout 0.3 --max-tokens 4000 \
+# --min-lr '1e-09' --lr-scheduler inverse_sqrt --weight-decay 0.0001 \
+# --criterion label_smoothed_cross_entropy --max-update 30000 \
+# --warmup-updates 4000 --warmup-init-lr '1e-07' --save-interval 20 \
+# --adam-betas '(0.9, 0.98)' --save-dir /lustre/ssd/p_adm/models/lstm_luong_wmt_en_de
 
 srun python3 generate.py $DDIR/fairseq-data-bin \
---path /lustre/ssd/p_adm/models/fairseq_fconv_wmt_en_de/checkpoint_best.pt \
---beam 5 \
+  --path $MDIR/lstm_luong_wmt_en_de/checkpoint_best.pt \
+  --batch-size 128 --beam 5
