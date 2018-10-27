@@ -86,8 +86,11 @@ for file_path in args.file_paths:
     result.update(build_vocabulary_single_file(file_path))
 if "" in result:
     result.remove("")
-# adding <unk> into the vocabulary would cause problems when running nmt, had to remove it
-# if "<unk>" not in result:
-#     result.add("<unk>")
+auxiliary_tokens = ["<unk>", "<s>", "</s>"]
+for t in auxiliary_tokens:
+    if t in result:
+        result.remove(t)
+result = auxiliary_tokens + list(result)
+result
 for v in result:
     print(v)
