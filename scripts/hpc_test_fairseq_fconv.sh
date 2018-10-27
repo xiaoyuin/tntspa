@@ -4,6 +4,7 @@
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "fairseq_fconv_test"   # job name
+#SBATCH -o "test_fairseq_fconv-%j.out"   # output name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de

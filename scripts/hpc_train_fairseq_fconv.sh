@@ -4,6 +4,7 @@
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "fairseq_fconv"   # job name
+#SBATCH -o "train_fairseq_fconv-%j.out"   # output name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
@@ -24,7 +25,7 @@ fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
-srun python3 train.py $DDIR/fairseq-data-bin \
+srun python3 ../fairseq/train.py $DDIR/fairseq-data-bin \
 --lr 0.5 --clip-norm 0.1 --dropout 0.2 --max-tokens 4000 \
 --max-epoch 500 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
 --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \

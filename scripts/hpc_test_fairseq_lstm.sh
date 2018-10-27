@@ -4,6 +4,7 @@
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "fairseq_lstm_test"   # job name
+#SBATCH -o "test_fairseq_lstm-%j.out"   # output name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
@@ -32,6 +33,6 @@ fi
 # --warmup-updates 4000 --warmup-init-lr '1e-07' --save-interval 20 \
 # --adam-betas '(0.9, 0.98)' --save-dir /lustre/ssd/p_adm/models/lstm_luong_wmt_en_de
 
-srun python3 generate.py $DDIR/fairseq-data-bin \
+srun python3 ../fairseq/generate.py $DDIR/fairseq-data-bin \
   --path $MDIR/lstm_luong_wmt_en_de/checkpoint_best.pt \
   --batch-size 128 --beam 5

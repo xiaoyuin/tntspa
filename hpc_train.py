@@ -19,6 +19,6 @@ training_scripts = sorted([file for file in os.listdir('./scripts') if file.star
 for i, s in enumerate(training_scripts):
     print(i, '->', s)
 print('Type job ids to submit into hpc queue: ')
-job_ids = list(map(str, input().split()))
+job_ids = list(map(int, input().split()))
 for i in job_ids:
     subprocess.run(["sbatch", "./scripts/"+training_scripts[i], data_directory, models_diretory])

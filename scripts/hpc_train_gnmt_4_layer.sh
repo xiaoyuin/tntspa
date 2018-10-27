@@ -1,9 +1,10 @@
 #!/bin/bash
-#SBATCH --time=8:00:00   # walltime
+#SBATCH --time=12:00:00   # walltime
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "hpc_gnmt_4_layer"   # job name
+#SBATCH -o "train_gnmt_4_layer-%j.out"   # output name
 #SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
@@ -22,7 +23,9 @@ if [ -n "$2" ]
     then MDIR=$2
 fi
 
-srun python3 -m ../nmt/nmt/nmt.py \
+export PYTHONPATH="${PYTHONPATH}:$(pwd)/../"
+
+srun python3 -m nmt.nmt.nmt \
     --src=en --tgt=sparql \
     --hparams_path=../nmt_hparams/wmt16_gnmt_4_layer.json \
     --out_dir=$MDIR/wmt16_gnmt_4_layer \
