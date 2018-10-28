@@ -25,10 +25,10 @@ fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
-srun python3 ../fairseq/train.py $DDIR/fairseq-data-bin \
+srun python3 ../fairseq/train.py $DDIR/fairseq-data-bin -s en -t sparql \
 --lr 0.5 --clip-norm 0.1 --dropout 0.2 --max-tokens 4000 \
---max-epoch 500 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
+--criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
 --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \
---save-interval 20 \
+--max-epoch 500 --save-interval 50 \
 --save-dir $MDIR/fairseq_fconv_wmt_en_de
 

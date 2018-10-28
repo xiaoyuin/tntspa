@@ -29,6 +29,7 @@ srun python3 ../fairseq/train.py $DDIR/fairseq-data-bin \
 -a lstm_luong_wmt_en_de --optimizer adam --lr 0.001 -s en -t sparql \
 --label-smoothing 0.1 --dropout 0.3 --max-tokens 4000 \
 --min-lr '1e-09' --lr-scheduler inverse_sqrt --weight-decay 0.0001 \
---criterion label_smoothed_cross_entropy --max-update 30000 \
---warmup-updates 4000 --warmup-init-lr '1e-07' --save-interval 20 \
+--criterion label_smoothed_cross_entropy \
+--warmup-updates 4000 --warmup-init-lr '1e-07' \
+--max-epoch 500 --save-interval 50 \
 --adam-betas '(0.9, 0.98)' --save-dir $MDIR/lstm_luong_wmt_en_de

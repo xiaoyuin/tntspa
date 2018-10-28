@@ -26,11 +26,11 @@ fi
 
 srun python3 -m nmt.nmt.nmt \
     --src=en --tgt=sparql \
-    --hparams_path=nmt_hparams/neural_sparql_machine_attention_normed_bahdanau.json \
-    --out_dir=output/models/neural_sparql_machine_attention_normed_bahdanau \
-    --vocab_prefix=data/monument_600/vocab \
-    --train_prefix=data/monument_600/train \
-    --dev_prefix=data/monument_600/dev \
-    --test_prefix=data/monument_600/test
+    --hparams_path=../nmt_hparams/neural_sparql_machine_attention_normed_bahdanau.json \
+    --out_dir=$MDIR/neural_sparql_machine_attention_normed_bahdanau \
+    --vocab_prefix=$DDIR/vocab \
+    --train_prefix=$DDIR/train \
+    --dev_prefix=$DDIR/dev \
+    --test_prefix=$DDIR/test
 
 exit 0
