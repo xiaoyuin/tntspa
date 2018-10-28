@@ -27,7 +27,7 @@ export PYTHONPATH="${PYTHONPATH}:$(pwd)/../"
 
 srun python3 -m nmt.nmt.nmt \
     --src=en --tgt=sparql \
-    --hparams_path=../nmt_hparams/wmt16_gnmt_4_layer.json \
+    --hparams_path=nmt_hparams/wmt16_gnmt_4_layer.json \
     --out_dir=$MDIR/wmt16_gnmt_4_layer \
     --vocab_prefix=$DDIR/vocab \
     --train_prefix=$DDIR/train \

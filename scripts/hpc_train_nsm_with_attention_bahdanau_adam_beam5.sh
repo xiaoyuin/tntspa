@@ -26,7 +26,7 @@ fi
 
 srun python3 -m nmt.nmt.nmt \
     --src=en --tgt=sparql \
-    --hparams_path=../nmt_hparams/neural_sparql_machine_attention_bahdanau_adam_beam5.json \
+    --hparams_path=nmt_hparams/neural_sparql_machine_attention_bahdanau_adam_beam5.json \
     --out_dir=$MDIR/neural_sparql_machine_attention_bahdanau_adam_beam5 \
     --vocab_prefix=$DDIR/vocab \
     --train_prefix=$DDIR/train \
