@@ -12,8 +12,8 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../data/monument_600
-MDIR=../output/models
+DDIR=data/monument_600
+MDIR=output/models
 
 if [ -n "$1" ]
     then DDIR=$1
@@ -25,7 +25,7 @@ fi
 
 # python3 preprocess.py -s en -t sparql --trainpref $DDIR/train --validpref $DDIR/dev --testpref $DDIR/test --destdir $DDIR/fairseq-data-bin
 
-srun python3 ../fairseq/train.py $DDIR/fairseq-data-bin \
+srun python3 fairseq/train.py $DDIR/fairseq-data-bin \
 -a transformer_iwslt_de_en --optimizer adam --lr 0.0005 -s en -t sparql \
 --label-smoothing 0.1 --dropout 0.3 --max-tokens 4000 \
 --min-lr '1e-09' --lr-scheduler inverse_sqrt --weight-decay 0.0001 \

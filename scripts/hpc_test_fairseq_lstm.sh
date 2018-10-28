@@ -12,8 +12,8 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../data/monument_600
-MDIR=../output/models
+DDIR=data/monument_600
+MDIR=output/models
 
 if [ -n "$1" ]
     then DDIR=$1
@@ -33,6 +33,6 @@ fi
 # --warmup-updates 4000 --warmup-init-lr '1e-07' --save-interval 20 \
 # --adam-betas '(0.9, 0.98)' --save-dir /lustre/ssd/p_adm/models/lstm_luong_wmt_en_de
 
-srun python3 ../fairseq/generate.py $DDIR/fairseq-data-bin \
+srun python3 fairseq/generate.py $DDIR/fairseq-data-bin \
   --path $MDIR/lstm_luong_wmt_en_de/checkpoint_best.pt \
   --batch-size 128 --beam 5

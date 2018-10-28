@@ -12,8 +12,8 @@
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
 
-DDIR=../data/monument_600
-MDIR=../output/models
+DDIR=data/monument_600
+MDIR=output/models
 
 if [ -n "$1" ]
     then DDIR=$1
@@ -23,7 +23,7 @@ if [ -n "$2" ]
     then MDIR=$2
 fi
 
-USR_DIR=..
+USR_DIR=.
 PROBLEM=translate_ensparql
 MODEL=transformer
 HPARAMS=transformer_base_single_gpu

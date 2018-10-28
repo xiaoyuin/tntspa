@@ -11,10 +11,9 @@
 #SBATCH --mail-type ALL
 
 module load TensorFlow/1.8.0-foss-2018a-Python-3.6.4-CUDA-9.2.88
-export PYTHONPATH="${PYTHONPATH}:$(pwd)/../"
 
-DDIR=../data/monument_600
-MDIR=../output/models
+DDIR=data/monument_600
+MDIR=output/models
 
 if [ -n "$1" ]
     then DDIR=$1
