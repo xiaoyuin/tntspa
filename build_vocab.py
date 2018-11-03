@@ -7,6 +7,7 @@ Usage: python3 build_vocab.py data.en > vocab.en
 import sys
 import argparse
 import nltk
+import moses
 
 def build_vocabulary_single_file(file_path):
 
@@ -32,8 +33,9 @@ def build_vocabulary_single_file(file_path):
 
     else: # any other language
 
+        m = moses.MosesTokenizer()
         for line in lines:
-            for token in nltk.word_tokenize(line):
+            for token in m.tokenize(line):
                 vocabulary.add(token)
                 if token in dictionary:
                     dictionary[token] += 1

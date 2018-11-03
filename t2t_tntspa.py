@@ -36,7 +36,7 @@ class TranslateEnsparql(translate.TranslateProblem):
 
     @property
     def is_generate_per_split(self):
-        return False
+        return True
 
     @property
     def source_vocab_filename(self):
@@ -56,7 +56,7 @@ class TranslateEnsparql(translate.TranslateProblem):
         # 10% evaluation data 10% test data
         return [{
             "split": problem.DatasetSplit.TRAIN,
-            "shards": 8,
+            "shards": 1,
         }, {
             "split": problem.DatasetSplit.EVAL,
             "shards": 1,
@@ -68,8 +68,10 @@ class TranslateEnsparql(translate.TranslateProblem):
     def generate_samples(self, data_dir, tmp_dir, dataset_split):
         del tmp_dir
 
-        en_dir = os.path.join(data_dir, "data_600.en")
-        sparql_dir = os.path.join(data_dir, "data_600.sparql")
+        prefix = "train" if dataset_split == problem.DatasetSplit.TRAIN else ("dev" if dataset_split == problem.DatasetSplit.EVAL else "test")
+
+        en_dir = os.path.join(data_dir, "{}.en".format(prefix))
+        sparql_dir = os.path.join(data_dir, "{}.sparql".format(prefix))
        
         return text_problems.text2text_txt_iterator(en_dir, sparql_dir)
 
