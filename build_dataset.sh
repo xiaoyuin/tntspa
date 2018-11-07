@@ -1,9 +1,15 @@
 # Usage: sh build_dataset.sh $DATA_DIRECTORY $DATA_PREFIX
 # Requirement: there exists "$DATA_PREFIX.en" and "$DATA_PREFIX.sparql" under $DATA_DIRECTORY
 
-Split the data into 80/10/10 or given percentages
+SPLIT=80/10/10
+
+if [ -n "$3" ]
+then SPLIT=$3
+fi
+
+# Split the data into 80/10/10 or given percentages
 echo "Spliting the data into train/dev/test"
-python3 split.py $1 --data_prefix $2 --split_rates $3
+python3 split.py $1 --data_prefix $2 --split_rates $SPLIT
 
 # Generate vocabulary files
 echo "Generating vocabulary files"

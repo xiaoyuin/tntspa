@@ -5,7 +5,7 @@
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "fairseq_lstm"   # job name
 #SBATCH -o "train_fairseq_lstm-%j.out"   # output name
-#SBATCH --mem=20000   # minimum amount of real memory
+#SBATCH --mem=40000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
 #SBATCH --mail-type ALL

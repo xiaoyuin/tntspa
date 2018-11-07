@@ -5,11 +5,6 @@ import pathlib
 
 from generator_utils import query_dbpedia, decode
 
-def compute_query_accuracy(result1, result2):
-    """Compare two results from executing the SPARQL queries, and return the query accuracy"""
-    
-    pass
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('input_path', help='A file containing lines of SPARQL queries')
