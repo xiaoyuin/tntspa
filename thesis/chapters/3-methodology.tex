@@ -1,3 +1,53 @@
-\section{Model}
 
-\section{Evaluation}
+This chapter mainly describes the details of the models and frameworks of neural machine translation involved in this thesis for tackling the task of translating natural language to SPARQL. Then, the metrics that are typically utilized in automatic machine translation evaluation are described. We also mention another metric called query accuracy which suits specifically for our task.
+
+\section{Models}
+
+\subsection{RNN-based Encoder Decoder}
+
+\subsection{Convolutional Sequence-to-Sequence}
+
+\subsection{The Transformer}
+
+
+
+
+
+
+\section{Frameworks}
+
+\subsection{TensorFlow Neural Machine Translation}
+
+\subsection{Facebook AI Research Sequence-to-Sequence Toolkit}
+
+\subsection{Tensor2Tensor}
+
+
+
+
+
+
+
+\section{Evaluation Metrics}
+
+Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In automatic MT evaluation, for one candidate translation, a score is generally calculated to assess the closeness of it to one or more reference sentences which were manually translated by human profession. 
+
+\subsection{BLEU}
+
+BLEU is now one of the most popular automated metrics in the evaluation of neural machine translation systems. It is noted for its high correlation with human evaluation and low marginal cost for running \cite{Papineni2002}. We choose BLEU as it is the most dominating metric for translation evaluation at present, which brings the advantage of more straightforward comparisons with other successful models and experiments.
+
+The basis of BLEU is a modified n-gram precision measure. In a sentence composed of multiple words, an n-gram refers to a contiguous sequence of n words within it. To compute the precision of n-grams, one just counts up the number of the n-grams which occur in any reference translation, and divide this number by the total number of n-grams in the candidate sentence. This does not check if the candidate translation contains too many duplicate words which merely exist less times in reference translation. The modified version of precision adopted in BLEU addresses this issue. 
+
+In the following example, a candidate translation of poor quality is evaluated with two references. When n equals 1 (i.e. unigram), with standard precision, the candidate achieves 7/7 because every word (unigram) occurs in the first reference, whereas it only achieves 2/7 in modified unigram precision. 
+
+Candidate: the the the the the the the
+
+Reference 1: The cat is on the mat.
+
+Reference 2: There is a cat on the mat.
+
+
+
+\subsection{Query Accuracy}
+
+

@@ -1,6 +1,6 @@
 
 % Chapter Background
-This chapter gives an introduction to the background technologies and subfields involved in this thesis. First, Semantic Web technologies are briefly introduced in Section \ref{section:semantic web technologies}, including the notion of RDF in Section \ref{subsection:rdf}, Linked Data in section \ref{subsection:linked data} and SPARQL in Section \ref{subsection:sparql}. Second, Section \ref{section:neural machine translation} describes the notion of neural machine translation and involved models and components. Finally, related research is discussed in Section \ref{section:related work}.
+This chapter gives an introduction to the background technologies and subfields involved in this thesis. First, Semantic Web technologies are briefly introduced in Section \ref{section:semantic web technologies}, including the notion of RDF in Section \ref{subsection:rdf}, Linked Data in Section \ref{subsection:linked data} and SPARQL in Section \ref{subsection:sparql}. Second, Section \ref{section:neural machine translation} describes the notion of neural machine translation and involved models and components. Finally, related research is discussed in Section \ref{section:related work}.
 
 \section{Semantic Web Technologies} \label{section:semantic web technologies}
 
@@ -68,28 +68,76 @@ triple 2 & subject & \textit{<http://example.org/bob\#me>}\\
 \end{tabular}
 \end{center}
 
-It is noticeable that these IRIs do not share the same prefixes because in an RDF document concepts defined from different sources can be incorporated collaboratively. As a result, the existing knowledge sources are readily combined or extended with new information. Joining the above triples and replacing some IRIs with shorter prefixes we obtain a graph shown in figure \ref{figure:rdf example2}.
+It is noticeable that these IRIs do not share the same prefixes because in an RDF document concepts defined from different sources can be incorporated collaboratively. As a result, the existing knowledge sources are readily combined or extended with new information. Joining the above triples and replacing some IRIs with shorter prefixes we obtain a graph shown in Figure \ref{figure:rdf example2}.
 
 \begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{placeholder}
+\includegraphics[width=0.5\textwidth]{RDF-Bob}
 \centering
-\caption{An example RDF graph representing "Bob is a person who is born in 1990-07-04"}
+\caption{An example RDF graph representing "Bob is a person who is born in 1990-07-04". Some absolute IRIs are edited to be relative with prefixes.}
 \label{figure:rdf example2}
 \end{figure}
 
 % What are the tools or specifications for writing and publishing RDF?
-RDF graphs provide an abstract representation for the knowledge. To write it down in a document, there exists a variety of serialization formats. The most used ones are: Turtle \cite{rdfturtle2014}, JSON-LD \cite{jsonld2014}, RDFa \cite{rdfaprimer2013}, and RDF/XML \cite{rdfxml2014}. Referring to the same RDF graph, the documents written in different serialization formats are logically equivalent \cite{schreiber2014rdf}.
-
-
-\subsection{Linked Data} \label{subsection:linked data}
-\% What is Linked Data? What is the use of Linked Data? 
-
-\% Which publishing tools are available for Linked Data? What's the current progress of Linked Data?
-
-\% Introduce DBpedia and its potential use, applications
+RDF graphs provide an abstract representation for the knowledge. To write it down in a document, there exists a variety of serialization formats where each of them are designed for different scenarios and purposes. The most used ones are: Turtle \cite{rdfturtle2014}, JSON-LD \cite{jsonld2014}, RDFa \cite{rdfaprimer2013}, and RDF/XML \cite{rdfxml2014}. Referring to the same RDF graph, the documents written in different serialization formats are logically equivalent \cite{schreiber2014rdf}. The data owners can choose from these serialization formats to convert their existing documents into or publish new documents in RDF.
 
 \subsection{SPARQL} \label{subsection:sparql}
-\% Deep introduction of SPARQL, examples, etc.
+% Deep introduction of SPARQL, examples, etc.
+SPAQRL Protocol and RDF Query Language (SPARQL) is a structured language similar to SQL but for querying and manipulating RDF graphs \cite{Harris2013}. This thesis primarily focuses on the query capability of SPARQL. A SPARQL query normally consists of a \texttt{SELECT} operator followed by queried objects which are usually denoted by variables or their combinations, a \texttt{WHERE} block containing graph patterns for matching the RDF data store, and optionally extensional operators such as filtering and grouping depending on the requirements. A list of prefixes can be provided in the head for shortening the IRIs involved in the matching graph patterns. The results of SPARQL queries are usually result sets or RDF graphs. 
+
+For instance, to query the RDF graph exhibited in Figure \ref{figure:rdf example2}, a simple SPARQL query with only one single variable and WHERE block can be formulated as in the Listing \ref{listing:sparql query1}.
+
+\begin{lstlisting}[language=SPARQL, label={listing:sparql query1}, caption={A SPARQL query asking for "the persons whose birthday is on 1990 July 4th"}]
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?person
+WHERE
+{ 
+  ?person rdf:type foaf:Person .
+  ?person schema:birthDate "1990-07-04"^^xsd:date . 
+}
+\end{lstlisting}
+
+Note that in SPARQL, prefixes are mandatory in the head of the query to make IRIs resolvable into absolute forms if there are any abbreviations in the body. The query in Listing \ref{listing:sparql query1} simply asks for the persons whose birthday is on 4th of July 1990. Running it on Figure \ref{figure:rdf example2} leads to a result consisting of a single value which can be displayed in tabular form (Table \ref{table:rdf simple result}). The query results can also be exhibited in variable standardized formats including XML, JSON, CSV, and TSV for the benefits of exchanging results in miscellaneous environments \cite{Harris2013}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|}
+\hline
+person \\
+\hline
+<http://example.org/bob\#me> \\
+\hline
+\end{tabular}
+\caption{Returned result of a SPARQL query on the RDF graph in Figure \ref{figure:rdf example2}}
+\label{table:rdf simple result}
+\end{table}
+
+
+Table \ref{table:rdf simple result} indicates that \textit{<http://example.org/bob\#me>} is the only entity that matches the conjunction of both triples in the query graph pattern. If it is likely to have multiple values in the result, one can control the sequence size of the result with \texttt{OFFSET} and \texttt{LIMIT} operators, and further specify the ordering by using \texttt{ORDER BY} operator. In addition, SPARQL supports more advanced operators\footnote{Full capabilities of SPARQL is available at: \url{https://www.w3.org/TR/sparql11-query}} for expressing aggregation, negation, counting, etc. for performing queries with higher complexity against the given RDF data. Some of them are not mentioned here for the reason that it is so far difficult to include all the operators in this thesis. The operators covered in this thesis are listed in Section \ref{section:datasets}.  
+
+\subsection{Linked Data} \label{subsection:linked data}
+% What is Linked Data? What is the use of Linked Data? 
+RDF as a common data format provides a sound foundation for the unification of information on the traditional Web. While a huge amount of data is available in a standard format, to create a Web of Data that is able to provide more meaningful services, the relationships between data are also important. The collection of interrelated datasets that contain links to each other on the Web are referred to as Linked Data \cite{linkeddataw3c}. Linked Data also refers to a set of best practices to publish, share, and connect the data, information, and knowledge on the Web \cite{Bizer2009}. 
+
+% Which publishing tools are available for Linked Data? What's the current status of Linked Data?
+Anyone can create Linked Data and publish it on the Web. There exists a number of ways to do so. One can simply put a static RDF file on a server, or publish relational databases with the help of dedicated tools. A list of tools for editing, publishing, and consuming Linked Data are already publicly available \cite{ldtools}. For large datasets, a SPARQL query service is often needed as well to support broader use cases.
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{Virtuoso_Linked_Data_Deployment.png} 
+\centering
+\caption{Current DBpedia data provision architecture \cite{dbparchi} }
+\label{figure:dbpedia architecture}
+\end{figure}
+
+% Introduce DBpedia and its potential use, applications
+DBpedia is one of the most popular large-scale Linked Datasets online. It hosts datasets in RDF representing connected knowledge graphs that are generated by essentially parsing the articles of Wikipedia into structured information. The knowledge graphs on DBpedia not only links the described concepts within Wikipedia but also connects the concepts with other external datasets existing on the Web. In addition, DBpedia is serving a public endpoint upon which applications can post queries in SPARQL to retrieve information in RDF triples for different kinds of purposes. Figure \ref{figure:dbpedia architecture} illustrates the architecture DBpedia is currently adopting for the provision of its RDF data set. In DBpedia, OpenLink Virtuoso Server\footnote{available at: \url{https://virtuoso.openlinksw.com/}} is used to provide support for SPARQL endpoint and HTTP hosting.
+
+\% Add some DBpedia use cases
+
+
+
 
 
 \section{Neural Machine Translation} \label{section:neural machine translation}
@@ -113,10 +161,10 @@ Among these categories, we focus primarily on the Neural Machine Translation met
 
 So far, many different architectures have been explored in NMT and new methods are constantly beating previous models in some benchmark datasets and achieving higher efficiency in computing. Among these architectures, primary works are listed here. Sutskever et al. \cite{Sutskever2014} and Cho et al. \cite{Cho2014} proposed and deployed an encoder-decoder architecture that contains two models where Recurrent Neural Networks (RNN) (see section \ref{subsection:rnn}) were used. The encoder encodes the input into a fixed-length vector, the decoder then decodes it into a translation. The two models are jointly trained to maximize the likelihood of a target sequence based on the given source sequence. However, the performance of this architecture drops when the length of the input sentence increases. To adress this issue, Bahdanau et al. and Luong et al. presented in \cite{Bahdanau2014,Luong2015} an attention mechanism which serves as an extension to align the encoder and decoder. The acceptance of this mechanism increased the quality of translation significantly. Furthermore, there have been other improvement strategies like bi-directional RNN, beam search, etc. Some variants like Long-Short Term Memory (LSTM) \cite{hochreiter1997long} and Gated Recurrent Unit (GRU) \cite{Cho2014} versions of encoder-decoders have also been investigated. In the mean time, while RNN encoder-decoders consume a lot of computation time on their sequential learning, there are architectures based on Convolutional Neural Networks (CNN) that are able to achieve parallelized computations, thus outperform the former models at a faster speed \cite{Gehring2017}. What's more, Vaswani et al. \cite{Vaswani2017} proposed a self-attention model called the Transformer. This model shows both quality and speed advantages and has achieves state-of-the-art results on multiple translation tasks. In the past years, some novel paradigms for NMT have also emerged like the applications of Generative Adversarial Networks (GAN) in \cite{wu2017adversarial,yang2017improving}.
 
-\subsection{Sequence to Sequence Learning}
-\% What is sequence to sequence learning? What is the role of it in NMT and ML?
+\subsection{Sequence to Sequence Learning} \label{subsection:seq2seq learning}
+% What is sequence to sequence learning? What is the role of it in NMT and ML?
 
-\% Which models have been proposed in seq2seq learning?
+% Which models have been proposed in seq2seq learning?
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{placeholder}
@@ -126,16 +174,25 @@ So far, many different architectures have been explored in NMT and new methods a
 \end{figure}
 
 \subsection{Recurrent Neural Network} \label{subsection:rnn}
-\% Introduction of RNN and technical details
+% Introduction of RNN and technical details
 
-\subsection{Long Short-Term Memory}
-\% Introduction of LSTM and technical details
+\subsection{Long Short-Term Memory Unit}
+% Introduction of LSTM and technical details
+
+\subsection{Convolutional Neural Network}
+
+\subsection{Attention Mechanism}
+
+
+
+
+
 
 \section{Related Work} \label{section:related work}
 
 The primary focus of the investigation in this thesis is neural network models that can be used to map natural language statements to SPARQL expressions. Regarding the related work, we consider two main categories: the systems that integrate with NMT approaches and the systems not related to NMT. In the first category, we broaden the range on papers which have deployed machine learning methods to map unstructured sequences to structured sequences for the reason that we observe these methodologies sharing similar principles in learning the prediction of structured sequences like SPARQL. In terms of the second category, we narrow down the choices to those which translate natural language to SPARQL using merely non-NMT approaches on account of referencing their employed datasets, evaluation metrics, and experiment results for comparison. 
 
-\subsection{Systems with NMT} \label{subsection:related work with nmt}
+\subsection{NMT Systems} \label{subsection:related work with nmt}
 
 Cai et al. \cite{Cai2017} proposed an enhanced encoder-decoder framework for the task of translating natural language to SQL, a similar query language with SPARQL but targeting structured databases instead of knowledge bases. They used not only BLEU \cite{Papineni2002}, but also query accuracy, tuple recall, and tuple precision for measuring the quality of output queries, and achieved good results.
 
@@ -147,4 +204,9 @@ Luz et al. \cite{Luz2018} also used an LSTM encoder-decoder model but the purpos
 
 Soru et al. \cite{Soru2018a,Soru2018} proposed a generator-learner-interpreter architecture, namely Neural SPARQL Machines to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in the target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to generalize to unseen natural language sentence, and generate encoding sequence of SPARQL for the interpreter to decode. 
 
-\subsection{Systems without NMT}
+\subsection{Non-NMT Systems} \label{subsection: non-nmt related work}
+
+Dubey et al. \cite{Dubey2016} proposed a framework called \textit{AskNow}, a question answering system targeting at DBpedia. This framework first transforms the questions in English to an intermediary common structure called Normalized Query Structure (NQS), which is later translated into a SPARQL query through a NQS parser and a SPARQL generator. The NQS plays an significant role in carrying the desire, the input information, and their mutual semantic relations in a query. From English query to NQS, they deployed the POS-tagger to retract tags of each tokens in the query and characterized the desire-input dependency relations through semantic analysis based on certain hypotheses. In NQS to SPARQL algorithm, they utilized DBpedia Spotlight \cite{isem2013daiber} and  \cite{Miller:1995:WLD:219717.219748} for query annotation and entity matching, which essentially analyzes the tokens in the query and finds their synonymous entities in the vocabulary of DBpedia. In terms of evaluation, they tested four aspects including syntactic robustness, sensitivity to structural variation, semantic accuracy, and the accuracy of the whole system with precision and recall measurements, and the benchmark data sets QALD \cite{unger:hal-01086472,Unger2015}.
+
+
+
