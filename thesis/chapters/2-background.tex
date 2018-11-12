@@ -99,7 +99,7 @@ WHERE
 }
 \end{lstlisting}
 
-Note that in SPARQL, prefixes are mandatory in the head of the query to make IRIs resolvable into absolute forms if there are any abbreviations in the body. The query in Listing \ref{listing:sparql query1} simply asks for the persons whose birthday is on 4th of July 1990. Running it on Figure \ref{figure:rdf example2} leads to a result consisting of a single value which can be displayed in tabular form (Table \ref{table:rdf simple result}). The query results can also be exhibited in variable standardized formats including XML, JSON, CSV, and TSV for the benefits of exchanging results in miscellaneous environments \cite{Harris2013}.
+Note that in SPARQL, prefixes are mandatory in the head of the query to make IRIs resolvable into absolute forms if there are any abbreviations in the body. The query in Listing \ref{listing:sparql query1} simply asks for the persons whose birthday is on 4th of July 1990. Running it on Figure \ref{figure:rdf example2} leads to a result consisting of a single value which can be displayed in tabular form (see Table \ref{table:rdf simple result}). The query results can also be exhibited in variable standardized formats including XML, JSON, CSV, and TSV for the benefits of exchanging results in miscellaneous environments \cite{Harris2013}.
 
 \begin{table}[h]
 \centering
@@ -163,25 +163,59 @@ So far, many different architectures have been explored in NMT and new methods a
 
 \subsection{Sequence to Sequence Learning} \label{subsection:seq2seq learning}
 % What is sequence to sequence learning? What is the role of it in NMT and ML?
+Sequence to sequence (Seq2Seq) learning \cite{Sutskever2014} \cite{Cho2014} was an emerging area in supervised learning proposed for machine translation, and has been applied to many other sequential problems such as speech recognition, and text summarization. Learning the representation of one sequence and transformation of it into another sequence with different forms effectively and accurately is essentially the goal of Seq2Seq learning. The NMT approaches explored in this thesis belong to the category of sequence-to-sequence learning.
 
-% Which models have been proposed in seq2seq learning?
+Regarding Seq2Seq learning on automated translation, encoder-decoder is one of the most applied architectures. In the architecture shown in Figure \ref{figure:encoder-decoder}, the encoder receives the input as a sequence of tokens and turns it into a feature vector representing the input information in higher dimensionality space, the decoder then decodes that information from the vector in a way that enables generating another sequence of tokens as the output. When certain neural networks have been used in both encoder and decoder, this architecture has shown its superiority over the traditional phrase-based models in ease of extracting features, more flexibility with regard to the configuration of models, and better result accuracy \cite{Wu2016}.
 
 \begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{placeholder}
+\includegraphics[width=\textwidth]{seq2seq-encdec}
 \centering
-\caption{A conventional encoder-decoder framework}
+\caption{A conventional encoder-decoder architecture for machine translation}
 \label{figure:encoder-decoder}
 \end{figure}
 
+In the above architecture, different kinds of neural networks in both encoder and decoder can be integrated to make combinations of models suitable for specific tasks. Recurrent Neural Networks are mostly used in problems dealing with texts which normally have variable lengths. In the layers of RNN, various cell types, normally LSTM and GRU, can provide the model with capabilities of maintaining the past information and capturing long-range dependencies in texts. Convolutional Neural Networks are less commonly used in sequence modeling. However, they were appearing in recently proposed models because of their inherent advantage in computation parallelization and effectiveness of building hierarchical representations. 
+
+% Attention mechanism
+Apart from the already mentioned components, a special attention mechanism is widely applied in Seq2Seq learning and even computer vision tasks that require models to attend to different parts of the input. In machine translation, an attention layer connects the decoder with the encoder hidden states to allow it search for parts of the source sequence instead of merely relying on a global vector. The attention mechanism has further improved the performance of NMT approaches by providing an effective mean to tackle the long-term dependency problem, although it also increases the computation.
+
+
 \subsection{Recurrent Neural Network} \label{subsection:rnn}
 % Introduction of RNN and technical details
+In sequence to sequence learning, Recurrent Neural Networks (RNNs) are the most widely used artificial neural networks. RNNs are specifically effective for processing sequential data. Given a sequence of inputs $ x = (x_{1},...,x_{T}) $, an RNN is able to compute a series of hidden states $ h = (h_{1},...,h_{T}) $ step-wise where at each step $ t $ the hidden state $ h_{t} $ is dependent on the previous hidden state $ h_{t-1} $ and input $ x_{t} $ by the following equation:
+\[ h_{t} = f(h_{t-1}, x_{t}) \]
+where f is a non-linear activation function which may differ in distinct architectures (e.g. GRU and LSTM). Based on this set of hidden states $ h $, a sequence of outputs $ y = (y_{1},...,y_{T^{'}}) $ can be generated. Given different configurations of input sequence length $ T $ and output sequence length $ T^{'} $, RNNs can be adapted to cope with various tasks including image classification (one to one), image captioning (one to many), sentiment analysis (many to one), machine translation (many to many), and video frame labeling (many to many), all of which are shown in Figure \ref{figure:rnn different sequences}.
 
-\subsection{Long Short-Term Memory Unit}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{rnn-different-sequences}
+\centering
+\caption{A list of RNNs (unfolded) mapping sequences to sequences with variant lengths. Each column of rectangles represents a step, the rectangle at the bottom, middle and top represent the input, hidden state, and output respectively at that step.}
+\label{figure:rnn different sequences}
+\end{figure}
+
+In machine translation, the inputs and outputs are normally a sequence of words or characters from the source sentences and the target sentences. Therefore, RNNs suited well in the encoder-decoder architecture (see Section \ref{subsection:seq2seq learning}). The RNNs served in the encoder and the decoder have different purposes. 
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{rnn-encoder-decoder}
+\centering
+\caption{A vanilla RNN encoder-decoder}
+\label{figure:vanilla rnn encoder-decoder}
+\end{figure}
+Figure \ref{figure:vanilla rnn encoder-decoder} demonstrates a vanilla RNN encoder-decoder, where the encoder RNN reads the input words and encodes the information into the last hidden state vector, and then the decoder RNN receives this vector as the initial hidden state and samples a sequence word by word beginning from a starting symbol in the input until an ending symbol is produced in the output.
+
+In addition to the primitive structure shown above, there are many techniques optimizing RNNs for various purposes. For example, the layers of hidden units can be stacked together, thus providing deeper representation of the information. Furthermore, residual connections \cite{Wu2016} can be applied to deep layered RNNs to improve the gradient flow in terms of training. Bi-directional RNNs \cite{schuster1997bidirectional} were used in the encoder to reduce average dependency lengths.
+
+\subsection{Long Short-Term Memory} \label{subsection:lstm}
 % Introduction of LSTM and technical details
+Long Short-Term Memory is a special kind of RNN with gating cells. Compared to simple RNNs, LSTM models contain units that allow the network to accumulate information while selectively forgetting the old states. 
 
-\subsection{Convolutional Neural Network}
+% Picture showing the LSTM architecture, and relevant equations
 
-\subsection{Attention Mechanism}
+
+LSTM networks are well known for their ability to learn long-term dependencies better than most of their rivals. There exist many variants of LSTM and other similar gated RNNs such as the networks based on Gated Recurrent Units (GRU) which has also shown competitive results.
+
+\subsection{Convolutional Neural Network} \label{subsection:cnn}
+
+\subsection{Attention Mechanism} \label{subsection:attention}
 
 
 
@@ -192,21 +226,36 @@ So far, many different architectures have been explored in NMT and new methods a
 
 The primary focus of the investigation in this thesis is neural network models that can be used to map natural language statements to SPARQL expressions. Regarding the related work, we consider two main categories: the systems that integrate with NMT approaches and the systems not related to NMT. In the first category, we broaden the range on papers which have deployed machine learning methods to map unstructured sequences to structured sequences for the reason that we observe these methodologies sharing similar principles in learning the prediction of structured sequences like SPARQL. In terms of the second category, we narrow down the choices to those which translate natural language to SPARQL using merely non-NMT approaches on account of referencing their employed datasets, evaluation metrics, and experiment results for comparison. 
 
+\subsection{Non-NMT Systems} \label{subsection: non-nmt related work}
+
+In this section, the systems that did not involve neural computation are discussed. Most of the approaches investigated had similar structure of two-step query composition, where the question provided by the user, either in a controlled natural language or not, needs to be adapted into an intermediary language representation which is lastly translated into a valid SPARQL expression.
+
+\textit{SQUALL2SPARQL} \cite{ferre:hal-00943522} is a translator capable of producing SPARQL from a controlled English called Semantic Query and Update High-Level Language (SQUALL). Despite the limitation in the input side, this system is able to capture nearly full features of SPARQL 1.1. \textit{SQUALL2SPARQL} achieved a high F-measure of 0.90 as well as very good precision and recall on QALD-3 challenge \cite{cabrio2013qald}.
+
+Pradel et al. \cite{Pradel2013} presented an approach using an intermediary pivot query to interpret the natural language queries and then formalized into target formal queries like SPARQL. They implemented a system called \textit{Semantic Web Interface using Patterns} (SWIP). The dataset they used primarily for evaluation was QALD-3 targeting the DBpedia knowledge base. An assessment of the system based on the measurements of precision, recall, and F-measure was conducted on it. 
+
+Xu et al. \cite{Xu2014} proposed a question answering (QA) system that is able to recognize the intention and map the relevant semantic entities contained in a natural language query, which are used to further instantiate a formal structured query. They firstly extracted phrases from the query and then  annotated the phrases with semantic labels in order to form a Directed Acyclic Graph (DAG) with phrase dependency relations. The DAG was lastly decoded into SPARQL query by mapping the phrases into corresponding entities in KB. They experimented the system on 50 QALD-4 testing questions and achieved F-measure of 0.71, which was a very competitive result at QALD-4 challenge \cite{unger:hal-01086472}.
+
+Dubey et al. \cite{Dubey2016} proposed a framework called \textit{AskNow}, a QA system targeting at DBpedia. This framework first transforms the questions in English to an intermediary common structure called Normalized Query Structure (NQS), which is later translated into a SPARQL query through a NQS parser and a SPARQL generator. The NQS plays an significant role in carrying the desire, the input information, and their mutual semantic relations in a query. From English query to NQS, they deployed the POS-tagger to retract tags of each tokens in the query and characterized the desire-input dependency relations through semantic analysis based on certain hypotheses. In NQS to SPARQL algorithm, they utilized DBpedia Spotlight \cite{isem2013daiber} and  \cite{Miller:1995:WLD:219717.219748} for query annotation and entity matching, which essentially analyzes the tokens in the query and finds their synonymous entities in the vocabulary of DBpedia. In terms of evaluation, they tested four aspects including syntactic robustness, sensitivity to structural variation, semantic accuracy, and the accuracy of the whole system with precision and recall measurements, and the benchmark data sets QALD-4 and QALD 5 \cite{unger:hal-01086472,Unger2015}.
+
 \subsection{NMT Systems} \label{subsection:related work with nmt}
 
 Cai et al. \cite{Cai2017} proposed an enhanced encoder-decoder framework for the task of translating natural language to SQL, a similar query language with SPARQL but targeting structured databases instead of knowledge bases. They used not only BLEU \cite{Papineni2002}, but also query accuracy, tuple recall, and tuple precision for measuring the quality of output queries, and achieved good results.
 
 Dong et al. \cite{dong2016language} presented a method based on an encoder-decoder model with attention mechanism aimed at translating the input utterances to their logical forms with minimum domain knowledge. Moreover, they proposed another sequence-to-tree model that has a special decoder better able to capture the hierarchical structure of logical forms. Then, they tested their model on four different datasets and evaluated the results with accuracy as the metric.
 
-Zhong et al. \cite{DBLP:journals/corr/abs-1709-00103} proposed a framework called Seq2SQL for translating natural language questions to SQL. They took LSTM-based encoder-decoder networks as the core model. In order to leverage the structure of the SQL language, they augmented the input question with addition of column names of the queried table and split the decoder into three components, respectively predicting aggregation classifier, column names, and where clause part of a SQL query. As opposed to conventional teacher forcing, they trained the model with reinforcement learning to deal with the problem that queries that execute correct results but do not have exact string matches would be wrongly penalized. To address this issue in the evaluation, they performed analysis with measuring execution accuracy and logical form accuracy of generated queries.
+Zhong et al. \cite{DBLP:journals/corr/abs-1709-00103} proposed a framework called \textit{Seq2SQL} for translating natural language questions to SQL. They took LSTM-based encoder-decoder networks as the core model. In order to leverage the structure of the SQL language, they augmented the input question with addition of column names of the queried table and split the decoder into three components, respectively predicting aggregation classifier, column names, and where clause part of a SQL query. As opposed to conventional teacher forcing, they trained the model with reinforcement learning to deal with the problem that queries that execute correct results but do not have exact string matches would be wrongly penalized. To address this issue in the evaluation, they performed analysis with measuring execution accuracy and logical form accuracy of generated queries.
 
 Luz et al. \cite{Luz2018} also used an LSTM encoder-decoder model but the purpose is to encode natural language and decode into SPARQL. Furthermore, they employed a neural probabilistic language model to learn a word vector representation for SPARQL, and used the attention mechanism to associate a vocabulary mapping between natural language and SPARQL. For the experiment, they transformed the logical queries in the traditional Geo880 dataset into equivalent SPARQL form. In terms of evaluation, they adopted two metrics: accuracy and syntactical errors. They further compared their method with several other similar approaches \cite{alagha2015using,Kaufmann06querix:a} and the comparison showed that they obtained better accuracy results. However, they did not deal with the "out of vocabulary" (OOV) problem and the issue of lexical disambiguation.
 
-Soru et al. \cite{Soru2018a,Soru2018} proposed a generator-learner-interpreter architecture, namely Neural SPARQL Machines to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in the target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to generalize to unseen natural language sentence, and generate encoding sequence of SPARQL for the interpreter to decode. 
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{neural-sparql-machines}
+\centering
+\caption{The generator-learner-interpreter architecture of \textit{Neural SPARQL Machines} \cite{Soru2018a}}
+\label{figure:nsm architecture}
+\end{figure}
 
-\subsection{Non-NMT Systems} \label{subsection: non-nmt related work}
-
-Dubey et al. \cite{Dubey2016} proposed a framework called \textit{AskNow}, a question answering system targeting at DBpedia. This framework first transforms the questions in English to an intermediary common structure called Normalized Query Structure (NQS), which is later translated into a SPARQL query through a NQS parser and a SPARQL generator. The NQS plays an significant role in carrying the desire, the input information, and their mutual semantic relations in a query. From English query to NQS, they deployed the POS-tagger to retract tags of each tokens in the query and characterized the desire-input dependency relations through semantic analysis based on certain hypotheses. In NQS to SPARQL algorithm, they utilized DBpedia Spotlight \cite{isem2013daiber} and  \cite{Miller:1995:WLD:219717.219748} for query annotation and entity matching, which essentially analyzes the tokens in the query and finds their synonymous entities in the vocabulary of DBpedia. In terms of evaluation, they tested four aspects including syntactic robustness, sensitivity to structural variation, semantic accuracy, and the accuracy of the whole system with precision and recall measurements, and the benchmark data sets QALD \cite{unger:hal-01086472,Unger2015}.
+Soru et al. \cite{Soru2018a,Soru2018} proposed a generator-learner- architecture (see Figure \ref{figure:nsm architecture}), namely \textit{Neural SPARQL Machines} to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in the target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to generalize to unseen natural language sentence, and generate encoding sequence of SPARQL for the interpreter to decode. 
 
 
 

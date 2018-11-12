@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="27cm" height="16cm" viewBox="318 18 523 303" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="320" y="120" width="240" height="40" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="320" y="120" width="240" height="40" rx="10" ry="10"/>
+  </g>
+  <text font-size="18.0622" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="440" y="147.175">
+    <tspan x="440" y="147.175">GENERATOR</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="320" y="200" width="240" height="40" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="320" y="200" width="240" height="40" rx="10" ry="10"/>
+  </g>
+  <text font-size="18.0622" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="440" y="227.175">
+    <tspan x="440" y="227.175">LEARNER</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="600" y="200" width="240" height="40" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="600" y="200" width="240" height="40" rx="10" ry="10"/>
+  </g>
+  <text font-size="18.0622" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="720" y="227.175">
+    <tspan x="720" y="227.175">INTERPRETER</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x1="380" y1="80" x2="380" y2="110.264"/>
+    <polygon style="fill: #000000" points="380,117.764 375,107.764 380,110.264 385,107.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="380,117.764 375,107.764 380,110.264 385,107.764 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="520" y1="80" x2="520" y2="110.264"/>
+    <polygon style="fill: #000000" points="520,117.764 515,107.764 520,110.264 525,107.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="520,117.764 515,107.764 520,110.264 525,107.764 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="440" y1="160" x2="440" y2="190.264"/>
+    <polygon style="fill: #000000" points="440,197.764 435,187.764 440,190.264 445,187.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="440,197.764 435,187.764 440,190.264 445,187.764 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="440" y1="240" x2="440" y2="265.014"/>
+    <polygon style="fill: #000000" points="440,272.514 435,262.514 440,265.014 445,262.514 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="440,272.514 435,262.514 440,265.014 445,262.514 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="720" y1="240" x2="720" y2="270.264"/>
+    <polygon style="fill: #000000" points="720,277.764 715,267.764 720,270.264 725,267.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="720,277.764 715,267.764 720,270.264 725,267.764 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="260" y="160">
+    <tspan x="260" y="160"></tspan>
+  </text>
+  <g>
+    <path style="fill: #ffffff" d="M 460 20 L 560,20 L 560,88.5714 C 540,77.1429 530,77.1429 510,88.5714 C 490,100 480,100 460,88.5714 L 460,20z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 460 20 L 560,20 L 560,88.5714 C 540,77.1429 530,77.1429 510,88.5714 C 490,100 480,100 460,88.5714 L 460,20"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="510" y="39.2581">
+      <tspan x="510" y="39.2581">Query</tspan>
+      <tspan x="510" y="56.1914">Templates</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 320 20 L 420,20 L 420,88.5714 C 400,77.1429 390,77.1429 370,88.5714 C 350,100 340,100 320,88.5714 L 320,20z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 320 20 L 420,20 L 420,88.5714 C 400,77.1429 390,77.1429 370,88.5714 C 350,100 340,100 320,88.5714 L 320,20"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="370" y="39.2581">
+      <tspan x="370" y="39.2581">RDF</tspan>
+      <tspan x="370" y="56.1914">Data</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="440" cy="297.75" rx="80" ry="23.0001"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="440" cy="297.75" rx="80" ry="23.0001"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="440" y="302.883">
+      <tspan x="440" y="302.883">seq2seq Model</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="720" cy="300" rx="60" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="720" cy="300" rx="60" ry="20"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="720" y="305.133">
+      <tspan x="720" y="305.133">SPARQL</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="720" y1="146" x2="720" y2="190.264"/>
+    <polygon style="fill: #000000" points="720,197.764 715,187.764 720,190.264 725,187.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="720,197.764 715,187.764 720,190.264 725,187.764 "/>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="720" cy="123" rx="80" ry="23.0001"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="720" cy="123" rx="80" ry="23.0001"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="720" y="128.133">
+      <tspan x="720" y="128.133">seq2seq Model</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="719.999" cy="40" rx="65.6331" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="719.999" cy="40" rx="65.6331" ry="20"/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:middle;font-family:Damascus;font-style:normal;font-weight:normal" x="719.999" y="45.1334">
+      <tspan x="719.999" y="45.1334">NL Query</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="720" y1="60" x2="720" y2="90.2639"/>
+    <polygon style="fill: #000000" points="720,97.7639 715,87.7639 720,90.2639 725,87.7639 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="720,97.7639 715,87.7639 720,90.2639 725,87.7639 "/>
+  </g>
+</svg>

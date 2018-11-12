@@ -5,24 +5,49 @@ This chapter mainly describes the details of the models and frameworks of neural
 
 \subsection{RNN-based Encoder Decoder}
 
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{placeholder}
+\centering
+\caption{An RNN-based encoder-decoder architecture with attention mechanism}
+\label{figure:rnn encoder-decoder}
+\end{figure}
+
 \subsection{Convolutional Sequence-to-Sequence}
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{convs2s-architecture}
+\centering
+\caption{The architecture of the Convolutional Sequence-to-Sequence model}
+\label{figure:convs2s model}
+\end{figure}
 
 \subsection{The Transformer}
 
-
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{transformer-architecture}
+\centering
+\caption{The architecture of the Transformer model}
+\label{figure:transformer model}
+\end{figure}
 
 
 
 
 \section{Frameworks}
 
+Three frameworks have been used in this thesis, where two of them are based on TensorFlow \cite{tensorflow2015-whitepaper} and the other one based on PyTorch \cite{paszke2017automatic}.
+
 \subsection{TensorFlow Neural Machine Translation}
+
+\cite{luong17}
 
 \subsection{Facebook AI Research Sequence-to-Sequence Toolkit}
 
+\cite{gehring2017convs2s}
+
 \subsection{Tensor2Tensor}
 
-
+\cite{tensor2tensor}
 
 
 
@@ -30,7 +55,7 @@ This chapter mainly describes the details of the models and frameworks of neural
 
 \section{Evaluation Metrics}
 
-Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In automatic MT evaluation, for one candidate translation, a score is generally calculated to assess the closeness of it to one or more reference sentences which were manually translated by human profession. 
+Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In automatic MT evaluation, for one candidate translation, a score is usually calculated to assess the closeness of it to one or more reference sentences which were mostly human professional translations. 
 
 \subsection{BLEU}
 
