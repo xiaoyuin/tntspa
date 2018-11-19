@@ -8,14 +8,7 @@ This chapter gives an introduction to the background technologies and subfields 
 The original Web consisted largely of documents made up of hypertexts for rendering in the browsers, the meanings of the web page are not well conveyed, thus being difficult for computers to analyze, or users to make higher-level searches. As Berners-Lee et al. stated in \cite{Berners-Lee2001}, the Semantic Web is not an individual web separate from the current one but an extension. In the Semantic Web, there is an important functionality that the machines are able to process data and information automatically. The semantics of web pages are well-encoded and displayed to the software agents owned by users or organizations to provide meaningful services. In the Semantic Web, agents from different sources, namely producers and consumers, are able to communicate with each other by exchanging an ontology which typically contains a taxonomy and a set of inference rules. With the ontology, the computers can define classes, subclasses, and relations among entites on the Web and perform automated reasoning as if they "understand" the information \cite{Berners-Lee2001}.
 
 % Why does Semantic Web exist since the current Web is a big success? What makes Semantic Web more special than the current Web?
-The World Wide Web has linked more than 10 billion websites, and the useful contents can be delivered almost instantaneously to the users through search engines. Meanwhile, it is evolving from the web of documents for humans to read to a web of data and information derived from shared semantics. There are various types of programs and intelligent agents around the Web handcrafted for particular tasks, however, they usually possess little ability to deal with heterogeneous types of information \cite{Shadbolt2006}. There is also a growing need for the integration of data and information, especially in areas that demand heterogeneous and diverse datasets originating from separate subfields \cite{Shadbolt2006}. A typical use case scenario of the Semantic Web is shown in Figure \ref{figure:usecase1}.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{placeholder}
-\caption{A typical use case scenario of the Semantic Web}
-\label{figure:usecase1}
-\end{figure}
+The World Wide Web has linked more than 10 billion websites, and the useful contents can be delivered almost instantaneously to the users through search engines. Meanwhile, it is evolving from the web of documents for humans to read to a web of data and information derived from shared semantics. There are various types of programs and intelligent agents around the Web handcrafted for particular tasks, however, they usually possess little ability to deal with heterogeneous types of information \cite{Shadbolt2006}. There is also a growing need for the integration of data and information, especially in areas that demand heterogeneous and diverse datasets originating from separate subfields \cite{Shadbolt2006}.
 
 % What techniques are here to support for Semantic Web? 
 A set of technologies are already here to provide a preliminary environment for transforming the current Web into the Semantic Web. Figure \ref{figure:semantic web stack} shows an illustration of the Semantic Web technology stack, where the language in each layer is dependent on the layers below it. These languages have provided a foundation for allowing shared semantics to be integrated into the current documents on the Web, and data to be connected in a more explicit and standardized way. Resource Description Framework (RDF) \cite{Cyganiak2014}, a language located at a lower layer, has provided a foundation for the standardization of the formats of common data. SPARQL, on the other end, is a query language that can be utilized to search and manipulate data in RDF format from diverse sources \cite{Harris2013}. The details of RDF and SPARQL are respectively presented in section \ref{subsection:rdf} and section \ref{subsection:sparql}.
@@ -182,9 +175,11 @@ Apart from the already mentioned components, a special attention mechanism is wi
 
 \subsection{Recurrent Neural Network} \label{subsection:rnn}
 % Introduction of RNN and technical details
-In sequence to sequence learning, Recurrent Neural Networks (RNNs) are the most widely used artificial neural networks. RNNs are specifically effective for processing sequential data. Given a sequence of inputs $ x = (x_{1},...,x_{T}) $, an RNN is able to compute a series of hidden states $ h = (h_{1},...,h_{T}) $ step-wise where at each step $ t $ the hidden state $ h_{t} $ is dependent on the previous hidden state $ h_{t-1} $ and input $ x_{t} $ by the following equation:
-\[ h_{t} = f(h_{t-1}, x_{t}) \]
-where f is a non-linear activation function which may differ in distinct architectures (e.g. GRU and LSTM). Based on this set of hidden states $ h $, a sequence of outputs $ y = (y_{1},...,y_{T^{'}}) $ can be generated. Given different configurations of input sequence length $ T $ and output sequence length $ T^{'} $, RNNs can be adapted to cope with various tasks including image classification (one to one), image captioning (one to many), sentiment analysis (many to one), machine translation (many to many), and video frame labeling (many to many), all of which are shown in Figure \ref{figure:rnn different sequences}.
+In sequence to sequence learning, Recurrent Neural Networks (RNNs) are the most widely used artificial neural networks. RNNs are specifically effective for processing sequential data. Given a sequence of inputs $ x = (x_{1},...,x_{T_{x}}) $, an RNN is able to compute a series of hidden states $ h = (h_{1},...,h_{T_{x}}) $ step-wise where at each step $ t $ the hidden state $ h_{t} $ is dependent on the previous hidden state $ h_{t-1} $ and input $ x_{t} $ by the following equation:
+\begin{equation} \label{equation:rnn hidden state}
+h_{t} = f(h_{t-1}, x_{t})
+\end{equation}
+where f is a non-linear activation function which may differ in distinct architectures (e.g. GRU and LSTM). Based on this set of hidden states $ h $, a sequence of outputs $ y = (y_{1},...,y_{T_{y}}) $ can be generated. Given different configurations of input sequence length $ T_{x} $ and output sequence length $ T_{y} $, RNNs can be adapted to cope with various tasks including image classification (one to one), image captioning (one to many), sentiment analysis (many to one), machine translation (many to many), and video frame labeling (many to many), all of which are shown in Figure \ref{figure:rnn different sequences}.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{rnn-different-sequences}
@@ -206,21 +201,63 @@ In addition to the primitive structure shown above, there are many techniques op
 
 \subsection{Long Short-Term Memory} \label{subsection:lstm}
 % Introduction of LSTM and technical details
-Long Short-Term Memory is a special kind of RNN with gating cells. Compared to simple RNNs, LSTM models contain units that allow the network to accumulate information while selectively forgetting the old states. 
+RNNs usually process information over a long duration. The ability of forgetting the old states once the information has been used becomes an important feature to RNNs. This is achieved by the so called gated RNNs, where the neural networks are able to gradually learn to decide when to clear the state relying on the use of gated hidden units \cite{Goodfellow-et-al-2016}. Among different kinds of gated RNNs, Long Short-Term Memory (LSTM) \cite{hochreiter1997long} has been proved to be successful in many applications. LSTM-based models \cite{Wu2016,Sutskever2014} have been dominating in the area of machine translation and achieving state-of-the-art results on many benchmark datasets.
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{lstm-unit}
+\centering
+\caption{The diagram of the LSTM unit}
+\label{figure:lstm unit}
+\end{figure}
 
 % Picture showing the LSTM architecture, and relevant equations
-
-
-LSTM networks are well known for their ability to learn long-term dependencies better than most of their rivals. There exist many variants of LSTM and other similar gated RNNs such as the networks based on Gated Recurrent Units (GRU) which has also shown competitive results.
+Figure \ref{figure:lstm unit} reveals the structure of the LSTM unit in an RNN at time step $ t $. Different from standard RNNs, a new vector which represents the cell state is used. There are also three gates, namely input gate i, forget gate f, and output gate o, each producing an activation vector. Suppose the number of input features is denoted by $ e $ and the number of hidden units is denoted by $ d $. At step $ t $, the input $ x_{t} \in \mathbb{R}^{e} $, the previous cell state $ c_{t-1} \in \mathbb{R}^{d} $, and the previous hidden state $ h_{t-1} \in \mathbb{R}^{d} $ are already given information. In order to compute the current cell state $ c_{t} \in \mathbb{R}^{d} $ and hidden state $ h_{t} \in \mathbb{R}^{d} $, one needs to firstly compute three activation vectors:
+\begin{align*}
+f_{t} &= \sigma(W_{f}x_{t}+U_{f}h_{t-1}+b_{f}) \\
+i_{t} &= \sigma(W_{i}x_{t}+U_{i}h_{t-1}+b_{i}) \\
+o_{t} &= \sigma(W_{o}x_{t}+U_{o}h_{t-1}+b_{o})
+\end{align*}
+, then:
+\begin{align*}
+c_{t} &= f_{t}\circ c_{t-1}+i_{t}\circ \tanh(W_{c}x_{t}+U_{c}h_{t-1}+b_{c}) \\
+h_{t} &= o_{t}\circ \tanh(c_{t})
+\end{align*}
+where the operator $ \circ $ denotes the element-wise product and $ \sigma $ denotes the sigmoid function. $ W \in \mathbb{R}^{d\times e} $, $ U \in \mathbb{R}^{d \times d} $, and $ b \in \mathbb{R}^{d} $ denotes the internal weight matrices and bias vectors that are to be continuously updated during training phase. $ f_{t} \in \mathbb{R}^{d} $, $ i_{t} \in \mathbb{R}^{d} $, and $ o_{t} \in \mathbb{R}^{d} $ are the activation vectors from corresponding sigmoid gates that control how much information is accumulated from the old states to the new ones.
 
 \subsection{Convolutional Neural Network} \label{subsection:cnn}
 
 \subsection{Attention Mechanism} \label{subsection:attention}
 
+Attention mechanism \cite{Bahdanau2014} is firstly proposed as an enhancement module for the basic RNN-based encoder-decoder architecture. In general, it gives the model abilities to conduct searching on parts of the source inputs at the time of inference. The conventional encoder-decoder models often perform worse when the length of the processed sentence is long, for the reason that the fixed-length vector produced by the encoder tends to lack some necessary information crucial for the decoder to predict accurate tokens. Attention mechanism addresses this issue by allowing the decoder to, at each decoding step, refer to a context vector calculated from weighted sum of a sequence of annotations to which the encoder maps the input sequence.
 
+We hereby illustrate the concept of attention mechanism with a simplified version of the model proposed by Bahdanau et al. \cite{Bahdanau2014} which utilizes GRU-based bi-directional encoder to obtain annotations from the input sequences instead of taking only hidden states along a single direction, which is shown in Figure \ref{figure:attention mechanism}.
 
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{attention-mechanism}
+\centering
+\caption{The $ t $-th decoding step of a simplified encoder-decoder model with attention mechanism. The attention layer is placed on top of the hidden layer of the encoder.}
+\label{figure:attention mechanism}
+\end{figure}
 
+Figure \ref{figure:attention mechanism} demonstrates how a encoder-decoder model with attention generates the $ t $-th target word $ y_{t} $ given a source sentence $ x = (x_{1},...,x_{T}) $. The encoder maps $ x $ into a sequence of hidden states $ h = (h_{1},...,h_{T}) $ by Equation \ref{equation:rnn hidden state}. For the decoder, the hidden state $ s_{t} $ for step $ t $ is computed by
+\[ s_{t} = f(s_{t-1}, y_{t-1}, c_{t}) \]
+where $ c_{t} $ is the context vector only for the $ t $-th target word $ y_{t} $. $ c_{t} $ is computed as a weighted sum of the annotations of the input sequence ($ h $ in this case):
+\[ c_{t} = \sum_{i=1}^{T}\alpha_{t,i}h_{i} \]
+where $ \alpha_{t,i} $ is the weight of each annotation $ h_{i} $. It is based on a $ score_{t,i} $ which is dependent on the previous decoder hidden state $ s_{t-1} $ and $ i $-th annotation $ h_{i} $. The equations for computing the score $ e_{t,i} $ and the weight $ \alpha_{t,i} $ is:
+\begin{align*}
+score_{t,i} &= a(s_{t-1}, h_{i}) \\
+\alpha_{t,i} &= \frac{\exp(score_{t,i})}{\sum_{j=1}^{T}\exp(score_{t,j})}
+\end{align*} 
+where $ a $ is an alignment model usually parameterized as a feedforward neural network that can be jointly trained with other parts of the model. The $ score_{t,i} $ is expected to evaluate how important is the input around position $ x_{i} $ with respect to the previous hidden state $ s_{t-1} $ in determining the next output $ y_{t} $ being generated. The final attention weights or the alignment model can be visualized into a matrix that reflects the relationships between tokens of input sequence and output sequence as an example is shown in Figure \ref{figure:attention visualization}.
 
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{attention-visualization}
+\centering
+\caption{Visualization of the attention weights \cite{Luong2015}. The color of each block represents the attention weight between the words positioned at the row and the column. Lighter blocks indicate stronger relations.}
+\label{figure:attention visualization}
+\end{figure}
+
+Although attention mechanism brings more preciseness to the models, it increases the training cost and may cause longer sequences impractical to translate. Therefore, in addition to the one described above which is referred to as global attention, there is local attention mechanism that in each decoding step only a subset of the whole source sequence is needed \cite{Luong2015}.
 
 \section{Related Work} \label{section:related work}
 

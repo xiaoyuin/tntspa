@@ -1,9 +1,35 @@
 
-This chapter mainly describes the details of the models and frameworks of neural machine translation involved in this thesis for tackling the task of translating natural language to SPARQL. Then, the metrics that are typically utilized in automatic machine translation evaluation are described. We also mention another metric called query accuracy which suits specifically for our task.
+This chapter mainly describes the models and frameworks of neural machine translation involved in this thesis for the task of translating natural language to SPARQL and related preliminaries. Then, a measurement BLEU that is typically utilized in automatic machine translation evaluation is described. We also clarify another metric called query accuracy which suits specifically for our task.
+
+\section{Preliminary}
+
+\subsection{Input}
+
+For the input of the NMT models, a sentence or paragraph can be normally separated into three kinds of sequences: characters, subwords, or words. Different methods of splitting sequences lead to differences in vocabularies that are seen by the model and its effectiveness of dealing with rare words. For the task in this thesis, the texts are fed into the models word-based for the reason that the entities in SPARQL which are normally words in the queries need to be treated as a whole.
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{one-hot_encoding}
+\centering
+\caption{}
+\label{figure:one-hot encoding}
+\end{figure}
+
+Each word in the sequences of both source input and target input is represented in an one-hot encoding vector, which is a sparse vector in which one element is set to 1 and all other elements are set to 0. The dimension of the one-hot encoding is equal to the size of the specific vocabulary. An example is shown in Figure \ref{figure:one-hot encoding}.
+
+Due to the use of one-hot encoding, every word in the vocabulary is orthogonal to each other. This does not reflect the relevance of some similar or distinct words such as man and king, king and queen. Therefore, in NMT models, the one-hot encoding vectors are usually further mapped into a low-dimensional space where each word is represented as a dense vector called word embedding that holds floating-point values in each element. This mapping can be learned along with the training of the whole model or provided with a pre-trained word embedding matrix.
+
+\subsection{Output}
+
+The output of NMT model is a sequence of vectors, where the dimension of each vector is the size of the vocabulary for the target language. The sum of the entries in each vector is equal to 1, which means the vector is essentially a probability distribution over all the possible words in the target vocabulary. One can then perform greedy or beam search over this sequence of probability distributions to generate a translation with the highest probabilities.
+
 
 \section{Models}
 
-\subsection{RNN-based Encoder Decoder}
+In this thesis, we mainly focus on investigating three families of deep NMT models, including RNN-based models with an encoder-decoder architecture, the models entirely based on convolutional neural networks, and self-attention models relying on neither RNNs nor CNNs. We consider these three families covering the most advanced research of NMT and best-performing models so far, regardless of any other choices difficult to be classified such as hybrid models. Within each of these categories, one or more representative models are chosen and specified under.
+
+\subsection{RNN-based Models}
+
+
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{placeholder}
@@ -12,25 +38,72 @@ This chapter mainly describes the details of the models and frameworks of neural
 \label{figure:rnn encoder-decoder}
 \end{figure}
 
-\subsection{Convolutional Sequence-to-Sequence}
+\subsubsection*{Google's Neural Machine Translation System}
 
+Google's Neural Machine Translation (GNMT) system \cite{Wu2016} 
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{gnmt-architecture}
+\centering
+\caption{The model architecture of GNMT.}
+\label{figure:gnmt architecture}
+\end{figure}
+
+\subsection{CNN-based Models}
+
+\subsubsection*{Convolutional Sequence-to-Sequence}
+
+Convolutional Sequence to Sequence (ConvS2S) \cite{gehring2017convs2s} is another sequence to sequence modeling architecture that depends on convolutional neural networks instead of traditional RNNs. In machine translation task, CNNs own several advantages over RNNs in the following aspects:
+\begin{itemize}
+\item Faster training speed because the computations of CNNs allow parallelization over every element in a sequence, whereas the computations in RNN are sequentially dependent on each other.
+\item Long-range dependencies have shorter paths when the inputs are processed in a hierarchical multi-layer CNN compared to the chain structure of RNNs. CNN is able to create representations for $ n $ continuous words in $ \mathcal{O}(\frac{n}{k}) $ convolutions with $ k $-width kernels, while RNN needs $ \mathcal{O}(n) $.
+\end{itemize}
+On the other hand, it also has certain limitations:
+\begin{itemize}
+\item The input needs to be padded before fed into the model for the reason that CNNs can only processe sequences of fixed length.
+\item Additional position encoding is required to provide the model with a sense of ordering in the elements being dealt with.
+\end{itemize}
+
+Figure \ref{figure:convs2s model} depicts the architecture of ConvS2S model and how it can be trained. In fact, it remains the architecture of encoder-decoder, and the decoding phase is aided by attention mechanism. The encoder (placed at top) and the decoder (placed at bottom left) both consist of several stacked convolutional blocks (only one block is drawn in the figure).
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{convs2s-architecture}
 \centering
-\caption{The architecture of the Convolutional Sequence-to-Sequence model}
+\caption{The demonstration of training the Convolutional Sequence-to-Sequence model \cite{gehring2017convs2s}}
 \label{figure:convs2s model}
 \end{figure}
+The input for the encoder is $ \textbf{e} = (w_{1}+p_{1},...,w_{m}+p_{m}) $ where $ m $ is the length of an input sentence, $ w_{i} $ and $ p_{i} $ are the word embedding and the positional embedding of the $ i $-th input element respectively. Each convolutional block is formed by a one-dimensional convolutional layer that has kernel width $ k $ and a subsequent Gated Linear Unit (GLU) as non-linearity. Note that due to the number of input elements in each block is fixed, the input to each convolutional block needs to be padded with zero vectors. We denote the $ l $-th block of the encoder output $ \textbf{z}^{l} = (z_{1}^{l},...,z_{m}^{l}) $, and the decoder output $ \textbf{h}^{l} = (h_{1}^{l},...,h_{n}^{l}) $. We also assume that the $ l $-th block is stacked on the $ l $-1-th block. 
 
-\subsection{The Transformer}
+After convolution operations, the output of each decoder block and the output of top encoder block are then combined in a multi-step attention. In other words, the model computes $ n $ context vectors $ \textbf{c}^{l} = (c^{l}_{1},...,c^{l}_{n}) $ for each decoder convolutional layer (center right in the figure) where $ n $ is a fixed number for the input and the output of decoder. The context vectors $ \textbf{c}^{l} $ and $ \textbf{h}^{l} $ are simply added together. A softmax layer is placed on $ (\textbf{c}^{l} + \textbf{h}^{l}) $ for generating the target elements (bottom right).
+
+
+
+\subsection{Self-attention Models}
+
+\subsubsection*{The Transformer}
+
+The Transformer model \cite{Vaswani2017} is another novel neural machine translation model adopting encoder decoder structure, without RNNs or CNNs as the primary units but entirely based on the attention mechanism. The traditional RNN models use attention mechanism to connect the encoder and decoder at some time steps. Differently, the Transformer model uses internal stacked self-attention in both encoder and decoder.
+
+The attention mechanism used in the Transformer model is called Scaled Dot-Product Attention (see Figure \ref{figure:scaled dot-product attention}) \cite{Vaswani2017}. The function of it can be described as a mapping from queries $ Q $ and a set of key-value pairs where keys and values can be denoted as $ K, V $ to an output matrix. The queries and keys are of dimension $ d_{k} $ and the values are of dimension $ d_{v} $. The output is computed by:
+\[ Attention(Q,K,V) = softmax(\frac{QK^{T}}{\sqrt{d_{k}}})V \]
+where the dot products of the queries and all keys are computed firstly, scaled by $ \sqrt{d_{k}} $, and then applied a softmax function for obtaining the weights on the values.
+
+\begin{figure}[h]
+\includegraphics[width=0.25\textwidth]{scaled_dot_product_attention}
+\centering
+\caption{}
+\label{figure:scaled dot-product attention}
+\end{figure}
+
+Figure \ref{figure:transformer model} displays the architecture of the Transformer model, where the left side shows one layer in the encoder and the right half shows one decoder layer.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{transformer-architecture}
 \centering
-\caption{The architecture of the Transformer model}
+\caption{The architecture of the Transformer model \cite{Vaswani2017}}
 \label{figure:transformer model}
 \end{figure}
 
-
+The encoder consists of two sub-layers. The first is a multi-head attention sub-layer and the second is a point-wise fully connected feed forward sub-layer. Each sub-layer is employed a residual connection, which means the input to the sub-layer is further passed to the tail and added to the output. After that, the addition result is normalized. Therefore, the output of each sub-layer can be specified by $ Norm(x+Sublayer(x)) $ where $ x $ is the input and $ Sublayer(x) $ indicates the operation implemented in this sub-layer.
 
 
 \section{Frameworks}
@@ -56,6 +129,8 @@ Three frameworks have been used in this thesis, where two of them are based on T
 \section{Evaluation Metrics}
 
 Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In automatic MT evaluation, for one candidate translation, a score is usually calculated to assess the closeness of it to one or more reference sentences which were mostly human professional translations. 
+
+\subsection{Perplexity}
 
 \subsection{BLEU}
 
