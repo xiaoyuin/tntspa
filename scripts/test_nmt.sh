@@ -35,4 +35,4 @@ python3 -m nmt.nmt.nmt \
     --inference_ref_file=$DDIR/test.sparql
 
 # Query and Analyze
-python3 generate.py $DDIR $RDIR
+# python3 generate.py $DDIR $RDIR

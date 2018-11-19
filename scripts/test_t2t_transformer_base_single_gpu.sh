@@ -55,7 +55,9 @@ t2t-decoder \
 
 # Evaluate the BLEU score
 # Note: Report this BLEU score in papers, not the internal approx_bleu metric.
-# t2t-bleu --translation=translation.en --reference=ref-translation.de
+t2t-bleu --translation=$RDIR/dev_translation.sparql --reference=$DDIR/dev.sparql > $RDIR/dev_output.txt
+
+t2t-bleu --translation=$RDIR/test_translation.sparql --reference=$DDIR/test.sparql > $RDIR/test_output.txt
 
 # Query and Analyze
-python3 generate.py $DDIR $RDIR
+# python3 generate.py $DDIR $RDIR

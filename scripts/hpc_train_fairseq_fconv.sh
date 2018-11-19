@@ -5,7 +5,7 @@
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "fairseq_fconv"   # job name
 #SBATCH -o "train_fairseq_fconv-%j.out"   # output name
-#SBATCH --mem=40000   # minimum amount of real memory
+#SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
 #SBATCH --mail-type ALL
@@ -29,6 +29,6 @@ srun python3 fairseq/train.py $DDIR/fairseq-data-bin -s en -t sparql \
 --lr 0.5 --clip-norm 0.1 --dropout 0.2 --max-tokens 4000 \
 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
 --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \
---max-epoch 500 --save-interval 50 \
+--max-epoch 50 --save-interval 10 --valid-subset valid,test \
 --save-dir $MDIR/fairseq_fconv_wmt_en_de
 

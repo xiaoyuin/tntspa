@@ -34,17 +34,17 @@ fi
 
 srun python3 fairseq/generate.py $DDIR/fairseq-data-bin \
 --gen-subset valid \
---path $MDIR/checkpoint_best.pt \
+--path $MDIR/checkpoint_last.pt \
 --beam 5 > $RDIR/dev_output.txt
 
 srun python3 fairseq_output_reader.py $RDIR/dev_output.txt > $RDIR/dev_translation.sparql
 
 srun python3 fairseq/generate.py $DDIR/fairseq-data-bin \
 --gen-subset test \
---path $MDIR/checkpoint_best.pt \
+--path $MDIR/checkpoint_last.pt \
 --beam 5 > $RDIR/test_output.txt
 
 srun python3 fairseq_output_reader.py $RDIR/test_output.txt > $RDIR/test_translation.sparql
 
 # Query and Analyze
-srun python3 generate.py $DDIR $RDIR
+# srun python3 generate.py $DDIR $RDIR
