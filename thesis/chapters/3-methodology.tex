@@ -10,7 +10,7 @@ For the input of the NMT models, a sentence or paragraph can be normally separat
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{one-hot_encoding}
 \centering
-\caption{}
+\caption{For our task, the source input (left) and target input (right) are one-hot encoding vectors representing word positions from respectively English and SPARQL vocabulary. The output vector is a probability distribution over all words in SPARQL vocabulary.}
 \label{figure:one-hot encoding}
 \end{figure}
 
@@ -20,7 +20,7 @@ Due to the use of one-hot encoding, every word in the vocabulary is orthogonal t
 
 \subsection{Output}
 
-The output of NMT model is a sequence of vectors, where the dimension of each vector is the size of the vocabulary for the target language. The sum of the entries in each vector is equal to 1, which means the vector is essentially a probability distribution over all the possible words in the target vocabulary. One can then perform greedy or beam search over this sequence of probability distributions to generate a translation with the highest probabilities.
+The output of NMT model is a sequence of vectors, where the dimension of each vector is the size of the vocabulary for the target language (see Figure \ref{figure:one-hot encoding}). The sum of the entries in each vector is equal to 1, which means the vector is essentially a probability distribution over all the possible words in the target vocabulary. One can then perform greedy or beam search over this sequence of probability distributions to generate a translation with the highest probabilities.
 
 
 \section{Models}
@@ -29,14 +29,11 @@ In this thesis, we mainly focus on investigating three families of deep NMT mode
 
 \subsection{RNN-based Models}
 
+RNN is the most natural choice for machine translation task because of its sequential structure. Prior research generally confirms that certain RNN-based models are superior to traditional statistical machine translation methods in translation quality, in spite of some weaknesses on expensive computation and issues of rare words. 
 
+There are many variants in RNN-based models that mostly differ in layer depth, unit type, etc. We choose a simple 2-layer LSTM network which is used in the learner phase of Neural SPARQL Machine \cite{Soru2018a} as a baseline. On the basis of it, we apply two kinds of attention: global attention \cite{Bahdanau2014} and local attention \cite{Luong2015} to see how much effects the attention mechanism have in our task.
 
-\begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{placeholder}
-\centering
-\caption{An RNN-based encoder-decoder architecture with attention mechanism}
-\label{figure:rnn encoder-decoder}
-\end{figure}
+Moreover, we adopt the model proposed by Luong et al. \cite{Luong2015} and the architecture proposed by Wu et al. \cite{Wu2016}, both of which achieved state-of-the-art results on natural language translation benchmarks. The former is essentially a deeper LSTM with 4 layers and local attention mechanism. The latter is described in the following.
 
 \subsubsection*{Google's Neural Machine Translation System}
 
@@ -49,11 +46,9 @@ Google's Neural Machine Translation (GNMT) system \cite{Wu2016}
 \label{figure:gnmt architecture}
 \end{figure}
 
-\subsection{CNN-based Models}
+\subsection{CNN-based Models} \label{subsection:cnn-based models}
 
-\subsubsection*{Convolutional Sequence-to-Sequence}
-
-Convolutional Sequence to Sequence (ConvS2S) \cite{gehring2017convs2s} is another sequence to sequence modeling architecture that depends on convolutional neural networks instead of traditional RNNs. In machine translation task, CNNs own several advantages over RNNs in the following aspects:
+In machine translation task, CNNs own several advantages over RNNs in the following aspects:
 \begin{itemize}
 \item Faster training speed because the computations of CNNs allow parallelization over every element in a sequence, whereas the computations in RNN are sequentially dependent on each other.
 \item Long-range dependencies have shorter paths when the inputs are processed in a hierarchical multi-layer CNN compared to the chain structure of RNNs. CNN is able to create representations for $ n $ continuous words in $ \mathcal{O}(\frac{n}{k}) $ convolutions with $ k $-width kernels, while RNN needs $ \mathcal{O}(n) $.
@@ -64,18 +59,47 @@ On the other hand, it also has certain limitations:
 \item Additional position encoding is required to provide the model with a sense of ordering in the elements being dealt with.
 \end{itemize}
 
-Figure \ref{figure:convs2s model} depicts the architecture of ConvS2S model and how it can be trained. In fact, it remains the architecture of encoder-decoder, and the decoding phase is aided by attention mechanism. The encoder (placed at top) and the decoder (placed at bottom left) both consist of several stacked convolutional blocks (only one block is drawn in the figure).
+\subsubsection*{Convolutional Sequence-to-Sequence}
+
+Convolutional Sequence to Sequence (ConvS2S) \cite{gehring2017convs2s} is a sequence to sequence modeling architecture that depends on CNNs instead of traditional RNNs. 
+
+Figure \ref{figure:convs2s model} depicts the general architecture of ConvS2S model and how it can be trained. Actually, it remains the architecture of encoder-decoder, and the decoder is also aided by attention mechanism as the RNN-based models. The encoder (placed at top) and the decoder (placed at bottom left) both consist of several stacked convolutional blocks (only one block is drawn in the figure).
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{convs2s-architecture}
 \centering
 \caption{The demonstration of training the Convolutional Sequence-to-Sequence model \cite{gehring2017convs2s}}
 \label{figure:convs2s model}
 \end{figure}
-The input for the encoder is $ \textbf{e} = (w_{1}+p_{1},...,w_{m}+p_{m}) $ where $ m $ is the length of an input sentence, $ w_{i} $ and $ p_{i} $ are the word embedding and the positional embedding of the $ i $-th input element respectively. Each convolutional block is formed by a one-dimensional convolutional layer that has kernel width $ k $ and a subsequent Gated Linear Unit (GLU) as non-linearity. Note that due to the number of input elements in each block is fixed, the input to each convolutional block needs to be padded with zero vectors. We denote the $ l $-th block of the encoder output $ \textbf{z}^{l} = (z_{1}^{l},...,z_{m}^{l}) $, and the decoder output $ \textbf{h}^{l} = (h_{1}^{l},...,h_{n}^{l}) $. We also assume that the $ l $-th block is stacked on the $ l $-1-th block. 
-
-After convolution operations, the output of each decoder block and the output of top encoder block are then combined in a multi-step attention. In other words, the model computes $ n $ context vectors $ \textbf{c}^{l} = (c^{l}_{1},...,c^{l}_{n}) $ for each decoder convolutional layer (center right in the figure) where $ n $ is a fixed number for the input and the output of decoder. The context vectors $ \textbf{c}^{l} $ and $ \textbf{h}^{l} $ are simply added together. A softmax layer is placed on $ (\textbf{c}^{l} + \textbf{h}^{l}) $ for generating the target elements (bottom right).
+Each convolutional block is composed of a one-dimensional convolutional layer (shown in Section \ref{subsection:cnn}) and a following Gated Linear Unit (GLU) as non-linearity. There is a residual connection between the input to the convolutional layer and the output of GLU.
 
 
+As Figure \ref{figure:convs2s enc dec} displays, the input of the convolutional block can be the output from the previous layer or the word embeddings, which is only the case at the bottom layer. Initially in the training phase, the input for the encoder is $ \textbf{e} = (w_{1}+p_{1},...,w_{m}+p_{m}) $ where $ m $ is the length of an input sentence, $ w_{i} \in \mathbb{R}^{f} $ and $ p_{i} \in \mathbb{R}^{f} $ are the word embedding and the positional embedding of the $ i $-th input element respectively ($ f $ is the embedding size). We denote the output of $ L^{'} $ layers of encoder convolutional block as $ \textbf{z} = (z^{1},...,z^{L^{'}}) $ where the output of $ l $-th layer is $ z^{l} = (z_{1}^{l},...,z_{m}^{l}) $ and $ l $-th layer is stacked above the $ l-1 $-th layer. We denote the output pf $ i $-th convolution operation $ Y = [A\,B] \in \mathbb{R}^{2d} $, then:
+\[ z_{i}^{l} = A \otimes \sigma(B) + z_{i}^{l-1} \]
+where $ \otimes $ is the point-wise multiplication and $ \sigma $ is the sigmoid function.
+
+Note that due to the number of accepted input elements in each convolutional block is fixed (i.e. $ m $ is often smaller than the input dimension), the input of each block before the convolution usually needs to be padded with zero vectors (like the grey squares shown in Section \ref{subsection:cnn}).
+ 
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{convs2s_enc_dec}
+\centering
+\caption{The illustration of convolutional blocks in the encoder (left side) and decoder (right side) of ConvS2S model.}
+\label{figure:convs2s enc dec}
+\end{figure}
+
+Compared to the encoder, each convolutional block in the decoder have one more attention module located after the output of GLU and before the residual connection, which is shown on the right side of Figure \ref{figure:convs2s enc dec}. We denote the output of L layers of decoder convolutional block as $ \textbf{h} = (h^{1},...,h^{L^{'}}) $, and the $ l $-th layer's output as $ h^{l} = (h_{1}^{l},...,h_{n}^{l}) $ where $ n $ is, during the training phase the length of target input elements, or during the generation phase the number of current decoding step. In $ l $-th layer, before attention module, the computation is exactly like in the encoder blocks. We denote the $ i $-th intermediate output of GLU as $ v^{l}_{i} $, the final output of $ i $-th decoder state $ h_{i}^{l} $ is then computed as follows:
+\begin{align}
+d^{l}_{i} &= W^{l}_{d}v^{l}_{i} + b^{l}_{d} + g_{i} \label{eq:decoder state summary}\\
+a^{l}_{ij} &= \frac{\exp(d^{l}_{i}\cdot z_{j}^{L^{'}})}{\sum_{t=1}^{m} \exp(d^{l}_{i}\cdot z_{t}^{L^{'}})} \label{eq:attention weight}\\
+c^{l}_{i} &= \sum_{j=1}^{m} a^{l}_{ij}(z^{L^{'}}_{j}+e_{j}) \label{eq:conditional input}\\
+h^{l}_{i} &= c^{l}_{i} + v^{l}_{i} + h^{l-1}_{i} \label{eq:decoder output}
+\end{align}
+To compute the attention weights $ a^{l}_{ij} $ between the $ i $-th decoder state and $ j $-th source element, a decoder state summary $ d^{l}_{i} $ is firstly computed in a linear layer with $ v^{l}_{i} $ and the embedding of $ i $-th target element $ g_{i} $ in Eq. \ref{eq:decoder state summary}. After that, the dot-product of $ d^{l}_{i} $ and $ j $-th output of the top encoder block $ z_{j}^{L^{'}} $ is simply calculated as the attention weights in Eq. \ref{eq:attention weight}. To further let the model refer to the input elements, in Eq. \ref{eq:conditional input}, the conditional input $ c_{i}^{l} $ is computed as the weighted sum of both the encoder outputs and encoder input embeddings $ \textbf{e} $. At last, the output $ h_{i}^{l} $ is the addition of the conditional input, the output of GLU, and the input of this decoder layer from residual connection. 
+
+Since attentions exist in each decoder layer and are computed individually, higher layers have access to the information that which elements the lower layers attended to, which is called multi-step attention. 
+
+Given the output of the top decoder layer $ h^{L} $, a distribution over the possible next target elements at $ i $-th position can be retrieved with a softmax layer $ softmax(W_{o}h_{i}^{L}+b_{o}) $ built upon a linear layer with weights $ W_{o} $ and bias $ b_{o} $. 
+
+This architecture is able to parallel the computations occurred during the training phase since the target elements are known beforehand and can be fed to the decoder once. However, during the inference stage where the target elements are not available, the computations in the decoder are still sequential. Nevertheless, full parallelization of the encoder is enough to make this model faster than most of its RNN rivals \cite{gehring2017convs2s}.
 
 \subsection{Self-attention Models}
 
@@ -88,7 +112,7 @@ The attention mechanism used in the Transformer model is called Scaled Dot-Produ
 where the dot products of the queries and all keys are computed firstly, scaled by $ \sqrt{d_{k}} $, and then applied a softmax function for obtaining the weights on the values.
 
 \begin{figure}[h]
-\includegraphics[width=0.25\textwidth]{scaled_dot_product_attention}
+\includegraphics[width=0.7\textwidth]{multi-attention}
 \centering
 \caption{}
 \label{figure:scaled dot-product attention}

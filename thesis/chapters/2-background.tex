@@ -226,6 +226,22 @@ where the operator $ \circ $ denotes the element-wise product and $ \sigma $ den
 
 \subsection{Convolutional Neural Network} \label{subsection:cnn}
 
+Compared to RNNs, Convolutional Neural Networks (CNNs) are more common for image processing tasks and have been less employed in machine translation despite their prominent advantages in feature extraction and faster training speed than the former. 
+
+In this thesis, CNNs are used in one of the investigated NMT models called Convolutional Sequence to Sequence (see Section \ref{subsection:cnn-based models}), in which several convolutional layers are stacked upon the input and target sequences to extract hierarchical representations.
+
+The convolutional operations in natural language processing are often one-dimensional instead of 2D when targeting the images. Figure \ref{figure:convolutions} shows an example of a one-dimensional convolution layer, 
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{convolutions}
+\centering
+\caption{The illustration of a one-dimensional convolutional layer. The white squares are the input word embeddings or the output embeddings. The red rectangle and the dash arrows indicate that the convolution kernel is scanning over the sequence. The grey boxes placed in front of the output sequence represent the paddings which are usually zero vectors.}
+\label{figure:convolutions}
+\end{figure}
+where the size of the convolution kernel is $ k=3 $, the length of the input is $ m=10 $. The kernel maps a concatenation of $ k $ continuous input elements $ X\in \mathbb{R}^{kd_{x}} $ to a single output element $ Y \in \mathbb{R}^{d_{y}} $, where $ d_{x} $ and $ d_{y} $ is respectively the dimension of the input embedding and output embedding. The parameters in the kernel are the weight matrix $ W \in \mathbb{R}^{d_{y} \times kd_{x}} $ and bias $ b \in \mathbb{R}^{d_{y}} $, and the output is simply computed by:
+\[ Y = WX + b \]
+
+In practical situations, $ d_{x} $ and $ d_{y} $ are not essentially the same, as the output can be followed by a non-linearity to constitute a so-called gated convolutional neural network. In addition, in order for the CNN layers to be stacked to build deep hierarchical representations, before convolutions on each layer, the input of not enough length often needs to be padded.
+
 \subsection{Attention Mechanism} \label{subsection:attention}
 
 Attention mechanism \cite{Bahdanau2014} is firstly proposed as an enhancement module for the basic RNN-based encoder-decoder architecture. In general, it gives the model abilities to conduct searching on parts of the source inputs at the time of inference. The conventional encoder-decoder models often perform worse when the length of the processed sentence is long, for the reason that the fixed-length vector produced by the encoder tends to lack some necessary information crucial for the decoder to predict accurate tokens. Attention mechanism addresses this issue by allowing the decoder to, at each decoding step, refer to a context vector calculated from weighted sum of a sequence of annotations to which the encoder maps the input sequence.
