@@ -1,11 +1,42 @@
 
-This chapter mainly describes the models and frameworks of neural machine translation involved in this thesis for the task of translating natural language to SPARQL and related preliminaries. Then, a measurement BLEU that is typically utilized in automatic machine translation evaluation is described. We also clarify another metric called query accuracy which suits specifically for our task.
+This chapter mainly describes the models of neural machine translation involved in this thesis for the task of translating natural language to SPARQL and related preliminaries. Then, a measurement BLEU that is typically utilized in automatic machine translation evaluation is described. We also clarify another metric called query accuracy which suits specifically for our task.
 
 \section{Preliminary}
 
-\subsection{Input}
+\subsection{SPARQL Encoding} \label{subsection:preprocessing}
 
-For the input of the NMT models, a sentence or paragraph can be normally separated into three kinds of sequences: characters, subwords, or words. Different methods of splitting sequences lead to differences in vocabularies that are seen by the model and its effectiveness of dealing with rare words. For the task in this thesis, the texts are fed into the models word-based for the reason that the entities in SPARQL which are normally words in the queries need to be treated as a whole.
+Unlike natural language, SPARQL queries are often written in structured forms instead of sequences that are easy to be tokenized. Therefore, the first step of training a seq2seq model with SPARQL is to convert SPARQL queries into sequences. To clarify, we encode the original SPARQL query into a sequential form which can be later decoded back. 
+
+We adopted the encoding approach in \cite{Soru2018a}, which basically applies the following operations:
+\begin{enumerate}
+\item shorten the entities in the query with prefixes
+\item replace the built-in symbols with dedicated words connected with underscores
+\item shorten the query by replacing the built-in set phrases (e.g. ORDER BY) with one simplified word
+\end{enumerate}
+
+These operations can be implemented as a set of replacements and applying them turns an original SPARQL query to a final sequence which contains tokens that are only formed of characters and underscores. An example is shown in Table \ref{table:sparql encoding}. After training, as an encoded form of SPARQL translation is generated, it can be easily decoded back by reverse replacements.
+
+\begin{table}[h]
+\begin{tabular}{c | p{0.9\textwidth}}
+SPARQL & \begin{lstlisting}[language=SPARQL]
+SELECT DISTINCT ?uri 
+WHERE { 
+<http://dbpedia.org/resource/Sam_Loyd> <http://dbpedia.org/ontology/knownFor> ?uri .
+<http://dbpedia.org/resource/Eric_Schiller> <http://dbpedia.org/ontology/knownFor> ?uri . 
+}
+\end{lstlisting} \\
+\hline
+Encoded & {\small select distinct var\_uri where brack\_open dbr\_Sam\_Loyd dbo\_knownFor var\_uri sep\_dot dbr\_Eric\_Schiller dbo\_knownFor var\_uri sep\_dot brack\_close}
+\end{tabular}
+\caption{A SPARQL query is encoded into a sequence of short tokens before treated as the input of the seq2seq model. Thus, the model learns how to translate from natural language texts into sequences of encoded form of SPARQL.}
+\label{table:sparql encoding}
+\end{table}
+
+
+
+\subsection{Input} \label{subsection:preliminary input}
+
+For the input of the NMT models, a sentence or paragraph can be normally separated into three kinds of sequences: characters, subwords, or words. Different methods of splitting sequences lead to differences in vocabularies that are seen by the model and its effectiveness of dealing with rare words. For the task in this thesis, the texts are fed into the models in a word-based fashion on account of the reason that the words contained in the SPARQL vocabulary are mostly SPARQL operators and DBpedia entities that need to be treated as a whole.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{one-hot_encoding}
@@ -20,7 +51,9 @@ Due to the use of one-hot encoding, every word in the vocabulary is orthogonal t
 
 \subsection{Output}
 
-The output of NMT model is a sequence of vectors, where the dimension of each vector is the size of the vocabulary for the target language (see Figure \ref{figure:one-hot encoding}). The sum of the entries in each vector is equal to 1, which means the vector is essentially a probability distribution over all the possible words in the target vocabulary. One can then perform greedy or beam search over this sequence of probability distributions to generate a translation with the highest probabilities.
+The output of NMT model is a sequence of vectors, where the dimension of each vector is the size of the vocabulary for the target language (see Figure \ref{figure:one-hot encoding}). The sum of the entries in each vector is equal to 1, which means the vector is essentially a probability distribution over all the possible words in the target vocabulary. 
+
+The model usually generates the output vectors one by one, where each probability distribution is conditioned on its previous ones. During inference, one can then perform greedy or beam search over this sequence of probability distributions to generate a translation.
 
 
 \section{Models}
@@ -33,11 +66,11 @@ RNN is the most natural choice for machine translation task because of its seque
 
 There are many variants in RNN-based models that mostly differ in layer depth, unit type, etc. We choose a simple 2-layer LSTM network which is used in the learner phase of Neural SPARQL Machine \cite{Soru2018a} as a baseline. On the basis of it, we apply two kinds of attention: global attention \cite{Bahdanau2014} and local attention \cite{Luong2015} to see how much effects the attention mechanism have in our task.
 
-Moreover, we adopt the model proposed by Luong et al. \cite{Luong2015} and the architecture proposed by Wu et al. \cite{Wu2016}, both of which achieved state-of-the-art results on natural language translation benchmarks. The former is essentially a deeper LSTM with 4 layers and local attention mechanism. The latter is described in the following.
+Moreover, we adopt the model proposed by Luong et al. \cite{Luong2015} and the GNMT system proposed by Wu et al. \cite{Wu2016}, both of which achieved state-of-the-art results on natural language translation benchmarks. The former is essentially a deeper LSTM with 4 layers and local attention mechanism. The latter is described in the following.
 
 \subsubsection*{Google's Neural Machine Translation System}
 
-Google's Neural Machine Translation (GNMT) system \cite{Wu2016} 
+Google's Neural Machine Translation (GNMT) system \cite{Wu2016} is proposed to address several issues existing in past NMT approaches such as lack of robustness and rare words in the input sentences. The model architecture of GNMT is an LSTM network with deep encoder and decoder which have both 8-layer depth as shown in Figure \ref{figure:gnmt architecture}. The attention mechanism is used between the bottom layer of decoder and top layer of encoder. Starting from the third layer, a residual connection is employed between the input and the output of each LSTM cell.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{gnmt-architecture}
@@ -45,6 +78,10 @@ Google's Neural Machine Translation (GNMT) system \cite{Wu2016}
 \caption{The model architecture of GNMT.}
 \label{figure:gnmt architecture}
 \end{figure}
+
+Specially, the first layer of the encoder in GNMT is a bi-directional RNN. It is based on the consideration that when output words is being translated left-to-right in the decoder, their closely related words in the source side may appear in distributed positions, which causes the distance between the correct dependency of target and source word to be longer. Although attention mechanism to a great extent has remedied this issue by allowing the decoder to refer to any position of the encoder while decoding, it is practically useful to encode the source information in both directions. The outputs of forward LSTM $ \overrightarrow{x} $ and backward LSTM $ \overleftarrow{x} $ are concatenated together before feeding into the next layer.
+
+To address the issue of rare words, GNMT system adopts the wordpiece model (WPM) that segments the words into wordpieces in the pre-processing stage and establishes a wordpiece vocabulary for the system. During decoding time, the decoder predicts wordpiece sequences which are subsequently converted back to word sequences. WPM is found to be beneficial for the translation accuracy and faster decoding speed \cite{Wu2016}. However, due to the consideration mentioned in Section \ref{subsection:preliminary input}, WPM is not used in our experiments. 
 
 \subsection{CNN-based Models} \label{subsection:cnn-based models}
 
@@ -93,23 +130,21 @@ a^{l}_{ij} &= \frac{\exp(d^{l}_{i}\cdot z_{j}^{L^{'}})}{\sum_{t=1}^{m} \exp(d^{l
 c^{l}_{i} &= \sum_{j=1}^{m} a^{l}_{ij}(z^{L^{'}}_{j}+e_{j}) \label{eq:conditional input}\\
 h^{l}_{i} &= c^{l}_{i} + v^{l}_{i} + h^{l-1}_{i} \label{eq:decoder output}
 \end{align}
-To compute the attention weights $ a^{l}_{ij} $ between the $ i $-th decoder state and $ j $-th source element, a decoder state summary $ d^{l}_{i} $ is firstly computed in a linear layer with $ v^{l}_{i} $ and the embedding of $ i $-th target element $ g_{i} $ in Eq. \ref{eq:decoder state summary}. After that, the dot-product of $ d^{l}_{i} $ and $ j $-th output of the top encoder block $ z_{j}^{L^{'}} $ is simply calculated as the attention weights in Eq. \ref{eq:attention weight}. To further let the model refer to the input elements, in Eq. \ref{eq:conditional input}, the conditional input $ c_{i}^{l} $ is computed as the weighted sum of both the encoder outputs and encoder input embeddings $ \textbf{e} $. At last, the output $ h_{i}^{l} $ is the addition of the conditional input, the output of GLU, and the input of this decoder layer from residual connection. 
+To compute the attention weights $ a^{l}_{ij} $ between the $ i $-th decoder state and $ j $-th source element, a decoder state summary $ d^{l}_{i} $ is firstly computed in a linear layer with $ v^{l}_{i} $ and the embedding of $ i $-th target element $ g_{i} $ in Eq. \ref{eq:decoder state summary}. After that, the dot-product of $ d^{l}_{i} $ and $ j $-th output of the top encoder block $ z_{j}^{L^{'}} $ is calculated as the attention weights in Eq. \ref{eq:attention weight}. To further let the model refer to the input elements, in Eq. \ref{eq:conditional input}, the conditional input $ c_{i}^{l} $ is computed as the weighted sum of both the encoder outputs and encoder input embeddings $ \textbf{e} $. At last, the output $ h_{i}^{l} $ is the addition of the conditional input, the output of GLU, and the input of this decoder layer from residual connection. 
 
 Since attentions exist in each decoder layer and are computed individually, higher layers have access to the information that which elements the lower layers attended to, which is called multi-step attention. 
 
 Given the output of the top decoder layer $ h^{L} $, a distribution over the possible next target elements at $ i $-th position can be retrieved with a softmax layer $ softmax(W_{o}h_{i}^{L}+b_{o}) $ built upon a linear layer with weights $ W_{o} $ and bias $ b_{o} $. 
 
-This architecture is able to parallel the computations occurred during the training phase since the target elements are known beforehand and can be fed to the decoder once. However, during the inference stage where the target elements are not available, the computations in the decoder are still sequential. Nevertheless, full parallelization of the encoder is enough to make this model faster than most of its RNN rivals \cite{gehring2017convs2s}.
+This architecture is able to parallelize the computations occurred during the training phase since the target elements are known beforehand and can be fed to the decoder once. However, during the inference stage where the target elements are not available, the computations in the decoder are still sequential. Nevertheless, full parallelization of the encoder is enough to make this model faster than most of its RNN rivals \cite{gehring2017convs2s}.
 
-\subsection{Self-attention Models}
+\subsection{Self-attention Model}
+
+Recently a new sequence to sequence model that is based neither on RNNs nor CNNs but only on the attention mechanism has emerged and quickly drawn plenty of attention. This kind of model shows simpler architecture but brings less training cost and is currently claimed to achieve state-of-the-art results on several popular benchmarks such as  English-German and English-French.
 
 \subsubsection*{The Transformer}
 
 The Transformer model \cite{Vaswani2017} is another novel neural machine translation model adopting encoder decoder structure, without RNNs or CNNs as the primary units but entirely based on the attention mechanism. The traditional RNN models use attention mechanism to connect the encoder and decoder at some time steps. Differently, the Transformer model uses internal stacked self-attention in both encoder and decoder.
-
-The attention mechanism used in the Transformer model is called Scaled Dot-Product Attention (see Figure \ref{figure:scaled dot-product attention}) \cite{Vaswani2017}. The function of it can be described as a mapping from queries $ Q $ and a set of key-value pairs where keys and values can be denoted as $ K, V $ to an output matrix. The queries and keys are of dimension $ d_{k} $ and the values are of dimension $ d_{v} $. The output is computed by:
-\[ Attention(Q,K,V) = softmax(\frac{QK^{T}}{\sqrt{d_{k}}})V \]
-where the dot products of the queries and all keys are computed firstly, scaled by $ \sqrt{d_{k}} $, and then applied a softmax function for obtaining the weights on the values.
 
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{multi-attention}
@@ -118,7 +153,15 @@ where the dot products of the queries and all keys are computed firstly, scaled 
 \label{figure:scaled dot-product attention}
 \end{figure}
 
-Figure \ref{figure:transformer model} displays the architecture of the Transformer model, where the left side shows one layer in the encoder and the right half shows one decoder layer.
+The attention mechanism proposed in the Transformer model is called Multi-Head Attention where each head performs Scaled Dot-Product Attention (see Figure \ref{figure:scaled dot-product attention}) \cite{Vaswani2017}. 
+
+The scaled dot-product attention can be described as a mapping from queries $ Q $ and a set of key-value pairs $ K, V $ to an output attention matrix. Among these vectors, the queries and keys are of the same dimension $ d_{k} $ and the values are of dimension $ d_{v} $. The output of dimension $ d_{v} $ is computed by:
+\begin{align} \label{eq:scaled-dot attention}
+Attention(Q,K,V) = softmax(\frac{QK^{T}}{\sqrt{d_{k}}})V
+\end{align}
+where the dot products of the queries and all keys are computed firstly, then scaled by $ \sqrt{d_{k}} $, and finally applied a softmax function to obtain weights on the different positions of values.
+
+Figure \ref{figure:transformer model} displays the architecture of the Transformer model. The encoder and decoder are both consisted of $ N $ stacked layers where each layer of the encoder is shown on the left half and the decoder on the right half. The connection between them goes from the top layer of the encoder to each layer of the decoder. For all layers as well as their sub-layers in the encoder and decoder, the input and output have the same dimension $ d_{model} $.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{transformer-architecture}
@@ -127,50 +170,92 @@ Figure \ref{figure:transformer model} displays the architecture of the Transform
 \label{figure:transformer model}
 \end{figure}
 
-The encoder consists of two sub-layers. The first is a multi-head attention sub-layer and the second is a point-wise fully connected feed forward sub-layer. Each sub-layer is employed a residual connection, which means the input to the sub-layer is further passed to the tail and added to the output. After that, the addition result is normalized. Therefore, the output of each sub-layer can be specified by $ Norm(x+Sublayer(x)) $ where $ x $ is the input and $ Sublayer(x) $ indicates the operation implemented in this sub-layer.
+Each encoder layer consists of two sub-layers. The first is a multi-head attention sub-layer and the second is a point-wise fully connected feed forward sub-layer. Each sub-layer is employed with a residual connection, which means the input to the sub-layer is further passed to the tail and added to the output. After that, the output is normalized. In summary, the output of each sub-layer can be specified by $ Norm(x+Sublayer(x)) $ where $ x $ is the input and $ Sublayer(x) $ indicates the operation performed by this sub-layer. 
 
+For multi-head attention sub-layers (yellow rectangles in Figure \ref{figure:transformer model}), the input $ x $ is composed of three parts $ Q \in \mathbb{R}^{d_{model}} $, $ K \in \mathbb{R}^{d_{model}}$, and $ V \in \mathbb{R}^{d_{model}} $. In sub-layers that aim at performing self-attentions such as the ones in the encoder and the masked sub-layers in the decoder, $ Q $, $K$, and $V $ are identical and from the output of the previous layer. In sub-layers that connect both the encoder and decoder, $ V=K $ and come from the encoder, $ Q $ is from the decoder and the one used in the residual connection. In each multi-head attention sub-layer, there are $ h $ heads that are equivalent to $ h $ parallel attention layers. Each head projects $ Q $, $ K $, and$ V $ to respectively $ d_{k} $, $ d_{k} $, and $ d_{v} $ dimensions and performs a scaled dot-product attention. The outputs gathered from all the heads are concatenated and projected again to a final output of dimension $ d_{model} $. In formula, it is represented as follows:
+\begin{align*}
+MultiHead(Q,K,V) = Concat(head_{1},...,head_{h})W^{O}
+\end{align*}
+The output of each head $ head_{i} $ is defined the same as the Eq. \ref{eq:scaled-dot attention}:
+\begin{align*}
+head_{i} = Attention(QW_{i}^{Q},KW_{i}^{K},VW_{i}^{V})
+\end{align*}
+where $ W_{i}^{Q} \in \mathbb{R}^{d_{model} \times d_{k}} $, $ W_{i}^{K} \in \mathbb{R}^{d_{model} \times d_{k}} $, $ W_{i}^{V} \in \mathbb{R}^{d_{model} \times d_{v}} $, and $ W^{O} \in \mathbb{R}^{hd_{v} \times d_{model}} $ are matrices for the corresponding projections.
 
-\section{Frameworks}
-
-Three frameworks have been used in this thesis, where two of them are based on TensorFlow \cite{tensorflow2015-whitepaper} and the other one based on PyTorch \cite{paszke2017automatic}.
-
-\subsection{TensorFlow Neural Machine Translation}
-
-\cite{luong17}
-
-\subsection{Facebook AI Research Sequence-to-Sequence Toolkit}
-
-\cite{gehring2017convs2s}
-
-\subsection{Tensor2Tensor}
-
-\cite{tensor2tensor}
-
-
-
-
+In terms of fully-connected feed forward sub-layers, $ Sublayer(x) $ means:
+\begin{align*}
+FeedForward(x) = max(0,xW_{1}+b_{1})W_{2}+b_{2}
+\end{align*}
+which sequentially propagates the input through one linear transformation, a ReLU activation function, and another linear transformation where the dimension of both linear transformations is $ d_{ff} $. Therefore, the parameters here are $ W_{1} \in \mathbb{R}^{d_{model} \times d_{ff}} $, $ b_{1} \in \mathbb{R}^{d_{ff}} $, $ W_{2} \in \mathbb{R}^{d_{ff} \times d_{model}} $, and $ b_{2} \in \mathbb{R}^{d_{model}} $.
 
 \section{Evaluation Metrics}
 
-Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In automatic MT evaluation, for one candidate translation, a score is usually calculated to assess the closeness of it to one or more reference sentences which were mostly human professional translations. 
+Automatic machine translation evaluation is crucial for the development of machine translation system, since human evaluations are normally expensive, longer and subjective to some extents. In this thesis, we use perplexity to see how well a model is being trained, and BLEU to assess how close the translations of the model are to the reference translations.
 
 \subsection{Perplexity}
+
+Perplexity is a common intrinsic measurement for evaluating the quality of a language model based on the cross entropy \cite{koehn2009statistical}. A better language model is one that assigns higher probabilities to the words that actually occur. For a target probability distribution $ p $ and an estimated probability distribution $ q $, the cross entropy is used to assess how close they are and defined as follows:
+\begin{align*}
+H(p,q) = - \sum_{x} p(x) \log q(x)
+\end{align*}
+where $ x $ stands for the possible values in the distribution. The perplexity is then defined as the exponentiation of the cross entropy:
+\begin{align*}
+Perplexity(p,q) = 2^{H(p,q)}
+\end{align*}
+It is possible to use $ e $ as the base instead of $ 2 $ and it depends on which one is used in the cross entropy.
+
+Specifically for machine translation, the target distribution $ p $ is the one-hot encoding vector of the target vocabulary and $ q $ is obtained from the result of the output softmax layer. In practice, perplexity is calculated per batch or epoch where the cross entropy is averaged over all internal decoding steps beforehand. It is shown in related research \cite{luong2015deep,Wu2016} that perplexity is a good measurement for MT and our results also confirm that source-conditioned perplexity strongly correlates with MT performance.
 
 \subsection{BLEU}
 
 BLEU is now one of the most popular automated metrics in the evaluation of neural machine translation systems. It is noted for its high correlation with human evaluation and low marginal cost for running \cite{Papineni2002}. We choose BLEU as it is the most dominating metric for translation evaluation at present, which brings the advantage of more straightforward comparisons with other successful models and experiments.
 
-The basis of BLEU is a modified n-gram precision measure. In a sentence composed of multiple words, an n-gram refers to a contiguous sequence of n words within it. To compute the precision of n-grams, one just counts up the number of the n-grams which occur in any reference translation, and divide this number by the total number of n-grams in the candidate sentence. This does not check if the candidate translation contains too many duplicate words which merely exist less times in reference translation. The modified version of precision adopted in BLEU addresses this issue. 
+N-gram precision is a measurement that is commonly used to reflect the adequacy and fluency of the translation sentence. In a sentence composed of multiple words, an n-gram refers to a contiguous sequence of n words within it. To compute the precision of n-grams, one just counts up the number of the n-grams which occur in any reference translation, and divide this number by the total number of n-grams in the candidate sentence. This does not check if the candidate translation contains too many duplicate words which merely exist less times in reference translation. 
 
-In the following example, a candidate translation of poor quality is evaluated with two references. When n equals 1 (i.e. unigram), with standard precision, the candidate achieves 7/7 because every word (unigram) occurs in the first reference, whereas it only achieves 2/7 in modified unigram precision. 
+In order to prevent this issue which often occurs in NMT results, a modified version of n-gram precision is proposed in BLEU. To compute, firstly calculate the total number of n-grams in the sentence $ N $. Then pick all the distinct n-grams and for each distinct n-gram $ w $ count the number of times it occurs in the sentence $ c_{w} $ and the maximum number of times it occurs in any single reference as $ m_{w} $. Next, derive a clipped count for each $ w $ by $ c\_clipped_{w} = min(c_{w},m_{w}) $. Finally, the modified n-gram precision is computed by:
+\begin{align*}
+P = \frac{\sum_{w}c\_clipped_{w}}{N} = \frac{\sum_{w}min(c_{w},m_{w})}{N}
+\end{align*}
 
-Candidate: the the the the the the the
+For example, two candidate translations in Table \ref{table:modified n-gram} are evaluated against the following references:
 
-Reference 1: The cat is on the mat.
+Reference 1: the cat is on the mat
 
-Reference 2: There is a cat on the mat.
+Reference 2: there is a cat on the mat
 
+When n equals 1 (unigram), the standard precision of the first candidate is 7/7 since all of the words "the" occur in the references. Whereas the modified achieved only 2/7, because in this sentence there is only one distinct unigram "the" that has maximum reference count $ m_{w} = 2 $ which is derived from the first reference and total count $ c_{w} = 7 = N $.
 
+\begin{table}[h]
+\label{table:modified n-gram}
+\centering
+\caption{}
+\begin{tabular}{c|ccc|ccc}
+\multirow{2}{*}{ Candidates } & \multicolumn{3}{c|}{ n-gram precision } & \multicolumn{3}{c}{ modified n-gram precision } \\
+\cline{2-7}
+& n=1 & n=2 & n=3 & n=1 & n=2 & n=3 \\
+\hline
+the the the the the the the & 1 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+the cat sat on the mat & 1 & 1 & 1 & 1 & 1 & 1 \\
+\end{tabular}
+\end{table}
+
+Although the modified n-gram precision addresses the duplicates issue, there is a problem that when the candidate translation length is too short, it is likely that the final precision is very high. Therefore, a brevity penalty is introduced as follows:
+\begin{align*}
+BP = \left\{
+\begin{array}{lc}
+1 & \text{if } c > r \\
+e^{(1-r/c)} & \text{if } c \leq r
+\end{array}\right.
+\end{align*}
+where $ c $ and $ r $ are the length of the candidate translation and the reference. Next, a set of positive weights $ w_{n} $ are assigned where $ \sum_{n=1}^{N} $ equals 1 to take the geometric mean of the scores of the modified n-gram precision $ p_{n} $ with different n-gram sizes up to some $ N $. Experimentally, $ N=4 $ and uniform weights $ w_{n} = 1/N $ performs encouraging results \cite{Papineni2002}. 
+
+Finally, the BLEU score is computed as:
+\begin{align*}
+\text{BLEU} = BP\cdot \exp(\sum_{n=1}^{N}w_{n}\log p_{n})
+\end{align*}
+
+BLEU is used to assess the accuracy of a translation corpus as well. For each translation, there might be multiple corresponding references one of which matches best with the translation in length. In this case, we replace $ c $ and $ r $ in the brevity penalty with the sum of the length of candidate translations and the sum of the best match lengths in references. $ p_{n} $ is replaced as well with the geometric average of the modified n-gram precisions of all the translations. 
 
 \subsection{Query Accuracy}
 

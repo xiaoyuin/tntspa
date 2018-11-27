@@ -1,15 +1,68 @@
 
-This chapter describes the details of the experiments conducted in this thesis. 
+This chapter includes the details of the experiments carried out in this thesis. We introduce the utilized English-SPARQL datasets in Section \ref{section:datasets}. The use of frameworks and configurations of general and specific hyperparameters for each model are described in Section \ref{section:frameworks} and \ref{section:model parameters}. The environments for training and testing the models are introduced in Section \ref{section:runtime environment}. Finally, the results are exhibited in Section \ref{section:results}.
 
 \section{Datasets} \label{section:datasets}
 
+To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeting at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}.
+
+According to our research, different from natural language translation corpus that can be established from crowdsourcing, the construction of an NL to query language (SPARQL in this thesis) dataset appropriate for NMT training has the following challenges:
+\begin{itemize}
+\item Creating correct language pairs usually requires expert knowledge of SPARQL which is not yet owned by a large number of people. 
+\item The knowledge of corresponding knowledge base is further required. Most of the knowledge bases such as DBpedia have vocabularies containing transformed words from automatic crawling of a large quantities of articles online, which are extremely difficult for humans to master. For example, "located at" is represented by "dbo:location" in DBpedia.
+\item The vocabularies of the online knowledge bases are likely to change along with the updates of the whole KB, which causes some pairs of the dataset invalid and hard to be tested again.
+\end{itemize}
+
+Because of the above-mentioned difficulties and related issues, the most common adoption of construction method by the available datasets in this field is to first manually create a list of template pairs with placeholders inside and then replace the placeholders largely with extracted entities or predicates from the latest endpoint of online knowledge base.
+
 \subsection{Monument dataset}
+
+The monument dataset is generated and used by the Neural SPARQL Machine \cite{Soru2018a} system. It has 14788 question-query pairs and the questions are only in English. The full vocabulary size is about 2500 for English and 2200 for SPARQL.
+
+The range of entities in this dataset is restricted to the instances of a specific class dbo:Monument. They generate the data from a list of manually crafted templates and related assistant SPARQL queries that can be executed directly on DBpedia endpoint. For example, given a question template "Where is <$ A $> ?" and a query template:
+\begin{lstlisting}[language=SPARQL]
+SELECT ?x
+WHERE
+{ 
+  <A> dbo:location ?x . 
+}
+\end{lstlisting}
+where <$ A $> belongs to the class dbo:Monument in DBpedia, then one can retrieve a list of entities and their corresponding English labels to replace <$ A $> by executing the following SPARQL query upon DBpedia endpoint:
+\begin{lstlisting}[language=SPARQL]
+SELECT ?uri ?label
+WHERE
+{ 
+  ?uri rdf:type <C> .
+  ?uri dbo:location ?x . 
+  ?uri rdfs:label ?label .
+  FILTER(lang(?label) = 'en') .
+}
+\end{lstlisting}
+where the first triple imposes the class restriction and the second triple expresses the meaning of the template question. The returned values of $ ?uri $ and values of $ ?label $ are then used in pairs to replace the corresponding placeholders <$ A $> in the given templates.
 
 \subsection{LC-QUAD}
 
 \subsection{DBNQA}
 
-\section{Model Parameters} \label{section:model parameters}
+
+\section{Frameworks} \label{section:frameworks}
+
+Three frameworks have been used in this thesis, where two of them are based on TensorFlow \cite{tensorflow2015-whitepaper} and the other one based on PyTorch \cite{paszke2017automatic}.
+
+\subsection{TensorFlow Neural Machine Translation}
+
+\cite{luong17}
+
+\subsection{Facebook AI Research Sequence-to-Sequence Toolkit}
+
+\cite{gehring2017convs2s}
+
+\subsection{Tensor2Tensor}
+
+\cite{tensor2tensor}
+
+
+
+\section{Hyperparameters} \label{section:model parameters}
 
 \section{Runtime Environment} \label{section:runtime environment}
 
