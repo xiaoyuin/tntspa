@@ -5,20 +5,20 @@ This chapter includes the details of the experiments carried out in this thesis.
 
 To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeting at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}.
 
-According to our research, different from natural language translation corpus that can be established from crowdsourcing, the construction of an NL to query language (SPARQL in this thesis) dataset appropriate for NMT training has the following challenges:
+According to our research, different from a natural language translation corpus that can be established from crowdsourcing, the construction of an NL to query language (SPARQL in this thesis) dataset appropriate for NMT training has the following challenges:
 \begin{itemize}
 \item Creating correct language pairs usually requires expert knowledge of SPARQL which is not yet owned by a large number of people. 
-\item The knowledge of corresponding knowledge base is further required. Most of the knowledge bases such as DBpedia have vocabularies containing transformed words from automatic crawling of a large quantities of articles online, which are extremely difficult for humans to master. For example, "located at" is represented by "dbo:location" in DBpedia.
+\item The knowledge of corresponding knowledge bases is further required. Most of the knowledge bases such as DBpedia have vocabularies containing transformed words from automatic crawling of large quantities of articles online, for example, "located at" is represented by "dbo:location" in DBpedia. These words are not expected to be known by common users.
 \item The vocabularies of the online knowledge bases are likely to change along with the updates of the whole KB, which causes some pairs of the dataset invalid and hard to be tested again.
 \end{itemize}
 
-Because of the above-mentioned difficulties and related issues, the most common adoption of construction method by the available datasets in this field is to first manually create a list of template pairs with placeholders inside and then replace the placeholders largely with extracted entities or predicates from the latest endpoint of online knowledge base.
+Because of the aforementioned difficulties and related issues, the most common adoption of construction methods by the available datasets in this field is to first manually create a list of template pairs with placeholders inside and then replace the placeholders largely with extracted entities or predicates from the latest endpoint of online knowledge base.
 
-\subsection{Monument dataset}
+\subsection{Monument dataset} \label{subsection:monument dataset}
 
-The monument dataset is generated and used by the Neural SPARQL Machine \cite{Soru2018a} system. It has 14788 question-query pairs and the questions are only in English. The full vocabulary size is about 2500 for English and 2200 for SPARQL.
+The monument dataset is generated and used by the Neural SPARQL Machine \cite{Soru2018a} system. It has 14,788 question-query pairs and the questions are only in English. The full vocabulary size is about 2,500 for English and 2,200 for SPARQL.
 
-The range of entities in this dataset is restricted to the instances of a specific class dbo:Monument. They generate the data from a list of manually crafted templates and related assistant SPARQL queries that can be executed directly on DBpedia endpoint. For example, given a question template "Where is <$ A $> ?" and a query template:
+The range of entities in this dataset is restricted to the instances of a specific class dbo:Monument. The data is generated from a list of manually crafted template pairs and related assistant SPARQL queries that can be executed directly on DBpedia endpoint. For example, given a question template "Where is <$ A $> ?" and a query template:
 \begin{lstlisting}[language=SPARQL]
 SELECT ?x
 WHERE
@@ -26,7 +26,7 @@ WHERE
   <A> dbo:location ?x . 
 }
 \end{lstlisting}
-where <$ A $> belongs to the class dbo:Monument in DBpedia, then one can retrieve a list of entities and their corresponding English labels to replace <$ A $> by executing the following SPARQL query upon DBpedia endpoint:
+where <$ A $> belongs to the class dbo:Monument in DBpedia, then one can retrieve a list of entities and their corresponding English labels to replace <$ A $> by executing the following SPARQL query on a DBpedia endpoint:
 \begin{lstlisting}[language=SPARQL]
 SELECT ?uri ?label
 WHERE
@@ -39,33 +39,62 @@ WHERE
 \end{lstlisting}
 where the first triple imposes the class restriction and the second triple expresses the meaning of the template question. The returned values of $ ?uri $ and values of $ ?label $ are then used in pairs to replace the corresponding placeholders <$ A $> in the given templates.
 
-\subsection{LC-QUAD}
+It is claimed that \cite{Soru2018a} 38 manually annotated templates have been used in generating the monument dataset. For each query template, 600 examples were generated with the aforementioned method. However, we found that out of these 38 template pairs there are some issues that may caused the whole dataset generated to be simpler than expected:
+\begin{itemize}
+\item Some template pairs have different English templates but same SPARQL query templates or very similar-structured query templates, which means the translation model may favor generating some certain kinds of SPARQL queries.
+\item Some English templates are partial phrases instead of full sentence (e.g. latitude of <something>).
+\end{itemize}
 
-\subsection{DBNQA}
+\subsection{LC-QUAD} \label{subsection:lc-quad}
 
+Largescale Complex Question Answering Dataset (LC-QUAD) \cite{trivedi2017lc} is also an English-SPARQL dataset. It contains 5,000 pairs, in which about 7,000 English words and 5,000 SPARQL tokens are used. The SPARQL queries are for DBpedia. 
+
+The goal of LC-QUAD is to provide a large dataset with complex questions where the complexity of a question depends on how many triples its intended SPARQL query contains. To complete this goal, 38 unique templates as well as 5,042 entities and 615 predicates from DBpedia are involved in the generation workflow.
+
+The generation of data in LC-QUAD is different from that in the monument dataset. Instead of allocating an executable SPARQL query for each English-SPARQL template pair to retrieve a list of entity instances, an entity seed list as well as a predicate whitelist are prepared beforehand. Next, each entity in the entity seed list is used as a seed to extract subgraphs from DBpedia through a generic SPARQL query. The triples in the subgraphs are then used to instantiate the SPARQL templates and the corresponding English templates which are called Normalized Natural Question Templates (NNQT). After that, the instances of NNQT are examined and paraphrased through peer reviews to ensure grammatical correctness. An example in LC-QUAD is shown in Table \ref{table:lc-quad generation}.
+
+\begin{table}[h]
+\centering
+\label{table:lc-quad generation}
+\caption{An example question and its corresponding instantiation of the query template and NNQT in LC-QUAD generation \cite{trivedi2017lc}.}
+\begin{tabular}{c p{12cm}}
+Template & SELECT ?uri WHERE \{ ?x e\_in\_to\_e\_in\_out e\_in\_out . ?x e\_in\_to\_e ?uri . \} \\
+\hline
+Query & SELECT ?uri WHERE \{ ?x dbp:league dbr:Turkish\_Handball\_Super\_League . ?x dbp:mascot ?uri . \} \\
+\hline
+NNQT Instance & What is the <mascot> of the <handball team> whose <league> is <Turkish Handball Super League >? \\
+\hline
+Question & What are the mascots of the teams participating in the turkish handball
+super league? \\
+\end{tabular}
+\end{table}
+
+LC-QUAD has richer data variety than the monument dataset. However, limited size of LC-QUAD makes it harder to be trained with deep neural network models. In addition, due to the pursuing of complexty of questions in LC-QUAD, grammar errors still exist, and some questions contain unusual punctuation (e.g. the u.n.i.t.y group) that leads to unnoticeable incorrect tokenizations during vocabulary building.
+
+\subsection{DBNQA} \label{subsection:dbnqa}
+
+DBpedia Neural Question Answering (DBNQA) \cite{Soru2018dbnqa} is the largest DBpedia-targeting dataset we have found so far. It is also based on English and SPARQL pairs and contains 894,499 instances in total. In terms of vocabulary, it has about 131,000 words for English and 244,900 tokens for SPARQL without any reduction.
+
+DBNQA provides a remedy for the drawbacks of previous two datasets. A large number of generic templates are extracted from the concrete examples of two existing datasets LC-QUAD and QLAD-7-Train \cite{usbeck20177th} by replacing the entities with placeholders. These templates can subsequently be used in the same approach as the one in the monument dataset (see Section \ref{subsection:monument dataset}) to generate a large dataset.
+
+DBNQA has basically satisfied the data requirements of training a neural network model. However, the relatively large vocabulary of it needs to be coped with carefully otherwise the training is likely to suffer from memory shortages. Moreover, it is necessary to point out that the size of DBNQA is still incomparable to that of natural language datasets which commonly contain over millions of data.
 
 \section{Frameworks} \label{section:frameworks}
 
-Three frameworks have been used in this thesis, where two of them are based on TensorFlow \cite{tensorflow2015-whitepaper} and the other one based on PyTorch \cite{paszke2017automatic}.
+There are a large number of available frameworks that implement the models described in Section \ref{section:models} and provide integration of prompting internal training statistics as well as external evaluation scores. We chose two frameworks by taking into account the experiment requirements in this thesis, one of which is based on TensorFlow \cite{tensorflow2015-whitepaper} and the other based on PyTorch \cite{paszke2017automatic}.
 
-\subsection{TensorFlow Neural Machine Translation}
+TensorFlow Neural Machine Translation\footnote{available at \url{https://github.com/tensorflow/nmt}} (nmt) \cite{luong17}, as its name indicates, is a dedicated framework for neural machine translation based on TensorFlow. It provides a flexible implementation of the RNN-based NMT models. One can easily build and train variant RNN-based architectures by specifying the hyperparameters, e.g. number of encoder-decoder layers and type of attention, through designated Python program commands. This framework is used in our experiments for instantiating, training, and testing five different models including three baseline 2-layer LSTMs, a 4-layer GNMT, and an 8-layer GNMT.
 
-\cite{luong17}
-
-\subsection{Facebook AI Research Sequence-to-Sequence Toolkit}
-
-\cite{gehring2017convs2s}
-
-\subsection{Tensor2Tensor}
-
-\cite{tensor2tensor}
-
+Facebook AI Research Sequence-to-Sequence Toolkit\footnote{available at \url{https://github.com/pytorch/fairseq}} (fairseq) \cite{gehring2017convs2s} is another framework that implements various Seq2Seq models but based on PyTorch. It can also be used to perform other NLP tasks such as text summarization. Fairseq provides off-the-shelf models as well as packed hyperparameter sets for the users to configure their experiments. We used it to train and test three models including the 4-layer LSTM with attention proposed by Luong et al.\cite{Luong2015}, the ConvS2S, and the Transformer.
 
 
 \section{Hyperparameters} \label{section:model parameters}
 
+
+
 \section{Runtime Environment} \label{section:runtime environment}
 
-\subsection{High Performance Computing} \label{subsection:hpc}
+
 
 \section{Results} \label{section:results}
+

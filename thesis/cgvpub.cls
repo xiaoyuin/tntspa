@@ -723,6 +723,30 @@
     \@author
 
 \cleardoublestandardpage
+%Danksagung
+\ifx\@empty\@acknowledgments
+\else
+  \if@german
+    \@mkboth{Danksagung}{}
+  \else
+    \@mkboth{Acknowledgments}
+  \fi
+  \ifx\@empty\@isreport
+    \if@german
+      \section*{Danksagung}
+    \else
+      \section*{Acknowledgments}
+    \fi
+  \else
+    \if@german
+      \chapter*{Danksagung}
+    \else
+      \chapter*{Acknowledgments}
+    \fi
+  \fi
+  \@acknowledgments
+\fi
+\cleardoublestandardpage
 %Zusammenfassung
 \ifx\@empty\@isdiploma
 \else
@@ -803,30 +827,6 @@
   \printlof
   \cleardoublestandardpage
   \printlot
-\fi
-\cleardoublestandardpage
-%Danksagung
-\ifx\@empty\@acknowledgments
-\else
-  \if@german
-    \@mkboth{Danksagung}{}
-  \else
-    \@mkboth{Acknowledgments}
-  \fi
-  \ifx\@empty\@isreport
-    \if@german
-      \section*{Danksagung}
-    \else
-      \section*{Acknowledgments}
-    \fi
-  \else
-    \if@german
-      \chapter*{Danksagung}
-    \else
-      \chapter*{Acknowledgments}
-    \fi
-  \fi
-  \@acknowledgments
 \fi
 % Copyright-Kram
 \cleardoublestandardpage
