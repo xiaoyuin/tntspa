@@ -308,7 +308,7 @@ Luz et al. \cite{Luz2018} also used an LSTM encoder-decoder model but the purpos
 \label{figure:nsm architecture}
 \end{figure}
 
-Soru et al. \cite{Soru2018a,Soru2018} proposed a generator-learner- architecture (see Figure \ref{figure:nsm architecture}), namely \textit{Neural SPARQL Machines} to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in the target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to generalize to unseen natural language sentence, and generate encoding sequence of SPARQL for the interpreter to decode. 
+Soru et al. \cite{Soru2018a,Soru2018} proposed a generator-learner-interpreter architecture (see Figure \ref{figure:nsm architecture}), namely \textit{Neural SPARQL Machines} (NSpM) to translate any natural language expression to encoded forms of SPARQL queries. They designed templates with variables that can be filled with instances from certain kinds of concepts in the target knowledge base and generated pairs of natural language expression and SPARQL query accordingly. After encoding operators, brackets, and URIs contained in original SPARQL queries, the pairs were fed into a sequence to sequence learner model as the training data. The model was able to generalize to unseen natural language sentence, and generate encoding sequence of SPARQL for the interpreter to decode. 
 
 
 

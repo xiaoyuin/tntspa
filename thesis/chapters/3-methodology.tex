@@ -64,7 +64,7 @@ In this thesis, we mainly focus on investigating three families of deep NMT mode
 
 RNN is the most natural choice for the machine translation task because of its sequential structure. Prior research generally confirms that certain RNN-based models are superior to traditional statistical machine translation methods in translation quality, in spite of some weaknesses on expensive computation and issues of rare words. 
 
-There are many variants in RNN-based models that mostly differ in layer depth, unit type, etc. We choose a simple 2-layer LSTM network which is used in the learner phase of Neural SPARQL Machine \cite{Soru2018a} as a baseline. On the basis of it, we apply two kinds of attention: global attention \cite{Bahdanau2014} and local attention \cite{Luong2015} to see how much effects the attention mechanism have in our task.
+There are many variants in RNN-based models that mostly differ in layer depth, unit type, etc. We choose a simple 2-layer LSTM network which is used in the learner phase of NSpM \cite{Soru2018a} (see Figure \ref{figure:nsm architecture}) as a baseline. On the basis of it, we apply two kinds of attention: global attention \cite{Bahdanau2014} and local attention \cite{Luong2015} to see how much effects the attention mechanism have in our task.
 
 Moreover, we adopt the model proposed by Luong et al. \cite{Luong2015} and the GNMT system proposed by Wu et al. \cite{Wu2016}, both of which achieved state-of-the-art results on natural language translation benchmarks. The former is essentially a deeper LSTM with 4 layers and local attention mechanism. The latter is described in the following.
 
@@ -226,9 +226,9 @@ Reference 2: there is a cat on the mat
 When $ n $ equals 1 (unigram), the standard precision of the first candidate is 7/7 since all of the words "the" occur in the references. Whereas the modified version achieved only 2/7, because in this sentence there is only one distinct unigram "the" that has maximum reference count $ m_{w} = 2 $ which is derived from the first reference and total count $ c_{w} = 7 = N $.
 
 \begin{table}[h]
-\label{table:modified n-gram}
 \centering
 \caption{The comparison between the standard n-gram precision and the modified version on two candidates. The modified n-gram precision reflects the duplicate words issue on candidate 1 while preserving the standard measurements on candidate 2.}
+\label{table:modified n-gram}
 \begin{tabular}{c|ccc|ccc}
 \multirow{2}{*}{ Candidates } & \multicolumn{3}{c|}{ n-gram precision } & \multicolumn{3}{c}{ modified n-gram precision } \\
 \cline{2-7}

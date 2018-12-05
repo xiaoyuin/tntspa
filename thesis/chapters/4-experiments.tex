@@ -1,9 +1,9 @@
 
-This chapter includes the details of the experiments carried out in this thesis. We introduce the utilized English-SPARQL datasets in Section \ref{section:datasets}. The use of frameworks and configurations of general and specific hyperparameters for each model are described in Section \ref{section:frameworks} and \ref{section:model parameters}. The environments for training and testing the models are introduced in Section \ref{section:runtime environment}. Finally, the results are exhibited in Section \ref{section:results}.
+This chapter includes the details of the experiments carried out in this thesis. We introduce the utilized English-SPARQL datasets in Section \ref{section:datasets}. The use of frameworks and experimental setups for each model and dataset are described in Section \ref{section:frameworks} and \ref{section:experimental setup}. The environments for training and testing the models are introduced in Section \ref{section:runtime environment}.
 
 \section{Datasets} \label{section:datasets}
 
-To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeting at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}.
+To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeting at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}. 
 
 According to our research, different from a natural language translation corpus that can be established from crowdsourcing, the construction of an NL to query language (SPARQL in this thesis) dataset appropriate for NMT training has the following challenges:
 \begin{itemize}
@@ -51,12 +51,12 @@ Largescale Complex Question Answering Dataset (LC-QUAD) \cite{trivedi2017lc} is 
 
 The goal of LC-QUAD is to provide a large dataset with complex questions where the complexity of a question depends on how many triples its intended SPARQL query contains. To complete this goal, 38 unique templates as well as 5,042 entities and 615 predicates from DBpedia are involved in the generation workflow.
 
-The generation of data in LC-QUAD is different from that in the monument dataset. Instead of allocating an executable SPARQL query for each English-SPARQL template pair to retrieve a list of entity instances, an entity seed list as well as a predicate whitelist are prepared beforehand. Next, each entity in the entity seed list is used as a seed to extract subgraphs from DBpedia through a generic SPARQL query. The triples in the subgraphs are then used to instantiate the SPARQL templates and the corresponding English templates which are called Normalized Natural Question Templates (NNQT). After that, the instances of NNQT are examined and paraphrased through peer reviews to ensure grammatical correctness. An example in LC-QUAD is shown in Table \ref{table:lc-quad generation}.
+The generation of data in LC-QUAD is different from that in the monument dataset. Instead of allocating an executable SPARQL query for each English-SPARQL template pair to retrieve a list of entity instances, an entity seed list as well as a predicate whitelist are prepared beforehand. Next, each entity in the entity seed list is used as a seed to extract subgraphs from DBpedia through a generic SPARQL query. The triples in the subgraphs are then used to instantiate the SPARQL templates and the corresponding English templates which are called Normalized Natural Question Templates (NNQT). After that, the instances of NNQT are examined and paraphrased through peer reviews to ensure grammatical correctness. An example in LC-QUAD is shown in Table \ref{table:lcquad generation}.
 
 \begin{table}[h]
 \centering
-\label{table:lc-quad generation}
 \caption{An example question and its corresponding instantiation of the query template and NNQT in LC-QUAD generation \cite{trivedi2017lc}.}
+\label{table:lcquad generation}
 \begin{tabular}{c p{12cm}}
 Template & SELECT ?uri WHERE \{ ?x e\_in\_to\_e\_in\_out e\_in\_out . ?x e\_in\_to\_e ?uri . \} \\
 \hline
@@ -87,14 +87,116 @@ TensorFlow Neural Machine Translation\footnote{available at \url{https://github.
 
 Facebook AI Research Sequence-to-Sequence Toolkit\footnote{available at \url{https://github.com/pytorch/fairseq}} (fairseq) \cite{gehring2017convs2s} is another framework that implements various Seq2Seq models but based on PyTorch. It can also be used to perform other NLP tasks such as text summarization. Fairseq provides off-the-shelf models as well as packed hyperparameter sets for the users to configure their experiments. We used it to train and test three models including the 4-layer LSTM with attention proposed by Luong et al.\cite{Luong2015}, the ConvS2S, and the Transformer.
 
+It should be noted that there are some differences between the use of these two frameworks in terms of training in this thesis. With the nmt we use number of examples to determine the size of a mini-batch (i.e. batch size), whereas we use number of tokens with the fairseq. That means the batch size in the fairseq varies during the training according to the lengths of the examples in the mini-batch. In addition, the training and evaluation statistics are recorded based on epochs in the fairseq and steps in the nmt. The best checkpoint saving is based on the valid BLEU in the nmt and the valid loss in the fairseq because online BLEU measurements while training is only supported in the nmt. 
 
-\section{Hyperparameters} \label{section:model parameters}
+\section{Experimental Setup} \label{section:experimental setup}
 
+We split each dataset in a ratio of 80\%-10\%-10\% for training, validation, and test set. We further do two splits on the monument dataset. First is a ratio of 50\%-10\%-40\% to evaluate the complexity of the dataset, and the second is using the splitting approach in \cite{Soru2018a} to directly compare our results with NSpM. The latter split essentially fixes 100 examples for both validation and test set and keeps the rest for the training set. In summary, we have 5 experimental datasets, namely:
+\begin{itemize}
+\item \textbf{MonumentNSpM}, \textbf{Monument50}, \textbf{Monument80}, \textbf{LC-QUAD}, and \textbf{DBNQA}
+\end{itemize}
 
+We set up 8 different models from three categories (see Section \ref{section:models}) and train them respectively on each of the aforementioned experimental datasets with a single GPU. The names of the models and their architectures as well as reported model settings and training hyperparameters are described as follows:
+\begin{itemize}
+\item RNN-based models
+\begin{enumerate}
+\item \textbf{NSpM\footnote{from \textit{Neural SPARQL Machines} (available at \url{https://github.com/AKSW/NSpM})}}: an LSTM-based RNN model with 2 layers of both the encoder and decoder where the number of hidden units is 128. We use stochastic gradient descent (sgd) optimizer with a batch size of 128 and a fixed learning rate of 1 without decaying. A dropout of 0.2 is applied. Training is limited up to 50,000 steps.
+\item \textbf{NSpM+Att1}: NSpM plus a global attention mechanism module (see Section \ref{subsection:attention}). Training hyperparameters are the same as NSpM.
+\item \textbf{NSpM+Att2}: NSpM plus a local attention mechanism module (see Section \ref{subsection:attention}). Training hyperparameters are the same as NSpM.
+\item \textbf{LSTM\_Luong}: an LSTM-based RNN model with 4 layers of both the encoder and the decoder where the number of hidden units is 1000. 
+\item \textbf{GNMT-4}: a GNMT model with 4 layers of both the encoder and decoder. 
+\item \textbf{GNMT-8}: a GNMT model with 8 layers of both the encoder and decoder. Training hyperparameters are the same as GNMT-4.
+\end{enumerate}
+\item CNN-based models
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item \textbf{ConvS2S}: a Convolutional Sequence-to-Sequence model.
+\end{enumerate}
+\item Self-attention models
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item \textbf{Transformer}: A small-sized Transformer model.
+\end{enumerate}
+\end{itemize}
+
+In summary, we have in total 40 experiments, each of which is training and testing one model on one dataset. We run each experiment one or more times until the model shows convergence on the dataset or the trend of its result remains unchanged. Unfortunately, due to the limitation of time and hardware resources, delicate fine-tuning of training hyperparameters has not been performed across different runs of each experiment. We only tuned the parameters for all of the experiments on MonumentNSpM dataset and then applied them on other experiments.
 
 \section{Runtime Environment} \label{section:runtime environment}
 
+In our experiments, the primary runtime jobs include training and testing of the NMT models, where training is usually the most compute-intensive part. It is common to use GPU as the assistance to CPU to accelerate the calculation. Given that we have 40 different experiments where each experiment consumes various amount of memory according to the size of its model and dataset, we assign them to three GPUs with memory capacity from small to large running on a High Performance Computing (HPC) server. The configurations are listed in Table \ref{table:hpc gpus}. The details of the assignment are displayed in Table \ref{table:assignment}. In terms of software, all of the training is completed using Linux operating system with Python 3.6.4, TensorFlow 1.8.0, and PyTorch 0.4.1 installed. 
+
+\begin{table}[h]
+\caption{Three hardware configurations on HPC server used in this thesis}
+\label{table:hpc gpus}
+\centering
+\begin{tabular}{|c|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+& GPU Small & GPU Medium & GPU Large \\
+\hline
+CPU & Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} CPU E5-2450 @ 2.10GHz & Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} CPU E5-2680 @ 2.50GHz & POWER9  \\
+\hline
+RAM & 24 GB & 16 GB & 192 GB (approximately) \\
+\hline
+Cores & 8 & 6 & 32 \\
+\hline
+GPU & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} K20Xm & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} K80 & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} V100-SXM2 \\
+\hline
+GPU RAM & 6 GB & 12 GB & 32 GB \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{The hardware assignment of the experiments, where S represents GPU small, M means GPU medium, and L represents GPU large.}
+\label{table:assignment}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ & MonumentNSpM & Monument50 & Monument80 & LC-QUAD & DBNQA \\
+\hline
+NSpM & S & S & S & S & M \\
+\hline
+NSpM+Att1 & S & S & S & S & M \\
+\hline
+NSpM+Att2 & S & S & S & S & M \\
+\hline
+GNMT-4 & S & S & S & S & L \\
+\hline
+GNMT-8 & M & M & M & M & L \\
+\hline
+LSTM\_Luong & S & S & S & S & L \\
+\hline
+ConvS2S & S & S & S & S & L \\
+\hline
+Transformer & S & S & S & S & L \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{Local Computer}
+\label{table:macbook}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+CPU & Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} i7-4960HQ @ 2.60GHz \\
+\hline
+RAM & 16 GB \\
+\hline
+Cores & 4 \\
+\hline
+GPU & NVIDIA\textsuperscript{\textregistered} GeForce\textsuperscript{\textregistered} GT 750M \\
+\hline
+GPU RAM & 2 GB \\
+\hline
+\end{tabular}
+\end{table}
+
+A local computer Macbook Pro manufactured in 2013 is also used for running dataset splitting, data preprocessing\footnote{English tokenization is done with \begin{tiny}
+\url{https://github.com/moses-smt/mosesdecoder/tree/master/scripts/tokenizer/mosestokenizer}
+\end{tiny}}, testing of some models, and plotting of all the result graphs from the training statistics. The hardware is listed in Table \ref{table:macbook}. The software environment is macOS High Sierra 10.13.6 with Python 3.6.5, TensorFlow 1.8.0, PyTorch 0.4.1, and matplotlib 3.0.2 installed.
 
 
-\section{Results} \label{section:results}
+
+
 
