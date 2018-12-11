@@ -11,7 +11,7 @@ We adopted the encoding approach in \cite{Soru2018a}, which basically applies th
 \begin{enumerate}
 \item shorten the entities in the query with prefixes
 \item replace the built-in symbols with dedicated words connected with underscores
-\item shorten the query by replacing the built-in set phrases (e.g. ORDER BY) with one simplified word
+\item shorten the query by replacing the built-in set phrases (e.g. \texttt{ORDER BY}) with one simplified word
 \end{enumerate}
 
 These operations can be implemented as a set of replacements and applying them turns an original SPARQL query to a final sequence which contains tokens that are only formed of characters and underscores. An example is shown in Table \ref{table:sparql encoding}. After training, as an encoded form of SPARQL translation is generated, it can be easily decoded back by reverse replacements.
@@ -70,12 +70,12 @@ Moreover, we adopt the model proposed by Luong et al. \cite{Luong2015} and the G
 
 \subsubsection*{Google's Neural Machine Translation System}
 
-Google's Neural Machine Translation (GNMT) system \cite{Wu2016} is proposed to address several issues existing in past NMT approaches such as lack of robustness and rare words in the input sentences. The model architecture of GNMT is an LSTM network with deep encoder and decoder which have both 8-layer depth as shown in Figure \ref{figure:gnmt architecture}. The attention mechanism is used between the bottom layer of decoder and top layer of encoder. Starting from the third layer, a residual connection is employed between the input and the output of each LSTM cell.
+Google's Neural Machine Translation (GNMT) system \cite{Wu2016} is proposed to address several issues existing in past NMT approaches such as lack of robustness and rare words in the input sentences. The model architecture of GNMT is an LSTM network with deep encoder and decoder which have both 8-layer depth as shown in Figure \ref{figure:gnmt architecture}. The attention mechanism is used between the bottom layer of decoder and top layer of encoder. Starting from the third layer, a residual connection is employed between the input and the output of each LSTM cell to remedy the loss of information through deep layers. It essentially adds them together and feeds the result as the input of the next layer. 
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{gnmt-architecture}
 \centering
-\caption{The model architecture of GNMT.}
+\caption{The model architecture of GNMT \cite{Wu2016}.}
 \label{figure:gnmt architecture}
 \end{figure}
 

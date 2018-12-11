@@ -3,31 +3,44 @@ This chapter includes the details of the experiments carried out in this thesis.
 
 \section{Datasets} \label{section:datasets}
 
-To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeting at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}. 
+To successfully train a neural machine translation model, a large-quantity bilingual parallel corpus is often needed. In natural language translation tasks, there are abundant choices where the most adopted ones are the multilingual datasets published for training and evaluating statistical machine translation models from the Workshop on Machine Translation (WMT) and the International Workshop on Spoken Language Translation (IWSLT), such as WMT14' English-German dataset. However, regarding translating natural language to SPARQL queries targeted at some specific knowledge base the choices are rather limited. In this thesis, three English-SPARQL datasets are selected: the monument dataset \cite{Soru2018a}, LC-QUAD \cite{trivedi2017lc}, and DBNQA \cite{Soru2018dbnqa}. 
 
 According to our research, different from a natural language translation corpus that can be established from crowdsourcing, the construction of an NL to query language (SPARQL in this thesis) dataset appropriate for NMT training has the following challenges:
 \begin{itemize}
-\item Creating correct language pairs usually requires expert knowledge of SPARQL which is not yet owned by a large number of people. 
-\item The knowledge of corresponding knowledge bases is further required. Most of the knowledge bases such as DBpedia have vocabularies containing transformed words from automatic crawling of large quantities of articles online, for example, "located at" is represented by "dbo:location" in DBpedia. These words are not expected to be known by common users.
-\item The vocabularies of the online knowledge bases are likely to change along with the updates of the whole KB, which causes some pairs of the dataset invalid and hard to be tested again.
+\item Creating correct language pairs usually requires expertise in SPARQL which not yet a lot of people have. 
+\item The knowledge of corresponding knowledge bases is further required. Most of the knowledge bases, such as DBpedia, have vocabularies containing uncommon words from automatic crawling of large quantities of articles online, for example, "located at" is represented by "dbo:location" in DBpedia. The common users are usually not automatically aware about the prefixes required.
+\item The vocabularies of the online knowledge bases are likely to change along with the updates of the whole KB, which causes some pairs of the dataset to become invalid and hard to be tested again.
 \end{itemize}
 
-Because of the aforementioned difficulties and related issues, the most common adoption of construction methods by the available datasets in this field is to first manually create a list of template pairs with placeholders inside and then replace the placeholders largely with extracted entities or predicates from the latest endpoint of online knowledge base.
+Because of the aforementioned difficulties and related issues, the most common adoption of construction methods by the available datasets in this field is to first manually create a list of template pairs (see an example in Table \ref{table:template pair} below) with placeholders inside and then replace the placeholders with extracted entities or predicates from the latest endpoint of online knowledge base. Due to this limitation and the complexity of SPARQL itself, only a subset of SPARQL operators are included in the target SPARQL queries of the involved datasets here:
+\begin{itemize}
+\item \texttt{SELECT}, \texttt{ASK}, \texttt{DISTINCT}, \texttt{WHERE}, \texttt{FILTER}, \texttt{ORDER BY}, \texttt{LIMIT}, \texttt{GROUP BY}, \texttt{UNION}
+\end{itemize}
 
 \subsection{Monument dataset} \label{subsection:monument dataset}
 
 The monument dataset is generated and used by the Neural SPARQL Machine \cite{Soru2018a} system. It has 14,788 question-query pairs and the questions are only in English. The full vocabulary size is about 2,500 for English and 2,200 for SPARQL.
 
-The range of entities in this dataset is restricted to the instances of a specific class dbo:Monument. The data is generated from a list of manually crafted template pairs and related assistant SPARQL queries that can be executed directly on DBpedia endpoint. For example, given a question template "Where is <$ A $> ?" and a query template:
-\begin{lstlisting}[language=SPARQL]
+The range of entities in this dataset is restricted to the instances of a specific class dbo:Monument. The data is generated from a list of manually crafted template pairs and related assistant SPARQL queries that can be executed directly on DBpedia endpoint. For example, given a template pair in Table \ref{table:template pair}:
+\begin{table}[H]
+\centering
+\caption{A template pair in the monument dataset}
+\label{table:template pair}
+\begin{tabular}{c|c}
+Question template & Query template \\
+\hline
+Where is <$ A $> ? & \begin{lstlisting}[language=SPARQL]
 SELECT ?x
 WHERE
 { 
   <A> dbo:location ?x . 
 }
 \end{lstlisting}
-where <$ A $> belongs to the class dbo:Monument in DBpedia, then one can retrieve a list of entities and their corresponding English labels to replace <$ A $> by executing the following SPARQL query on a DBpedia endpoint:
-\begin{lstlisting}[language=SPARQL]
+\end{tabular}
+\end{table}
+
+where <$ A $> belongs to the class dbo:Monument in DBpedia, one can then retrieve a list of entities and their corresponding English labels to replace <$ A $> by executing the following SPARQL query on a DBpedia endpoint:
+\begin{lstlisting}[language=SPARQL, caption={An assistant query to retrieve a list of entities and labels to fill a template pair}, label={lst:assistant query}]
 SELECT ?uri ?label
 WHERE
 { 
@@ -37,11 +50,33 @@ WHERE
   FILTER(lang(?label) = 'en') .
 }
 \end{lstlisting}
-where the first triple imposes the class restriction and the second triple expresses the meaning of the template question. The returned values of $ ?uri $ and values of $ ?label $ are then used in pairs to replace the corresponding placeholders <$ A $> in the given templates.
+where the first triple imposes the class restriction and the second triple expresses the meaning of the template question. The returned values of $ ?uri $ and values of $ ?label $ are then used in pairs to replace the corresponding placeholders <$ A $> in the given templates. An example is shown in Table \ref{table:example result generation}.
 
-It is claimed that \cite{Soru2018a} 38 manually annotated templates have been used in generating the monument dataset. For each query template, 600 examples were generated with the aforementioned method. However, we found that out of these 38 template pairs there are some issues that may caused the whole dataset generated to be simpler than expected:
+\begin{table}[H]
+\centering
+\caption{An example returned result and template instantiation from running the assistant query in Listing \ref{lst:assistant query}}
+\label{table:example result generation}
+\begin{tabular}{c|c}
+?uri & http://dbpedia.org/resource/Carew\_Cross  \\
+\hline
+?label & "Carew Cross"@en \\
+\hline
+Generated question & Where is Carew Cross ? \\
+\hline
+Generated query & \begin{lstlisting}[language=SPARQL]
+SELECT ?x
+WHERE
+{ 
+  http://dbpedia.org/resource/Carew\_Cross dbo:location ?x . 
+}
+\end{lstlisting}
+\end{tabular}
+\end{table}
+
+
+It is claimed \cite{Soru2018a} that 38 manually annotated templates have been used in generating the monument dataset. For each query template, 600 examples were generated with the aforementioned method. However, we found that out of these 38 template pairs there are some issues that have caused the whole dataset generated to be simpler than expected:
 \begin{itemize}
-\item Some template pairs have different English templates but same SPARQL query templates or very similar-structured query templates, which means the translation model may favor generating some certain kinds of SPARQL queries.
+\item Some template pairs have different question templates but same query template or very similar-structured query templates, which means the translation model may favor generating some certain kinds of queries.
 \item Some English templates are partial phrases instead of full sentence (e.g. latitude of <something>).
 \end{itemize}
 
@@ -69,19 +104,19 @@ super league? \\
 \end{tabular}
 \end{table}
 
-LC-QUAD has richer data variety than the monument dataset. However, limited size of LC-QUAD makes it harder to be trained with deep neural network models. In addition, due to the pursuing of complexty of questions in LC-QUAD, grammar errors still exist, and some questions contain unusual punctuation (e.g. the u.n.i.t.y group) that leads to unnoticeable incorrect tokenizations during vocabulary building.
+LC-QUAD has a richer data variety than the monument dataset. However, the limited size of LC-QUAD makes it harder to train deep neural network models on. In addition, although peer reviews have been used to check the correctness of generated questions and queries, grammar errors still exist, and some questions contain unusual punctuation that leads to undetectable incorrect tokenizations during vocabulary building (e.g. "the u.n.i.t.y group" will be split into seven tokens "the, u, n, i, t, y, group").
 
 \subsection{DBNQA} \label{subsection:dbnqa}
 
 DBpedia Neural Question Answering (DBNQA) \cite{Soru2018dbnqa} is the largest DBpedia-targeting dataset we have found so far. It is also based on English and SPARQL pairs and contains 894,499 instances in total. In terms of vocabulary, it has about 131,000 words for English and 244,900 tokens for SPARQL without any reduction.
 
-DBNQA provides a remedy for the drawbacks of previous two datasets. A large number of generic templates are extracted from the concrete examples of two existing datasets LC-QUAD and QLAD-7-Train \cite{usbeck20177th} by replacing the entities with placeholders. These templates can subsequently be used in the same approach as the one in the monument dataset (see Section \ref{subsection:monument dataset}) to generate a large dataset.
+DBNQA provides a remedy for the drawbacks of the previous two datasets. A large number of generic templates are extracted from the concrete examples of two existing datasets LC-QUAD and QLAD-7-Train \cite{usbeck20177th} by replacing the entities with placeholders. These templates can subsequently be used in the same approach as the one in the monument dataset (see Section \ref{subsection:monument dataset}) to generate a large dataset.
 
 DBNQA has basically satisfied the data requirements of training a neural network model. However, the relatively large vocabulary of it needs to be coped with carefully otherwise the training is likely to suffer from memory shortages. Moreover, it is necessary to point out that the size of DBNQA is still incomparable to that of natural language datasets which commonly contain over millions of data.
 
 \section{Frameworks} \label{section:frameworks}
 
-There are a large number of available frameworks that implement the models described in Section \ref{section:models} and provide integration of prompting internal training statistics as well as external evaluation scores. We chose two frameworks by taking into account the experiment requirements in this thesis, one of which is based on TensorFlow \cite{tensorflow2015-whitepaper} and the other based on PyTorch \cite{paszke2017automatic}.
+There are a large number of available frameworks that implement the models described in Section \ref{section:models} and provide integration of prompting internal training statistics as well as external evaluation scores. We chose two frameworks based on their popularity and coverage of the  models to be tested in this thesis, one of which is based on TensorFlow \cite{tensorflow2015-whitepaper} and the other based on PyTorch \cite{paszke2017automatic}.
 
 TensorFlow Neural Machine Translation\footnote{available at \url{https://github.com/tensorflow/nmt}} (nmt) \cite{luong17}, as its name indicates, is a dedicated framework for neural machine translation based on TensorFlow. It provides a flexible implementation of the RNN-based NMT models. One can easily build and train variant RNN-based architectures by specifying the hyperparameters, e.g. number of encoder-decoder layers and type of attention, through designated Python program commands. This framework is used in our experiments for instantiating, training, and testing five different models including three baseline 2-layer LSTMs, a 4-layer GNMT, and an 8-layer GNMT.
 
@@ -96,34 +131,38 @@ We split each dataset in a ratio of 80\%-10\%-10\% for training, validation, and
 \item \textbf{MonumentNSpM}, \textbf{Monument50}, \textbf{Monument80}, \textbf{LC-QUAD}, and \textbf{DBNQA}
 \end{itemize}
 
-We set up 8 different models from three categories (see Section \ref{section:models}) and train them respectively on each of the aforementioned experimental datasets with a single GPU. The names of the models and their architectures as well as reported model settings and training hyperparameters are described as follows:
+We set up 8 different models from three categories (see Section \ref{section:models}) and train them respectively on each of the aforementioned experimental datasets with a single GPU. The names of the models and their architectures as well as reported model settings and important training hyperparameters are described as follows:
 \begin{itemize}
 \item RNN-based models
 \begin{enumerate}
-\item \textbf{NSpM\footnote{from \textit{Neural SPARQL Machines} (available at \url{https://github.com/AKSW/NSpM})}}: an LSTM-based RNN model with 2 layers of both the encoder and decoder where the number of hidden units is 128. We use stochastic gradient descent (sgd) optimizer with a batch size of 128 and a fixed learning rate of 1 without decaying. A dropout of 0.2 is applied. Training is limited up to 50,000 steps.
+\item \textbf{NSpM\footnote{from \textit{Neural SPARQL Machines} (available at \url{https://github.com/AKSW/NSpM})}}: an LSTM-based RNN model with 2 layers of both the encoder and decoder where the number of hidden units is 128. We use stochastic gradient descent (sgd) optimizer with a batch size of 128 and a fixed learning rate of 1 without decaying. A dropout of 0.2 is applied. Training is limited to 50,000 steps.
 \item \textbf{NSpM+Att1}: NSpM plus a global attention mechanism module (see Section \ref{subsection:attention}). Training hyperparameters are the same as NSpM.
 \item \textbf{NSpM+Att2}: NSpM plus a local attention mechanism module (see Section \ref{subsection:attention}). Training hyperparameters are the same as NSpM.
-\item \textbf{LSTM\_Luong}: an LSTM-based RNN model with 4 layers of both the encoder and the decoder where the number of hidden units is 1000. 
-\item \textbf{GNMT-4}: a GNMT model with 4 layers of both the encoder and decoder. 
+\item \textbf{LSTM\_Luong}: an LSTM-based RNN model with 4 layers of both the encoder and the decoder where the number of hidden units is 1,000. The attention module is the local multiplicative attention proposed in \cite{Luong2015}. The training is conducted with the Adam optimizer, a decaying learning rate from 0.001 with the method of inverse square root, a batch size of 4,000 tokens, a dropout of 0.3, and particularly label smoothed cross entropy with a label smoothing rate of 0.1 as the loss function. 500 epochs are set as the maximum training iterations. 
+\item \textbf{GNMT-4}: a GNMT model with 4 layers of both the encoder and decoder. The number of hidden units is 1,024. The training is executed up to 30,000 steps with sgd optimizer, a fixed learning rate of 1.0, dropout of 0.2, and a batch size of 128.
 \item \textbf{GNMT-8}: a GNMT model with 8 layers of both the encoder and decoder. Training hyperparameters are the same as GNMT-4.
 \end{enumerate}
 \item CNN-based models
 \begin{enumerate}
 \setcounter{enumi}{6}
-\item \textbf{ConvS2S}: a Convolutional Sequence-to-Sequence model.
+\item \textbf{ConvS2S}: a Convolutional Sequence-to-Sequence model. Both the encoder and decoder consist of 15 layers of convolutional block, where the first 9 layers have 512 units and convolutional kernel width of 3, next 4 layers have 1,024 units and kernel width of 3, and final 2 layers have 2,048 units and kernel width of 1. The embedding size is 768 for the encoder and the input of the decoder and 512 for the output of the decoder. In terms of the training, we use a fixed learning rate of 0.5 and a dropout rate of 0.2. The loss function, the batch size and the maximum epoch are the same as the LSTM\_Luong model.
 \end{enumerate}
 \item Self-attention models
 \begin{enumerate}
 \setcounter{enumi}{7}
-\item \textbf{Transformer}: A small-sized Transformer model.
+\item \textbf{Transformer}: A small-sized Transformer model. The embedding size for the input and output $ d_{model} $ is 512. The number of hidden units in feed forward sub-layers $ d_{ff} $ is 1,024. The encoder and decoder both have 6 layers and 4 heads in each multi-head attention sub-layer. For the training, we use the Adam optimizer, a starting learning rate of 0.0005 with the scheduler of inverse square root, and a dropout rate of 0.3. The loss function, the batch size and the maximum epoch are the same as the LSTM\_Luong model.
 \end{enumerate}
 \end{itemize}
 
-In summary, we have in total 40 experiments, each of which is training and testing one model on one dataset. We run each experiment one or more times until the model shows convergence on the dataset or the trend of its result remains unchanged. Unfortunately, due to the limitation of time and hardware resources, delicate fine-tuning of training hyperparameters has not been performed across different runs of each experiment. We only tuned the parameters for all of the experiments on MonumentNSpM dataset and then applied them on other experiments.
+The training is based on cross entropy loss minimization unless specified otherwise. For the decoding, beam search of beam width 5 is used for all the experiments. Full details of the experiments are available online\footnote{\url{https://github.com/xiaoyuin/tntspa}}.
+
+In summary, we have in total 40 experiments (see Table 4.3 for an overview), each of which is training and testing one model on one dataset. Each experiment is run one or more times until the model shows convergence on the dataset or the trend of its result remains unchanged.
+
+\subsection{Hyperparameters} \label{subsection:hyperparams}
+
+Since the usage of hyperparameters has direct and considerable effects on the performance of deep neural networks, they are mostly supposed to be fine-tuned based on the results of the validation set. Unfortunately, due to the limitation of time and hardware resources, delicate fine-tuning of training hyperparameters has not been performed across different runs of each experiment in this thesis. We only tuned the parameters for all of the experiments on MonumentNSpM dataset and then applied them on other experiments. Specifically, we chose for each model a base hyperparameter set as it was suggested in common natural language translation tasks from each used framework\footnote{The standard hyperparameters for the nmt framework are referenced from \url{https://github.com/tensorflow/nmt/tree/master/nmt/standard_hparams}, and for the fairseq framework from \url{https://github.com/pytorch/fairseq/tree/master/examples/translation}}. For each model, we started from the recommended base hyperparameter set and tuned the learning rate and batch size until it performed stable (i.e. converge at a fairly low perplexity value) on the validation set.
 
 \section{Runtime Environment} \label{section:runtime environment}
-
-In our experiments, the primary runtime jobs include training and testing of the NMT models, where training is usually the most compute-intensive part. It is common to use GPU as the assistance to CPU to accelerate the calculation. Given that we have 40 different experiments where each experiment consumes various amount of memory according to the size of its model and dataset, we assign them to three GPUs with memory capacity from small to large running on a High Performance Computing (HPC) server. The configurations are listed in Table \ref{table:hpc gpus}. The details of the assignment are displayed in Table \ref{table:assignment}. In terms of software, all of the training is completed using Linux operating system with Python 3.6.4, TensorFlow 1.8.0, and PyTorch 0.4.1 installed. 
 
 \begin{table}[h]
 \caption{Three hardware configurations on HPC server used in this thesis}
@@ -146,7 +185,9 @@ GPU RAM & 6 GB & 12 GB & 32 GB \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+In our experiments, the primary runtime jobs include training and testing of the NMT models, where training is usually the most compute-intensive part. It is common to use GPU as the assistance to CPU to accelerate the calculation. Given that we have 40 different experiments where each experiment consumes various amounts of memory according to the size of its model and dataset, we assigned them to three GPUs with memory capacity from small to large running on a High Performance Computing (HPC) server. The configurations are listed in Table \ref{table:hpc gpus}. The details of the assignment are displayed in Table \ref{table:assignment}. In terms of software, all of the training was completed using Linux operating system with Python 3.6.4, TensorFlow 1.8.0, and PyTorch 0.4.1 installed. 
+
+\begin{table}[H]
 \caption{The hardware assignment of the experiments, where S represents GPU small, M means GPU medium, and L represents GPU large.}
 \label{table:assignment}
 \centering
@@ -173,7 +214,11 @@ Transformer & S & S & S & S & L \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
+A local computer Macbook Pro manufactured in 2013 was also used for running dataset splitting, data preprocessing\footnote{English tokenization is done with \begin{tiny}
+\url{https://github.com/moses-smt/mosesdecoder/tree/master/scripts/tokenizer/mosestokenizer}
+\end{tiny}}, testing of some models, and plotting of all the result graphs from the training statistics. The hardware is listed in Table \ref{table:macbook}. The software environment is macOS High Sierra 10.13.6 with Python 3.6.5, TensorFlow 1.8.0, PyTorch 0.4.1, and matplotlib 3.0.2 installed.
+
+\begin{table}[H]
 \caption{Local Computer}
 \label{table:macbook}
 \centering
@@ -191,10 +236,6 @@ GPU RAM & 2 GB \\
 \hline
 \end{tabular}
 \end{table}
-
-A local computer Macbook Pro manufactured in 2013 is also used for running dataset splitting, data preprocessing\footnote{English tokenization is done with \begin{tiny}
-\url{https://github.com/moses-smt/mosesdecoder/tree/master/scripts/tokenizer/mosestokenizer}
-\end{tiny}}, testing of some models, and plotting of all the result graphs from the training statistics. The hardware is listed in Table \ref{table:macbook}. The software environment is macOS High Sierra 10.13.6 with Python 3.6.5, TensorFlow 1.8.0, PyTorch 0.4.1, and matplotlib 3.0.2 installed.
 
 
 

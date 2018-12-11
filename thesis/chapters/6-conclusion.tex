@@ -1,4 +1,16 @@
 
 \section{Summary} \label{section:summary}
 
+The Semantic Web is gradually changing the way the information and data are stored on the Web. It enables a new form of accessing the knowledge located in various places - through Linked Data. However, most of the linked datasets, such as DBpedia, has not yet unleashed their great potentials because of the specialized query languages like SPARQL that are necessary to be mastered for accessing this data and the huge gap between it and the natural languages used by the humans. We believe this gap could be bridged by the application of Neural Machine Translation models on the specific task of translating natural language to SPARQL. 
+
+In this thesis, after thorough investigation on various related datasets and NMT architectures, three representative categories of models in NMT were selected to be tested on three English-SPARQL datasets. We carried out 40 experiments which consist of training 8 models with different configurations in architecture and parameters on 5 experimental datasets after splitting and preprocessing three originally examined ones. We demonstrated the results in perplexity graphs and BLEU score tables and discussed their implications.
+
+It has been found that the ConvS2S model consistently outperformed other models in all of the experiments in terms of convergence and translation quality, and the DBNQA dataset is so far the most appropriate English-SPARQL dataset for the training and testing of NMT models. Based on the results, we also discussed the relationship between the perplexity and BLEU and compared the difference between our specific task and the common task in the field of NMT. Finally, three primary limitations of our experiments were pointed out, which mostly impacted the results in the aspects of training and evaluation.
+
 \section{Outlook} \label{section:outlook}
+
+Although the experiments have shown encouraging results in this thesis, there is some future work that deserves to be attached importance to specifically for the task of translating natural language to SPARQL. The first is to establish a NL-SPARQL dataset that suits the requirements of training deep neural networks while preserving the complexity of the question and query types. This could be potentially fulfilled by taking the templates from the DBNQA and deploying the generation methods of LC-QUAD, as stated in Section \ref{section:datasets}. The second is designing a unique metric to replace BLEU for better evaluating the quality of the translated queries, which should not only focus on the sentence structures but also on the semantics and execution results in practical situations. Last but not least, with the realization of aforementioned outlooks and acknowledgements of certain limitations specified in Section \ref{subsection:limitation}, it is well worth training these or even more NMT models on this task in a more standardized way. 
+
+
+
+
