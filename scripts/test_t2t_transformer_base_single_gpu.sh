@@ -28,7 +28,7 @@ PROBLEM=translate_ensparql
 MODEL=transformer
 HPARAMS=transformer_base_single_gpu
 
-BEAM_SIZE=4
+BEAM_SIZE=5
 ALPHA=0.6
 
 t2t-decoder \

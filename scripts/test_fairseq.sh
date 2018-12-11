@@ -27,14 +27,14 @@ fi
 
 python3 fairseq/generate.py $DDIR/fairseq-data-bin \
 --gen-subset valid \
---path $MDIR/checkpoint_last.pt \
+--path $MDIR/checkpoint_best.pt \
 --beam 5 > $RDIR/dev_output.txt
 
 python3 fairseq_output_reader.py $RDIR/dev_output.txt > $RDIR/dev_translation.sparql
 
 python3 fairseq/generate.py $DDIR/fairseq-data-bin \
 --gen-subset test \
---path $MDIR/checkpoint_last.pt \
+--path $MDIR/checkpoint_best.pt \
 --beam 5 > $RDIR/test_output.txt
 
 python3 fairseq_output_reader.py $RDIR/test_output.txt > $RDIR/test_translation.sparql

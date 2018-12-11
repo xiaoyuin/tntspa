@@ -5,7 +5,7 @@
 #SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
 #SBATCH -J "t2t_transformer"   # job name
 #SBATCH -o "train_t2t_transformer-%j.out"   # output name
-#SBATCH --mem=40000   # minimum amount of real memory
+#SBATCH --mem=20000   # minimum amount of real memory
 #SBATCH -A p_adm # name of the project
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
 #SBATCH --mail-type ALL
@@ -36,7 +36,6 @@ srun ~/.local/bin/t2t-trainer \
   --problem=$PROBLEM \
   --model=$MODEL \
   --hparams_set=$HPARAMS \
-  --hparams='batch_size=1024' \
   --train_steps=30000 \
   --keep_checkpoint_max 10 \
   --output_dir=$MDIR/transformer_base_single_gpu

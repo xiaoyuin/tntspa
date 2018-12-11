@@ -28,7 +28,7 @@ PROBLEM=translate_ensparql
 MODEL=lstm_seq2seq_attention_bidirectional_encoder
 HPARAMS=lstm_bahdanau_attention
 
-BEAM_SIZE=4
+BEAM_SIZE=5
 ALPHA=0.6
 
 t2t-decoder \

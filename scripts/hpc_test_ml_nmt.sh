@@ -1,14 +1,20 @@
 #!/bin/bash
-#SBATCH --time=12:00:00   # walltime
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8  # number of processor cores (i.e. threads)
-#SBATCH -p gpu1,gpu2    # K80 GPUs on Haswell node
-#SBATCH -J "test_nmt"   # job name
-#SBATCH -o "test_nmt-%j.out"   # output name
-#SBATCH --mem=20000   # minimum amount of real memory
+#SBATCH -J "hpc_ml_nmt"   # job name
 #SBATCH -A p_adm # name of the project
+#SBATCH --mail-type=ALL
 #SBATCH --mail-user xiaoyu.yin@mailbox.tu-dresden.de
-#SBATCH --mail-type ALL
+#SBATCH --time=8:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:1
+#SBATCH --partition=ml
+#SBATCH -o "test_ml_nmt-%j.out"   # output name
+#SBATCH --mem-per-cpu=6000   # minimum amount of real memory
+
+ANACONDA3_INSTALL_PATH='/opt/anaconda3'
+export PATH=$ANACONDA3_INSTALL_PATH/bin:$PATH
+source /opt/DL/tensorflow/bin/tensorflow-activate
 
 DDIR=data/monument_600
 MDIR=output/models
