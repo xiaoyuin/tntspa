@@ -1,6 +1,7 @@
 \documentclass[11pt]{beamer}
 \usetheme{Dresden}
 \usecolortheme{dolphin}
+\graphicspath{{./images/}}
 \usepackage[utf8]{inputenc}
 \usepackage{pifont}
 \usepackage{amsmath}
@@ -15,13 +16,13 @@
 \setbeamertemplate{bibliography entry location}{}
 \setbeamertemplate{bibliography entry note}{}
 %\logo{} 
-\institute
+\institute[International Center for Computational Logic]
 {
 International Center for Computational Logic\\
 Technische Universität Dresden
 } 
-\date{10 December 2018} 
-%\subject{} 
+\date{8th January 2019} 
+%\subject{Master Thesis} 
 \begin{document}
 
 \AtBeginSection[]
@@ -41,362 +42,515 @@ Technische Universität Dresden
     \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Background}
+\section{Introduction}
 
-\subsection{Math Word Problem Generation}
-\begin{frame}{Math Word Problem Generation}
-    \begin{block}{Math Word Problem}
-        a word problem is a mathematical exercise where significant background information on the problem is presented as text rather than in mathematical notation.
-    \end{block}
-    \begin{example}[Math Word Problem]
-    John has 4 apples. Jack has 5 apples. How many apples do they have in total?
-    \end{example}
-\end{frame}
+\subsection{Motivation}
 
-\begin{frame}{Math Word Problem Generation}
-    Existing methods:
-    \begin{itemize}
-    \item requirements $\Rightarrow$ problems meeting requirements
-    \item problem and themes $\Rightarrow$ problem in new theme
-    \item ...
-    \end{itemize}
-    Our method (ideal):
-    \begin{itemize}
-    \item problem $\Rightarrow$ more problems
-    \end{itemize}
-\end{frame}
+\begin{frame}{Transformation of the Web}{Motivation}
 
-\subsection{Question Generation}
-\begin{frame}{Question Generation}
-    \begin{example}[Math Word Problem]
-    \underline{John has \alert{4} apples.}
-    \underline{Jack has \alert{5} apples.} How many apples do they have in total?
-    \end{example}
     \begin{columns}
-    \column<2->{5cm}
-    $\Downarrow$
-    ~\\
-    John and Jack have 9 apples in total. Jack has 5 apples. How many apples does \textbf{John} have?
-    \column<3->{5cm}
-    $\Downarrow$
-    ~\\
-    John and Jack have 9 apples in total. John has 4 apples. How many apples does \textbf{Jack} have?
+
+    \column{0.5\textwidth}
+        \begin{block}{Web}
+        \begin{itemize}
+        \item Linked web pages
+        \item Made for human to browse
+        \end{itemize}
+        \end{block}
+    \pause
+    \column{0.5\textwidth}
+        \begin{block}{Semantic Web}
+        \begin{itemize}
+        \item Built on the existing Web
+        \item Linked knowledge graphs and data
+        \item For human and machines to lookup
+        \end{itemize}
+        \end{block}
+
     \end{columns}
-    ~\\
-    \begin{block}<4->{Our goal}
-    Generate a nearly new problem with \textbf{no extra input}
-    \end{block}
+
 \end{frame}
 
-\begin{frame}{Question Generation}
-    \begin{block}{General QG}
-    Generating different kinds of questions from a given sentence or paragraph. (like who, when, why, etc.)
-    \end{block}
-    \begin{block}{In this project}
-    Only a subset of question types is needed.
-    \begin{example}<2->
-        John has 4 apples.
-        \begin{description}
-        \item[\ding{55}] Who has 4 apples?
-        \item[\ding{55}] Why does John have 4 apples?
-        \item[\ding{51}] How many apples does John have?
-        \end{description}
-    \end{example}
-    \end{block}
-\end{frame}
+\subsection{Background}
 
-\section{Project Structure}
-\begin{frame}
-\textbf{Old} math word problem\\
-$\Downarrow$\\
-\begin{enumerate}
-    \item Preprocessing
-    \item Question Generating
-    \item Postprocessing
-\end{enumerate}
-$\Downarrow$\\
-\textbf{New} math word problem
-\end{frame}
-
-\subsection{Preprocessing}
-\begin{frame}{Preprocessing}
-    Prepare the original math word problem input for the other tasks\\
-    \begin{block}{Steps}
-    \begin{enumerate}
-        \item Text Simplification
-        \item Pronouns Removal
-        \item Sentence Filtering
-        \item ...
-    \end{enumerate}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Text simplification}{Preprocessing}
-    Keep sentences in simple form, important for question generation
-    \begin{example}
-    Input: John has 4 apples and Jack has 5 apples.\\
-    Output: John has 4 apples. Jack has 5 apples.
-    \end{example}
-    \begin{block}<2->{Avoid such question:}
-    \ding{55} John and Jack have 9 apples in total. How many apples does John have and How many apples does Jack have?
-    \end{block}
-    ~\\
-    Method adopted from \emph{\cite{Heilman2010}}
-\end{frame}
-
-\begin{frame}{Pronouns removal}{Preprocessing}
-    \begin{example}
-    Input: John has 4 apples. \textbf{He} took 3 apples from Jack. \\
-    Output: John has 4 apples. \textbf{John} took 3 apples from Jack.
-    \end{example}
-    ~\\
-    \begin{block}<2->{Disambiguate the generated question}
-    \ding{55} How many apples did \textbf{he} take from Jack?\\
-    \ding{51} How many apples did \textbf{John} take from Jack?
-    \end{block}  
-    ~\\~\\
-    Acheived by using \emph{Coreference Resolution} 
-\end{frame}
-
-\begin{frame}{Sentence Filtering}{Preprocessing}
-    \begin{example}
-    John had 4 apples. \underline{John gave Jack some of his apples.} John has 1 apple now. John gave Jack 3 apples.
-    \end{example}
-    ~\\
-    Find all the sentences that do not have numbers.\\
-    ~\\
-    Achieved by using \emph{Named Entity Recogniton}
-\end{frame}
-
-\begin{frame}{Preprocessing}
-    \begin{block}{Other Steps}
-    \begin{itemize}
-    \item<1> Sentence Splitting\\
-    not trival as it looks!
-    \item<2-> Question Answering
-    \begin{itemize}
-        \item<2-> Replaced with manual answering
-    \end{itemize}
-    \end{itemize}
-    \end{block}
-    \only<1>{
-    \begin{example}
-    \underline{John spent 5}.\underline{20 dollars}.
-    \end{example}}
-    \only<2>{
-    \begin{example}
-    John has \alert{4} apples. Jack has \alert{5} apples. \underline{How many apples do they have in total?}
-    \end{example}}
-\end{frame}
-
-\subsection{Question Generating}
-\begin{frame}{Question Generating}
-    \structure{Detect components of a sentence and raise a question about the numeric part.}\\ \pause
-    Rule-based detection and template-based question generation adopted from \cite{Das2016}\\
-    ~\\
-    \begin{itemize}
-    \item Clause detection rule
-    \begin{itemize}
-        \item find \textbf{subject phrases} and \textbf{verb phrases}
-        \item find \textbf{auxiliary word} for the template
-    \end{itemize}
-    \item Numeric Phrase detection rule
-    \begin{itemize}
-        \item find \textbf{numerical phrases}
-    \end{itemize}
-    \item Question template of \emph{How-many}
-    \end{itemize}
-    ~\\
-    Achieved by using \emph{Part-Of-Speech tags pattern matching}
-\end{frame}
-
-\begin{frame}{Question Generating}
-    \begin{overlayarea}{\textwidth}{2cm}
-    \begin{itemize}
-    \only<1>{
-    \item Clause detection rule (a \emph{POS tag pattern})\\
-    $\{<DT>?<JJ.?>*<NN.?|PRP|PRP\$|POS|IN|DT|CC|VBG|VBN>+<RB.?|VB.?|MD|RP>+\}$}
-    \only<2>{
-    \item Numeric Phrase detection rule (a \emph{POS tag pattern})
-    $\{<DT>?<CD>+<RB>?<JJ|JJR|JJS>?<NN|NNS|NNP|NNPS|VBG>+\}$}
-    \only<3>{
-    \item Question template of \emph{How-many}
-    \begin{itemize}
-        \item ”How many” + part of the numeric phrase excluding cardinal number + auxiliary word + subject part + remaining words of verb phrase + remaining part of the sentence as it is + ”?”
-    \end{itemize}}
-    \end{itemize}
-    \end{overlayarea}
-    \begin{example}
-    \only<1>{\underline{John(\textbf{NNP}) has(\textbf{VBZ})} 4(CD) apples(NNS) .}
-    \only<2>{John(NNP) has(VBZ) \underline{4(\textbf{CD}) apples(\textbf{NNS})} .}
-    \only<3>{John(NNP) has(VBZ) 4(CD) apples(NNS) .}
-    \begin{description}[Question]
-        \item<1,3>[Clause] John has
-        \begin{description}[]
-        \item[Subject] John
-        \item[Verb] has
-        \item[Auxiliary word] does
-        \end{description}
-        \item<2,3>[Numeric] 4 apples
-        \item<3>[Question] \underline{How many} \underline{apples} \underline{does} \underline{John} \underline{have}?
-    \end{description}
-    \end{example}
-\end{frame}
-
-\subsection{Postprocessing}
-\begin{frame}{Postprocessing}
-    \begin{itemize}
-    \item Combine questions and sentences to form a new math word problem
-    \item Reorder sentences if necessary (pronouns removal failed)
-    \end{itemize}
-    \begin{example}
-    Input: He(\textbf{?}) gave Jack some of his apples. \underline{John had 4 apples.} He has 1 apple now. How many apples did he give to Jack?\\
-    \structure{Move the underlined sentence to the first position}\\
-    Output: \underline{John had 4 apples.} He(\textbf{John}) gave Jack some of his apples. He has 1 apple now. How many apples did he give to Jack?\\
-    \end{example}
-\end{frame}
-
-\section{Experiment \& Analysis}
-
-\subsection{Implementation}
-\begin{frame}
-    \frametitle{Implementation\footnote[frame,1]{source code available at: \href{https://github.com/xiaoyuin/ProjectMathWordProblemGeneration}{\structure{\emph{this link}}}}}
-    \begin{itemize}
-    \item Kotlin and Java programming language
-    \item Stanford CoreNLP v3.8.0 
-    \begin{itemize}
-        \item Stanford Named Entity Recognizer
-        \item Stanford Coreference Resolution
-        \item Stanford POS Tagger
-    \end{itemize}
-    \item Intellij Idea IDE
-    \item macOS High Sierra 10.13.3
-    \end{itemize}
-\end{frame}
-
-\subsection{Experiment}
-\begin{frame}{Experiment}
-    \begin{block}{Data}
-    20 math word problems were selected from MAWPS\footnote[frame, 1]{available at: \href{http://lang.ee.washington.edu/MAWPS/}{http://lang.ee.washington.edu/MAWPS/}}\\
-    \textbf{Selection criteria}:
-    \begin{itemize}
-    \item 10 simple problems + 10 complex problems
-    \item equation contains only addition and subtraction
-    \item only problems with how-many questions
-    \end{itemize}
-    The question in each problem was manually transformed into answer form
-    \end{block}
-    \begin{block}{Simple problem}
-    average number of words in each sentence $\leq$ 8
-    \end{block}
-\end{frame}
-
-\begin{frame}{Experiment}
-    \begin{example}[Original data]
-    \begin{description}
-        \item[simple] Keith has 20 books . Jason has 21 books . How many books do they have together ?  | ["41"]\\
-        \textsl{(average 6 tokens per sentence)}
-        \item[complex] Mary picked 122 oranges and Jason picked 105 oranges from the orange tree . How many oranges were picked in total ?  | ["227"]\\
-        \textsl{(average 11 tokens per sentence)}
-    \end{description}
-    \end{example}
-\end{frame}
-
-\begin{frame}{Experiment}
-    \begin{example}[After manual transformation]
-    \begin{description}
-        \item[simple] Keith has 20 books. Jason has 21 books. \textbf{They have 41 books together.}
-        \item[complex] Mary picked 122 oranges and Jason picked 105 oranges from the orange tree. \textbf{227 oranges were picked in total.}
-    \end{description}
-    \end{example}
-\end{frame}
-
-\begin{frame}{Experiment}
-    \begin{figure}
-    \includegraphics[height=6cm]{"Modules overview".png}
+\begin{frame}{Semantic Web Technologies}
+    \begin{figure}[h]
+    \includegraphics[width=0.6\textwidth]{Semantic-web-stack}
+    \centering
+    \caption{Semantic Web technology stack}
+    \label{figure:semantic web stack}
     \end{figure}
 \end{frame}
 
-\subsection{Results and Analysis}
-
-\begin{frame}[allowframebreaks]{Results and Analysis}
-    \begin{center}
-    \begin{tabular}{| l | l | l | l |}
-    \hline
-        & Failure & Success & Problems generated \\ \hline
-        Simple problems & 0 & 10 & 22 \\ \hline
-        Complex problems & 3 & 7 & 14 \\ \hline
-    \end{tabular}
-    \end{center}
+\begin{frame}{Linked Data}
     \begin{itemize}
-    \item The system performs worse when facing with more complex problems
+        \item a notion in Semantic Web
+        \item based on RDF 
+        \item currently only in commercial applications but has great potentials
     \end{itemize}
-    \pagebreak
-    \begin{block}{Known limitation}
-    \begin{itemize}
-        \item Support only one question type
+
+    \begin{example}
+        \textit{Google Knowledge Graph}
+        \textit{DBpedia}
         \begin{itemize}
-        \item Generate similiar questions (some of them with grammar errors)
-        \item Unable to deal with multiple numbers.\\ e.g. John spent 5 dollars on 4 apples.
+            \item knowledge from the Wikipedia articles in RDF files so that machines can process easily, open to everyone
         \end{itemize}
-        \item Performance was limited by how far the library can do\\
-        i.e. If the library is not able to split the sentences, detect the tags, or resolve the coreference correctly, then the system would fail
-    \end{itemize}
-    \end{block}
-    \pagebreak
-    \begin{block}{Potential limitation}
+    \end{example}
+\end{frame}
+
+\begin{frame}{SPARQL}
+
     \begin{itemize}
-        \item Can't identify \textbf{distraction}\\
-        e.g. irrelevant numerical information
+        \item like SQL but for the Semantic Web and Linked Data
+        \item structured query language
+        \item the meaning of a SPARQL query can be usually expressed in Natural Language
+        \item Why not Natural Language to SPARQL?
     \end{itemize}
+
+    \begin{block}{Application}
+        \begin{itemize}
+            \item Broaden the accessibility of the Semantic Web resources
+            \item Chatbots, service agents
+        \end{itemize}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Natural Language to SPARQL}
+    \begin{itemize}
+        \item proved possible by Neural SPARQL Machine (NSpM) \cite{Soru2018a}
+        \item no large number of tests have been done before
+    \end{itemize}
+
+    \begin{block}{Our goal}
+        Conduct a large number of tests on the possibility of translating human language to SPARQL (machine language)
     \end{block}
 \end{frame}
 
-\section{Future Work}
+\begin{frame}{Machine Translation}{Background}
 
-\begin{frame}{Future Work}
     \begin{itemize}
-    \item Implement \textbf{Question Answering} in preprocessing to reduce the human efforts testing large data~\\
-    ~\\
-    \item Extend the \textbf{Rules and Templates} in question generation phase\\
-    Enhance the ability to deal with variation of sentences\\
-    ~\\
-    \item Add \textbf{Understanding module} to avoid distractions
+        \item Rule-based Machine Translation
+        \item Statistical Machine Translation
+        \item Example-based Machine Translation
+        \item \textbf{Neural Machine Translation}
+        \item Hybrid Machine Translation
+    \end{itemize}
+
+    \begin{block}{Neural Machine Translation}
+        Given large number of training samples, use deep neural networks to perform end-to-end translation between source and target languages.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Neural Machine Translation}{Background}
+    
+    \begin{block}{Why NMT?}
+        \begin{itemize}
+            \item So far \alert{the best performing} methods in translating between natural languages (e.g. English to German)
+            \item Abundant choices of neural networks
+            \item Off-the-shelf frameworks to use
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Challenges}
+        \begin{itemize}
+            \item SPARQL is not like any Natural Language
+        \end{itemize}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Idea}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{motivation-overview}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Idea}
+    \begin{figure}
+        \includegraphics[width=0.8\textwidth]{datasets-models}
+    \end{figure}
+    \begin{figure}
+        \includegraphics[width=0.4\textwidth]{motivation-overview}
+    \end{figure}
+\end{frame}
+
+\section{Methodology}
+
+\subsection{Models}
+
+\begin{frame}{Neural Machine Translation}
+    \begin{description}
+        \item[2013]<1-> Recurrent Neural Networks (RNN) started
+        \item[2014-15]<2-> Attention mechanisms
+        \begin{itemize}
+            \item great enhancements to RNN 
+        \end{itemize} 
+        \item[2016]<3-> Google Translate System (GNMT)
+        \begin{itemize}
+            \item bi-directional RNN, residual connection, etc.
+        \end{itemize} 
+        \item[2017-now]<4-> Convolutional Neural Networks (CNN), Self-attention models joined
+        \begin{itemize}
+            \item right now state-of-the-art
+        \end{itemize} 
+    \end{description}
+\end{frame}
+
+\begin{frame}{Neural Machine Translation Models}
+    \begin{itemize}
+        \item Three categories
+    \end{itemize}
+    \begin{table}
+        \begin{tabular}{p{3cm}|p{3cm}|p{3cm}}
+            Recurrent Neural Network (RNN) models &  Convolutional Neural Network (CNN) models & Self-Attention models \\
+            \hline
+            \includegraphics[width=3cm]{rnn-encoder-decoder} & \includegraphics[width=3cm]{convolutions} & \includegraphics[width=3cm]{multi-attention}\\
+            \hline
+            GNMT & ConvS2S & Transformer
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Google's Neural Machine Translation System (GNMT)}{RNN-based}
+    \begin{figure}[h]
+        \includegraphics[width=0.9\textwidth]{gnmt-architecture}
+        \centering
+        \caption{The model architecture of GNMT \cite{Wu2016}.}
+        \label{figure:gnmt architecture}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Convolutional Sequence-to-Sequence (ConvS2S)}{CNN-based}
+    \begin{figure}[h]
+        \includegraphics[width=0.3\textwidth]{convs2s-architecture}
+        \centering
+        \caption{The demonstration of training the Convolutional Sequence-to-Sequence model \cite{gehring2017convs2s}}
+        \label{figure:convs2s model}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{The Transformer}{Self-attention Models}
+    \begin{figure}[h]
+        \includegraphics[width=0.3\textwidth]{transformer-architecture}
+        \centering
+        \caption{The architecture of the Transformer model \cite{Vaswani2017}}
+        \label{figure:transformer model}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Models Summary}
+    Out of these three categories, we constructed 8 models...
+    \begin{itemize}
+        \item RNN-based models: \textbf{NSpM, NSpM+Att1, NSpM+Att2, LSTM\_Luong, GNMT-4, GNMT-8}
+        \item CNN-based model: \textbf{ConvS2S}
+        \item Self-attention model: \textbf{Transformer}
+    \end{itemize}
+    \medskip
+
+    \begin{itemize}
+        \item NSpM: Basic 2-layer RNN
+        \item NSpM+Att: NSpM with attention module
+        \item LSTM\_Luong: a deep 4-layer RNN
+    \end{itemize}
+    
+\end{frame}
+
+\subsection{Datasets}
+
+\begin{frame}{Datasets}
+    \begin{itemize}
+        \item The \textbf{Monument} dataset 
+        \item Largescale Complex Question Answering Dataset (\textbf{LC-QUAD})
+        \item DBpedia Neural Question Answering (\textbf{DBNQA})
+    \end{itemize}
+    \pause
+    \begin{table}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & Monument & LC-QUAD & DBNQA \\
+            \hline
+            Instance & 14,788 & 5,000 & 894,499 \\
+            \hline
+            English vocab & 2,500 & 7,000 & 131,000 \\
+            \hline
+            SPARQL vocab & 2,200 & 5,000 & 244,900 \\
+            \hline
+        \end{tabular}
+        \caption{Sizes of three used English-SPARQL datasets}
+    \end{table}
+\end{frame}
+
+
+\subsection{Metrics}
+
+\begin{frame}{Evaluation Metrics}
+    \begin{itemize}
+        \item \textbf{Perplexity} for training phase
+        \item \textbf{BLEU} for testing phase
+    \end{itemize}
+    \only<1>{
+        \begin{block}{Perplexity}
+            \begin{itemize}
+                \item 1 $ \rightsquigarrow $ +$\infty $
+                \item reflects how well the model is trained (1 is best)
+            \end{itemize}
+        \end{block}
+    }
+    \only<2>{
+        \begin{block}{BLEU}
+            \begin{itemize}
+                \item 0 $ \rightsquigarrow $ 100
+                \item reflects the quality of the generated translations compared to the reference (100 is best)
+                \item widely used in Machine Translation tasks
+            \end{itemize}
+        \end{block}
+    }
+    \only<3->{
+        \begin{example}[BLEU]
+            \begin{description}
+                \item[Translation] the cat sat on the mat
+                \item[Reference 1] there is a cat on the mat
+                \item[Reference 2] the cat is on the mat
+            \end{description}
+            BLEU Score: \alert{42}
+        \end{example}
+    }
+    
+\end{frame}
+
+\section{Experiments}
+
+\begin{frame}{Experiment Overview}
+
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{experiment_overview}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Dataset Preprocessing}
+    
+    \only<1>{
+        \begin{block}{Dataset Splitting}
+            \begin{itemize}
+                \item Split the Monument, LC-QUAD, and DBNQA into 80\%/10\%/10\% training/validation/testing set
+                \item Split the Monument dataset further into 50\%/10\%/40\% and 14588/100/100 (in NSpM paper)
+                \item Leads to 5 different splits: \textbf{MonumentNSpM, Monument50, Monument80, LC-QUAD, DBNQA}
+            \end{itemize}
+        \end{block}
+    }
+
+    \only<2>{
+        \begin{block}{SPARQL Encoding}
+            \includegraphics[width=\textwidth]{sparql-encoding}
+        \end{block}
+    }
+
+\end{frame}
+
+\begin{frame}{Hardware}
+
+    \begin{table}[h]
+        \small
+        \centering
+        \begin{tabular}{|c|p{2cm}|p{3cm}|p{2cm}|}
+            \hline
+            & GPU \textbf{Small} & GPU \textbf{Medium} & GPU \textbf{Large} \\
+            \hline
+            CPU & Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} CPU E5-2450 @ 2.10GHz & Intel\textsuperscript{\textregistered} Xeon\textsuperscript{\textregistered} CPU E5-2680 @ 2.50GHz & POWER9  \\
+            \hline
+            RAM & 24 GB & 16 GB & 192 GB \\
+            \hline
+            Cores & 8 & 6 & 32 \\
+            \hline
+            \alert{GPU} & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} K20Xm & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} K80 & NVIDIA\textsuperscript{\textregistered} Tesla\textsuperscript{\textregistered} V100-SXM2 \\
+            \hline
+            \alert{GPU RAM} & 6 GB & 12 GB & 32 GB \\
+            \hline
+        \end{tabular}
+        \caption{Three hardware configurations on High Performance Computing (HPC) server used in this thesis}
+        \label{table:hpc gpus}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}{Software (1/2)}
+    \begin{block}{Python Frameworks}
+    \begin{itemize}
+        \item \textit{nmt}\footnote{\url{https://github.com/tensorflow/nmt}} based on TensorFlow
+        \begin{itemize}
+            \item Implements: \textbf{NSpM, NSpM+Att1, NSpM+Att2, GNMT-4, GNMT-8}
+        \end{itemize}
+        \item \textit{fairseq}\footnote{\url{https://github.com/pytorch/fairseq}} based on PyTorch
+        \begin{itemize}
+            \item Implements: \textbf{LSTM\_Luong, ConvS2S, Transformer}
+        \end{itemize}
+    \end{itemize}
+    \end{block}
+    Takes care of training, validation, and testing the models on given dataset and outputs the results and statistics
+\end{frame}
+
+\begin{frame}{Software (2/2)}
+    \begin{block}{Operating Systems}
+        \begin{itemize}
+            \item \includegraphics[height=12pt]{linux} Linux from HPC with Python 3.6.4, TensorFlow 1.8.0, and PyTorch 0.4.1
+            \begin{itemize}
+                \item Ran the training and testing jobs and saved the results
+            \end{itemize}
+            \item \includegraphics[height=12pt]{apple} macOS High Sierra 10.13.6 from my computer with Python 3.6.5, TensorFlow 1.8.0, PyTorch 0.4.1, and matplotlib 3.0.2
+            \begin{itemize}
+                \item Preprocessed the datasets
+                \item Uploaded and downloaded jobs between HPC
+                \item Analyzed the outputs
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+    Source code is all available on GitHub\footnote{\url{https://github.com/xiaoyuin/tntspa}}.
+\end{frame}
+
+\subsection{Experimental Setups}
+
+\begin{frame}{Hyperparameters}
+    Tricky part of neural network training
+    \medskip
+    \begin{enumerate}
+        \item Adopted recommended hyperparameters from each framework
+        \item Adjusted for the \textbf{MonumentNSpM} dataset split
+        \item Applied on the other splits
+    \end{enumerate}
+\end{frame}
+
+\section{Results \& Discussion}
+
+\begin{frame}{Results}
+    For each dataset split and model, we report...
+    \begin{itemize}
+        \item \textbf{Perplexity graphs} on the training and validation set
+        \item \textbf{BEST BLEU} on the test set
+    \end{itemize}
+    \medskip\medskip
+    In total, 5 (dataset splits) * 8 (models) = 40 perplexity graphs and 40 BLEU scores
+\end{frame}
+
+\begin{frame}{Results}
+    \begin{example}
+        \begin{columns}
+
+            \column{0.5\textwidth}
+            \includegraphics[width=\textwidth]{../results/dbnqa1/run1/neural_sparql_machine/ppls.png}
+            \column{0.5\textwidth}
+            \begin{table}
+                \tiny
+                \begin{tabular}{c|c|c}
+                    Models & \textbf{Test BLEU} & Step / Epoch \\
+                    \hline
+                    NSpM & 65.92 & Step 50k \\
+                    NSpM+Att1 & 89.87 & Step 50k \\
+                    NSpM+Att2 & 91.50 & Step 50k \\
+                    GNMT-4 & 69.61 & Step 30k \\
+                    GNMT-8 & 68.41 & Step 30k \\
+                    LSTM\_Luong & 77.67 & Epoch 55 \\
+                    ConvS2S & \textbf{96.07} & Epoch 54 \\
+                    Transformer & 68.82 & Epoch 53 \\
+                \end{tabular}
+            \end{table}
+            \end{columns}
+    \end{example}
+\end{frame}
+
+\begin{frame}{Dataset Comparison}
+
+    \pause
+    Three different splits of the monument dataset did not show very big differences in results
+    \begin{itemize}
+        \item The \textbf{Monument} dataset is relatively simple
+    \end{itemize}
+
+    \pause
+    Serious overfit in LC-QUAD dataset experiments
+    \begin{itemize}
+        \item The \textbf{LC-QUAD} dataset is too small in size
+    \end{itemize}
+
+    \pause
+    \begin{itemize}
+        \item The \textbf{DBNQA} is so far the most suitable for this task
+    \end{itemize}
+    \medskip
+    \pause
+    But they are all relatively simpler compared to Natural Language datasets
+    \begin{itemize}
+        \item \alert{25-30 BLEU} for Natural Language task, \alert{60-100 BLEU} for our task
     \end{itemize}
 \end{frame}
 
-\section{Summary}
+\begin{frame}{Model Comparison}
 
-\begin{frame}{Summary}
     \begin{itemize}
-    \item Related fields
+        \item<1> \textbf{ConvS2S} model outperformed other models in converging speed (Perplexity curves) and translation quality (BLEU scores)
+        \item<2> Attention mechanisms contributed to the translation quality
+        \item<3> GNMT (deeper-layer model) performs relatively worse than shallower-layer models
+        \item<4> The Transformer model is relatively harder to train
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Perplexity vs. BLEU}
+    \begin{figure}
+        \includegraphics[width=0.7\textwidth]{perplexity-bleu}
+        \centering
+        \caption{The perplexity-BLEU graph on the validation set in the DBNQA experiments}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Limitations}
+
+    \begin{block}{Training}
+        \begin{itemize}
+            \item Training hyperparameters are not tuned specifically for each model and each dataset.
+            \item Framework differences
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Testing}
+        \begin{itemize}
+            \item BLEU is not a perfect metric for SPARQL
+        \end{itemize}
+    \end{block}
+
+\end{frame}
+
+\section{Summary \& Outlook}
+
+\begin{frame}{Summary \& Outlook}
     \begin{itemize}
-        \item Math word problem generation
-        \item Question generation
+        \item Semantic Web and SPARQL
+        \item Neural Machine Translation Models
+        \item Experiments
+        \item Results and Discussion
+        \pause
     \end{itemize}
-    \item Three primary tasks
-    \begin{itemize}
-        \item Preprocessing
-        \item Question Generating
-        \item Postprocessing
-    \end{itemize}
-    \item Implementation and Experiment
-    \begin{itemize}
-        \item NLP techniques used
-        \item 20 problems test
-        \item Limitations
-    \end{itemize}
-    \item Future Work
-    \begin{itemize}
-        \item Question Answering
-        \item More rules and templates
-    \end{itemize}
-    \end{itemize}
+    \begin{block}{Future Work}
+        \begin{itemize}
+            \item a better NL-SPARQL dataset
+            \item better metric instead of BLEU
+            \item more hyperparameter tuning
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+    \begin{LARGE}
+        Thank you !
+    \end{LARGE}
+\end{center}
 \end{frame}
 
 \begin{frame}{Reference}
 \bibliographystyle{amsalpha}
-\bibliography{bibliography.bib}
+\bibliography{literature}
 \end{frame}
 
 \end{document}
