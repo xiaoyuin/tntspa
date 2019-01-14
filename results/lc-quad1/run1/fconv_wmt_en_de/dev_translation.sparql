@@ -1,0 +1,500 @@
+SELECT DISTINCT var_uri WHERE brack_open <dbp_notableCommanders> <dbp_notableCommanders> var_x sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_1906–17_Stanford_rugby_teams> <dbo_university> var_uri sep_dot <dbo_managerClub> <dbp_headcoach> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_John_Kotelawala> <dbo_hometown> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_foundationPlace> <dbr_Texas> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Dion_Beebe> <dbo_award> var_uri sep_dot <dbr_Edmund_John> <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_1993_European_Grand_Prix> <dbp_firstDriver> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Vanderbilt_University_Medical_Center> <dbp_affiliation> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Air_2000> <dbp_governingBody> var_uri sep_dot <dbr_Clark_Daniel_Stearns> <dbo_militaryBranch> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_militaryUnit> <dbr_Buccinoidea> sep_dot var_uri <rdf_type> <dbo_MilitaryUnit> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_currentMember> <dbr_Wild_Risk> sep_dot var_uri <dbp_currentMembers> var_x sep_dot var_uri <rdf_type> <dbo_Organisation> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_league> <dbr_National_Hockey_League> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_employer> <dbr_CBS> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_publisher> <dbr_Apollo_11> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_locatedInArea> <dbr_Daniel_Gibson> sep_dot var_x <dbp_designer> var_uri sep_dot var_x <rdf_type> <dbo_Bridge> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_child> <dbr_Frank_Miller_ sep_dot var_x <dbo_award> var_uri sep_dot var_x <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_tenant> <dbr_Oakland_Athletics> sep_dot var_x <dbp_architect> var_uri sep_dot var_x <rdf_type> <dbo_Stadium> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_spouse> <dbr_Ptolemy_XIV_of_Egypt> sep_dot var_uri <rdf_type> <dbo_Royalty> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_athletics> <dbr_Taekwondo> sep_dot var_x <dbp_athletics> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Google_Web_Toolkit> <dbo_author> var_uri sep_dot <dbr_Google_Web_Toolkit> <dbo_author> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_league> <dbr_University_of_Edinburgh> sep_dot var_x <dbo_birthPlace> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_Tennis_at_the_2012_Summer_Olympics_–_Women's_singles> <dbo_bronzeMedalist> <dbr_Truth_prevails> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_beatifiedBy> <dbr_Pope_Pius_XI> sep_dot var_x <dbo_majorShrine> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_location> <dbr_Watkins_Glen,_New_York> sep_dot var_x <dbo_firstDriver> var_uri sep_dot var_x <rdf_type> <dbo_GrandPrix> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_operatingSystem> <dbr_Microsoft_Windows> sep_dot var_uri <rdf_type> <dbo_Software> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_operatingSystem> <dbr_Mac_OS> sep_dot var_uri <rdf_type> <dbo_Software> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Arunachal_Pradesh_Legislative_Assembly_election,_2014> <dbo_leaderName> var_uri sep_dot <dbr_Sherlock_Holmes_ attr_open Andhra_Pradesh attr_close math_gt <dbo_affiliation> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Carolyn_Dennis> <dbo_musicalArtist> var_x sep_dot var_x <dbo_associatedMusicalArtist> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Miguel_García_Granados> <dbo_child> var_x sep_dot var_x <dbo_party> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_builder> <dbr_United_States> sep_dot var_x <dbo_builder> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_composer> <dbr_Semnani_languages> sep_dot var_uri <rdf_type> <dbo_Song> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_deathPlace> <dbr_Colonel_ sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_license> <dbr_GNU> sep_dot var_uri <dbo_license> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_region> <dbr_Quiché_Department> sep_dot var_x <dbp_origin> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_settlementType> <dbr_Mac_OS> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_majorShrine> <dbr_Kampuchean_United_Front_for_National_Salvation> sep_dot var_x <dbo_majorShrine> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_computingPlatform> <dbr_New_Mexico> sep_dot var_uri <dbo_computingPlatform> <dbo_Game> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_themeMusicComposer> <dbr_Gary_Portnoy> sep_dot var_uri <dbo_subsequentWork> <dbr_Frasier> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+ASK WHERE brack_open <dbr_Stanislav_Morozov> <dbp_headCoach> <dbr_Akan_language> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_spouse> <dbr_Dolley_Madison> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_James_W._Hyatt> <dbo_successor> var_x sep_dot var_x <dbo_almaMater> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Elizabeth_Alexander_ attr_open Australian_politician attr_close math_gt <dbp_primeminister> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_residence> <dbr_Laozi> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Mavro> <dbo_origin> var_x sep_dot var_x <dbo_deathPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ramiro_Peña> <dbo_team> var_x sep_dot var_x <dbo_country> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_successor> <dbr_PlayStation_4> sep_dot var_uri <dbo_manufacturer> <dbr_Foxconn> sep_dot var_uri <rdf_type> <dbo_InformationAppliance> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_producer> <dbr_Akira_Ifukube> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_relative> <dbo_relative> sep_dot var_uri <dbo_relative> <dbr_Ozzy_Osbourne> sep_dot brack_close
+ASK WHERE brack_open <dbr_Geneva> <dbp_neighboringMunicipalities> <dbr_Cologny> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Xocolatlite> <dbo_colour> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_hometown> <dbr_Kevin_Jonas> sep_dot var_uri <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Erica_Frank> <dbo_institution> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_locationCity> <dbr_Tehran> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_relation> <dbr_Dionne_Warwick> sep_dot var_uri <dbo_child> <dbr_Tom_McLaury> sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_tenant> <dbr_Canada> sep_dot var_x <dbo_formerTeam> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Juhu_Aerodrome> <dbp_city> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_keyPeople> <dbr_Dennis_Muilenburg> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_notableWork> <dbr_Novelas_ejemplares> sep_dot var_uri <dbo_author> var_x sep_dot var_uri <rdf_type> <dbo_Book> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_architect> <dbr_St._Peter's_Basilica> sep_dot var_x <dbp_city> var_uri sep_dot var_x <rdf_type> <dbo_Location> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_partner> <dbr_Tony_Romo> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_locatedInArea> <dbr_Inyo_National_Forest> sep_dot var_uri <dbo_parentMountainPeak> <dbr_Nevado_de_Toluca> sep_dot var_uri <rdf_type> <dbo_Mountain> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_programmingLanguage> <dbr_C++> sep_dot var_uri <dbo_operatingSystem> <dbr_Microsoft_Windows> brack_close
+ASK WHERE brack_open <dbr_Gümüş_ attr_open TV_series attr_close math_gt <dbo_firstAscentPerson> <dbr_Albania> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_sourceRegion> <dbr_Wyoming> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_almaMater> <dbo_location> sep_dot var_x <dbo_residence> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_foundedBy> <dbr_Harvest_Christian_Center> sep_dot var_x <dbo_sport> var_uri sep_dot var_x <rdf_type> <dbo_School> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_William_Luther_Hill> <dbp_order> var_uri sep_dot <dbr_William_Luther_Hill> <dbo_profession> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Emerald_Air_ attr_open United_States attr_close math_gt <dbp_subject> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_commander> <dbr_Robin_ sep_dot var_uri <dbo_commander> var_x sep_dot var_uri <rdf_type> <dbo_MilitaryConflict> brack_close
+ASK WHERE brack_open <dbr_Heydar> <dbo_position> <dbr_Midfielder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ted_Williams_Tunnel> <dbo_maintainedBy> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Luke_List_ attr_open golfer attr_close math_gt <dbo_college> var_uri sep_dot <dbr_Park_Trammell> <dbo_college> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_opponent> <dbr_Jim_Dooley> sep_dot var_x <dbp_president> var_uri sep_dot var_x <rdf_type> <dbo_President> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_computingPlatform> <dbr_BBC_Parliament> sep_dot var_x <dbp_genre> var_uri sep_dot var_x <rdf_type> <dbo_VideoGame> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Kady_O'Malley> <dbo_club> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_leaderName> <dbr_Kazuo_Hirai> sep_dot var_uri <dbo_manufacturer> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Burro_Flats_Painted_Cave> <dbo_governingBody> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_computingPlatform> <dbr_Rhaetian_Railway> sep_dot var_x <dbo_developer> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_area> <dbr_Calera,_Oklahoma> sep_dot var_x <dbp_licensee> var_uri sep_dot var_uri <rdf_type> <dbp_licensee> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Arthur_A._Ross> <dbo_birthPlace> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_network> <dbr_Fox_Broadcasting_Company> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_locationCity> <dbr_Mike_Babcock> sep_dot var_uri <rdf_type> <dbo_AmericanFootballTeam> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_musicComposer> <dbr_Akiva_Goldsman> sep_dot var_uri <dbp_screenplay> <dbr_Akiva_Goldsman> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_mouthMountain> <dbr_Montauk_State_Park> sep_dot var_x <dbo_state> var_uri sep_dot var_x <rdf_type> <dbo_River> brack_close
+ASK WHERE brack_open <dbo_location> <dbo_distributingLabel> <dbr_MapleMusic_Recordings> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_fields> <dbr_Chinese_poetry> sep_dot var_x <dbp_fields> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_network> <dbr_Prime_Time_Entertainment_Network> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_artist> <dbr_Christopher_Franke> sep_dot var_uri <dbp_network> <dbr_TNT_ attr_open TV_channel attr_close math_gt sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Linda_Hogan> <dbp_ethnicity> var_uri sep_dot <dbr_Edward_Niesen> <dbo_nationality> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Pittsburgh> <dbp_party> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_division> <dbo_division> var_uri sep_dot <dbr_Gary_Holder-Winfield> <dbp_region> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_judges> <dbr_Shannon_Pot> sep_dot var_uri <dbo_mouthPlace> <dbr_Limerick> sep_dot var_uri <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_recordLabel> <dbr_MapleMusic_Recordings> sep_dot var_uri <dbp_currency> var_x sep_dot var_uri <rdf_type> <dbp_currency> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Allama_Matthews> <dbo_almaMater> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_operator> <dbo_sourceRegion> sep_dot var_x <dbo_city> var_uri sep_dot var_x <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_spouse> <dbr_Neil_Brown_ sep_dot var_uri <rdf_type> <dbo_predecessor> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_species> <dbr_Liger> sep_dot var_uri <dbo_ingredient> var_x sep_dot var_uri <rdf_type> <dbo_Food> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_hubs> <dbr_Subang,_Indonesia> sep_dot var_x <dbp_hubs> var_uri sep_dot var_x <rdf_type> <dbo_Airline> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Eddie_Anderson_ <dbo_riverMouth> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_manufacturer> <dbr_Sony> sep_dot var_uri <dbo_manufacturer> <dbr_Foxconn> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_operatingSystem> <dbr_Mac_OS> sep_dot var_uri <dbo_operatingSystem> <dbr_C++> sep_dot var_uri <rdf_type> <dbo_Software> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_athletics> <dbr_NCAA_Division_I_Football_Bowl_Subdivision> sep_dot var_uri <rdf_type> <dbo_University> brack_close
+ASK WHERE brack_open <dbr_Amazon_River> <dbo_sourceRegion> <dbr_Kingston,_Ontario> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_owner> <dbr_Laozi> sep_dot var_uri <rdf_type> <dbo_Astronaut> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_WRVU> <dbp_licensee> var_uri sep_dot <dbr_Angela_Trusty> <dbo_almaMater> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_governor> <dbr_Charles_Willing_Byrd> sep_dot var_uri <dbo_restingPlace> <dbr_North_Bend,_Ohio> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_South_Side_Elevated_Railroad> <dbo_operatedBy> var_uri sep_dot <dbr_Doctor_Who:_Destiny_of_the_Doctors> <dbo_deathPlace> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_youthclubs> <dbr_Newell's_Old_Boys> sep_dot var_uri <rdf_type> <dbo_Athlete> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_presenter> <dbr_Ryan_Seacrest> sep_dot var_uri <dbo_channel> <dbr_Brian_Dunkleman> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_themeMusicComposer> <dbr_Simon_Fuller> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_recordedIn> <dbr_Criteria_Studios> sep_dot var_x <dbp_writer> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_narrator> <dbr_Anthony_Harvey> sep_dot var_uri <dbp_composer> <dbr_Vangelis> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Fabio_Mercurio> <dbo_deathPlace> var_x sep_dot var_x <dbo_founder> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_routeEnd> <dbr_CKFM-FM> sep_dot var_x <dbp_origin> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_John_Tyler,_Sr.> <dbo_militaryRank> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Fr._Agnel_Multipurpose_School_and_Junior_College> <dbo_sport> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_headquarter> <dbo_Building> sep_dot var_uri <dbp_company> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Rev_ <dbp_founder> var_uri brack_close
+ASK WHERE brack_open <dbr_Stanislav_Morozov> <dbo_routeEnd> <dbr_Mumbai> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_mountainRange> <dbr_Israel> sep_dot var_uri <rdf_type> <dbo_MilitaryPerson> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_openingTheme> <dbr_Te_Deum_ attr_open Charpentier attr_close math_gt sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_athletics> <dbr_Thesaban> sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_ingredient> <dbr_George_Beauchamp> sep_dot var_x <dbo_ingredient> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_John_Kotelawala> <dbp_allegiance> var_uri sep_dot <dbr_Camilla_Martin> <dbo_country> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_writer> <dbr_Adventures_of_Huckleberry_Finn> sep_dot var_uri <dbp_writer> <dbr_The_Sarah_Jane_Adventures> sep_dot var_uri <rdf_type> <dbo_Writer> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_child> <dbr_Dennis_Muilenburg> sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Liverpool_Playhouse> <dbo_operatedBy> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_openingTheme> <dbr_Where_Everybody_Knows_Your_Name> sep_dot var_uri <dbp_composer> <dbr_Frasier> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_sourceLocation> <dbr_North-Western_Province,_Zambia> sep_dot var_uri <dbp_sourceRegion> <dbr_Arequipa_Region> sep_dot var_uri <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_knownFor> <dbr_Democratic_Party_ attr_open Lok_Sabha_constituency attr_close math_gt sep_dot var_x <dbp_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_The_Sandman_ <dbo_deathPlace> var_uri sep_dot <dbr_Tigran_Petrosian> <dbo_deathPlace> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_previousWork> <dbo_previousWork> var_x sep_dot var_x <dbo_hometown> var_uri sep_dot var_x <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_almaMater> <dbr_Harvard-Westlake_School> sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_producer> <dbr_Michael_Deeley> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_previousWork> <dbo_Artwork> sep_dot var_x <dbp_label> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_developer> <dbr_Australia> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_keyPeople> <dbo_Person> sep_dot var_x <dbo_product> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_firstTeam> <dbr_Renault_in_Formula_One> sep_dot var_x <dbo_poleDriver> var_uri sep_dot var_uri <rdf_type> <dbo_GrandPrix> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_sisterStations> <dbr_American_Revolutionary_War> sep_dot var_x <dbo_stylisticOrigin> var_uri sep_dot var_x <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Shinya_Aoki> <dbp_founder> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Tennie_and_Laura_ attr_open schooner attr_close math_gt <dbp_nearestCity> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_branch> <dbr_United_States> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Luke_List_ attr_open name attr_close math_gt <dbo_president> var_uri sep_dot <dbr_Al_Gore_presidential_campaign,_2000> <dbo_president> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_keyPerson> <dbr_United_States> sep_dot var_uri <dbp_owners> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_anthem> <dbr_United_States_Coast_Guard> sep_dot var_uri <dbp_currency> var_x sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_commander> <dbr_Mr._Tambourine_Man_ sep_dot var_x <dbp_combatant> var_uri sep_dot var_x <rdf_type> <dbo_MilitaryConflict> brack_close
+ASK WHERE brack_open var_x <dbp_museum> <dbr_United_States> sep_dot var_x <dbo_origin> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_distributor> <dbo_MilitaryUnit> sep_dot var_uri <dbo_manufacturer> <dbr_Sony> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_spouse> <dbr_Arlington_Heights,_Illinois> sep_dot var_x <dbp_genre> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_director> <dbr_Orson_Welles> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_family> <dbr_Darth_Vader> sep_dot var_uri <dbp_portrayer> <dbr_Duck_family_ attr_open Disney attr_close math_gt sep_dot var_uri <rdf_type> <dbo_FictionalCharacter> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_part> <dbo_part> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_ethnicity> <dbr_Michaelhouse> sep_dot var_x <dbo_basedOn> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open <dbr_Ionian_Sea> <dbo_outflow> var_x sep_dot var_x <dbp_cities> var_uri sep_dot var_x <rdf_type> <dbo_Sea> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_restingPlace> <dbr_Æthelred_the_Unready> sep_dot var_uri <dbp_mascot> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_currentMembers> <dbp_currentMembers> sep_dot var_x <dbo_bandMember> var_uri sep_dot var_x <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_award> var_uri sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_designer> <dbr_Brian_Moriarty> sep_dot var_x <dbo_builder> var_uri sep_dot var_x <rdf_type> <dbo_Stadium> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_family> <dbr_Buccinidae> sep_dot var_uri <dbo_family> <dbr_Buccinoidea> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_cities> <dbp_cities> sep_dot var_uri <rdf_type> <dbo_Sea> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Breann_McGregor> <dbo_knownFor> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Marine_Corps_Air_Station_Kaneohe_Bay> <dbp_architect> var_uri sep_dot <dbr_Edwin_F._Hunter> <dbp_branch> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_operatingSystem> <dbr_Microsoft_Windows> sep_dot var_uri <dbo_operatingSystem> <dbr_Mac_OS> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_label> <dbr_Entertainment_One_Music> sep_dot var_uri <dbo_bandMember> var_x sep_dot var_uri <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_company> <dbr_HBO> sep_dot var_uri <dbo_company> <dbr_Playtone> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+ASK WHERE brack_open <dbr_Zachary_Taylor> <dbp_rank> <dbo_incumbent> attr_open United_States attr_close math_gt brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Aghasalim_Childagh> <dbo_deathPlace> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_restingPlace> <dbr_William_Henry_Harrison_Tomb_State_Memorial> sep_dot var_uri <dbo_restingPlace> <dbr_Indiana> sep_dot var_uri <rdf_type> <dbo_Royalty> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Charles_Gordon_ <dbo_birthPlace> var_uri sep_dot <dbr_Salsette_Island> <dbo_largestCity> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ingmar_Bergman> <dbo_award> var_uri sep_dot <dbr_Inthakin> <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_owningCompany> <dbr_Viacom_ sep_dot var_uri <dbp_company> var_x sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+ASK WHERE brack_open <dbr_Silver_Airways> <dbo_hubAirport> <dbr_Barcelona> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_headquarter> <dbr_United_States> sep_dot var_uri <dbo_location> var_x sep_dot var_uri <rdf_type> <dbo_Place> brack_close
+ASK WHERE brack_open <dbr_Walt_Disney_Studios_ attr_open Bill_Gates_book attr_close math_gt <dbp_owned> <dbr_Pixar> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Antonio_Giannini> <dbp_education> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Charlie_Mensuel> <dbo_publisher> var_x sep_dot var_x <dbo_founder> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Chiva_bus> <dbo_computingPlatform> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_1992_Canadian_Grand_Prix> <dbp_firstDriver> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_birthPlace> <dbr_French_people> sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ionian_Sea> <dbo_county> var_x sep_dot var_x <dbo_countySeat> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_European_Go_Federation> <dbp_purpose> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_doctoralAdvisor> <dbr_Daniel_Gibson> sep_dot brack_close
+ASK WHERE brack_open <dbr_Pink_Floyd> <dbp_mother> <dbr_Moscow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Championship_Snooker> <dbp_pastteams> var_x sep_dot var_x <dbo_deathPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_James_McClure_ attr_open table_tennis attr_close math_gt <dbp_doctoralStudents> var_x sep_dot var_x <dbo_birthPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_publisher> <dbr_Random_House> sep_dot var_uri <dbo_genre> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Rev_ attr_open drink attr_close math_gt <dbp_distributor> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_1997_Canadian_Grand_Prix> <dbo_poleDriver> var_uri sep_dot <dbr_1971_United_States_Grand_Prix> <dbo_poleDriver> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_mountainRange> <dbr_Sierra_Nevada_ attr_open U.S sep_dot attr_close math_gt sep_dot var_uri <dbo_parentMountainPeak> <dbr_Nevado_de_Toluca> sep_dot var_uri <rdf_type> <dbo_Mountain> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_debutTeam> <dbr_San_Francisco_49ers> sep_dot var_uri <rdf_type> <dbo_Software> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Dad's_Root_Beer> <dbp_locationCity> var_uri sep_dot <dbr_Svetlana_Gounkina> <dbp_location> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_religiousAffiliation> <dbr_Colonel_ attr_open United_States attr_close math_gt sep_dot var_uri <rdf_type> <dbo_City> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Banlung> <dbo_ground> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_tenant> <dbr_Raptors_905> sep_dot var_x <dbo_tenant> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Bloomington_Viaduct> <dbo_launchSite> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_residence> <dbr_National_Academy_Museum_and_School> sep_dot var_x <dbo_restingPlace> var_uri sep_dot var_x <rdf_type> <dbo_Politician> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_locationCity> <dbr_O.co_Coliseum> sep_dot var_uri <rdf_type> <dbo_AmericanFootballTeam> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_locatedInArea> <dbo_firstAscentPerson> sep_dot var_x <dbo_firstAscentPerson> var_uri sep_dot var_x <rdf_type> <dbo_Mountain> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_residence> <dbr_England> sep_dot var_x <dbp_religion> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_foundedBy> <dbr_Texas> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_products> <dbr_Runes_of_Magic> sep_dot var_x <dbp_products> var_uri sep_dot var_x <rdf_type> <dbo_Company> brack_close
+ASK WHERE brack_open <dbr_Saneh_Lungkeaw> <dbp_instrument> <dbr_Thailand> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_governor> <dbr_Charles_Willing_Byrd> sep_dot var_uri <rdf_type> <dbp_primeminister> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_commander> <dbo_commander> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Afrika_Baby_Bam> <dbo_associatedBand> var_uri sep_dot <dbr_Siberia> <dbo_associatedBand> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Lawrence_F._Cafero> <dbp_region> var_uri sep_dot <dbp_region> <dbp_region> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_notableCommanders> <dbo_division> sep_dot var_uri <dbp_battles> var_x sep_dot var_uri <rdf_type> <dbo_MilitaryConflict> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Daund_Junction_railway_station> <dbo_servingRailwayLine> var_uri brack_close
+ASK WHERE brack_open <dbr_Baker's_Dozen_Donuts> <dbo_industry> <dbr_Coffee> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_city> <dbr_Kazan> sep_dot var_x <dbo_riverMouth> var_uri sep_dot var_x <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Galician_Wikipedia> <dbp_firstDriver> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_college> <dbr_Bill_Clinton> sep_dot var_x <dbp_cities> var_uri sep_dot var_uri <rdf_type> <dbo_City> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Steven_Palazzo> <dbp_battles> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Kenya_national_under-20_football_team> <dbp_homeStadium> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_mainInterests> <dbr_Philosophy> sep_dot var_uri <rdf_type> <dbo_Philosopher> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_phylum> <dbr_Chordate> sep_dot var_uri <rdf_type> <dbo_Mammal> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Sigma_TV> <dbp_headquarters> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Lula_J._Davis> <dbo_residence> var_uri sep_dot <dbr_Haile_Selassie_Gugsa> <dbo_deathPlace> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_leader> <dbr_Surayud_Chulanont> sep_dot var_x <dbp_currency> var_uri sep_dot var_x <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Buckhurst_Hill_County_High_School> <dbo_localAuthority> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Polytechnic_University_of_the_Philippines_–_Bataan> <dbo_sport> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_company> <dbr_HBO> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Snake_Island_ attr_open Black_Sea attr_close math_gt <dbp_locationCountry> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_related> <dbr_Chicago_Bulls> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_citizenship> <dbp_nationalMotto> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_successor> <dbr_Anne_Hidalgo> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_design> <dbr_Burr_Truss> sep_dot var_x <dbp_crosses> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_headquarters> <dbr_Wild_Risk> sep_dot var_x <dbp_destinations> var_uri sep_dot var_x <rdf_type> <dbo_Airline> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_locatedInArea> <dbr_Lampedusa> sep_dot var_x <dbp_nickname> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Panki_block> <dbo_leaderName> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_district> <dbr_Pequea_Creek> sep_dot var_x <dbo_capital> var_uri sep_dot var_x <rdf_type> <dbo_SoccerClub> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Juhu_Aerodrome> <dbo_city> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_archipelago> <dbr_VMF-155> sep_dot var_uri <rdf_type> <dbo_Astronaut> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_ground> <dbr_Varsity_Stadium> sep_dot var_uri <dbo_formerTeam> var_x sep_dot var_uri <rdf_type> <dbo_AmericanFootballPlayer> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ford_Falcon_Cobra> <dbo_parentCompany> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_music> <dbr_Laurie_Johnson> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_regionServed> <dbo_Bridge> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_producer> <dbr_Stephen_E._Ambrose> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_targetAirport> <dbr_Gatwick_Airport> sep_dot var_x <dbp_destinations> var_uri sep_dot var_x <rdf_type> <dbo_Airline> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_sourceLocation> <dbr_Semnani_languages> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_associatedBand> <dbr_Foxy_Brown_ sep_dot var_uri <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_manufacturer> <dbr_The_Spirit_of_Christmas_ sep_dot var_uri <rdf_type> <dbo_AdministrativeRegion> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_president> <dbo_President> sep_dot var_x <dbo_field> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Mikhail_Pashnin> <dbp_prospectTeam> var_uri sep_dot <dbr_Robin_Kovacs> <dbp_prospectTeam> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ramiro_Peña> <dbo_league> var_x sep_dot var_x <dbo_country> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_operator> <dbr_Pittsburgh_Pirates> sep_dot var_x <dbp_architect> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_South_Loop_Printing_House_District> <dbo_architecturalStyle> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_creator> <dbr_Playtone> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_party> <dbr_British_Columbia> sep_dot var_x <dbp_religion> var_uri sep_dot var_x <rdf_type> <dbo_Politician> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_portrayer> <dbr_Brian_Graden> sep_dot var_uri <rdf_type> <dbo_FictionalCharacter> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_birthPlace> <dbr_Canada> sep_dot var_x <dbo_knownFor> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Anna_Bergman> <dbo_child> var_x sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Clinton_Foundation> <dbp_keyPeople> var_uri sep_dot <dbo_appointer> <dbo_appointer> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_office> <dbr_Sylvain_Lévi> sep_dot var_x <dbp_office> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_leader> <dbr_HBO> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_label> <dbp_label> sep_dot var_uri <rdf_type> <dbo_Album> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_keyPeople> <dbr_Raymond_Conner> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_birthPlace> <dbr_United_States> sep_dot var_x <dbp_knownFor> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_museum> <dbr_Cheers> sep_dot var_x <dbp_label> var_uri sep_dot var_x <rdf_type> <dbo_Single> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Soccer_Bowl_'76> <dbo_city> var_uri sep_dot <dbr_Timothy_J._Roemer> <dbo_country> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Women_in_the_Garden> <dbp_artist> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Island_Bayou_ attr_open Oklahoma attr_close math_gt <dbo_source> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_cities> brack_open sep_dot var_uri <dbp_branch> <dbr_Continental_Army> sep_dot var_uri <rdf_type> <dbo_MilitaryUnit> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Temenos_Group> <dbp_foundation> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_ingredient> <dbr_Coconut> sep_dot var_x <dbo_ingredient> var_uri sep_dot var_x <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_veneratedIn> <dbr_Islam> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Cosmos_ attr_open Carl_Sagan_book attr_close math_gt <dbo_previousWork> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_William_Anthony_ attr_open artist attr_close math_gt <dbo_training> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_deathPlace> <dbr_United_States> sep_dot var_uri <dbo_manufacturer> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Pōmare_I> <dbo_successor> var_x sep_dot var_x <dbo_birthPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_mountainRange> <dbr_Sierra_Nevada_ attr_open U.S sep_dot attr_close math_gt sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_leader> <dbr_Economist> sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Jonas_Gahr_Støre> <dbp_constituency> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_David_Prowse_ attr_open Metro_Transit_station attr_close math_gt <dbp_grandsire> var_x sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_lyrics> attr_open musical attr_close math_gt <dbp_lyrics> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_movement> <dbo_movement> sep_dot var_x <dbo_country> var_uri sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_child> <dbr_Indira_Gandhi> sep_dot var_x <dbo_otherParty> var_uri sep_dot var_x <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Marine_Corps_Air_Station_Kaneohe_Bay> <dbp_architect> var_uri brack_close
+ASK WHERE brack_open <dbr_X_the_Unknown> <dbo_musicalBand> <dbr_Queen_Latifah> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_leader> <dbr_Vanderbilt_Commodores> sep_dot var_uri <rdf_type> <dbo_University> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Jo_Garcia> <dbo_knownFor> var_uri sep_dot <dbr_Craig_Van_Tilbury> <dbo_knownFor> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_superintendent> <dbr_Christopher_Franke> sep_dot var_uri <rdf_type> <dbo_Scientist> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_deputy> <dbr_Ashton_Historic_District> sep_dot var_x <dbo_nationality> var_uri sep_dot var_x <rdf_type> <dbo_GolfPlayer> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Clara_Ng> <dbo_ethnicity> var_x sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_Lena_River> <dbo_mouthMountain> <dbr_Olyokma_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_restingPlace> <dbr_William_W._Brien> sep_dot var_uri <dbo_opponent> var_x sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Bogumilus> <dbo_majorShrine> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_license> <dbo_OfficeHolder> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_9_to_5_ attr_open musical attr_close math_gt <dbo_lyrics> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_spouse> <dbr_Frasier> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_related> <dbr_Subaru_Outback> sep_dot var_x <dbo_layout> var_uri sep_dot var_x <rdf_type> <dbo_Automobile> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_sourceMountain> <dbr_Baikal_Mountains> sep_dot var_uri <dbp_mouthLocation> <dbr_Arctic_Ocean> sep_dot var_uri <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Abhijit_Kunte> <dbp_purpose> var_x sep_dot var_x <dbp_purpose> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_predecessor> <dbr_Viacom_Productions> sep_dot var_uri <dbp_company> var_x sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_The_Producers_ attr_open 2005_film attr_close math_gt <dbp_label> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_opponent> <dbr_Tom_McLaury> sep_dot var_uri <dbo_opponent> <dbr_Billy_Clanton> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_publisher> <dbr_Oddworld> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+ASK WHERE brack_open <dbr_Mount_Everest> <dbo_firstAscentPerson> <dbr_Krzysztof_Wielicki> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Hirth_Acrostar> <dbp_origin> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_writer> <dbr_Puerto_Rico> sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_composer> <dbr_Judy_Hart_Angelo> sep_dot var_uri <dbp_company> <dbr_Paramount_Television> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Victor_Hope,_2nd_Marquess_of_Linlithgow> <dbp_primeminister> var_uri sep_dot <dbo_Astronaut> <dbp_primeminister> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_headquarters> <dbr_Klang_Valley> sep_dot var_uri <dbo_country> var_x sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Sverre_Krogh_Sundbø> <dbo_birthPlace> var_uri sep_dot <dbr_Ragnhild_Jølsen> <dbo_birthPlace> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Evraz> <dbo_owningCompany> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_division> <dbr_Firmicutes> sep_dot var_uri <dbo_division> var_x sep_dot var_uri <rdf_type> <dbo_Bacteria> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Riley_Reid> <dbo_state> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Sarah_Kazemy> <dbo_residence> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_artist> <dbr_Sanremo_Music_Festival> sep_dot var_x <dbo_associatedMusicalArtist> var_uri sep_dot var_x <rdf_type> <dbo_MusicalArtist> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_architecturalStyle> <dbp_doctoralAdvisor> sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_publisher> <dbo_cpu> sep_dot var_x <dbo_academicDiscipline> var_uri sep_dot var_x <rdf_type> <dbo_AcademicJournal> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_vicePresident> <dbr_Cross-platform> sep_dot var_x <dbo_vicePresident> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_author> <dbr_Even-toed_ungulate> sep_dot var_uri <dbo_author> var_x sep_dot var_uri <rdf_type> <dbo_Book> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_notableWork> <dbr_The_Dognapper> sep_dot var_uri <rdf_type> <dbo_Writer> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbo_ceremonialCounty> <dbo_ceremonialCounty> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_branch> <dbr_Semnani_languages> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_almaMater> <dbr_Detroit_Red_Wings> sep_dot var_x <dbp_residence> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_jurisdiction> <dbr_German-occupied_Europe> sep_dot var_x <dbo_leader> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_Darcs> <dbo_license> <dbr_GNU> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_placeofburial> <dbr_Arlington_National_Cemetery> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Liudmila_Privivkova> <dbo_birthPlace> var_uri sep_dot <dbr_Qadir_Huseynov> <dbo_birthPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Vesak> <dbo_type> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_cities> <dbr_Rostock> sep_dot var_uri <dbp_cities> <dbr_United_States> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_nationalteam> <dbr_United_States_men's_national_soccer_team> sep_dot var_x <dbo_team> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Angela_Trusty> attr_open Buddhist attr_close math_gt <dbo_author> var_uri sep_dot <dbr_Bombay_Sapphire> <dbo_author> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ronald_Wilson> <dbp_branch> var_x sep_dot var_x <dbp_mascot> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_deathPlace> <dbr_Colorectal_cancer> sep_dot var_x <dbo_award> var_uri sep_dot var_x <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_mascot> <dbp_school> sep_dot var_x <dbp_school> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_militaryRank> <dbr_Nebraska> sep_dot var_x <dbp_battles> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_hubs> <dbr_Detroit> sep_dot var_x <dbp_parent> var_uri sep_dot var_x <rdf_type> <dbo_Airline> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Wilfred_McDonald> <dbp_playedFor> var_uri sep_dot <dbr_Brian_Horwitz> <dbp_draftTeam> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Carl_Stokes> <dbo_president> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_designer> <dbr_Olivier_Boulay> sep_dot var_x <dbo_layout> var_uri sep_dot var_x <rdf_type> <dbo_Automobile> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Bertalan_Szemere> <dbo_monarch> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_lieutenant> <dbr_Timothy_L._Woodruff> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_publisher> <dbr_Lucifer's_Hammer> sep_dot var_uri <dbo_founder> <dbr_Ralph_J._Gleason> sep_dot var_uri <rdf_type> <dbo_Magazine> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_GNOWSYS> <dbo_country> var_uri sep_dot <dbr_Kaan_Önder> <dbo_river> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_knownFor> <dbr_Anthrax> sep_dot var_uri <dbo_academicAdvisor> <dbr_Georg_Meissner> sep_dot var_uri <rdf_type> <dbo_Scientist> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_champion> <dbr_American_Hockey_League> sep_dot var_x <dbo_sport> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_purpose> <dbr_Scientology> sep_dot brack_close
+ASK WHERE brack_open <dbr_Henry_David_Thoreau> <dbp_notableCommanders> <dbr_Female> brack_close
+ASK WHERE brack_open <dbr_Gümüş_ attr_open TV_series attr_close math_gt <dbp_firstAired> <dbr_Galileo_Galilei> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_award> <dbr_Puerto_Rico> sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_AMC_Gremlin> <dbp_engine> <dbr_Audi> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_distributor> <dbr_Dalilah_Sappenfield> sep_dot var_x <dbo_recordLabel> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_board> <dbr_Trinity_House> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_board> <dbr_Christopher_Franke> sep_dot var_uri <dbo_deathCause> 1787–1850 sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_location> <dbr_United_States> sep_dot var_uri <dbp_archipelago> var_x sep_dot var_uri <rdf_type> <dbo_Island> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_doctoralAdvisor> <dbr_Georg_Meissner> sep_dot var_uri <rdf_type> <dbo_Scientist> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Hirth_Acrostar> <dbo_president> var_x sep_dot var_x <dbo_origin> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_leaderName> <dbr_Sukhumbhand_Paribatra> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_municipality> <dbr_Jennifer_Lopez> sep_dot var_uri <dbo_foundationPlace> var_x sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Timothy_Morton> <dbp_mainInterests> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Steve_Ontiveros_ attr_open <dbr_MasterCard_Centre> attr_close math_gt <dbo_team> var_uri sep_dot <dbr_MasterCard_Centre> <dbo_tenant> var_uri brack_close
+ASK WHERE brack_open <dbr_Mickey_Roker> <dbo_associatedBand> <dbr_Female> brack_close
+ASK WHERE brack_open <dbr_Nokia_215> <dbo_destination> <dbr_Moscow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Southwest_African_lion> <dbo_species> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Michael_Powell_ attr_open lacrosse attr_close math_gt <dbo_team> var_uri sep_dot <dbr_Before_I_Let_You_Go> <dbo_university> var_uri sep_dot var_uri <rdf_type> <dbo_University> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_neighboringMunicipalities> <dbr_Lancy> sep_dot var_uri <dbo_child> <dbr_Esther_Alder> sep_dot var_uri <rdf_type> <dbo_InformationAppliance> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Chicken_Run> <dbo_spouse> var_x sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Claiborne_Pell> <dbo_child> var_x sep_dot var_x <dbo_profession> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Lezlee_Westine> <dbp_residence> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_source> <dbr_Celluloid_Records> sep_dot var_uri <rdf_type> <dbo_River> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_chairman> <dbr_Patrícia_Amorim> sep_dot var_x <dbo_bandMember> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_creator> <dbr_Jerry_Siegel> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_religion> <dbr_India> sep_dot var_x <dbp_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_schooltype> <dbr_Norwegian_language> sep_dot var_x <dbo_sport> var_uri sep_dot var_x <rdf_type> <dbo_School> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_capital> <dbr_Tirana> sep_dot var_uri <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_neighboringMunicipalities> <dbr_Cologny> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_deathPlace> <dbr_United_States> sep_dot var_x <dbo_deathCause> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_cities> <dbr_Atlantic_Ocean> sep_dot var_x <dbp_cities> var_uri sep_dot var_x <rdf_type> <dbo_Sea> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_governingBody> <dbr_Mid_Wales> sep_dot var_x <dbo_builder> var_uri sep_dot var_x <rdf_type> <dbo_Stadium> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_recordedIn> <dbr_Faisal_Aman_Khan> sep_dot var_x <dbo_recordedIn> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_athletics> <dbr_Hockey> sep_dot var_x <dbp_athletics> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_veneratedIn> <dbr_Judaism> sep_dot var_uri <rdf_type> <dbo_Saint> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_album> <dbo_album> sep_dot var_uri <dbo_formerBandMember> var_x sep_dot var_uri <rdf_type> <dbo_Band> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_office> <dbr_Raptors_905> sep_dot var_x <dbp_destinations> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_deathCause> <dbr_Chicago_Bulls> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_subsequentWork> <dbr_Æthelred_the_Unready> sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_party> <dbr_Prime_Time_Entertainment_Network> sep_dot var_x <dbo_party> var_uri sep_dot var_x <rdf_type> <dbo_PoliticalParty> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_title> <dbr_Miss_Louisiana_USA> sep_dot var_uri <dbo_manufacturer> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Angela_Trusty> <dbo_almaMater> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_headquarter> <dbr_Li_Si> sep_dot var_x <dbo_foundedBy> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Michael_Powell_ attr_open ice_hockey attr_close math_gt <dbo_debutTeam> var_uri sep_dot <dbr_Jean_Segura> <dbo_team> var_uri sep_dot var_uri <rdf_type> <dbo_SportsTeam> brack_close
+ASK WHERE brack_open <dbr_Henry_David_Thoreau> <dbp_headcoach> <dbr_Stan_Lee> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_type> <dbr_Hiroyuki_Takei> sep_dot var_x <dbp_writer> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Mekong_River_Commission> <dbo_notableWork> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Gabriel_París_Gordillo> <dbp_locationCountry> var_uri sep_dot <dbr_Judson_Huss> <dbo_deathPlace> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_label> <dbr_Celluloid_Records> sep_dot var_uri <dbp_label> <dbr_Celluloid_Records> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_successor> <dbr_Quagmire's_Quagmire> sep_dot var_uri <dbo_successor> var_x sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Scott_Berkun> <dbo_localAuthority> var_uri sep_dot <dbr_Dennis_DeConcini> <dbo_localAuthority> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_opponent> <dbr_Ike_Clanton> sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_predecessor> <dbo_Automobile> sep_dot var_x <dbo_predecessor> var_uri sep_dot var_x <rdf_type> <dbo_Automobile> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_product> <dbr_John_Randolph_of_Roanoke> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_designer> <dbr_Cable-stayed_bridge> sep_dot var_x <dbp_crosses> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_Sloth> <dbp_album> <dbr_Planet_Pit> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Blodpalt> <dbp_constituency> var_uri sep_dot <dbr_Salsette_Island> <dbp_constituency> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_primeminister> <dbr_Derick_Heathcoat-Amory,_1st_Viscount_Amory> sep_dot var_x <dbp_country> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_nationality> <dbr_Filipinos> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Novair_International_Airways> <dbo_destination> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_wineRegion> <dbr_Michigan> sep_dot var_x <dbo_wineRegion> var_uri sep_dot var_x <rdf_type> <dbo_Grape> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Pulau_Ujong> <dbo_largestCity> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Steven_Palazzo> <dbp_battles> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_majorShrine> <dbr_GTK+> sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Everything_Will_Be_OK> <dbp_narrated> var_x sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Slapstick_ attr_open band attr_close math_gt <dbo_producer> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_writer> <dbr_James_Roosevelt> sep_dot var_uri <rdf_type> <dbo_Book> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_rightTributary> <dbr_Rakitnica> sep_dot var_x <dbp_mouthLocation> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_militaryRank> <dbr_Benjamin_Spock> sep_dot var_x <dbo_country> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_locatedInArea> <dbr_Yosemite_National_Park> sep_dot var_x <dbo_firstAscentPerson> var_uri sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Journal_of_Cerebral_Blood_Flow_&_Metabolism> <dbo_academicDiscipline> var_uri sep_dot <dbr_Dart_ attr_open journal attr_close math_gt <dbo_academicDiscipline> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_predecessor> <dbp_engine> sep_dot var_x <dbo_manufacturer> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Persona_ attr_open 1966_film attr_close math_gt <dbp_narrated> var_uri sep_dot <dbr_Before_I_Let_You_Go> attr_open playwright attr_close math_gt <dbp_narrated> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_The_Conglomerate_ attr_open American_group attr_close math_gt <dbo_associate> var_uri sep_dot <dbr_Before_I_Let_You_Go> <dbo_artist> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_garrison> <dbr_The_Pentagon> sep_dot var_uri <rdf_type> <dbo_MilitaryUnit> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_genre> <dbo_musicComposer> sep_dot var_x <dbp_artist> var_uri sep_dot var_x <rdf_type> <dbo_Single> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Babita> <dbo_birthPlace> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_writer> <dbr_Daniel_Gibson> sep_dot var_x <dbp_appointer> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_Gamini_Seneviratne> <dbo_editing> <dbr_Moscow> brack_close
+ASK WHERE brack_open <dbr_Jim_Kiick> <dbo_institution> <dbr_New_England_Patriots> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_music> <dbr_BAFTA_Award_for_Best_Film_Music> sep_dot var_uri <dbo_musicComposer> var_x sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Mary_Poppins_ attr_open musical attr_close math_gt <dbo_author> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_youthclubs> <dbr_FC_Barcelona> sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_restingPlace> <dbr_Convent_of_the_Barefoot_Trinitarians> sep_dot var_uri <dbo_author> var_x sep_dot var_uri <rdf_type> <dbo_Book> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_PlayStation_4> <dbo_successor> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Barbara_Bush> <dbo_child> var_x sep_dot var_x <dbo_child> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Jo_Garcia> <dbo_sport> var_uri sep_dot <dbr_Abhijit_Kunte> <dbo_knownFor> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_location> <dbr_Sweden> sep_dot var_x <dbo_product> var_uri sep_dot var_x <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_battles> <dbr_Operation_Barbarossa> sep_dot var_x <dbo_relation> var_uri sep_dot var_x <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_kingdom> <dbr_Animal> sep_dot var_x <dbp_services> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbp_developer> <dbp_products> var_x sep_dot var_x <dbp_developer> var_uri sep_dot var_x <rdf_type> <dbo_Software> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_writer> <dbr_Frasier> sep_dot var_x <dbo_notableWork> var_uri sep_dot var_x <rdf_type> <dbo_Writer> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_battles> <dbr_Damon_Hill> sep_dot var_x <dbp_battles> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_debutteam> <dbr_Hawaii> sep_dot var_x <dbo_team> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_music> <dbr_Geoffrey_Burgon> sep_dot var_uri <dbp_distributor> <dbr_Monty_Python> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_J._T._Krogh> <dbo_nationality> var_x sep_dot var_x <dbo_nationality> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_music> <dbr_Gary_Chang> sep_dot var_x <dbp_starring> var_uri sep_dot var_x <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Kumta> <dbo_mountainRange> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_sisterStations> <dbr_Al_Arabiya_99> sep_dot var_x <dbp_location> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Kimberly_Stewart> <dbo_spouse> var_x sep_dot var_x <dbo_spouse> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Brideun_School_for_Exceptional_Children> <dbp_destinations> var_uri sep_dot <dbr_Biscayne_Bay> <dbo_birthPlace> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_birthPlace> <dbr_England> sep_dot var_x <dbo_deathPlace> var_uri sep_dot var_uri <rdf_type> <dbo_Place> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbp_mascot> <dbo_sport> var_uri brack_close
+ASK WHERE brack_open <dbr_Sunrise_ attr_open AM attr_close math_gt <dbp_guests> <dbr_Andy_Warhol> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbp_location> <dbr_Toronto> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Linda_Hogan> <dbp_state> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_spouse> <dbo_governor> sep_dot var_uri <dbp_branch> <dbr_Militia> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+ASK WHERE brack_open <dbr_Hyundai_Lavita> <dbp_assembly> <dbr_GTK+> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_composer> <dbr_Gerard_Marino> sep_dot var_x <dbo_developer> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_guests> <dbr_Frasier> sep_dot var_x <dbp_guests> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_William_Anthony_ attr_open artist attr_close math_gt <dbo_training> var_uri sep_dot <dbr_X_ attr_open artist attr_close math_gt <dbp_primeminister> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_state> <dbr_United_States> sep_dot var_x <dbp_athletics> var_uri sep_dot var_uri <rdf_type> <dbo_Sport> brack_close
+ASK WHERE brack_open <dbr_The_Boy_Is_Mine_ attr_open song attr_close math_gt <dbp_discoverer> <dbr_Albania> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_country> <dbr_United_States> sep_dot var_x <dbp_discipline> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri brack_close
+ASK WHERE brack_open <dbr_Nokia_215> <dbp_editing> <dbr_C_ attr_open programming_language attr_close math_gt brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_membership> <dbr_Defenceman> sep_dot var_x <dbp_membership> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Kim_Sawchuk> <dbp_region> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_child> <dbr_Siege_of_Fort_Recovery> sep_dot var_uri <rdf_type> <dbr_Charles_Willing_Byrd> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_related> <dbr_Solon_Spencer_Beman> sep_dot var_x <dbp_locationTown> var_uri sep_dot var_x <rdf_type> <dbo_Beverage> brack_close
+ASK WHERE brack_open <dbr_Stanislav_Morozov> <dbp_os> <dbr_International_Style_ brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_uri <dbo_computingPlatform> <dbr_Bacillales> sep_dot var_uri <rdf_type> <dbo_Stadium> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Joseph_Clay_ attr_open horse attr_close math_gt <dbo_RaceHorse> var_uri sep_dot <dbr_Fergie_Sutherland> attr_open diplomat attr_close math_gt <dbo_RaceHorse> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_branch> <dbo_Politician> sep_dot var_x <dbo_associatedMusicalArtist> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Rouen_Business_School> <dbp_province> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Ferrel_Harris> <dbo_birthPlace> var_uri sep_dot <dbr_Kaitlyn_Ashley> <dbo_birthPlace> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_deathPlace> <dbr_Colorectal_cancer> sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbp_writer> <dbr_Monty_Python> sep_dot var_uri <rdf_type> <dbo_Film> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Dad's_Root_Beer> <dbp_state> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Greenpeace_Nordic> <dbp_founder> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_birthPlace> <dbr_Miguel_de_Cervantes> sep_dot var_uri <dbo_author> var_x sep_dot var_uri <rdf_type> <dbo_Book> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_The_Adventures_of_Tom_Sawyer> <dbo_coverArtist> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_party> <dbr_British_Columbia> sep_dot var_x <dbo_party> var_uri sep_dot var_x <rdf_type> <dbo_Politician> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_cities> <dbr_Miami> sep_dot var_x <dbp_cities> var_uri sep_dot var_uri <rdf_type> <dbo_City> brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbo_institution> <dbr_Rhaetian_Railway> sep_dot var_x <dbp_address> var_uri sep_dot brack_close
+ASK WHERE brack_open <dbr_12th_Field_Artillery_Regiment> <dbp_mother> <dbr_Colorado> brack_close
+ASK WHERE brack_open <dbr_12th_Field_Artillery_Regiment> <dbo_routeEnd> <dbr_Colorado> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_type> <dbr_National_Academy_Museum_and_School> sep_dot var_x <dbo_region> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_portrayer> <dbr_Josh_Friedman> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Gaza–Israel_conflict> <dbp_result> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_debutTeam> <dbr_Athens> sep_dot var_uri <rdf_type> <dbo_BasketballPlayer> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Waxiang_people> <dbo_relation> var_x sep_dot var_x <dbo_religion> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_militaryBranch> <dbr_United_States_Department_of_Defense> sep_dot var_uri <rdf_type> <dbo_MilitaryPerson> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_knownFor> <dbr_Dragons'_Den_ attr_open UK_TV_series attr_close math_gt sep_dot var_uri <rdf_type> <dbo_Person> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_mouthLocation> <dbr_Saunders_County,_Nebraska> sep_dot var_x <dbo_state> var_uri sep_dot var_x <rdf_type> <dbo_Road> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_recorded> <dbr_Faisal_Aman_Khan> sep_dot var_x <dbp_recorded> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_league> <dbr_Peter_Blay> sep_dot var_uri <rdf_type> <dbo_OfficeHolder> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_manager> <dbr_Chicago,_St._Paul,_Minneapolis_and_Omaha_Railway> attr_open Washington,_D.C attr_close math_gt sep_dot var_x <dbp_owner> var_uri sep_dot var_x <rdf_type> <dbo_RailwayLine> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_subsequentWork> <dbr_Henry_Howard,_1st_Earl_of_Northampton> sep_dot var_x <dbp_writer> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Angela_Trusty> attr_open horse attr_close math_gt <dbo_debutTeam> var_uri sep_dot <dbr_Fergie_Sutherland> <dbo_nationality> var_uri brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_deathPlace> <dbr_Hanging> sep_dot var_uri <dbo_opponent> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_museum> <dbr_São_Paulo_Museum_of_Art> sep_dot var_uri <dbp_archipelago> var_x sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_award> <dbp_religiousAffiliation> sep_dot var_x <dbo_award> var_uri sep_dot brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_borough> <dbr_Coconut> sep_dot var_x <dbo_district> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbp_nickname> <dbr_City_of_Angels> sep_dot var_x <dbp_nickname> var_uri sep_dot brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_officialLanguage> <dbr_French_language> sep_dot var_x <dbo_currency> var_uri sep_dot var_x <rdf_type> <dbo_Country> brack_close
+SELECT DISTINCT var_uri WHERE brack_open <dbr_Abhijit_Kunte> <dbo_relative> var_uri brack_close
+SELECT DISTINCT COUNT attr_open var_uri attr_close WHERE brack_open var_x <dbp_design> <dbr_Los_Angeles_World_Airports> sep_dot var_uri <dbo_hubAirport> var_x sep_dot var_uri <rdf_type> <dbo_Airline> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_manufacturer> <dbr_New_Mexico> sep_dot var_uri <rdf_type> <dbo_Company> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_uri <dbo_distributor> <dbr_Broadcast_syndication> sep_dot var_uri <dbp_developer> <dbr_Brian_Graden> sep_dot var_uri <rdf_type> <dbo_TelevisionShow> brack_close
+SELECT DISTINCT var_uri WHERE brack_open var_x <dbo_academicDiscipline> <dbr_Neuroimaging> sep_dot var_x <dbo_academicDiscipline> var_uri sep_dot var_x <rdf_type> <dbo_AcademicJournal> brack_close

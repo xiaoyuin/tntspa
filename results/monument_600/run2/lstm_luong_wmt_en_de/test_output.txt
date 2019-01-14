@@ -1,0 +1,408 @@
+Namespace(beam=5, cpu=False, data=['data/monument_600/fairseq-data-bin'], diverse_beam_groups=1, diverse_beam_strength=0.5, fp16=False, fp16_init_scale=128, gen_subset='test', left_pad_source='True', left_pad_target='False', lenpen=1, log_format=None, log_interval=1000, max_len_a=0, max_len_b=200, max_sentences=None, max_source_positions=1024, max_target_positions=1024, max_tokens=12000, min_len=1, model_overrides='{}', nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, num_shards=1, path='output/monument_600/models/lstm_luong_wmt_en_de/checkpoint_best.pt', prefix_size=0, print_alignment=False, quiet=False, raw_text=False, remove_bpe=None, replace_unk=None, sampling=False, sampling_temperature=1, sampling_topk=-1, score_reference=False, seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, source_lang=None, target_lang=None, task='translation', unkpen=0, unnormalized=False, upsample_primary=1)
+| [en] dictionary: 2576 types
+| [sparql] dictionary: 2064 types
+| data/monument_600/fairseq-data-bin test 100 examples
+| ['data/monument_600/fairseq-data-bin'] test 100 examples
+| loading model(s) from output/monument_600/models/lstm_luong_wmt_en_de/checkpoint_best.pt
+S-74	which is longer los angeles police department memorial for fallen officers or torre da tv bandeirantes
+T-74	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_Torre_da_TV_Bandeirantes par_close brack_close order by var_b limit 1
+H-74	-0.1861249953508377	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers par_close brack_close order by var_b limit 1
+P-74	-0.0884 -0.0891 -0.0835 -0.1320 -0.1122 -0.1081 -0.0714 -0.1472 -0.1043 -0.1102 -0.1243 -0.0948 -0.2602 -0.0919 -0.1167 -0.1056 -1.9809 -0.1160 -0.1012 -0.0990 -0.1067 -0.1052 -0.1201 -0.1086 -0.0758
+S-0	which is longer los angeles police department memorial for fallen officers or national war memorial
+T-0	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_National_War_Memorial_ par_open Canada par_close par_close brack_close order by var_b limit 1
+H-0	-0.15762320160865784	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_National_War_Memorial_ par_open Canada par_close par_close brack_close order by var_b limit 1
+P-0	-0.0895 -0.0969 -0.0956 -0.1486 -0.1491 -0.0969 -0.0585 -0.1428 -0.1059 -0.1120 -0.1312 -0.0967 -0.6030 -0.0788 -0.1132 -0.0983 -0.9703 -0.0887 -0.1865 -0.1003 -0.1220 -0.1070 -0.0986 -0.1075 -0.1127 -0.1199 -0.1069 -0.0762
+S-38	what are the coordinates of monument to the victims of the soviet occupation
+T-38	select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation georss_point var_a brack_close
+H-38	-0.10136095434427261	select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation georss_point var_a brack_close
+P-38	-0.0897 -0.1097 -0.1011 -0.1050 -0.0844 -0.1143 -0.1087 -0.0995 -0.0997
+S-77	which is taller between the keeper of the plains and gwalior monument
+T-77	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_The_Keeper_of_the_Plains || var_a = dbr_Gwalior_Monument par_close brack_close order by var_b limit 1
+H-77	-0.19765669107437134	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_The_Keeper_of_the_Plains || var_a = dbr_Aviation_Martyrs'_Monument par_close brack_close order by var_b limit 1
+P-77	-0.0892 -0.0973 -0.0879 -0.1232 -0.1274 -0.0676 -0.0528 -0.1458 -0.1069 -0.0947 -0.1169 -0.0969 -0.6543 -0.0923 -0.1287 -0.1084 -1.8588 -0.1687 -0.0965 -0.1012 -0.1083 -0.1124 -0.1201 -0.1090 -0.0763
+S-62	building date of memorial route of jewish martyrdom and struggle in warsaw
+T-62	select var_a where brack_open dbr_Memorial_Route_of_Jewish_Martyrdom_and_Struggle_in_Warsaw_ par_open 1940-1943 par_close dbp_complete var_a brack_close
+H-62	-0.10772410780191422	select var_a where brack_open dbr_Memorial_Route_of_Jewish_Martyrdom_and_Struggle_in_Warsaw_ par_open 1940-1943 par_close dbp_complete var_a brack_close
+P-62	-0.0905 -0.0978 -0.0978 -0.1014 -0.1144 -0.1083 -0.1280 -0.1158 -0.1240 -0.1114 -0.1033 -0.0997
+S-75	what do nelson's column and <unk> <unk> <unk> have in common
+T-75	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot <<unk>> var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d <<unk>> brack_close brack_close
+H-75	-0.5560100674629211	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Adam_Powell_ par_open The_Outer_Limits par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Blackbird_ par_open politics par_close brack_close brack_close
+P-75	-0.0947 -0.1204 -0.0919 -0.1262 -0.1480 -0.0882 -0.1226 -0.0632 -0.1768 -5.4427 -0.0949 -2.4554 -0.1105 -0.1208 -0.1191 -0.0614 -0.1070 -0.1215 -0.1281 -0.0847 -0.1382 -0.1504 -0.1461 -0.1183 -3.2682 -0.1161 -3.0345 -0.1328 -0.0980 -0.0856 -0.0701
+S-21	how north is los angeles police department memorial for fallen officers
+T-21	select var_a where brack_open dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers geo_lat var_a brack_close
+H-21	-0.08991824090480804	select var_a where brack_open dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers geo_lat var_a brack_close
+P-21	-0.0916 -0.0991 -0.0976 -0.1080 -0.0195 -0.0848 -0.1102 -0.1008 -0.0977
+S-34	which is longer atkinson clock tower or african renaissance monument
+T-34	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_African_Renaissance_Monument par_close brack_close order by var_b limit 1
+H-34	-0.12414737790822983	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Newkirk_Viaduct_Monument par_close brack_close order by var_b limit 1
+P-34	-0.0892 -0.1020 -0.0958 -0.1325 -0.1383 -0.0917 -0.0651 -0.1396 -0.1134 -0.1091 -0.1321 -0.1044 -0.1301 -0.0870 -0.1254 -0.1118 -0.4671 -0.1400 -0.0977 -0.1120 -0.1092 -0.1079 -0.1194 -0.1065 -0.0763
+S-95	what is 14th new jersey volunteer infantry monument all about
+T-95	select var_a where brack_open dbr_14th_New_Jersey_Volunteer_Infantry_Monument dct_subject var_a brack_close
+H-95	-0.09957017004489899	select var_a where brack_open dbr_14th_New_Jersey_Volunteer_Infantry_Monument dct_subject var_a brack_close
+P-95	-0.0918 -0.1027 -0.0985 -0.0941 -0.1038 -0.0979 -0.1089 -0.1008 -0.0977
+S-24	what do nelson's column and carlos <unk> have in common
+T-24	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot <<unk>> par_open soccer par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d <<unk>> par_open soccer par_close brack_close brack_close
+H-24	-0.5559004545211792	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Adam_Powell_ par_open The_Outer_Limits par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Blackbird_ par_open politics par_close brack_close brack_close
+P-24	-0.0950 -0.1207 -0.0920 -0.1255 -0.1472 -0.0879 -0.1224 -0.0632 -0.1770 -5.4424 -0.0949 -2.4550 -0.1105 -0.1209 -0.1192 -0.0615 -0.1069 -0.1215 -0.1278 -0.0847 -0.1380 -0.1505 -0.1461 -0.1183 -3.2670 -0.1161 -3.0345 -0.1328 -0.0980 -0.0856 -0.0701
+S-43	which is taller between sigismund bell and lone tree monument
+T-43	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Sigismund_Bell || var_a = dbr_Lone_Tree_Monument par_close brack_close order by var_b limit 1
+H-43	-0.1167488843202591	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Sigismund_Bell || var_a = dbr_Newkirk_Viaduct_Monument par_close brack_close order by var_b limit 1
+P-43	-0.0899 -0.1000 -0.0894 -0.1233 -0.1334 -0.0814 -0.0547 -0.1390 -0.1080 -0.0998 -0.1322 -0.0935 -0.0919 -0.0793 -0.1204 -0.1118 -0.4086 -0.1471 -0.0963 -0.0987 -0.1078 -0.1106 -0.1194 -0.1055 -0.0764
+S-6	what do nelson's column and albert <unk> have in common
+T-6	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot <<unk>> par_open cricketer par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d <<unk>> par_open cricketer par_close brack_close brack_close
+H-6	-0.5559345483779907	select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Adam_Powell_ par_open The_Outer_Limits par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Blackbird_ par_open politics par_close brack_close brack_close
+P-6	-0.0951 -0.1211 -0.0920 -0.1257 -0.1475 -0.0880 -0.1225 -0.0631 -0.1771 -5.4423 -0.0949 -2.4551 -0.1105 -0.1209 -0.1192 -0.0615 -0.1069 -0.1215 -0.1278 -0.0847 -0.1380 -0.1505 -0.1461 -0.1183 -3.2669 -0.1161 -3.0345 -0.1328 -0.0980 -0.0856 -0.0701
+S-89	what is statue of lenin in bila tserkva about
+T-89	select var_a where brack_open dbr_Statue_of_Lenin_in_Bila_Tserkva dct_subject var_a brack_close
+H-89	-0.09198930859565735	select var_a where brack_open dbr_Statue_of_Lenin_in_Bila_Tserkva dct_subject var_a brack_close
+P-89	-0.0907 -0.1002 -0.0975 -0.1041 -0.0281 -0.0955 -0.1108 -0.1012 -0.0997
+S-67	where can one find our lady of the rockies
+T-67	select var_a where brack_open dbr_Our_Lady_of_the_Rockies dbo_location var_a brack_close
+H-67	-0.10445955395698547	select var_a where brack_open dbr_Our_Lady_of_the_Rockies dbo_location var_a brack_close
+P-67	-0.0915 -0.1057 -0.1025 -0.0950 -0.0922 -0.1347 -0.1149 -0.1021 -0.1016
+S-98	which is longer february one or newkirk viaduct monument
+T-98	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_February_One || var_a = dbr_Newkirk_Viaduct_Monument par_close brack_close order by var_b limit 1
+H-98	-0.1249760091304779	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_February_One || var_a = dbr_Newkirk_Viaduct_Monument par_close brack_close order by var_b limit 1
+P-98	-0.0892 -0.1003 -0.0907 -0.1376 -0.1393 -0.0993 -0.0586 -0.1400 -0.1320 -0.1194 -0.1412 -0.1060 -0.2818 -0.0796 -0.1272 -0.1178 -0.2637 -0.1614 -0.0973 -0.1183 -0.1096 -0.1097 -0.1213 -0.1064 -0.0765
+S-72	how many place are there in zogu i boulevard
+T-72	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Zogu_I_Boulevard brack_close group by var_a
+H-72	-0.25898677110671997	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Santiago_de_los_Caballeros brack_close group by var_a
+P-72	-0.1190 -0.0408 -0.0893 -0.0642 -0.1441 -0.0848 -0.0651 -0.1171 -0.1249 -0.2788 -0.0424 -0.0997 -0.0893 -3.0233 -0.0855 -0.1397 -0.1018 -0.1110 -0.1001
+S-45	where is youth mao zedong statue located in
+T-45	select var_a where brack_open dbr_Youth_Mao_Zedong_Statue dbo_location var_a brack_close
+H-45	-0.11368518322706223	select var_a where brack_open dbr_Youth_Mao_Zedong_Statue dbo_location var_a brack_close
+P-45	-0.0930 -0.1031 -0.0989 -0.1036 -0.1716 -0.1408 -0.1080 -0.1015 -0.1027
+S-28	how many monument are there in los angeles
+T-28	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Los_Angeles brack_close group by var_a
+H-28	-0.18350520730018616	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Republic_of_Ireland brack_close group by var_a
+P-28	-0.1199 -0.0395 -0.1336 -0.0821 -0.1606 -0.0889 -0.0657 -0.1185 -0.0905 -0.0644 -0.0403 -0.1055 -0.0701 -1.7496 -0.0925 -0.1418 -0.1031 -0.1101 -0.1100
+S-59	where is canadian tomb of the unknown soldier
+T-59	select var_a where brack_open dbr_Canadian_Tomb_of_the_Unknown_Soldier dbo_location var_a brack_close
+H-59	-0.09951210021972656	select var_a where brack_open dbr_Canadian_Tomb_of_the_Unknown_Soldier dbo_location var_a brack_close
+P-59	-0.0922 -0.1059 -0.1171 -0.1089 -0.0294 -0.1272 -0.1098 -0.1034 -0.1018
+S-52	when was statue of lenin in berdichev completed
+T-52	select var_a where brack_open dbr_Statue_of_Lenin_in_Berdichev dbp_complete var_a brack_close
+H-52	-0.09383943676948547	select var_a where brack_open dbr_Statue_of_Lenin_in_Berdichev dbp_complete var_a brack_close
+P-52	-0.0914 -0.1030 -0.1019 -0.1032 -0.0089 -0.1237 -0.1108 -0.1006 -0.1010
+S-54	how many place are there in gelati monastery
+T-54	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Gelati_Monastery brack_close group by var_a
+H-54	-0.25520002841949463	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Warsaw_Old_Town brack_close group by var_a
+P-54	-0.1214 -0.0423 -0.1038 -0.0695 -0.1485 -0.0870 -0.0707 -0.1150 -0.1121 -0.3308 -0.0427 -0.1002 -0.0948 -2.8664 -0.0902 -0.1387 -0.1032 -0.1092 -0.1021
+S-41	is parents of murdered children memorial a monument
+T-41	ask where brack_open dbr_Parents_of_Murdered_Children_Memorial rdf_type dbo_Monument brack_close
+H-41	-0.10183882713317871	ask where brack_open dbr_Parents_of_Murdered_Children_Memorial rdf_type dbo_Monument brack_close
+P-41	-0.0324 -0.0927 -0.1165 -0.2685 -0.0764 -0.0467 -0.1021 -0.0794
+S-80	which is longer atkinson clock tower or gumbaz
+T-80	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Gumbaz,_Srirangapatna par_close brack_close order by var_b limit 1
+H-80	-0.12347282469272614	select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Gumbaz,_Srirangapatna par_close brack_close order by var_b limit 1
+P-80	-0.0901 -0.0981 -0.0843 -0.1250 -0.1145 -0.0992 -0.0600 -0.1426 -0.1030 -0.0972 -0.1284 -0.0858 -0.2954 -0.0848 -0.1266 -0.1138 -0.3894 -0.1321 -0.1000 -0.0954 -0.1078 -0.1099 -0.1199 -0.1066 -0.0768
+S-17	what's the most recent monument of british museum
+T-17	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_British_Museum sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+H-17	-0.11908140778541565	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_British_Museum sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-17	-0.0916 -0.1029 -0.0911 -0.1307 -0.1368 -0.1243 -0.0331 -0.0963 -0.0731 -0.0598 -0.0579 -0.0807 -0.1036 -0.0776 -0.0798 -0.0925 -0.0989 -0.1088 -0.6721 -0.1227 -0.1074 -0.0778
+S-57	what's the most recent monument of zona rosa
+T-57	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Zona_Rosa,_Mexico_City sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+H-57	-0.11677897721529007	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Zona_Rosa,_Mexico_City sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-57	-0.0913 -0.0986 -0.0886 -0.1320 -0.1032 -0.1061 -0.0356 -0.1052 -0.0665 -0.0749 -0.0149 -0.1030 -0.1014 -0.0838 -0.0874 -0.0908 -0.0960 -0.1104 -0.6714 -0.1228 -0.1078 -0.0774
+S-18	when was birth of the new world completed
+T-18	select var_a where brack_open dbr_Birth_of_the_New_World dbp_complete var_a brack_close
+H-18	-0.10479704290628433	select var_a where brack_open dbr_Birth_of_the_New_World dbp_complete var_a brack_close
+P-18	-0.0913 -0.1085 -0.1039 -0.1024 -0.1082 -0.1188 -0.1091 -0.0996 -0.1012
+S-25	what's the most recent monument of kew gardens
+T-25	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kew_Gardens_ par_open Toronto par_close sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+H-25	-0.11653514951467514	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kew_Gardens_ par_open Toronto par_close sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-25	-0.0918 -0.1008 -0.0923 -0.1409 -0.1232 -0.1169 -0.0342 -0.0973 -0.0707 -0.0641 -0.0034 -0.0756 -0.0097 -0.3053 -0.0208 -0.0927 -0.0875 -0.1003 -0.0951 -0.0977 -0.1096 -0.6715 -0.1265 -0.1081 -0.0772
+S-51	which is taller between ahu akivi and loyalty
+T-51	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Ahu_Akivi || var_a = dbr_Loyalty_ par_open monument par_close par_close brack_close order by var_b limit 1
+H-51	-0.1269461065530777	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Ahu_Akivi || var_a = dbr_Ahu_Akivi par_close brack_close order by var_b limit 1
+P-51	-0.0878 -0.0995 -0.0880 -0.1209 -0.1278 -0.0860 -0.0595 -0.1378 -0.1152 -0.0966 -0.1297 -0.0848 -0.0231 -0.0756 -0.1204 -0.1049 -0.7628 -0.1312 -0.0949 -0.1103 -0.1080 -0.1073 -0.1193 -0.1055 -0.0768
+S-39	give me the location of estela de luz
+T-39	select var_a where brack_open dbr_Estela_de_Luz dbo_location var_a brack_close
+H-39	-0.1020837351679802	select var_a where brack_open dbr_Estela_de_Luz dbo_location var_a brack_close
+P-39	-0.0941 -0.1041 -0.1009 -0.0888 -0.0677 -0.1498 -0.1112 -0.1023 -0.0998
+S-26	what is jesus de greatest all about
+T-26	select var_a where brack_open dbr_Jesus_de_Greatest dct_subject var_a brack_close
+H-26	-0.09611574560403824	select var_a where brack_open dbr_Jesus_de_Greatest dct_subject var_a brack_close
+P-26	-0.0941 -0.1090 -0.1019 -0.1002 -0.0356 -0.1096 -0.1144 -0.1016 -0.0987
+S-22	when was tomb of dai anga completed
+T-22	select var_a where brack_open dbr_Tomb_of_Dai_Anga dbp_complete var_a brack_close
+H-22	-0.09480857849121094	select var_a where brack_open dbr_Tomb_of_Dai_Anga dbp_complete var_a brack_close
+P-22	-0.0921 -0.1081 -0.1064 -0.1017 -0.0139 -0.1238 -0.1078 -0.0988 -0.1007
+S-90	where is monument to minin and pozharsky
+T-90	select var_a where brack_open dbr_Monument_to_Minin_and_Pozharsky dbo_location var_a brack_close
+H-90	-0.14405441284179688	select var_a where brack_open dbr_Monument_to_Minin_and_Pozharsky dbo_location var_a brack_close
+P-90	-0.0924 -0.1119 -0.1101 -0.0955 -0.4422 -0.1302 -0.1105 -0.1012 -0.1025
+S-85	where is arusha declaration monument located in
+T-85	select var_a where brack_open dbr_Arusha_Declaration_Monument dbo_location var_a brack_close
+H-85	-0.09584108740091324	select var_a where brack_open dbr_Arusha_Declaration_Monument dbo_location var_a brack_close
+P-85	-0.0929 -0.1078 -0.1013 -0.0936 -0.0334 -0.1224 -0.1089 -0.1009 -0.1014
+S-40	give me the location of rizal monument
+T-40	select var_a where brack_open dbr_Rizal_Monument dbo_location var_a brack_close
+H-40	-0.1691194325685501	select var_a where brack_open dbr_Rizal_Monument_ par_open Calamba par_close dbo_location var_a brack_close
+P-40	-0.0975 -0.1051 -0.1026 -0.1019 -0.7211 -0.1045 -0.2166 -0.1100 -0.1560 -0.1120 -0.1039 -0.0983
+S-73	what is petagas war memorial all about
+T-73	select var_a where brack_open dbr_Petagas_War_Memorial dct_subject var_a brack_close
+H-73	-0.10046926885843277	select var_a where brack_open dbr_Petagas_War_Memorial dct_subject var_a brack_close
+P-73	-0.0936 -0.1095 -0.1041 -0.1008 -0.0725 -0.1133 -0.1091 -0.1010 -0.1003
+S-78	where can one find tomb of saadi
+T-78	select var_a where brack_open dbr_Tomb_of_Saadi dbo_location var_a brack_close
+H-78	-0.10709105432033539	select var_a where brack_open dbr_Tomb_of_Saadi dbo_location var_a brack_close
+P-78	-0.0933 -0.1062 -0.1040 -0.0928 -0.1334 -0.1245 -0.1086 -0.1004 -0.1006
+S-81	how north is john the baptist monument
+T-81	select var_a where brack_open dbr_John_the_Baptist_Monument geo_lat var_a brack_close
+H-81	-0.09311538189649582	select var_a where brack_open dbr_John_the_Baptist_Monument geo_lat var_a brack_close
+P-81	-0.0932 -0.1008 -0.1010 -0.0962 -0.0519 -0.0866 -0.1116 -0.0997 -0.0971
+S-96	what is l'anneau de la mémoire about
+T-96	select var_a where brack_open dbr_L'Anneau_de_la_mémoire dct_subject var_a brack_close
+H-96	-0.10770458728075027	select var_a where brack_open dbr_L'Anneau_de_la_mémoire dct_subject var_a brack_close
+P-96	-0.0927 -0.1045 -0.1004 -0.0989 -0.1634 -0.0970 -0.1131 -0.0996 -0.0996
+S-99	is john the baptist monument in venezuela
+T-99	ask where brack_open dbr_John_the_Baptist_Monument dbo_location dbr_Venezuela brack_close
+H-99	-0.3621923327445984	ask where brack_open dbr_John_the_Baptist_Monument dbo_location dbr_John_the_Baptist_Monument brack_close
+P-99	-0.0316 -0.0883 -0.1072 -0.1778 -0.0520 -2.2591 -0.1052 -0.0763
+S-50	where can one find world cup sculpture
+T-50	select var_a where brack_open dbr_World_Cup_Sculpture dbo_location var_a brack_close
+H-50	-0.10853619128465652	select var_a where brack_open dbr_World_Cup_Sculpture dbo_location var_a brack_close
+P-50	-0.0931 -0.1154 -0.1120 -0.1028 -0.0974 -0.1425 -0.1101 -0.1014 -0.1021
+S-79	where can one find north carolina monument
+T-79	select var_a where brack_open dbr_North_Carolina_Monument dbo_location var_a brack_close
+H-79	-0.10401841998100281	select var_a where brack_open dbr_North_Carolina_Monument dbo_location var_a brack_close
+P-79	-0.0940 -0.1014 -0.1013 -0.1019 -0.1011 -0.1227 -0.1092 -0.1023 -0.1023
+S-37	what is husainabad clock tower related to
+T-37	select var_a where brack_open dbr_Husainabad_Clock_Tower dct_subject var_a brack_close
+H-37	-0.11750136315822601	select var_a where brack_open dbr_Husainabad_Clock_Tower dct_subject var_a brack_close
+P-37	-0.0944 -0.1070 -0.0990 -0.1051 -0.2446 -0.0985 -0.1083 -0.1014 -0.0993
+S-19	what is korean war memorial wall about
+T-19	select var_a where brack_open dbr_Korean_War_Memorial_Wall_ par_open Canada par_close dct_subject var_a brack_close
+H-19	-0.11067041009664536	select var_a where brack_open dbr_Korean_War_Memorial_Wall_ par_open Canada par_close dct_subject var_a brack_close
+P-19	-0.0924 -0.1055 -0.1007 -0.1070 -0.1500 -0.1055 -0.1484 -0.1083 -0.0970 -0.1121 -0.1040 -0.0971
+S-66	where is boer war memorial located in
+T-66	select var_a where brack_open dbr_Boer_War_Memorial_ par_open Montreal par_close dbo_location var_a brack_close
+H-66	-0.1112966537475586	select var_a where brack_open dbr_Boer_War_Memorial_ par_open Montreal par_close dbo_location var_a brack_close
+P-66	-0.0960 -0.1081 -0.0996 -0.1038 -0.1889 -0.0961 -0.0841 -0.1085 -0.1365 -0.1094 -0.1045 -0.1001
+S-9	where is edward vii monument located in
+T-9	select var_a where brack_open dbr_Edward_VII_Monument_ par_open Montreal par_close dbo_location var_a brack_close
+H-9	-0.10862644761800766	select var_a where brack_open dbr_Edward_VII_Monument_ par_open Montreal par_close dbo_location var_a brack_close
+P-9	-0.0936 -0.1088 -0.1012 -0.0946 -0.1669 -0.1026 -0.0840 -0.1077 -0.1301 -0.1106 -0.1041 -0.0994
+S-1	how many monument does böyük tağlar have
+T-1	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Böyük_Tağlar brack_close group by var_a
+H-1	-0.2702014148235321	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Republic_of_Ireland brack_close group by var_a
+P-1	-0.1199 -0.0454 -0.1358 -0.1837 -0.3379 -0.0901 -0.0671 -0.1230 -0.0793 -0.0820 -0.0385 -0.1096 -0.0801 -3.0798 -0.0932 -0.1402 -0.1021 -0.1120 -0.1140
+S-32	what's the most recent place of ghidighici
+T-32	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ghidighici sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+H-32	-0.12642478942871094	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ghidighici sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-32	-0.0921 -0.1031 -0.0937 -0.1270 -0.1307 -0.1404 -0.1167 -0.0840 -0.0634 -0.0514 -0.2076 -0.0404 -0.0929 -0.0710 -0.0841 -0.0923 -0.0978 -0.1086 -0.6752 -0.1235 -0.1075 -0.0778
+S-5	which is taller between loyalty and gumbaz
+T-5	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Loyalty_ par_open monument par_close || var_a = dbr_Gumbaz,_Srirangapatna par_close brack_close order by var_b limit 1
+H-5	-0.19471338391304016	select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Loyalty_ par_open monument par_close || var_a = dbr_Le_Marron_Inconnu par_close brack_close order by var_b limit 1
+P-5	-0.0898 -0.0998 -0.0903 -0.1261 -0.1448 -0.0969 -0.0558 -0.1419 -0.1114 -0.0905 -0.1160 -0.0968 -0.1344 -0.0815 -0.0325 -0.0887 -0.1455 -0.1259 -0.1062 -2.6344 -0.1369 -0.0961 -0.0924 -0.1065 -0.1087 -0.1189 -0.1061 -0.0768
+S-91	is monument of liberty in central chişinău
+T-91	ask where brack_open dbr_Monument_of_Liberty,_Chișinău dbo_location dbr_Central_Chişinău brack_close
+H-91	-0.39433753490448	ask where brack_open dbr_Monument_of_Liberty,_Istanbul dbo_location dbr_Central_Chişinău brack_close
+P-91	-0.0341 -0.0948 -0.1177 -2.2526 -0.0625 -0.4041 -0.1078 -0.0811
+S-47	what's the oldest monument of xanthos
+T-47	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Xanthos sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+H-47	-0.11857426911592484	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Xanthos sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-47	-0.0904 -0.1063 -0.0976 -0.1207 -0.1432 -0.1260 -0.0313 -0.0953 -0.0698 -0.0535 -0.1073 -0.0350 -0.0914 -0.0747 -0.0843 -0.0938 -0.1018 -0.1094 -0.6685 -0.1223 -0.1080 -0.0779
+S-29	what's the oldest place of arkansas
+T-29	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Arkansas sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+H-29	-0.12206077575683594	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Arkansas sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-29	-0.0901 -0.1057 -0.0911 -0.1244 -0.1432 -0.1417 -0.1195 -0.1014 -0.0660 -0.0526 -0.0864 -0.0322 -0.0924 -0.0707 -0.0841 -0.0930 -0.0985 -0.1091 -0.6742 -0.1234 -0.1076 -0.0780
+S-71	building date of statue of honor
+T-71	select var_a where brack_open dbr_Statue_of_Honor dbp_complete var_a brack_close
+H-71	-0.1086137592792511	select var_a where brack_open dbr_Statue_of_Honor dbp_complete var_a brack_close
+P-71	-0.0955 -0.1079 -0.0991 -0.0981 -0.1349 -0.1311 -0.1109 -0.1005 -0.0996
+S-76	what is anti-air war memorial about
+T-76	select var_a where brack_open dbr_Anti-Air_War_Memorial dct_subject var_a brack_close
+H-76	-0.10078631341457367	select var_a where brack_open dbr_Anti-Air_War_Memorial dct_subject var_a brack_close
+P-76	-0.0948 -0.1025 -0.1048 -0.1006 -0.0839 -0.1086 -0.1121 -0.1002 -0.0996
+S-84	where can one find genoese lighthouse
+T-84	select var_a where brack_open dbr_Genoese_Lighthouse dbo_location var_a brack_close
+H-84	-0.09748617559671402	select var_a where brack_open dbr_Genoese_Lighthouse dbo_location var_a brack_close
+P-84	-0.0956 -0.1061 -0.1020 -0.0966 -0.0493 -0.1143 -0.1098 -0.1015 -0.1023
+S-44	where is papravand mausoleum located in
+T-44	select var_a where brack_open dbr_Papravand_Mausoleum dbo_location var_a brack_close
+H-44	-0.1071285679936409	select var_a where brack_open dbr_Papravand_Mausoleum dbo_location var_a brack_close
+P-44	-0.0971 -0.1018 -0.1051 -0.0951 -0.1345 -0.1146 -0.1128 -0.1005 -0.1026
+S-69	how north is yalova earthquake monument
+T-69	select var_a where brack_open dbr_Yalova_Earthquake_Monument geo_lat var_a brack_close
+H-69	-0.09387461096048355	select var_a where brack_open dbr_Yalova_Earthquake_Monument geo_lat var_a brack_close
+P-69	-0.0959 -0.1075 -0.1021 -0.0938 -0.0538 -0.0851 -0.1102 -0.0986 -0.0978
+S-15	location of yusif ibn kuseyir mausoleum
+T-15	select var_a where brack_open dbr_Yusif_ibn_Kuseyir_Mausoleum dbo_location var_a brack_close
+H-15	-0.10478019714355469	select var_a where brack_open dbr_Yusif_ibn_Kuseyir_Mausoleum dbo_location var_a brack_close
+P-15	-0.0956 -0.1032 -0.0955 -0.0965 -0.1098 -0.1279 -0.1126 -0.1016 -0.1005
+S-49	latitude of gibraltar cross of sacrifice
+T-49	select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice geo_lat var_a brack_close
+H-49	-0.10124672949314117	select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice geo_lat var_a brack_close
+P-49	-0.0933 -0.1120 -0.1010 -0.1039 -0.0758 -0.1123 -0.1149 -0.1004 -0.0976
+S-42	what is monument to felix dzerzhinsky
+T-42	select var_a where brack_open dbr_Monument_to_Felix_Dzerzhinsky dbo_abstract var_a brack_close
+H-42	-0.10414102673530579	select var_a where brack_open dbr_Monument_to_Felix_Dzerzhinsky dbo_abstract var_a brack_close
+P-42	-0.0914 -0.1049 -0.1017 -0.1068 -0.1493 -0.0770 -0.1081 -0.0988 -0.0992
+S-10	when was kemal atatürk memorial built
+T-10	select var_a where brack_open dbr_Kemal_Atatürk_Memorial,_Canberra dbp_complete var_a brack_close
+H-10	-0.10720041394233704	select var_a where brack_open dbr_Kemal_Atatürk_Memorial,_Canberra dbp_complete var_a brack_close
+P-10	-0.0932 -0.1084 -0.1049 -0.0977 -0.1266 -0.1208 -0.1112 -0.1001 -0.1019
+S-60	when was le marron inconnu completed
+T-60	select var_a where brack_open dbr_Le_Marron_Inconnu dbp_complete var_a brack_close
+H-60	-0.11121220141649246	select var_a where brack_open dbr_Le_Marron_Inconnu dbp_complete var_a brack_close
+P-60	-0.0927 -0.1162 -0.1142 -0.1103 -0.1351 -0.1173 -0.1135 -0.1003 -0.1013
+S-46	what's the oldest place of france
+T-46	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_France sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+H-46	-0.1388436257839203	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_France sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-46	-0.0916 -0.1010 -0.0938 -0.1245 -0.1213 -0.1200 -0.1270 -0.0867 -0.0690 -0.0571 -0.4345 -0.0813 -0.1035 -0.0730 -0.0858 -0.0916 -0.1017 -0.1084 -0.6736 -0.1236 -0.1081 -0.0774
+S-13	how many monument does tolyatti have
+T-13	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Tolyatti brack_close group by var_a
+H-13	-0.255607545375824	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Mont_Fleuri brack_close group by var_a
+P-13	-0.1233 -0.0401 -0.1526 -0.0887 -0.1679 -0.0965 -0.0704 -0.1220 -0.0705 -0.1055 -0.0357 -0.1047 -0.0764 -3.0457 -0.0912 -0.1414 -0.1019 -0.1135 -0.1086
+S-7	how many monument does india have
+T-7	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_India brack_close group by var_a
+H-7	-0.1789281815290451	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Republic_of_Ireland brack_close group by var_a
+P-7	-0.1246 -0.0378 -0.0884 -0.0787 -0.1868 -0.1028 -0.0861 -0.1410 -0.1331 -0.0842 -0.0459 -0.1011 -0.0807 -1.4652 -0.0898 -0.1506 -0.1029 -0.1103 -0.1896
+S-56	what's the oldest monument of abajah
+T-56	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Abajah sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+H-56	-0.12085442245006561	select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Abajah sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-56	-0.0913 -0.1037 -0.0904 -0.1282 -0.1259 -0.1156 -0.0320 -0.0968 -0.0754 -0.0588 -0.1551 -0.0459 -0.0950 -0.0781 -0.0851 -0.0930 -0.1025 -0.1099 -0.6685 -0.1226 -0.1070 -0.0776
+S-82	what's the oldest place of odessa
+T-82	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Odessa sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+H-82	-0.12395234405994415	select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Odessa sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+P-82	-0.0916 -0.1009 -0.0983 -0.1365 -0.1202 -0.1325 -0.1161 -0.0859 -0.0688 -0.0547 -0.1472 -0.0340 -0.0922 -0.0727 -0.0892 -0.0936 -0.0993 -0.1097 -0.6757 -0.1222 -0.1079 -0.0778
+S-8	longitude of bromley parish church memorial
+T-8	select var_a where brack_open dbr_Bromley_Parish_Church_Memorial geo_long var_a brack_close
+H-8	-0.09583929181098938	select var_a where brack_open dbr_Bromley_Parish_Church_Memorial geo_long var_a brack_close
+P-8	-0.0953 -0.1063 -0.1021 -0.0985 -0.0455 -0.1051 -0.1101 -0.1013 -0.0984
+S-93	what is washington monument related to
+T-93	select var_a where brack_open dbr_Washington_Monument_ par_open Baltimore par_close dct_subject var_a brack_close
+H-93	-0.10718464851379395	select var_a where brack_open dbr_Washington_Monument_ par_open Baltimore par_close dct_subject var_a brack_close
+P-93	-0.0941 -0.1031 -0.1005 -0.1083 -0.0363 -0.0978 -0.2259 -0.1119 -0.0959 -0.1126 -0.1026 -0.0972
+S-3	how many place does foshan have
+T-3	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Foshan brack_close group by var_a
+H-3	-0.2762161195278168	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Castilla_y_León brack_close group by var_a
+P-3	-0.1209 -0.0402 -0.0999 -0.0673 -0.1608 -0.0809 -0.0612 -0.1214 -0.1105 -0.2214 -0.0401 -0.1057 -0.0936 -3.3743 -0.0875 -0.1385 -0.1010 -0.1165 -0.1065
+S-33	how many monument does shiraz have
+T-33	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Shiraz brack_close group by var_a
+H-33	-0.2612745463848114	select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Devil's_Tower_Road brack_close group by var_a
+P-33	-0.1219 -0.0394 -0.1229 -0.0746 -0.1367 -0.0889 -0.0714 -0.1278 -0.0743 -0.0709 -0.0385 -0.1108 -0.0782 -3.2214 -0.0942 -0.1477 -0.1036 -0.1203 -0.1209
+S-83	where is victory monument located in
+T-83	select var_a where brack_open dbr_Victory_Monument_ par_open Ankara par_close dbo_location var_a brack_close
+H-83	-0.09875830262899399	select var_a where brack_open dbr_Victory_Monument_ par_open Ankara par_close dbo_location var_a brack_close
+P-83	-0.0943 -0.1046 -0.1000 -0.1018 -0.0349 -0.1054 -0.0974 -0.1094 -0.1263 -0.1087 -0.1030 -0.0992
+S-20	is north carolina monument a place
+T-20	ask where brack_open dbr_North_Carolina_Monument rdf_type dbo_Place brack_close
+H-20	-0.11131203174591064	ask where brack_open dbr_North_Carolina_Monument rdf_type dbo_Place brack_close
+P-20	-0.0385 -0.0925 -0.1178 -0.2642 -0.0795 -0.1162 -0.1030 -0.0787
+S-2	location of mint clock tower
+T-2	select var_a where brack_open dbr_Mint_Clock_Tower,_Chennai dbo_location var_a brack_close
+H-2	-0.09677187353372574	select var_a where brack_open dbr_Mint_Clock_Tower,_Chennai dbo_location var_a brack_close
+P-2	-0.0979 -0.1043 -0.0930 -0.0908 -0.0678 -0.1050 -0.1117 -0.1014 -0.0990
+S-94	latitude of double six monument
+T-94	select var_a where brack_open dbr_Double_Six_Monument geo_lat var_a brack_close
+H-94	-0.09892283380031586	select var_a where brack_open dbr_Double_Six_Monument geo_lat var_a brack_close
+P-94	-0.0956 -0.1069 -0.1006 -0.1024 -0.0749 -0.0998 -0.1111 -0.1013 -0.0976
+S-31	hail to the sunrise statue
+T-31	select var_a where brack_open dbr_Hail_to_the_Sunrise_Statue dbo_abstract var_a brack_close
+H-31	-0.11208883672952652	select var_a where brack_open dbr_Hail_to_the_Sunrise_Statue dbo_abstract var_a brack_close
+P-31	-0.0923 -0.1026 -0.1009 -0.0935 -0.2299 -0.0827 -0.1048 -0.1003 -0.1018
+S-68	is nelsonville cross a place
+T-68	ask where brack_open dbr_Nelsonville_Cross rdf_type dbo_Place brack_close
+H-68	-0.10185360908508301	ask where brack_open dbr_Nelsonville_Cross rdf_type dbo_Place brack_close
+P-68	-0.0355 -0.0908 -0.1102 -0.1879 -0.0853 -0.1186 -0.1078 -0.0787
+S-4	is ramagrama stupa a monument
+T-4	ask where brack_open dbr_Ramagrama_stupa rdf_type dbo_Monument brack_close
+H-4	-0.07881247997283936	ask where brack_open dbr_Ramagrama_stupa rdf_type dbo_Monument brack_close
+P-4	-0.0414 -0.0976 -0.1104 -0.0750 -0.0756 -0.0493 -0.1010 -0.0801
+S-35	latitude of ignace bourget monument
+T-35	select var_a where brack_open dbr_Ignace_Bourget_Monument geo_lat var_a brack_close
+H-35	-0.10212866216897964	select var_a where brack_open dbr_Ignace_Bourget_Monument geo_lat var_a brack_close
+P-35	-0.0966 -0.1087 -0.0966 -0.1025 -0.1049 -0.1010 -0.1119 -0.0997 -0.0972
+S-36	is buzeyir cave a monument
+T-36	ask where brack_open dbr_Buzeyir_cave rdf_type dbo_Monument brack_close
+H-36	-0.07429850101470947	ask where brack_open dbr_Buzeyir_cave rdf_type dbo_Monument brack_close
+P-36	-0.0410 -0.0913 -0.1212 -0.0228 -0.0796 -0.0462 -0.1107 -0.0816
+S-23	brevet lt. general winfield scott
+T-23	select var_a where brack_open dbr_Brevet_Lt._General_Winfield_Scott dbo_abstract var_a brack_close
+H-23	-0.09690623730421066	select var_a where brack_open dbr_Brevet_Lt._General_Winfield_Scott dbo_abstract var_a brack_close
+P-23	-0.0932 -0.1015 -0.1081 -0.0943 -0.0243 -0.1431 -0.1087 -0.0991 -0.0997
+S-86	location of gibbet of montfaucon
+T-86	select var_a where brack_open dbr_Gibbet_of_Montfaucon dbo_location var_a brack_close
+H-86	-0.09763113409280777	select var_a where brack_open dbr_Gibbet_of_Montfaucon dbo_location var_a brack_close
+P-86	-0.0951 -0.1054 -0.1000 -0.0965 -0.0476 -0.1209 -0.1117 -0.1003 -0.1012
+S-55	latitude of american war memorial
+T-55	select var_a where brack_open dbr_American_War_Memorial,_Gibraltar geo_lat var_a brack_close
+H-55	-0.11779901385307312	select var_a where brack_open dbr_American_War_Memorial,_Gibraltar geo_lat var_a brack_close
+P-55	-0.0951 -0.1126 -0.0968 -0.1010 -0.2354 -0.1091 -0.1120 -0.0998 -0.0984
+S-58	what is ramagrama stupa about
+T-58	select var_a where brack_open dbr_Ramagrama_stupa dct_subject var_a brack_close
+H-58	-0.0973840281367302	select var_a where brack_open dbr_Ramagrama_stupa dct_subject var_a brack_close
+P-58	-0.0948 -0.1059 -0.0993 -0.0918 -0.0540 -0.1188 -0.1139 -0.0992 -0.0987
+S-61	location of william pryer monument
+T-61	select var_a where brack_open dbr_William_Pryer_Monument dbo_location var_a brack_close
+H-61	-0.09677314758300781	select var_a where brack_open dbr_William_Pryer_Monument dbo_location var_a brack_close
+P-61	-0.0955 -0.1038 -0.1035 -0.0908 -0.0345 -0.1317 -0.1092 -0.1012 -0.1007
+S-30	location of samuel hahnemann monument
+T-30	select var_a where brack_open dbr_Samuel_Hahnemann_Monument dbo_location var_a brack_close
+H-30	-0.11197938024997711	select var_a where brack_open dbr_Samuel_Hahnemann_Monument dbo_location var_a brack_close
+P-30	-0.0971 -0.1051 -0.1040 -0.1006 -0.1504 -0.1323 -0.1147 -0.1026 -0.1010
+S-12	when was wexford rebellion completed
+T-12	select var_a where brack_open dbr_Wexford_Rebellion dbp_complete var_a brack_close
+H-12	-0.10267268121242523	select var_a where brack_open dbr_Wexford_Rebellion dbp_complete var_a brack_close
+P-12	-0.0963 -0.1063 -0.0958 -0.0993 -0.1006 -0.1145 -0.1094 -0.1010 -0.1008
+S-27	is liberation tower a monument
+T-27	ask where brack_open dbr_Liberation_Tower,_Bessarabia rdf_type dbo_Monument brack_close
+H-27	-0.0749589204788208	ask where brack_open dbr_Liberation_Tower,_Bessarabia rdf_type dbo_Monument brack_close
+P-27	-0.0387 -0.0916 -0.1081 -0.0407 -0.0787 -0.0567 -0.1043 -0.0809
+S-87	longitude of cristo rei
+T-87	select var_a where brack_open dbr_Cristo_Rei,_Madeira geo_long var_a brack_close
+H-87	-0.09782293438911438	select var_a where brack_open dbr_Cristo_Rei,_Madeira geo_long var_a brack_close
+P-87	-0.0980 -0.1037 -0.1115 -0.1037 -0.0542 -0.0982 -0.1115 -0.1007 -0.0989
+S-92	longitude of thiruvalluvar statue
+T-92	select var_a where brack_open dbr_Thiruvalluvar_Statue geo_long var_a brack_close
+H-92	-0.09683672338724136	select var_a where brack_open dbr_Thiruvalluvar_Statue geo_long var_a brack_close
+P-92	-0.1005 -0.1060 -0.1010 -0.0941 -0.0633 -0.1000 -0.1081 -0.1000 -0.0984
+S-48	latitude of red basilica
+T-48	select var_a where brack_open dbr_Red_Basilica geo_lat var_a brack_close
+H-48	-0.1176580861210823	select var_a where brack_open dbr_Red_Basilica geo_lat var_a brack_close
+P-48	-0.0970 -0.1207 -0.1033 -0.1238 -0.1941 -0.1074 -0.1132 -0.1016 -0.0979
+S-65	monument to alfonso xii
+T-65	select var_a where brack_open dbr_Monument_to_Alfonso_XII dbo_abstract var_a brack_close
+H-65	-0.09474807232618332	select var_a where brack_open dbr_Monument_to_Alfonso_XII dbo_abstract var_a brack_close
+P-65	-0.0934 -0.1073 -0.1054 -0.0978 -0.0368 -0.0989 -0.1116 -0.1019 -0.0995
+S-14	where is reformation memorial
+T-14	select var_a where brack_open dbr_Reformation_Memorial,_Copenhagen dbo_location var_a brack_close
+H-14	-0.10380183160305023	select var_a where brack_open dbr_Reformation_Memorial,_Copenhagen dbo_location var_a brack_close
+P-14	-0.0974 -0.1045 -0.1032 -0.1041 -0.0861 -0.1251 -0.1098 -0.1019 -0.1021
+S-16	gibraltar cross of sacrifice
+T-16	select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice dbo_abstract var_a brack_close
+H-16	-0.10389328002929688	select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice dbo_abstract var_a brack_close
+P-16	-0.0898 -0.1080 -0.1035 -0.1065 -0.0730 -0.1425 -0.1072 -0.1016 -0.1029
+S-64	where is voortrekker monument
+T-64	select var_a where brack_open dbr_Voortrekker_Monument dbo_location var_a brack_close
+H-64	-0.1050100326538086	select var_a where brack_open dbr_Voortrekker_Monument dbo_location var_a brack_close
+P-64	-0.0988 -0.1048 -0.1016 -0.1022 -0.1062 -0.1203 -0.1087 -0.1010 -0.1016
+S-63	longitude of perry monument
+T-63	select var_a where brack_open dbr_Perry_Monument_ par_open Cleveland par_close geo_long var_a brack_close
+H-63	-0.1151518002152443	select var_a where brack_open dbr_Perry_Monument_ par_open Cleveland par_close geo_long var_a brack_close
+P-63	-0.0956 -0.1025 -0.0979 -0.1015 -0.1037 -0.1188 -0.2433 -0.1125 -0.0986 -0.1095 -0.1025 -0.0954
+S-88	cristo del otero
+T-88	select var_a where brack_open dbr_Cristo_del_Otero dbo_abstract var_a brack_close
+H-88	-0.0967356339097023	select var_a where brack_open dbr_Cristo_del_Otero dbo_abstract var_a brack_close
+P-88	-0.0940 -0.0984 -0.0967 -0.1033 -0.0738 -0.1018 -0.1054 -0.0993 -0.0980
+S-97	what is gumbaz
+T-97	select var_a where brack_open dbr_Gumbaz,_Srirangapatna dbo_abstract var_a brack_close
+H-97	-0.09513643383979797	select var_a where brack_open dbr_Gumbaz,_Srirangapatna dbo_abstract var_a brack_close
+P-97	-0.0979 -0.1009 -0.0960 -0.1005 -0.0739 -0.0785 -0.1072 -0.1024 -0.0990
+S-53	statue of equality
+T-53	select var_a where brack_open dbr_Statue_of_Equality dbo_abstract var_a brack_close
+H-53	-0.09432527422904968	select var_a where brack_open dbr_Statue_of_Equality dbo_abstract var_a brack_close
+P-53	-0.0950 -0.1013 -0.1115 -0.1108 -0.0241 -0.0968 -0.1071 -0.1022 -0.1002
+S-70	rudi geodetic point
+T-70	select var_a where brack_open dbr_Rudi_Geodetic_Point dbo_abstract var_a brack_close
+H-70	-0.09775479882955551	select var_a where brack_open dbr_Rudi_Geodetic_Point dbo_abstract var_a brack_close
+P-70	-0.0956 -0.0977 -0.0950 -0.0924 -0.0854 -0.1056 -0.1052 -0.1021 -0.1007
+S-11	mingun bell
+T-11	select var_a where brack_open dbr_Mingun_Bell dbo_abstract var_a brack_close
+H-11	-0.11011367291212082	select var_a where brack_open dbr_Mingun_Bell dbo_abstract var_a brack_close
+P-11	-0.0973 -0.0989 -0.1018 -0.0970 -0.1171 -0.1726 -0.0984 -0.1005 -0.1074
+| Translated 100 sentences (1332 tokens) in 6.0s (16.53 sentences/s, 220.19 tokens/s)
+| Generate test with beam=5: BLEU4 = 91.67, 97.1/93.7/90.6/87.3 (BP=0.995, ratio=0.995, syslen=1232, reflen=1238)

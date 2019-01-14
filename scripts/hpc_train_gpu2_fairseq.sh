@@ -27,7 +27,6 @@ then
     if [ "$3" == "conv" ]
     then
         srun python3 fairseq/train.py $DDIR/fairseq-data-bin -s en -t sparql \
-        --fp16 \
         --lr 0.5 --clip-norm 0.1 --dropout 0.2 --max-tokens 4000 \
         --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
         --arch fconv_wmt_en_de --lr-scheduler fixed --force-anneal 50 \
