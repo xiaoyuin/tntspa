@@ -1,0 +1,1479 @@
+select var_a where brack_open dbr_Villa_La_Reine_Jeanne dbp_complete var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_The_Paul_Simon_Songbook var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_The_Paul_Simon_Songbook brack_close brack_close
+select var_a where brack_open dbr_Rizal_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Răzeni sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Nebraska brack_close group by var_a
+select var_a where brack_open dbr_Villa_La_Californie dct_subject var_a brack_close
+select var_a where brack_open dbr_Countess_Pillar geo_long var_a brack_close
+select var_a where brack_open dbr_Temple_of_Augustus,_Pula dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Butte,_Montana brack_close group by var_a
+ask where brack_open dbr_Starcevich_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_First_José_Rizal_Monument_ par_open Daet par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Holocaust_Memorial,_Montevideo dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Saint-Vincent_Gate dct_subject var_a brack_close
+select var_a where brack_open dbr_Warsaw_Ghetto_boundary_markers dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close || var_a = dbr_Deluge_Fountain par_close brack_close order by var_b limit
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Sea_Wall,_Guyana || var_a = dbr_Royal_Monastery_of_Brou par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Gibraltar_Cross_of_Sacrifice dbo_location dbr_Winston_Churchill_Avenue brack_close
+select var_a where brack_open dbr_Chiang_Kai-shek_Memorial_Hall dbo_location var_a brack_close
+select var_a where brack_open dbr_Double_Six_Monument dbo_abstract var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Town sep_dot var_b [] var_a brack_close group by var_a order
+ask where brack_open dbr_South_African_War_Memorial_ par_open Halifax par_close rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Monument_to_Mirza_Alakbar_Sabir dbo_location var_a brack_close
+ask where brack_open dbr_Golden_Driller rdf_type dbo_Place brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_XFS var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_XFS brack_close brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Serotonin_syndrome var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_FK_Gaber brack_close brack_close
+select var_a where brack_open dbr_Martin_Luther_King_Jr._Memorial dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Billionth_Barrel_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Ontario_Veterans_Memorial dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Saint-Justin,_Landes sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Alexander_Garden_Obelisk dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Gilahli_Mosque_in_Sheki dct_subject var_a brack_close
+select var_a where brack_open dbr_Shwezigon_Pagoda_Bell dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Batu_Caves_ par_open town par_close brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mount_Royal_Park sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Photographic_Studio_of_Milan_Jovanović geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_New_York_City brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Colorado sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Erskine sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Galata_Tower georss_point var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Vojinović_Bridge || var_a = dbr_Loyalty_ par_open monument par_close par_close brack_close
+select var_a where brack_open dbr_Stefan_Starzyński_Monument dct_subject var_a brack_close
+ask where brack_open dbr_Victory_Monument_ par_open Ankara par_close rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Bab-e-Khyber dct_subject var_a brack_close
+ask where brack_open dbr_Monument_to_Felix_Dzerzhinsky rdf_type dbo_Place brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ankara brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Parasi,_Nepal sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Houston_Police_Officer's_Memorial || var_a = dbr_Lord_Murugan_Statue par_close brack_close order by var_b
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Beijing dbo_location var_a brack_close
+select var_a where brack_open dbr_Hargeisa_War_Memorial dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Taiwan brack_close group by var_a
+select var_a where brack_open dbr_Flame_of_Hope_ par_open diabetes par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Tashkent dct_subject var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Album sep_dot var_b [] var_a brack_close
+select var_a where brack_open dbr_Pennsylvania_State_Memorial,_Gettysburg dct_subject var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Henri_Estienne var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Henri_Estienne
+ask where brack_open dbr_Respect_to_Mehmetçik_Monument dbo_location dbr_Otlukbeli brack_close
+select var_a where brack_open dbr_Wallace_fountain dct_subject var_a brack_close
+select var_a where brack_open dbr_Cristo_del_Otero dct_subject var_a brack_close
+select var_a where brack_open dbr_Commando_Memorial dbp_complete var_a brack_close
+select var_a where brack_open dbr_Arch_of_Triumph_ par_open Pyongyang par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Flame_of_Hope_ par_open diabetes par_close dbp_complete var_a brack_close
+select var_a where brack_open dbr_Gilahli_Mosque_in_Sheki dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Monument_to_Alfonso_XII dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Netherlands brack_close group by var_a
+ask where brack_open dbr_Zar_Cave rdf_type dbo_Place brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Töv_Province sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+ask where brack_open dbr_Pir_Khidir_Zinda dbo_location dbr_Basin_Reserve brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Baku dct_subject var_a brack_close
+select var_a where brack_open dbr_Confederate_Memorial_Park_ par_open Albany,_Georgia par_close geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Sea_Wall,_Guyana || var_a = dbr_Newkirk_Viaduct_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_China sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Choeung_Ek || var_a = dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open obelisk par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Willy_Brandt_Monument_ par_open Warsaw par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Garibaldi_ par_open Rome par_close dbo_abstract var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_William_Morris var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Isabella_of_Angoulême brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Georgia_ par_open country par_close sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Capitoline_Wolf,_Chișinău dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_LaSalle_County,_Illinois brack_close group by var_a
+select var_a where brack_open dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open obelisk par_close dbp_complete var_a brack_close
+select var_a where brack_open dbr_Korean_War_Memorial_Wall_ par_open Canada par_close dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_February_One || var_a = dbr_Tomb_of_Sher_Shah_Suri par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_White_Horse_at_Ebbsfleet dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_De_Fontaine_Memorial || var_a = dbr_The_Keeper_of_the_Plains par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Kailashnath_Mahadev_Statue dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Samsun sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Bourguiba_mausoleum dbo_abstract var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Honda_NX650_Dominator var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Castelvecchio_di_Rocca_Barbena brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Papravənd sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Bismarck_Monument_ par_open Hamburg par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Liberation_Tower,_Bessarabia geo_long var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Cephalic_index var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Manon_Lescaut brack_close brack_close
+select var_a where brack_open dbr_Warsaw_Uprising_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Shot_at_Dawn_Memorial dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Singu_Min_Bell dbp_complete var_a brack_close
+select var_a where brack_open dbr_Monument_to_Salavat_Yulaev geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Statue_of_Lenin_in_Berdichev || var_a = dbr_Georgia_Guidestones par_close brack_close order by var_b limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+ask where brack_open dbr_Player_of_backgammon_ par_open monument par_close rdf_type dbo_Place brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Devon sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Edith_Cavell_Memorial georss_point var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Volhynia_27th_Home_Army_Infantry_Division dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Article_Three_of_the_United_States_Constitution var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Article_Three_of_the_United_States_Constitution brack_close brack_close
+ask where brack_open dbr_Chris_Hani_Memorial rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Bantayog_ng_mga_Bayani_Center dbo_abstract var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Zilog_Z80 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Zilog_Z80 brack_close brack_close
+select var_a where brack_open dbr_Mirali_Mausoleum dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Sigismund_Bell dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Hôtel-Dieu_de_Montréal brack_close group by var_a
+select var_a where brack_open dbr_Christ_the_Redeemer_ par_open statue par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Medal_of_Honor_Memorial_ par_open Indianapolis par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Kailashnath_Mahadev_Statue dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Henri_Estienne var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Almohad_Caliphate brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Calamba,_Laguna sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Eceabat brack_close group by var_a
+select var_a where brack_open dbr_Monument_to_Nicholas_I dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Statue_of_Unity sep_dot var_a dbp_height var_b brack_close order by desc par_open var_b par_close limit 1
+ask where brack_open dbr_North_Borneo_War_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Zebrnjak || var_a = dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Monument_to_Prince_Józef_Poniatowski_in_Warsaw dbo_designer var_a brack_close
+ask where brack_open dbr_Bab-e-Khyber rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Tağlar_Cave dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tor_Nørretranders var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo brack_close brack_close
+select var_a where brack_open dbr_Statue_of_Lenin_in_Berdichev dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mexico sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Lifeboat_Memorial,_Lytham dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Maharashtra sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kanyakumari brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Damnatio_memoriae var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Damnatio_memoriae brack_close brack_close
+select var_a where brack_open dbr_Golden_Warrior_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Shrine_of_the_Book dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Michael_the_Brave,_Guruslău dct_subject var_a brack_close
+select var_a where brack_open dbr_Arch_of_Campanus dct_subject var_a brack_close
+select var_a where brack_open dbr_Mehmetçik_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_North_Carolina_Monument geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mount_Herzl sep_dot var_a dbp_complete var_c brack_close order by desc par_open
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Warsaw_Old_Town brack_close group by var_a
+select var_a where brack_open dbr_Rizal_Monument dbp_complete var_a brack_close
+select var_a where brack_open dbr_Sverd_i_fjell dbo_location var_a brack_close
+select var_a where brack_open dbr_Chaitya_Bhoomi dct_subject var_a brack_close
+select var_a where brack_open dbr_Garakopaktapa dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Rhône-Alpes brack_close group by var_a
+select var_a where brack_open dbr_Mausoleum_of_Huseyn_Javid dct_subject var_a brack_close
+select var_a where brack_open dbr_The_Keeper_of_the_Plains georss_point var_a brack_close
+select var_a where brack_open dbr_Yar_Muhammad_Kalhoro dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_776 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Sea_Wall,_Guyana || var_a = dbr_Chekhov_Monument_in_Taganrog par_close brack_close order
+ask where brack_open dbr_Sandakan_War_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Monument_to_Ferdinand_I geo_long var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Baku dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Rome geo_long var_a brack_close
+select var_a where brack_open dbr_Washington_Monument_ par_open Baltimore par_close dbp_complete var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Electrical_impedance var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c
+select var_a where brack_open dbr_Birth_of_the_New_World dbo_location var_a brack_close
+ask where brack_open dbr_Marco_Zero_ par_open São_Paulo par_close rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Garakopaktapa dbp_complete var_a brack_close
+select var_a where brack_open dbr_Fort_Tauco dbp_complete var_a brack_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Ruse dct_subject var_a brack_close
+select var_a where brack_open dbr_Virajpet_Clock_Tower dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Statue_of_Michael_Jackson dbo_location var_a brack_close
+ask where brack_open dbr_Liberty_Monument_ par_open Amsterdam par_close dbo_location dbr_Dam_Square brack_close
+select var_a where brack_open dbr_Warsaw_Uprising_Monument dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Quadripoint sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Statue_of_Diogenes dbp_nativeName var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Khojaly_Massacre || var_a = dbr_Monument_to_Nicholas_I par_close brack_close order by var_b
+select var_a where brack_open dbr_Battle_of_Otlukbeli_Martyrs'_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation dbo_location var_a brack_close
+select var_a where brack_open dbr_Brock's_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Gibbet_of_Montfaucon dbo_location var_a brack_close
+select var_a where brack_open dbr_Dewey_Monument dbp_complete var_a brack_close
+select var_a where brack_open dbr_Long_Live_the_Victory_of_Mao_Zedong_Thought dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_De_Fontaine_Memorial || var_a = dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close par_close brack_close
+select var_a where brack_open dbr_Monument_to_the_Heroes_of_Warsaw dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Lone_Tree_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Starcevich_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_King_Zog_ par_open statue par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Offa's_Dyke dct_subject var_a brack_close
+select var_a where brack_open dbr_Evil_Clown_of_Middletown dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Beaufort,_Malaysia brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Poblacion_V,_Calamba sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Sverd_i_fjell geo_lat var_a brack_close
+select var_a where brack_open dbr_Mehmetçik_Monument georss_point var_a brack_close
+select var_a where brack_open dbr_Memorial_to_Victims_of_Stalinist_Repression geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Hampton,_London brack_close group by var_a
+select var_a where brack_open dbr_Livesey_Hall_War_Memorial geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Luchino_Visconti var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Luchino_Visconti
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Fuzuli_District sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Istanbul dct_subject var_a brack_close
+select var_a where brack_open dbr_Nadan_Mahal dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_People's_Heroes dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Pelican_Pete || var_a = dbr_Loyalty_ par_open monument par_close par_close brack_close
+select var_a where brack_open dbr_Monument_to_the_Allies_in_Dębina_Zakrzowska dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Guanyin_of_the_South_China_Sea,_Mount_Xiqiao dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Ruhollah_Khomeini geo_lat var_a brack_close
+ask where brack_open dbr_Singu_Min_Bell dbo_location dbr_Myanmar brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_1655 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_1655 brack_close brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open dbr_Lord_Murugan_Statue dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_in_Memory_of_the_Fallen_Polish_Pilots_in_World_War_II dct_subject var_a brack_close
+select var_a where brack_open dbr_Christ_the_Redeemer_ par_open statue par_close dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Paris sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Chollima_Statue dct_subject var_a brack_close
+select var_a where brack_open dbr_Lifeboat_Monument,_St_Annes dbo_location var_a brack_close
+select var_a where brack_open dbr_Gol_Gumbaz dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_İlkadım sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Tomb_of_Hayreddin_Barbarossa dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Cádiz_Memorial geo_long var_a brack_close
+select var_a where brack_open dbr_Guan_Yin_of_the_South_Sea_of_Sanya geo_long var_a brack_close
+select var_a where brack_open dbr_Billionth_Barrel_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Shot_at_Dawn_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Christ_of_the_Ozarks dbp_complete var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_243 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Sumo brack_close brack_close
+select var_a where brack_open dbr_Yalova_Earthquake_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Willy_Brandt_Monument_ par_open Warsaw par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Forest_of_the_Martyrs dct_subject var_a brack_close
+select var_a where brack_open dbr_Chartered_Company_Monument georss_point var_a brack_close
+select var_a where brack_open dbr_Kentucky_Medal_of_Honor_Memorial geo_long var_a brack_close
+select var_a where brack_open dbr_Wallace_fountain dct_subject var_a brack_close
+select var_a where brack_open dbr_Canberra_Centenary_Column dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Yusif_ibn_Kuseyir_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Nadan_Mahal dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_People's_Republic_of_China sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close geo_long var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Nisporeni sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Union_Soldiers_and_Sailors_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Tanjung_Simpang_Mengayau geo_lat var_a brack_close
+ask where brack_open dbr_Arusha_Declaration_Monument rdf_type dbo_Place brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Marwan_al-Shehhi var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Marwan_al-Shehhi brack_close brack_close
+select var_a where brack_open dbr_1820_Settlers_National_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Southern_General_Cemetery dbo_location var_a brack_close
+ask where brack_open dbr_Georgetown_Cenotaph dbo_location dbr_Paschimbanga brack_close
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial geo_lat var_a brack_close
+ask where brack_open dbr_Pelican_Pete dbo_location dbr_George_Town,_Chennai brack_close
+select var_a where brack_open dbr_Flame_of_Hope_ par_open diabetes par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Khanegah_tomb dbo_location var_a brack_close
+ask where brack_open dbr_The_Shot_in_the_Back rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Singu_Min_Bell dbo_location var_a brack_close
+select var_a where brack_open dbr_Double_Six_Monument dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ghidighici sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Handaberd dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Stephenson_Grand_Army_of_the_Republic_Memorial dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Chișinău sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Baguio brack_close group by var_a
+select var_a where brack_open dbr_Miła_18 geo_lat var_a brack_close
+select var_a where brack_open dbr_Khanegah_tomb dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Ahu_Akivi || var_a = dbr_Statue_of_Mahatma_Gandhi,_Gandhi_Maidan par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Mersin_Martyrs'_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Birth_of_the_New_World dbo_designer var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Abbeville sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_The_Silence_of_the_Lambs_ par_open film par_close var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d
+select var_a where brack_open dbr_Dead_Man's_Plack dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Red_Square sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Monument_to_Nicholas_I dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Berdichev brack_close group by var_a
+select var_a where brack_open dbr_Parents_of_Murdered_Children_Memorial geo_lat var_a brack_close
+select var_a where brack_open dbr_Fountain_of_Neptune,_Bologna dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Fort_Mont-Valérien sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Ahu_Akivi || var_a = dbr_Loyalty_ par_open monument par_close par_close brack_close order by var_b limit
+select var_a where brack_open dbr_Stephenson_Grand_Army_of_the_Republic_Memorial dct_subject var_a brack_close
+ask where brack_open dbr_Ramavarma_Appan_Thampuran_Memorial dbo_location dbr_Ayyanthole brack_close
+select var_a where brack_open dbr_Anti-Air_War_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Chișinău dbo_location var_a brack_close
+ask where brack_open dbr_Player_of_backgammon_ par_open monument par_close dbo_location dbr_Philippines brack_close
+select var_a where brack_open dbr_Torre_da_TV_Bandeirantes dbo_location var_a brack_close
+select var_a where brack_open dbr_Fort_Tauco georss_point var_a brack_close
+select var_a where brack_open dbr_Goddess_of_Democracy_ par_open Hong_Kong par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Archdiocesan_Marian_Shrine dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Chekhov_Monument_in_Taganrog sep_dot var_a dbp_height var_b brack_close order by desc par_open var_b par_close limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Don_Carlos var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Don_Carlos brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Egypt brack_close group by var_a
+ask where brack_open dbr_Buzeyir_cave dbo_location dbr_Lucknow brack_close
+ask where brack_open dbr_National_Law_Enforcement_Officers_Memorial rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Washington_Monument_ par_open Baltimore par_close geo_long var_a brack_close
+select var_a where brack_open dbr_Cristo_Rei,_Madeira dbp_complete var_a brack_close
+select var_a where brack_open dbr_Çanakkale_Martyrs'_Memorial dbp_complete var_a brack_close
+select var_a where brack_open dbr_Gol_Gumbaz dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Kandy_Clock_Tower geo_long var_a brack_close
+select var_a where brack_open dbr_Kailashnath_Mahadev_Statue dbo_location var_a brack_close
+select var_a where brack_open dbr_Cenotaph_ par_open Montreal par_close dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Old_Father_Time || var_a = dbr_Aviation_Martyrs'_Monument par_close brack_close order by var_b limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Guangdong brack_close group by var_a
+select var_a where brack_open dbr_Bali_Bombings_Memorial,_London dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Timeline_of_clothing_and_textiles_technology var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Timeline_of_clothing_and_textiles_technology brack_close brack_close
+select var_a where brack_open dbr_Torana_Gate,_Malaysia dct_subject var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_PopulatedPlace sep_dot var_b [] var_a brack_close group by var_a order
+select var_a where brack_open dbr_Offa's_Dyke dct_subject var_a brack_close
+ask where brack_open dbr_Freedom_Monument,_Bydgoszcz rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Hôtel_de_Blossac dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Telangana brack_close group by var_a
+select var_a where brack_open dbr_Khanegah_tomb dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Perry_Monument_ par_open Cleveland par_close || var_a = dbr_Independence_Flagstaff par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Lochaber sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Saint-Justin,_Landes sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Sir_Mix-a-Lot var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Sir_Mix-a-Lot brack_close brack_close
+select var_a where brack_open dbr_Union_Monument,_Târgu_Lăpuș georss_point var_a brack_close
+select var_a where brack_open dbr_Fontaine_du_Palmier dct_subject var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Varney_the_Vampire var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Varney_the_Vampire brack_close brack_close
+select var_a where brack_open dbr_Nelson's_Column dbp_complete var_a brack_close
+ask where brack_open dbr_Confederate_Memorial_Park_ par_open Albany,_Georgia par_close rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Place_Jacques-Cartier brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tiffani_Thiessen var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Ivo_Andrić brack_close brack_close
+select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Vojinović_Bridge || var_a = dbr_Statue_of_Unity par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Marché_en_Fer dbo_location var_a brack_close
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close georss_point var_a brack_close
+ask where brack_open dbr_Garakopaktapa rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Statue_of_Equality dbo_location var_a brack_close
+ask where brack_open dbr_Monument_in_Memory_of_the_Fallen_Polish_Pilots_in_World_War_II dbo_location dbr_Plaza_Degetau brack_close
+select var_a where brack_open dbr_Mingun_Bell dbp_complete var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Deshapriya_Park brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_250 brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Salinas,_Puerto_Rico sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Jesus_de_Greatest geo_lat var_a brack_close
+select var_a where brack_open dbr_Garakopaktapa geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Cape_Town,_South_Africa brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Luchino_Visconti var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Luchino_Visconti brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kalbajar_Rayon brack_close group by var_a
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Royal_Monastery_of_Brou || var_a = dbr_Monument_to_the_Polish_Underground_State_and_Home_Army par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Torre_da_TV_Bandeirantes dbo_location var_a brack_close
+select var_a where brack_open dbr_Warsaw_Uprising_Monument dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Gettysburg,_Pennsylvania brack_close group by var_a
+select var_a where brack_open dbr_Brigadier_General_Albert_Pike geo_lat var_a brack_close
+select var_a where brack_open dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_Law_Enforcement_Officers_Memorial || var_a = dbr_Gwalior_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Momine_Khatun_Mausoleum dct_subject var_a brack_close
+select var_a where brack_open dbr_Edward_VII_Monument_ par_open Montreal par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_Lenin_in_Berdichev dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Quailey's_Hill_Memorial georss_point var_a brack_close
+select var_a where brack_open dbr_Monument_du_22_Novembre_1970,_Conakry dbo_location var_a brack_close
+ask where brack_open dbr_Tiger_131 rdf_type dbo_Monument brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_9/11_Living_Memorial_Plaza || var_a = dbr_Butt-Millet_Memorial_Fountain par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Maiden_Tower_ par_open Baku par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Quezon_Memorial_Shrine geo_lat var_a brack_close
+select var_a where brack_open dbr_Tomb_of_National_Heroes_ par_open Ljubljana par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Shrine_of_the_Book dbp_complete var_a brack_close
+ask where brack_open dbr_Catacombs_of_Kom_el_Shoqafa dbo_location dbr_Berdichev brack_close
+select var_a where brack_open dbr_Tomb_of_Hayreddin_Barbarossa geo_lat var_a brack_close
+select var_a where brack_open dbr_Great_Buddha_of_Thailand georss_point var_a brack_close
+select var_a where brack_open dbr_The_Bull_of_Navan dbp_complete var_a brack_close
+select var_a where brack_open dbr_Hargeisa_War_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Vojvoda_Vuk geo_lat var_a brack_close
+select var_a where brack_open dbr_The_Bull_of_Navan dbo_location var_a brack_close
+select var_a where brack_open dbr_Rizal_Monument_ par_open Calamba par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Ludlow_Monument dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Clackline,_Western_Australia brack_close group by var_a
+select var_a where brack_open dbr_Maison_Coilliot geo_lat var_a brack_close
+select var_a where brack_open dbr_Golden_Warrior_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Grand_Bazaar,_Istanbul georss_point var_a brack_close
+select var_a where brack_open dbr_Atatürk_Monument_ par_open İzmir par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Pilgrim_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Atatürk_and_Şerife_Bacı_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close || var_a = dbr_The_Shot_in_the_Back par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_William_Pryer_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Victims_of_Iași_Pogrom_Monument geo_lat var_a brack_close
+ask where brack_open dbr_Mehmetçik_Monument dbo_location dbr_Turkey brack_close
+select var_a where brack_open dbr_Lateran_Obelisk dbo_designer var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Eureka_Springs,_Arkansas sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Castilla_y_León sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Polish_Cavalry_Monument || var_a = dbr_Monument_to_Party_Founding par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_February_One geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Sigismund_Bell || var_a = dbr_Lone_Tree_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Victoria_Memorial_ par_open Montreal par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Vinnytsia_water_tower dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Dead_Man's_Plack dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Golconda brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Ypres brack_close group by var_a
+select var_a where brack_open dbr_Waltham_Forest_Town_Hall dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_1655 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Electrolyte brack_close brack_close
+ask where brack_open dbr_Aquae_Iasae dbo_location dbr_Warsaw brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Sylhet brack_close group by var_a
+select var_a where brack_open dbr_Mint_Clock_Tower,_Chennai dbo_location var_a brack_close
+select var_a where brack_open dbr_Józef_Piłsudski_Monument,_Warsaw dct_subject var_a brack_close
+select var_a where brack_open dbr_Lone_Tree_Monument dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Vallauris sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Monument_to_the_Battle_of_Monte_Cassino_in_Warsaw || var_a = dbr_Terreiro_da_Luta par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Raymond's_Tomb dbo_location var_a brack_close
+ask where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Chișinău dbo_location dbr_Berdichev brack_close
+select var_a where brack_open dbr_Bonifacio_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Sigismund's_Column dbo_designer var_a brack_close
+select var_a where brack_open dbr_Bismarck_Monument_ par_open Hamburg par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Indio_Comahue_Monument geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Monument_to_the_Heroes_of_Warsaw sep_dot var_a dbp_height var_b brack_close order by desc par_open var_b par_close limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Saxony brack_close group by var_a
+select var_a where brack_open dbr_Monument_to_Alexander_Matrosov dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Ruse dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Chiang_Kai-shek_Memorial_Hall dbp_complete var_a brack_close
+select var_a where brack_open dbr_Shrine_of_the_Book georss_point var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Chișinău dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_The_Shot_in_the_Back || var_a = dbr_Statue_of_Lenin_in_Berdichev par_close brack_close order by var_b limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Zilog_Z80 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Zilog_Z80 brack_close brack_close
+select var_a where brack_open dbr_Monument_to_Prince_Józef_Poniatowski_in_Warsaw dbo_location var_a brack_close
+select var_a where brack_open dbr_11th_Mississippi_Infantry_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Yalova_Earthquake_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Gates_of_Ganja dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Three-Country_Cairn dct_subject var_a brack_close
+select var_a where brack_open dbr_King_Zog_ par_open statue par_close dbp_complete var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_MilitaryUnit sep_dot var_b [] var_a brack_close group by var_a order by desc par_open var_c
+select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation geo_lat var_a brack_close
+select var_a where brack_open dbr_Monument_to_Alfonso_XII dbo_location var_a brack_close
+select var_a where brack_open dbr_Battle_of_Otlukbeli_Martyrs'_Monument dct_subject var_a brack_close
+ask where brack_open dbr_Monument_of_the_Great_October_Revolution dbo_location dbr_Bashkortostan brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Batu_Caves_ par_open town par_close brack_close group by var_a
+select var_a where brack_open dbr_Rizal_Monument dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Cambridge,_Massachusetts brack_close group by var_a
+select var_a where brack_open dbr_Kurunegala_Clock_Tower dbp_complete var_a brack_close
+ask where brack_open dbr_Lone_Tree_Monument dbo_location dbr_Nebraska brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Patiala sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_India brack_close group by var_a
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Organisation sep_dot var_b [] var_a brack_close group by var_a order by desc par_open var_c
+select var_a where brack_open dbr_Gibraltar_War_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Starcevich_Monument dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Pyongyang brack_close group by var_a
+select var_a where brack_open dbr_Valdivieso_advertising_sign dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Victims_of_Iași_Pogrom_Monument geo_long var_a brack_close
+select var_a where brack_open dbr_Cristo_del_Otero dbo_location var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Payava dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Gandhi_Maidan sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Triumphal_arch,_Chișinău rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Capitoline_Wolf,_Chișinău dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Volhynia_27th_Home_Army_Infantry_Division dct_subject var_a brack_close
+select var_a where brack_open dbr_Brock's_Monument dbp_complete var_a brack_close
+select var_a where brack_open dbr_Singu_Min_Bell dbo_location var_a brack_close
+select var_a where brack_open dbr_Pilgrim_Monument georss_point var_a brack_close
+ask where brack_open dbr_Battle_of_Otlukbeli_Martyrs'_Monument rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Atkinson_Clock_Tower dbp_complete var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Artwork sep_dot var_b [] var_a brack_close group by var_a order by desc
+ask where brack_open dbr_Russia–Georgia_Friendship_Monument dbo_location dbr_Warsaw brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Harvard_Bixi || var_a = dbr_De_Fontaine_Memorial par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Landes_ par_open department par_close sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Civil_Rights_Memorial geo_lat var_a brack_close
+ask where brack_open dbr_Hussainiwala_National_Martyrs_Memorial dbo_location dbr_Ferozepur_district brack_close
+select var_a where brack_open dbr_Qutb_Shahi_tombs geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Pelican_Pete || var_a = dbr_Gwalior_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Yusif_ibn_Kuseyir_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_The_North_Wall geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Hyde_Park,_London brack_close group by var_a
+select var_a where brack_open dbr_Monument_of_the_Great_October_Revolution dbp_complete var_a brack_close
+select var_a where brack_open dbr_Hermannsdenkmal dbp_complete var_a brack_close
+select var_a where brack_open dbr_Starcevich_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Batu_Caves_ par_open town par_close sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_Pilgrim_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Robert_Burns_Memorial_ par_open Montreal par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Saint-Jacques_Tower geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Hainan brack_close group by var_a
+select var_a where brack_open dbr_Monument_to_the_People's_Heroes dbo_location var_a brack_close
+select var_a where brack_open dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers georss_point var_a brack_close
+select var_a where brack_open dbr_Statue_of_Mahatma_Gandhi,_Gandhi_Maidan dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Garajau brack_close group by var_a
+select var_a where brack_open dbr_Brock's_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Shwezigon_Pagoda_Bell geo_long var_a brack_close
+select var_a where brack_open dbr_Camphill_Column,_Alnwick dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Lone_Tree_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Gibbet_of_Montfaucon dbo_location var_a brack_close
+select var_a where brack_open dbr_Atkinson_Clock_Tower dbo_location var_a brack_close
+ask where brack_open dbr_Ramavarma_Appan_Thampuran_Memorial dbo_location dbr_Ayyanthole brack_close
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Terreiro_da_Luta dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Offa's_Dyke || var_a = dbr_Hermannsdenkmal par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice dbo_location var_a brack_close
+select var_a where brack_open dbr_Republic_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Roman_Dmowski_Monument,_Warsaw dbo_location dbr_Pioneer_Courthouse_Square brack_close
+select var_a where brack_open dbr_Zebrnjak dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Canadian_Tomb_of_the_Unknown_Soldier || var_a = dbr_Sacred_Heart_of_Jesus_ par_open Roxas,_Capiz par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Baku_Funicular dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Charaxes_sidamo var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_British_Museum sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kuala_Lumpur sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Youth_Mao_Zedong_Statue dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Pointe-Claire sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Youth_Mao_Zedong_Statue dbo_location var_a brack_close
+select var_a where brack_open dbr_Victims_of_Communism_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Clock_Tower,_Faisalabad dct_subject var_a brack_close
+ask where brack_open dbr_Great_Hamam_of_Pristina rdf_type dbo_Place brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Marco_Zero_ par_open São_Paulo par_close || var_a = dbr_Gwalior_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Monument_to_Alexander_Matrosov dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Mazor_Mausoleum dbp_complete var_a brack_close
+select var_a where brack_open dbr_Trenton_Cenotaph dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Peacekeeping_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Armada_Memorial dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Sex_worker var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Sex_worker brack_close brack_close
+select var_a where brack_open dbr_Damjili_Cave dbo_location var_a brack_close
+select var_a where brack_open dbr_Virginia_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Monument_to_Commemorate_Chinese_Victims_of_the_Atomic_Bombing rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Monument_Indië-Nederland dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Payava dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Nelsonville_Cross || var_a = dbr_Tomb_of_Payava par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Gibbet_of_Montfaucon dbo_location var_a brack_close
+ask where brack_open dbr_Ignace_Bourget_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Estela_de_Luz dbp_complete var_a brack_close
+select var_a where brack_open dbr_Nagasaki_Peace_Park dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Butt-Millet_Memorial_Fountain dbo_location var_a brack_close
+select var_a where brack_open dbr_Russia-Bashkir_Monument_of_Friendship geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Spangler_Woods brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Charaxes_sidamo var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo brack_close brack_close
+select var_a where brack_open dbr_Willy_Brandt_Monument_ par_open Warsaw par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Ruhollah_Khomeini georss_point var_a brack_close
+select var_a where brack_open dbr_Civil_War_Memorial_ par_open Webster,_Massachusetts par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Bonifacio_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_Cuauhtémoc georss_point var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mount_Herzl brack_close group by var_a
+select var_a where brack_open dbr_Dignity_ par_open statue par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Sandakan_War_Monument geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_New_Jersey sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Tomb_of_Saadi dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Imamzadeh_complex_in_Nakhchivan dbp_complete var_a brack_close
+select var_a where brack_open dbr_Grand_Bazaar,_Istanbul dct_subject var_a brack_close
+select var_a where brack_open dbr_Papravand_Mausoleum dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Virajpet_Clock_Tower dct_subject var_a brack_close
+select var_a where brack_open dbr_Pointe-Claire_Windmill dbp_complete var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Gettysburg,_Pennsylvania brack_close group by var_a
+select var_a where brack_open dbr_Hermannsdenkmal dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_Law_Enforcement_Officers_Memorial || var_a = dbr_Atkinson_Clock_Tower par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Mao_Zedong_Statue_ par_open Chengdu par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Choeung_Ek dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Kandy_Clock_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Farhad_and_Shirin_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Cristo_del_Otero dct_subject var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_1655 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_1655 brack_close brack_close
+select var_a where brack_open dbr_Kumanovo_Clock_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_United_States sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_9/11_Living_Memorial_Plaza rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Triumphal_arch,_Chișinău dbo_designer var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_São_Paulo brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Australia brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_4th_arrondissement_of_Paris sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Villa_Le_Trident dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Chișinău geo_lat var_a brack_close
+select var_a where brack_open dbr_Hôtel_de_Blossac dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Victims_of_the_Wola_Massacre dct_subject var_a brack_close
+ask where brack_open dbr_General_Philip_Sheridan dbo_location dbr_Washington,_D.C. brack_close
+select var_a where brack_open dbr_Holy_Trinity_Column_in_Olomouc dbo_location var_a brack_close
+select var_a where brack_open dbr_The_Shot_in_the_Back dbo_location var_a brack_close
+select var_a where brack_open dbr_Villa_Aujourd’hui dbo_location var_a brack_close
+select var_a where brack_open dbr_Admiral_David_G._Farragut_ par_open Ream_statue par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Akhsadan_Baba_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Independence_Flagstaff dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kalbajar_Rayon brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Lochaber sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Portugues_Urbano sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Bahadurgarh_Fort geo_lat var_a brack_close
+select var_a where brack_open dbr_Prince_Henry_the_Navigator_ par_open statue par_close georss_point var_a brack_close
+select var_a where brack_open dbr_The_Bull_of_Navan dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Nelsonville,_Ohio sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Wat's_Dyke || var_a = dbr_The_Shot_in_the_Back par_close brack_close order by var_b
+select var_a where brack_open dbr_Royal_Naval_Division_Memorial geo_lat var_a brack_close
+ask where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close dbo_location dbr_Guangzhou brack_close
+select var_a where brack_open dbr_Treaty_of_Lausanne_Monument_and_Museum dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Krakowskie_Przedmieście brack_close group by var_a
+select var_a where brack_open dbr_Crazy_Horse_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Christ_of_the_Ozarks dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Aviation_Martyrs'_Monument || var_a = dbr_Goddess_of_Democracy_ par_open Hong_Kong par_close par_close brack_close
+select var_a where brack_open dbr_Monument_to_Michael_the_Brave,_Guruslău dbo_location var_a brack_close
+select var_a where brack_open dbr_National_Shrine_of_Our_Lady_of_Czestochowa geo_long var_a brack_close
+select var_a where brack_open dbr_Monument_to_Vojvoda_Vuk dbo_location var_a brack_close
+select var_a where brack_open dbr_Arusha_Declaration_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Ramagrama_stupa dbo_location var_a brack_close
+select var_a where brack_open dbr_Baku_Turkish_Martyrs'_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_American_War_Memorial,_Gibraltar dbo_designer var_a brack_close
+select var_a where brack_open dbr_Edith_Cavell_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Victims_of_Acts_of_Terror_Memorial geo_lat var_a brack_close
+select var_a where brack_open dbr_Kurunegala_Clock_Tower geo_lat var_a brack_close
+select var_a where brack_open dbr_Memorial_to_Victims_of_Stalinist_Repression dbp_complete var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Vladimir_Atlasov var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Vladimir_Atlasov
+select var_a where brack_open dbr_Sea_Wall,_Guyana dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kazakhstan sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Queen_Isabel_II_Statue_ par_open Manila par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_The_Founders_of_the_Daughters_of_the_American_Revolution dbo_location var_a brack_close
+select var_a where brack_open dbr_Liberation_Tower,_Bessarabia dbo_location var_a brack_close
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Castillo_de_Colomares georss_point var_a brack_close
+ask where brack_open dbr_Garibaldi_Monument_in_Taganrog dbo_location dbr_Warsaw brack_close
+select var_a where brack_open dbr_Edward_VII_Monument_ par_open Montreal par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Chetiri_Bandere_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Sheykh_Babi_Yagub_Mausoleum dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Bahadurgarh_Fort geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Hyderabad,India brack_close group by var_a
+select var_a where brack_open dbr_Chartreuse_du_Liget dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Fatih sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Photographic_Studio_of_Milan_Jovanović georss_point var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Khojaly_Massacre || var_a = dbr_Matthias_Corvinus_Monument par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Mausoleum_of_Sheikh_Juneyd rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Fontaine_du_Palmier dct_subject var_a brack_close
+ask where brack_open dbr_Double_Six_Monument dbo_location dbr_Scott_Circle brack_close
+select var_a where brack_open dbr_Galata_Tower dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Dai_Anga dct_subject var_a brack_close
+ask where brack_open dbr_Guishan_Guanyin_of_the_Thousand_Hands_and_Eyes rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Atkinson_Clock_Tower geo_lat var_a brack_close
+select var_a where brack_open dbr_Ignace_Bourget_Monument dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Provincetown,_MA brack_close group by var_a
+select var_a where brack_open dbr_Juche_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Napoleon_Bonaparte_Monument_ par_open Warsaw par_close dbp_complete var_a brack_close
+select var_a where brack_open dbr_Martin_Luther_King_Jr._Memorial dbp_complete var_a brack_close
+ask where brack_open dbr_Statue_of_Equality dbo_location dbr_Dadar brack_close
+select var_a where brack_open dbr_Gilahli_Mosque_in_Sheki geo_lat var_a brack_close
+select var_a where brack_open dbr_Site_John_McCrae dbp_nativeName var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Paris brack_close group by var_a
+select var_a where brack_open dbr_Victims_of_Iași_Pogrom_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Juma_Mosque,_Ordubad dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Le_Marron_Inconnu || var_a = dbr_Royal_Monastery_of_Brou par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Statue_of_Diogenes dbo_location var_a brack_close
+select var_a where brack_open dbr_Berlin_Wall_Monument_ par_open Chicago par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Wexford_Rebellion dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Bergama sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Christ_of_the_Ozarks rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Monument_to_Chocolate dct_subject var_a brack_close
+select var_a where brack_open dbr_Kushimoto_Turkish_Memorial_and_Museum georss_point var_a brack_close
+select var_a where brack_open dbr_Star_of_Caledonia dct_subject var_a brack_close
+select var_a where brack_open dbr_National_Katyń_Memorial geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Monumental_Clock_of_Pachuca sep_dot var_a dbp_height var_b brack_close order by desc par_open var_b par_close limit 1
+select var_a where brack_open dbr_Khachin-Turbatli_Mausoleum georss_point var_a brack_close
+select var_a where brack_open dbr_Petagas_War_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Convento_de_los_Agustinos dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_Lenin_in_Berdichev dct_subject var_a brack_close
+ask where brack_open dbr_Huguenot_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Mihai_Eminescu_Statue,_Montreal dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Alexander_I_Statue_in_Taganrog dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kandy brack_close group by var_a
+select var_a where brack_open dbr_Victims_of_Iași_Pogrom_Monument dbo_abstract var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_RouteOfTransportation sep_dot var_b [] var_a brack_close group by
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kurunegala sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Museum sep_dot var_b [] var_a brack_close group by
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Christ_the_Redeemer_ par_open statue par_close || var_a = dbr_The_Boilermaker par_close brack_close order by
+select var_a where brack_open dbr_Papravand_Mausoleum dbp_complete var_a brack_close
+select var_a where brack_open dbr_Bethlehem_Chapel_ par_open Saint-Jean-de-Boiseau par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Sergei_Yesenin_in_St._Petersburg geo_lat var_a brack_close
+ask where brack_open dbr_Chartreuse_du_Liget rdf_type dbo_Place brack_close
+ask where brack_open dbr_Allar_Cave dbo_location dbr_Azerbaijan brack_close
+select var_a where brack_open dbr_Flame_of_Hope_ par_open diabetes par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Vinnytsia_water_tower geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_February_One || var_a = dbr_Matthias_Corvinus_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Royal_Monastery_of_Brou dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Istanbul georss_point var_a brack_close
+select var_a where brack_open dbr_Voortrekker_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Black_Ćuprija dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Khamis_Mosque || var_a = dbr_Tomb_of_Payava par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Prussian_National_Monument_for_the_Liberation_Wars georss_point var_a brack_close
+select var_a where brack_open dbr_Statue_of_Unity dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Pula brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Lancashire sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Maison_Coilliot geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Charlemont,_Massachusetts brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_250 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_250 brack_close brack_close
+select var_a where brack_open dbr_Valdivieso_advertising_sign dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Vršac brack_close group by var_a
+select var_a where brack_open dbr_Mansu_Hill_Grand_Monument geo_lat var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Changsha brack_close group by var_a
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Beijing dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Sandakan_War_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Pegasus_and_Dragon || var_a = dbr_Statue_of_Lenin_in_Berdichev par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Victoria_Memorial_ par_open Montreal par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Photographic_Studio_of_Milan_Jovanović dbo_location var_a brack_close
+select var_a where brack_open dbr_Gibraltar_War_Memorial geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Khamis,_Bahrain brack_close group by var_a
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Monument_to_Cuauhtémoc || var_a = dbr_Tomb_of_Payava par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Statue_of_Lenin_in_Bila_Tserkva dbo_location dbr_Bila_Tserkva brack_close
+select var_a where brack_open dbr_Monument_to_Mirza_Alakbar_Sabir dbo_location var_a brack_close
+ask where brack_open dbr_Major_General_John_A._Logan rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Shrine_of_the_Book dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Nigeria sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Chişinău sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_National_War_Memorial_ par_open Canada par_close || var_a = dbr_Monumental_Clock_of_Pachuca par_close brack_close order by
+select var_a where brack_open dbr_Old_Father_Time dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Le_Marron_Inconnu dct_subject var_a brack_close
+select var_a where brack_open dbr_Vršac_Castle geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Cicada var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_1009 brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Guárico brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Deshapriya_Park brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Longparish brack_close group by var_a
+select var_a where brack_open dbr_Alabama_State_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Electio_Viritim_Monument dbp_complete var_a brack_close
+select var_a where brack_open dbr_Polish_Cavalry_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Livesey_Hall_War_Memorial dbo_designer var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Utah brack_close group by var_a
+select var_a where brack_open dbr_Stefan_Starzyński_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Mehmetçik_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Star_of_Caledonia georss_point var_a brack_close
+select var_a where brack_open dbr_Memorial_Route_of_Jewish_Martyrdom_and_Struggle_in_Warsaw_ par_open 1940-1943 par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Allahabad_pillar geo_lat var_a brack_close
+select var_a where brack_open dbr_Red_Basilica dct_subject var_a brack_close
+select var_a where brack_open dbr_Ahu_Akivi dct_subject var_a brack_close
+select var_a where brack_open dbr_Pelican_Pete dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Monument_to_the_Battle_of_Monte_Cassino_in_Warsaw || var_a = dbr_Sacred_Heart_of_Jesus_ par_open Roxas,_Capiz par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_National_War_Memorial_ par_open Canada par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Bismarck_monument_ par_open Bremen par_close geo_long var_a brack_close
+select var_a where brack_open dbr_Jeanne_Mance_Monument geo_long var_a brack_close
+select var_a where brack_open dbr_Sigismund_Bell georss_point var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_London sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+ask where brack_open dbr_Hussainiwala_National_Martyrs_Memorial dbo_location dbr_Ferozepur_district brack_close
+select var_a where brack_open dbr_Mehmetçik_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Temple_of_Augustus,_Pula dct_subject var_a brack_close
+select var_a where brack_open dbr_Thanjavur_Maratha_Palace dbo_location var_a brack_close
+ask where brack_open dbr_Baku_Funicular dbo_location dbr_Serbia brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Central_City,_Nebraska brack_close group by var_a
+select var_a where brack_open dbr_Maisonneuve_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Monumental_Clock_of_Pachuca dbp_complete var_a brack_close
+select var_a where brack_open dbr_Georgetown_Cenotaph geo_lat var_a brack_close
+select var_a where brack_open dbr_Estela_de_Luz dct_subject var_a brack_close
+select var_a where brack_open dbr_Ontario_Veterans_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_National_War_Memorial_ par_open Canada par_close dbo_abstract var_a brack_close
+ask where brack_open dbr_Mémorial_des_Martyrs_de_la_Déportation rdf_type dbo_Place brack_close
+ask where brack_open dbr_Maha_Kavi_Moyinkutty_Vaidyar_Smaraka dbo_location dbr_India brack_close
+select var_a where brack_open dbr_Photographic_Studio_of_Milan_Jovanović geo_long var_a brack_close
+select var_a where brack_open dbr_Liberation_ par_open Holocaust_memorial par_close dbp_complete var_a brack_close
+select var_a where brack_open dbr_Monument_to_Chocolate dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Tsar_Cannon dct_subject var_a brack_close
+select var_a where brack_open dbr_Kirna_mausoleum dbp_nativeName var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_African_Renaissance_Monument || var_a = dbr_Canadian_Tomb_of_the_Unknown_Soldier par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_František_Palacký_Monument,_Prague dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Utah sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Organisation sep_dot var_b [] var_a brack_close group by var_a order by desc par_open var_c par_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Vannes brack_close group by var_a
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Font-Romeu-Odeillo-Via brack_close group by var_a
+ask where brack_open dbr_Woolwich_Town_Hall dbo_location dbr_Poland brack_close
+select var_a where brack_open dbr_Mausoleum_of_Huseyn_Javid dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Nelsonville_Cross || var_a = dbr_John_the_Baptist_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers || var_a = dbr_Aviation_Martyrs'_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Black_Ćuprija dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Gwalior_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Red_Basilica dct_subject var_a brack_close
+ask where brack_open dbr_Louis_Cyr_Monument rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Papravand_Mausoleum dbo_location var_a brack_close
+ask where brack_open dbr_Atatürk_and_Şerife_Bacı_Monument rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Papravənd brack_close group by var_a
+select var_a where brack_open dbr_Flame_of_Hope_ par_open diabetes par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Diana_the_Huntress_Fountain georss_point var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Rome sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Tomb_of_National_Heroes_ par_open Ljubljana par_close dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Newkirk_Viaduct_Monument || var_a = dbr_Atkinson_Clock_Tower par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Tanzania sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Garabaghlar_Mausoleum dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nicholas_I dbo_location var_a brack_close
+select var_a where brack_open dbr_Hill_60_ par_open Ypres par_close georss_point var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Almeria sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Shirvanshahs’_bath_houses rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Beverly_Hills_9/11_Memorial_Garden geo_lat var_a brack_close
+ask where brack_open dbr_Atatürk_and_Şerife_Bacı_Monument dbo_location dbr_Washington,_D.C. brack_close
+select var_a where brack_open dbr_Husainabad_Clock_Tower dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Wesselényi_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Salavat_Yulaev geo_long var_a brack_close
+select var_a where brack_open dbr_Arch_of_Triumph_ par_open Pyongyang par_close dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Salinas,_Puerto_Rico sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_De_Viron_Castle geo_lat var_a brack_close
+select var_a where brack_open dbr_Macdonald_Monument geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_John_Birt,_Baron_Birt var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_John_Birt,_Baron_Birt brack_close brack_close
+select var_a where brack_open dbr_Robert_Burns_Memorial_ par_open Montreal par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Zagir_Ismagilov dbo_location var_a brack_close
+select var_a where brack_open dbr_Villa_Aujourd’hui dbo_designer var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Organisation sep_dot var_b [] var_a brack_close group by var_a order
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kew_Gardens_ par_open Toronto par_close brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Tolyatti brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Aix-les-Bains sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_African_Renaissance_Monument dbo_location dbr_Dakar brack_close
+select var_a where brack_open dbr_Chollima_Statue dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Beşiktaş sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Husainabad_Clock_Tower dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Netherlands sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Thiruvalluvar_Statue dbo_designer var_a brack_close
+select var_a where brack_open dbr_Thiruvalluvar_Statue dbp_complete var_a brack_close
+select var_a where brack_open dbr_Haji_Gayib’s_bathhouse geo_lat var_a brack_close
+select var_a where brack_open dbr_Monument_to_Majit_Gafuri dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Victims_of_the_Soviet_Occupation georss_point var_a brack_close
+select var_a where brack_open dbr_Christ_the_Redeemer_ par_open statue par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kumanovo brack_close group by var_a
+select var_a where brack_open dbr_Lifeboat_Memorial,_Lytham dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_Michael_the_Brave,_Guruslău dbo_designer var_a brack_close
+select var_a where brack_open dbr_Canadian_Tomb_of_the_Unknown_Soldier geo_long var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Legislature sep_dot var_b [] var_a brack_close group by var_a order
+select var_a where brack_open dbr_Wesselényi_Monument dbp_complete var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Ruhollah_Khomeini dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Allies_in_Dębina_Zakrzowska georss_point var_a brack_close
+select var_a where brack_open dbr_Guishan_Guanyin_of_the_Thousand_Hands_and_Eyes dbo_location var_a brack_close
+select var_a where brack_open dbr_Huguenot_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Tawau_Japanese_War_Memorial dbo_abstract var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_MilitaryConflict sep_dot var_b [] var_a brack_close group by var_a order
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Boleyn_Ground sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Liberty_Bell rdf_type dbo_Place brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_France sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location var_b sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Cathedral_of_Kars geo_long var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Electrical_impedance var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Electrical_impedance brack_close brack_close
+select var_a where brack_open dbr_Monument_du_22_Novembre_1970,_Conakry geo_lat var_a brack_close
+select var_a where brack_open dbr_National_Shrine_of_Our_Lady_of_Czestochowa dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Willy_Brandt_Monument_ par_open Warsaw par_close || var_a = dbr_Atkinson_Clock_Tower par_close brack_close order by var_b limit
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_250 brack_close brack_close
+ask where brack_open dbr_Spring_Temple_Buddha dbo_location dbr_France brack_close
+select var_a where brack_open dbr_Monument_to_the_Fallen_and_Murdered_in_the_East dbo_location var_a brack_close
+select var_a where brack_open dbr_Castle_of_Capdepera dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Salavat_Yulaev dct_subject var_a brack_close
+select var_a where brack_open dbr_Valdivieso_advertising_sign geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Brest,_Belarus sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Digital_camera var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Digital_camera brack_close brack_close
+select var_a where brack_open dbr_Monument_to_Majit_Gafuri dbo_designer var_a brack_close
+select var_a where brack_open dbr_Les_petits_Baigneurs dct_subject var_a brack_close
+select var_a where brack_open dbr_Pioneers'_Obelisk_ par_open Montreal par_close dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Chollima_Statue || var_a = dbr_Morley_War_Memorial,_Scatcherd_Park par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Edith_Cavell_Memorial geo_lat var_a brack_close
+select var_a where brack_open dbr_North_Borneo_War_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Castillo_de_Colomares geo_long var_a brack_close
+select var_a where brack_open dbr_Cross_of_All_Nations geo_long var_a brack_close
+select var_a where brack_open dbr_Victims_of_Acts_of_Terror_Memorial dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Beverly_Hills_9/11_Memorial_Garden dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_South_Africa sep_dot var_a dbp_complete var_c brack_close order by desc par_open
+select var_a where brack_open dbr_Marie-Victorin_Statue dbo_abstract var_a brack_close
+ask where brack_open dbr_St._Jago's_Arch dbo_location dbr_Tanzania brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Deluge_Fountain || var_a = dbr_Aviation_Martyrs'_Monument par_close brack_close order
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Sylhet brack_close group by var_a
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Loyalty_ par_open monument par_close
+ask where brack_open dbr_Countess_Pillar rdf_type dbo_Monument brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tiffani_Thiessen var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Hunan brack_close group by var_a
+select var_a where brack_open dbr_Sendai_Daikannon georss_point var_a brack_close
+select var_a where brack_open dbr_Chartreuse_du_Liget dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Choeung_Ek dbo_location var_a brack_close
+select var_a where brack_open dbr_Romanian_People's_Salvation_Cross geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Zinc var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Murmansk brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Târgu_Lăpuş brack_close group by var_a
+ask where brack_open dbr_Sheykh_Babi_Yagub_Mausoleum rdf_type dbo_Monument brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_348 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c
+select var_a where brack_open dbr_Ranevskaya_Monument dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kurunegala brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Guangzhou sep_dot var_a dbp_complete var_c brack_close order by var_c limit
+select var_a where brack_open dbr_Monument_du_22_Novembre_1970,_Conakry dbo_location var_a brack_close
+select var_a where brack_open dbr_National_War_Memorial_ par_open Canada par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Samuel_Hahnemann_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Battle_of_Britain_Monument,_London geo_lat var_a brack_close
+select var_a where brack_open dbr_Miła_18 dbo_location var_a brack_close
+select var_a where brack_open dbr_Akhsadan_Baba_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_the_Sentinel_of_Freedom dbo_location var_a brack_close
+select var_a where brack_open dbr_The_Founders_of_the_Daughters_of_the_American_Revolution dct_subject var_a brack_close
+ask where brack_open dbr_Torana_Gate,_Malaysia dbo_location dbr_Brickfields brack_close
+select var_a where brack_open dbr_Mémorial_de_la_France_combattante dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Edith_Cavell_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Edith_Cavell_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Juma_Mosque,_Ordubad dbo_location var_a brack_close
+select var_a where brack_open dbr_Barrière_d’Enfer dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Fort_Saint-Elme_ par_open France par_close dbp_complete var_a brack_close
+select var_a where brack_open dbr_Avro_Anson_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Dai_Kannon_of_Kita_no_Miyako_park dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Calamba_Claypot dbo_abstract var_a brack_close
+ask where brack_open dbr_Tomb_of_Sher_Shah_Suri rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Sigismund's_Column dbo_designer var_a brack_close
+select var_a where brack_open dbr_Statue_of_the_Sentinel_of_Freedom dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mexico sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Golden_Warrior_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Monument_to_Nicholas_I dbo_location dbr_Sardar_Sarovar_Dam brack_close
+select var_a where brack_open dbr_Sikorski_Memorial dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Zogu_I_Boulevard sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Sheykh_Babi_Yagub_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Freedom_Monument,_Bydgoszcz dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Vojinović_Bridge || var_a = dbr_Morley_War_Memorial,_Scatcherd_Park par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Garabaghlar_Mausoleum dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Monument_to_the_Heroes_of_Warsaw || var_a = dbr_John_the_Baptist_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Nagasaki_Peace_Park dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Lone_Tree_Monument || var_a = dbr_The_Shot_in_the_Back par_close brack_close order by var_b limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Târgu_Lăpuş brack_close group by var_a
+select var_a where brack_open dbr_Yusif_ibn_Kuseyir_Mausoleum dct_subject var_a brack_close
+select var_a where brack_open dbr_Hanuman_Junction dbo_location var_a brack_close
+select var_a where brack_open dbr_Hyde_Park_Holocaust_memorial geo_long var_a brack_close
+select var_a where brack_open dbr_Robert_Burns_Memorial_ par_open Montreal par_close geo_lat var_a brack_close
+ask where brack_open dbr_Kościuszko_Infantry_Division_Memorial rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Photographic_Studio_of_Milan_Jovanović dct_subject var_a brack_close
+select var_a where brack_open dbr_Grand_Bazaar,_Istanbul dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Eceabat brack_close group by var_a
+ask where brack_open dbr_Westinghouse_Memorial rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Garrick's_Temple_to_Shakespeare dct_subject var_a brack_close
+ask where brack_open dbr_Monument_to_Simion_Murafa,_Alexei_Mateevici_and_Andrei_Hodorogea dbo_location dbr_Ufa brack_close
+ask where brack_open dbr_Monument_to_Endre_Ady,_Zalău dbo_location dbr_Ufa brack_close
+select var_a where brack_open dbr_Sebastopol_ par_open mortar par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Shaka_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Trenton_Cenotaph dct_subject var_a brack_close
+select var_a where brack_open dbr_The_Founders_of_the_Daughters_of_the_American_Revolution dbo_abstract var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_XFS var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_XFS brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Taganrog brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_1655 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Electrolyte brack_close brack_close
+ask where brack_open dbr_The_North_Wall rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Sigismund_Bell dct_subject var_a brack_close
+select var_a where brack_open dbr_Union_Monument,_Târgu_Lăpuș dbo_location var_a brack_close
+select var_a where brack_open dbr_Saint-Jacques_Tower dct_subject var_a brack_close
+select var_a where brack_open dbr_Union_Soldiers_and_Sailors_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Tashkent geo_lat var_a brack_close
+select var_a where brack_open dbr_Monument_to_Feodor_Chaliapin dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_973 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Canadian_Tomb_of_the_Unknown_Soldier || var_a = dbr_Bromley_Parish_Church_Memorial par_close brack_close order by var_b limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Central_Province,_Sri_Lanka brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_135 var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_135 brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Mlado_Nagoričane sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Monument_to_the_Allies_in_Dębina_Zakrzowska dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Deshapriya_Park brack_close group by var_a
+select var_a where brack_open dbr_Baku_Funicular dct_subject var_a brack_close
+select var_a where brack_open dbr_Buzeyir_cave dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Bonifacio_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Adam_Mickiewicz_Monument,_Warsaw dbp_complete var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_People's_Heroes dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Victims_of_Communism_Memorial dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_Simion_Murafa,_Alexei_Mateevici_and_Andrei_Hodorogea dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Garghabazar_Mosque dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Harvard_Bixi || var_a = dbr_Chekhov_Monument_in_Taganrog par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_First_José_Rizal_Monument_ par_open Daet par_close georss_point var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Victoria_Square,_Montreal brack_close group by var_a
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_Law_Enforcement_Officers_Memorial || var_a = dbr_Marco_Zero_ par_open São_Paulo par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Monument_to_the_Heroes_of_Warsaw || var_a = dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Perry_Monument_ par_open Cleveland par_close || var_a = dbr_Royal_Monastery_of_Brou par_close brack_close order by var_b limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tristan_und_Isolde var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Tristan_und_Isolde brack_close brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Baku dct_subject var_a brack_close
+ask where brack_open dbr_Indio_Comahue_Monument rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Monument_to_Simion_Murafa,_Alexei_Mateevici_and_Andrei_Hodorogea dbo_location var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Hayreddin_Barbarossa dbo_location var_a brack_close
+select var_a where brack_open dbr_Starcevich_Monument dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Nizami_Mausoleum dbp_complete var_a brack_close
+select var_a where brack_open dbr_Catacombs_of_Kom_el_Shoqafa dbo_location var_a brack_close
+select var_a where brack_open dbr_Hill_60_ par_open Ypres par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_South_African_War_Memorial_ par_open Halifax par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Vikramaditya_Statue dct_subject var_a brack_close
+select var_a where brack_open dbr_Ambedkar_Manimandapam,_Chennai dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Khojaly_massacre_memorials || var_a = dbr_Ahu_Akivi par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Lifeboat_Monument,_St_Annes dbo_designer var_a brack_close
+select var_a where brack_open dbr_National_Katyń_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Dignity_ par_open statue par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Aleje_Ujazdowskie brack_close group by var_a
+ask where brack_open dbr_Gulustan_Mausoleum rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Wisconsin brack_close group by var_a
+select var_a where brack_open dbr_Stephen_the_Great_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Southern_General_Cemetery geo_lat var_a brack_close
+select var_a where brack_open dbr_9/11_Living_Memorial_Plaza dct_subject var_a brack_close
+select var_a where brack_open dbr_11th_Mississippi_Infantry_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Maiden_Tower_ par_open Baku par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Guan_Yin_of_the_South_Sea_of_Sanya dbo_location var_a brack_close
+select var_a where brack_open dbr_Rizal_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Taras_Shevchenko_Memorial dbo_location var_a brack_close
+ask where brack_open dbr_Samadhi_of_Ranjit_Singh dbo_location dbr_Lahore brack_close
+select var_a where brack_open dbr_Castillo_de_Colomares dct_subject var_a brack_close
+select var_a where brack_open dbr_Esperanza_Stone dbp_nativeName var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Southwestern_United_States sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Haikou_Clock_Tower georss_point var_a brack_close
+ask where brack_open dbr_White_Horse_at_Ebbsfleet rdf_type dbo_Monument brack_close
+ask where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_location dbr_Mladenovac brack_close
+select var_a where brack_open dbr_Monument_to_Sergei_Yesenin_in_St._Petersburg dbo_location var_a brack_close
+select var_a where brack_open dbr_American_War_Memorial,_Gibraltar dbp_nativeName var_a brack_close
+ask where brack_open dbr_Queen_Victoria_Memorial,_Lancaster dbo_location dbr_Sheboygan,_Wisconsin brack_close
+ask where brack_open dbr_Monument_to_Miftahetdin_Akmulla rdf_type dbo_Monument brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Garajau sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Mały_Powstaniec dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Warsaw_Ghetto_boundary_markers dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Central_Province,_Sri_Lanka sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Brevet_Lt._General_Winfield_Scott dbo_location var_a brack_close
+select var_a where brack_open dbr_Les_petits_Baigneurs dbo_designer var_a brack_close
+select var_a where brack_open dbr_Taras_Shevchenko_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Victims_of_Iași_Pogrom_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Thanksgiving_Candle dct_subject var_a brack_close
+select var_a where brack_open dbr_Castle_of_Capdepera dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Statue_of_Lenin_in_Kharkiv dbo_location var_a brack_close
+select var_a where brack_open dbr_Monarch_advertising_sign dbo_location var_a brack_close
+ask where brack_open dbr_Quailey's_Hill_Memorial rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Anna_Livia_ par_open monument par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Allies_in_Dębina_Zakrzowska dbp_complete var_a brack_close
+select var_a where brack_open dbr_Jesus_de_Greatest dbp_complete var_a brack_close
+ask where brack_open dbr_Odeillo_solar_furnace dbo_location dbr_United_Kingdom brack_close
+select var_a where brack_open dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Villa_La_Mauresque dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Chocolate dbo_location var_a brack_close
+select var_a where brack_open dbr_Grand_Bazaar,_Tehran geo_lat var_a brack_close
+select var_a where brack_open dbr_Nelson's_Column,_Montreal dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Khamis_Mosque dbo_location var_a brack_close
+select var_a where brack_open dbr_Martyrs'_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Guan_Yin_of_the_South_Sea_of_Sanya dct_subject var_a brack_close
+ask where brack_open dbr_Monument_of_Liberty,_Ruse dbo_location dbr_Manila brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Sagaing_Region sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Pakistan sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Maison_Coilliot dbo_location dbr_Azerbaijan brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Pelican_Pete || var_a = dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Valdivieso_advertising_sign geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mount_Herzl sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_New_York_ par_open state par_close brack_close group by var_a
+select var_a where brack_open dbr_Dead_Man's_Plack dbo_location var_a brack_close
+select var_a where brack_open dbr_The_Founders_of_the_Daughters_of_the_American_Revolution dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Christ_of_the_Ozarks dbo_location var_a brack_close
+select var_a where brack_open dbr_Fort_Saint-Elme_ par_open France par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Abraham_Lincoln_ par_open Flannery par_close dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Nagorno-Karabakh sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Royal_Monastery_of_Brou dbo_location var_a brack_close
+select var_a where brack_open dbr_Monumento_a_la_abolición_de_la_esclavitud dbo_location var_a brack_close
+select var_a where brack_open dbr_Georgia_Guidestones dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Chemillé-sur-Indrois brack_close group by var_a
+select var_a where brack_open dbr_Monument_in_Memory_of_the_Fallen_Polish_Pilots_in_World_War_II geo_long var_a brack_close
+select var_a where brack_open dbr_Monument_of_Sivrihisar_Airplane dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Chişinău brack_close group by var_a
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Offa's_Dyke || var_a = dbr_Lone_Tree_Monument par_close brack_close order by var_b
+select var_a where brack_open dbr_Wilfrid_Laurier_Memorial georss_point var_a brack_close
+select var_a where brack_open dbr_Ranevskaya_Monument georss_point var_a brack_close
+ask where brack_open dbr_Tawau_Japanese_War_Memorial rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Garabaghlar_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Gwalior_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Pilgrim_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Juche_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Mazor_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Woolwich_Town_Hall dct_subject var_a brack_close
+select var_a where brack_open dbr_William_Pryer_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Statue_of_Parashurama dbo_location var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Sher_Shah_Suri geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Varaždinske_Toplice brack_close group by var_a
+select var_a where brack_open dbr_Edith_Cavell_Memorial dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Baku sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Alexandru_Ioan_Cuza var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Alexandru_Ioan_Cuza
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close || var_a = dbr_Sigismund_Bell par_close brack_close
+select var_a where brack_open dbr_Khanegah_tomb dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Tehran sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Zhou_Enlai var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Zhou_Enlai
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Hôtel-Dieu_de_Montréal brack_close group by var_a
+select var_a where brack_open dbr_Birth_of_the_New_World geo_long var_a brack_close
+ask where brack_open dbr_Tomb_of_Saadi dbo_location dbr_Shiraz brack_close
+select var_a where brack_open dbr_Victims_of_Acts_of_Terror_Memorial dbp_complete var_a brack_close
+select var_a where brack_open dbr_Mansu_Hill_Grand_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Khamis_Mosque || var_a = dbr_Royal_Monastery_of_Brou par_close brack_close order by var_b
+select var_a where brack_open dbr_Great_Buddha_of_Thailand dbp_complete var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Chișinău dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Haryana brack_close group by var_a
+select var_a where brack_open dbr_Battle_of_Britain_Monument,_London geo_long var_a brack_close
+select var_a where brack_open dbr_Dewey_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Istanbul dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Kreuzberg sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Hermannsdenkmal dbo_location var_a brack_close
+select var_a where brack_open dbr_Victory_Monument_ par_open Ankara par_close dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Ang_Thong_Province sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Logan_Circle,_Washington,_D.C. brack_close group by var_a
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Writer sep_dot var_b [] var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Khamis_Mosque || var_a = dbr_Monument_to_Nicholas_I par_close brack_close order by var_b
+select var_a where brack_open dbr_Villa_La_Reine_Jeanne dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Guárico sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Le_Marron_Inconnu dbo_location var_a brack_close
+select var_a where brack_open dbr_Basilica_in_Qum_village dbo_location var_a brack_close
+select var_a where brack_open dbr_Imamzadeh_ par_open Ganja par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Louisville,_Kentucky brack_close group by var_a
+select var_a where brack_open dbr_William_Wakefield_Memorial dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Bulgaria sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Garghabazar_Caravanserai dct_subject var_a brack_close
+select var_a where brack_open dbr_Gamigaya_Petroglyphs dbo_location var_a brack_close
+select var_a where brack_open dbr_Wat's_Dyke dbo_designer var_a brack_close
+select var_a where brack_open dbr_Peacekeeping_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Odeillo_solar_furnace dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_Parashurama dbo_location var_a brack_close
+select var_a where brack_open dbr_Villa_La_Mauresque dbp_complete var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Eceabat brack_close group by var_a
+select var_a where brack_open dbr_Roman_Dmowski_Monument,_Warsaw dct_subject var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Sheikh_Juneyd dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Saadi dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Beijing georss_point var_a brack_close
+select var_a where brack_open dbr_Independence_Flagstaff dct_subject var_a brack_close
+ask where brack_open dbr_Reformation_Memorial,_Copenhagen rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Rhodes_Memorial dbp_complete var_a brack_close
+select var_a where brack_open dbr_Akhsadan_Baba_Mausoleum dct_subject var_a brack_close
+select var_a where brack_open dbr_Barrière_d’Enfer dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Lagos sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Jesus_de_Greatest dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Site_John_McCrae dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Marco_Zero_ par_open São_Paulo par_close || var_a = dbr_The_Boilermaker par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Carefree_sundial || var_a = dbr_Independence_Flagstaff par_close brack_close order by var_b limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_North_Rhine-Westphalia brack_close group by var_a
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Monument_to_Nizami_Ganjavi_in_Saint_Petersburg || var_a = dbr_Statue_of_Equality par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Georgia_Guidestones dbo_location var_a brack_close
+ask where brack_open dbr_Handaberd rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Bulgaria brack_close group by var_a
+select var_a where brack_open dbr_Calamba_Claypot dbo_location var_a brack_close
+select var_a where brack_open dbr_Thanksgiving_Candle dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Juche_Tower geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Carefree_sundial || var_a = dbr_Monument_to_Cuauhtémoc par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Julfa_District sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Roman_Dmowski_Monument,_Warsaw georss_point var_a brack_close
+select var_a where brack_open dbr_Nicolaus_Copernicus_Monument,_Warsaw dct_subject var_a brack_close
+select var_a where brack_open dbr_Garabaghlar_Mausoleum geo_lat var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Hafez dct_subject var_a brack_close
+select var_a where brack_open dbr_Perry_Monument_ par_open Cleveland par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Peacekeeping_Monument geo_long var_a brack_close
+select var_a where brack_open dbr_Raymond's_Tomb dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Martin_Luther_King_Jr._Memorial dbo_designer var_a brack_close
+select var_a where brack_open dbr_Khachin-Turbatli_Mausoleum dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Sun dbp_complete var_a brack_close
+select var_a where brack_open dbr_Deluge_Fountain georss_point var_a brack_close
+ask where brack_open dbr_Greek_Memorial,_Dhaka rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Blantyre_Monument geo_long var_a brack_close
+select var_a where brack_open dbr_Holy_Trinity_Column_in_Olomouc dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Vikramaditya_Statue || var_a = dbr_Tomb_of_Sher_Shah_Suri par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Olomouc sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Arch_of_Reunification dct_subject var_a brack_close
+select var_a where brack_open dbr_Billionth_Barrel_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Odeillo_solar_furnace dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Khojaly_Massacre dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Canadian_Tomb_of_the_Unknown_Soldier || var_a = dbr_Willy_Brandt_Monument_ par_open Warsaw par_close par_close brack_close order by var_b limit
+select var_a where brack_open dbr_Monument_to_the_Fallen_and_Murdered_in_the_East dct_subject var_a brack_close
+select var_a where brack_open dbr_Fountain_of_Neptune,_Bologna georss_point var_a brack_close
+ask where brack_open dbr_Sverd_i_fjell rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Arusha_Declaration_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Weather_Machine dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Prince_Józef_Poniatowski_in_Warsaw geo_lat var_a brack_close
+select var_a where brack_open dbr_Jesus_de_Greatest dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Gumbaz,_Srirangapatna par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Cecil_John_Rhodes_Statue dbo_location dbr_Santiago brack_close
+ask where brack_open dbr_John_the_Baptist_Monument dbo_location dbr_Murmansk brack_close
+select var_a where brack_open dbr_Askari_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Nizami_Ganjavi_in_Saint_Petersburg dbo_location var_a brack_close
+select var_a where brack_open dbr_Le_Marron_Inconnu dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_War_Memorial_ par_open Canada par_close || var_a = dbr_Flame_of_Hope_ par_open diabetes par_close par_close brack_close order
+select var_a where brack_open dbr_Shaka_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_The_Keeper_of_the_Plains geo_long var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Bo'ai_Road_area sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Dorchester_Square brack_close group by var_a
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Nelsonville_Cross || var_a = dbr_Statue_of_Mahatma_Gandhi,_Gandhi_Maidan par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Clock_Tower,_Faisalabad geo_long var_a brack_close
+select var_a where brack_open dbr_Royal_Naval_Division_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Wilfrid_Laurier_Memorial dbo_designer var_a brack_close
+ask where brack_open dbr_Nelson's_Column,_Montreal dbo_location dbr_Place_du_Canada brack_close
+select var_a where brack_open dbr_Alexander_Garden_Obelisk dbo_designer var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Royal_Monastery_of_Brou par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Tashkent sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_North_Borneo_War_Monument geo_long var_a brack_close
+select var_a where brack_open dbr_South_African_War_Memorial_ par_open Toronto par_close dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Houston_Police_Officer's_Memorial || var_a = dbr_Monument_to_Felix_Dzerzhinsky par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Bonifacio_Monument dbo_location dbr_Warsaw brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Old_Father_Time par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Iran sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Suresnes sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Roddick_Gates dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Fort_Magruder dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Calamba_Claypot dbo_location var_a brack_close
+select var_a where brack_open dbr_Liberty_Monument_ par_open Seychelles par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Shot_at_Dawn_Memorial dbp_complete var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Southwestern_United_States brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Celbridge sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Paarl brack_close group by var_a
+select var_a where brack_open dbr_Vinnytsia_water_tower dct_subject var_a brack_close
+select var_a where brack_open dbr_Convento_de_los_Agustinos dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Victims_of_the_Wola_Massacre geo_long var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tiffani_Thiessen var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo brack_close brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Non-ProfitOrganisation sep_dot var_b [] var_a brack_close group by
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Carefree_sundial || var_a = dbr_Tomb_of_Sher_Shah_Suri par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Fermière_Monument_ par_open Montreal par_close dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Gudauri sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Shrine_of_the_Book geo_lat var_a brack_close
+select var_a where brack_open dbr_Dai_Kannon_of_Kita_no_Miyako_park dbo_location var_a brack_close
+select var_a where brack_open dbr_Vikramaditya_Statue dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Old_Father_Time || var_a = dbr_Christ_the_Redeemer_ par_open statue par_close par_close brack_close order by
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Georgia_ par_open country par_close brack_close group by var_a
+select var_a where brack_open dbr_Bromley_Parish_Church_Memorial geo_long var_a brack_close
+select var_a where brack_open dbr_Fountain_of_Neptune,_Bologna dbo_designer var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Paseo_de_la_Reforma brack_close group by var_a
+select var_a where brack_open dbr_Korean_War_Memorial_Wall_ par_open Canada par_close georss_point var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Lykia brack_close group by var_a
+select var_a where brack_open dbr_Gol_Gumbaz dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Heroes_of_Warsaw dct_subject var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Ultramarine var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Ultramarine brack_close brack_close
+select var_a where brack_open dbr_Monument_to_the_Polish_Underground_State_and_Home_Army georss_point var_a brack_close
+select var_a where brack_open dbr_Garabaghlar_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Russia–Georgia_Friendship_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Quailey's_Hill_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Maha_Kavi_Moyinkutty_Vaidyar_Smaraka dbo_location var_a brack_close
+select var_a where brack_open dbr_Virginia_Monument geo_long var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Sendai sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Plymouth sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Pyongyang sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_San_Juan_de_los_Morros brack_close group by var_a
+select var_a where brack_open dbr_Gol_Gumbaz dbo_location var_a brack_close
+ask where brack_open dbr_Hargeisa_War_Memorial dbo_location dbr_Hargeisa brack_close
+ask where brack_open dbr_Illinois_Freedom_Bell rdf_type dbo_Place brack_close
+ask where brack_open dbr_Hussainiwala_National_Martyrs_Memorial dbo_location dbr_Ferozepur_district brack_close
+select var_a where brack_open dbr_Château_de_l'Horizon dct_subject var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open dbr_Holy_Trinity_Statue,_Șimleu_Silvaniei dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Statue_of_Bobby_Moore,_Wembley geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Sigismund_Bell || var_a = dbr_Willy_Brandt_Monument_ par_open Warsaw par_close par_close brack_close order by var_b limit 1
+ask where brack_open dbr_Monument_to_the_Liberator_Soldier_ par_open Kharkiv par_close rdf_type dbo_Place brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Abbeville sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Marco_Zero_ par_open São_Paulo par_close || var_a = dbr_Sigismund_Bell par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Ramana_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Mint_Clock_Tower,_Chennai dbo_location var_a brack_close
+select var_a where brack_open dbr_Villa_La_Reine_Jeanne dbp_complete var_a brack_close
+select var_a where brack_open dbr_Bali_Bombings_Memorial,_London dbo_location var_a brack_close
+select var_a where brack_open dbr_American_War_Memorial,_Gibraltar georss_point var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Atkinson_Clock_Tower sep_dot var_a dbp_lengthvar_b dbr_Atkinson_Clock_Tower dbr_Atkinson_Clock_Tower || var_a = dbr_Atkinson_Clock_Tower par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Malappuram sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Eceabat brack_close group by var_a
+select var_a where brack_open dbr_Memorial_for_the_victims_killed_by_OUN-UPA_ par_open Luhansk par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Lateran_Obelisk dbo_location var_a brack_close
+select var_a where brack_open dbr_Our_Lady_of_the_Rockies dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Edward_VII_Monument_ par_open Montreal par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Nigeria brack_close group by var_a
+select var_a where brack_open dbr_Monument_to_Garibaldi_ par_open Rome par_close georss_point var_a brack_close
+select var_a where brack_open dbr_Ranevskaya_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Romanian_People's_Salvation_Cross rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Tağlar_Cave geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbr_Newkirk_Viaduct_Monument sep_dot var_a dbp_height var_b brack_close order by desc par_open var_b par_close limit 1
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Chonchi brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Devil's_Tower_Road brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Malaysia sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+ask where brack_open dbr_Blantyre_Monument dbo_location dbr_Warsaw brack_close
+select var_a where brack_open dbr_Lord_Murugan_Statue dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Portland,_Oregon brack_close group by var_a
+select var_a where brack_open dbr_Afrikaans_Language_Monument dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close dbo_location var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Charaxes_sidamo var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo
+select var_a where brack_open dbr_Rizal_Monument_ par_open Calamba par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Dewey_Monument geo_lat var_a brack_close
+select var_a where brack_open dbr_Gilahli_Mosque_in_Sheki dbo_abstract var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Pelican_Pete || var_a = dbr_De_Fontaine_Memorial par_close brack_close order by var_b
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Suresnes brack_close group by var_a
+select var_a where brack_open dbr_Castillo_de_San_Andrés dbo_abstract var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Monte sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close
+select var_a where brack_open dbr_Wesselényi_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Secunderabad_Clock_Tower dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Deluge_Fountain dct_subject var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Garajau sep_dot var_a dbp_complete var_c brack_close order by var_c limit
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Monument sep_dot var_b []
+select var_a where brack_open dbr_Rizal_Monument dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Australia brack_close group by var_a
+select var_a where brack_open dbr_Kemal_Atatürk_Memorial,_Canberra dbo_location var_a brack_close
+select var_a where brack_open dbr_Adam_Mickiewicz_Monument,_Warsaw dbp_complete var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Büzeyir brack_close group by var_a
+select var_a where brack_open dbr_Mémorial_des_Martyrs_de_la_Déportation dbo_location var_a brack_close
+select var_a where brack_open dbr_Long_Live_the_Victory_of_Mao_Zedong_Thought dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Lewisham sep_dot var_a dbp_complete var_c brack_close order by desc par_open
+select var_a where brack_open var_a rdf_type dbr_Terreiro_da_Luta sep_dot var_a dbp_lengthvar_b brack_close order by desc par_open var_b par_close limit 1
+select var_a where brack_open dbr_Monumento_al_Jíbaro_Puertorriqueño dbp_complete var_a brack_close
+select var_a where brack_open dbr_Mémorial_de_la_France_combattante dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Castilla_y_León brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Neuquén,_Argentina sep_dot var_a dbp_complete var_c brack_close order by var_c limit
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Mingun sep_dot var_a dbp_complete var_c brack_close order by var_c limit
+select var_a where brack_open dbr_Voortrekker_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Cristo_Rei,_Madeira dbo_location dbr_Villa_Regina brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Pittsburgh,_Pennsylvania brack_close group by var_a
+select var_a where brack_open dbr_Tomb_of_Sher_Shah_Suri dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Lone_Tree_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Croatia sep_dot var_a dbp_complete var_c brack_close order by var_c limit
+select var_a where brack_open dbr_Carefree_sundial dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Manama brack_close group by var_a
+select var_a where brack_open dbr_Chollima_Statue dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_Parashurama dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Singu_Min_Bell dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Vojinović_Bridge || var_a = dbr_Cristo_del_Otero par_close brack_close order
+select var_a where brack_open dbr_Les_petits_Baigneurs dbo_location var_a brack_close
+select var_a where brack_open dbr_Dupont_Circle_Fountain dbo_location var_a brack_close
+select var_a where brack_open dbr_Convento_de_los_Agustinos dbp_complete var_a brack_close
+select var_a where brack_open dbr_Tomb_of_National_Heroes_ par_open Ljubljana par_close geo_lat var_a brack_close
+ask where brack_open dbr_Monument_Indië-Nederland rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Ramana_Tower dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Croatia brack_close group by var_a
+select var_a where brack_open dbr_Bismarck_Monument_ par_open Hamburg par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Major_General_George_Henry_Thomas dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_of_Liberty,_Istanbul dbo_location var_a brack_close
+ask where brack_open dbr_Chris_Hani_Memorial dbo_location dbr_South_Africa brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Myanmar brack_close group by var_a
+select var_a where brack_open dbr_Bismarck_monument_ par_open Bremen par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Los_Angeles_Police_Department_Memorial_for_Fallen_Officers dct_subject var_a brack_close
+select var_a where brack_open dbr_Chartreuse_du_Liget dct_subject var_a brack_close
+ask where brack_open dbr_George-Étienne_Cartier_Monument dbo_location dbr_Liberty_State_Park brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ponce,_Puerto_Rico sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open dbr_Guanyin_of_the_South_China_Sea,_Mount_Xiqiao dct_subject var_a brack_close
+select var_a where brack_open dbr_Indio_Comahue_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Damjili_Cave dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_in_Memory_of_the_Fallen_Polish_Pilots_in_World_War_II geo_lat var_a brack_close
+select var_a where brack_open dbr_Alley_of_Classics,_Bălți dbo_location var_a brack_close
+ask where brack_open dbr_Mersin_Martyrs'_Memorial dbo_location dbr_Atatürk_Park brack_close
+select var_a where brack_open dbr_De_Viron_Castle dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Bihar brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Paris sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_National_Katyń_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Dharan_clock_tower geo_lat var_a brack_close
+select var_a where brack_open dbr_Canadian_Tomb_of_the_Unknown_Soldier dct_subject var_a brack_close
+select var_a where brack_open dbr_National_Katyń_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Kandy_Clock_Tower geo_lat var_a brack_close
+select var_a where brack_open dbr_Handaberd dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Hayreddin_Barbarossa dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Bromley brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Arusha sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_The_Shot_in_the_Back dbo_location var_a brack_close
+select var_a where brack_open dbr_Napoleon_Bonaparte_Monument_ par_open Warsaw par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Horse_Memorial dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Lancaster,_Lancashire brack_close group by var_a
+select var_a where brack_open dbr_De_Fontaine_Memorial geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Led_Zeppelin_IV var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Final_Fantasy_VIII brack_close brack_close
+select var_a where brack_open dbr_African_Renaissance_Monument dct_subject var_a brack_close
+select var_a where brack_open dbr_Memorial_Route_of_Jewish_Martyrdom_and_Struggle_in_Warsaw_ par_open 1940-1943 par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Shot_at_Dawn_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Khachin-Turbatli_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Shot_at_Dawn_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Lord_Murugan_Statue georss_point var_a brack_close
+ask where brack_open dbr_Statue_of_Lenin_in_Bila_Tserkva rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Bonifacio_Monument geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Newkirk_Viaduct_Monument || var_a = dbr_Gol_Gumbaz par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Rudi_Geodetic_Point dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Alyosha_Monument,_Murmansk geo_lat var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Ultramarine var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Ultramarine brack_close brack_close
+select var_a where brack_open dbr_Imamzadeh_ par_open Ganja par_close dbo_abstract var_a brack_close
+ask where brack_open dbr_Waltham_Forest_Town_Hall rdf_type dbo_Place brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Baltimore sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Marco_Zero_ par_open São_Paulo par_close || var_a = dbr_9/11_Living_Memorial_Plaza par_close brack_close order by var_b limit
+select var_a where brack_open dbr_Peter_I_Monument_in_Taganrog dbo_abstract var_a brack_close
+ask where brack_open dbr_Askari_Monument rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Tomb_of_National_Heroes_ par_open Ljubljana par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Secunderabad_Clock_Tower dbo_location var_a brack_close
+select var_a where brack_open dbr_Villa_Le_Trident dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Nagpur sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+ask where brack_open dbr_Commando_Memorial dbo_location dbr_Denmark brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Monument sep_dot var_b rdf_type dbo_Cleric sep_dot var_b [] var_a brack_close group by var_a order
+select var_a where brack_open dbr_Esperanza_Stone dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Memorial_Route_of_Jewish_Martyrdom_and_Struggle_in_Warsaw_ par_open 1940-1943 par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Mirza_Alakbar_Sabir dbo_location var_a brack_close
+select var_a where brack_open dbr_Bismarck_Monument_ par_open Hamburg par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_National_War_Memorial_ par_open Canada par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Carew_Cross geo_lat var_a brack_close
+select var_a where brack_open dbr_Gulustan_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Allahabad_pillar geo_lat var_a brack_close
+select var_a where brack_open dbr_Emperors_Yan_and_Huang dbo_location var_a brack_close
+select var_a where brack_open dbr_Dr._William_D._Young_Memorial dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Monument_to_the_Allies_in_Dębina_Zakrzowska dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Zebrnjak geo_long var_a brack_close
+select var_a where brack_open dbr_Deluge_Fountain dbo_location var_a brack_close
+select var_a where brack_open dbr_Tomb_of_Hafez dbo_designer var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open dbr_Bromley_Parish_Church_Memorial dbp_complete var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Sigismund_Bell || var_a = dbr_Houston_Police_Officer's_Memorial par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Diri_Baba_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open dbr_Wild_Bill_Hickok_Memorial geo_long var_a brack_close
+select var_a where brack_open dbr_Monumental_Clock_of_Pachuca dct_subject var_a brack_close
+select var_a where brack_open dbr_Dante_Monument_ par_open Montreal par_close geo_long var_a brack_close
+select var_a where brack_open dbr_Dewey_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_South_Africa sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_The_Founders_of_the_Daughters_of_the_American_Revolution geo_lat var_a brack_close
+select var_a where brack_open dbr_National_War_Memorial_ par_open Canada par_close geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kiev sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_MilitaryUnit sep_dot var_b [] var_a brack_close group by
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ohio brack_close group by var_a
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Sindh,_Pakistan brack_close group by var_a
+ask where brack_open dbr_Aquae_Iasae rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Aix-les-Bains brack_close group by var_a
+select var_a where brack_open dbr_Monumental_Clock_of_Pachuca dbo_location var_a brack_close
+select var_a where brack_open dbr_John_the_Baptist_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Bab-e-Khyber dct_subject var_a brack_close
+select var_a where brack_open dbr_Medal_of_Honor_Memorial_ par_open Indianapolis par_close georss_point var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_Atkinson_Clock_Tower || var_a = dbr_Chollima_Statue par_close brack_close order by var_b limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_XFS var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_XFS brack_close brack_close
+select var_a where brack_open dbr_Baku_Funicular dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Fuzuli_District sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Maisonneuve_Monument dct_subject var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Brickfields brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Tiffani_Thiessen var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Charaxes_sidamo brack_close brack_close
+select var_a where brack_open dbr_Carefree_sundial georss_point var_a brack_close
+ask where brack_open dbr_Statue_of_Unity rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_South_African_War_Memorial_ par_open Toronto par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Reformation_Memorial,_Copenhagen dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Yalova brack_close group by var_a
+ask where brack_open dbr_Arch_of_Triumph_ par_open Pyongyang par_close dbo_location dbr_Chişinău brack_close
+select var_a where brack_open dbr_Diana_the_Huntress_Fountain dbp_complete var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Kaduthuruthy sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Samuel_Hahnemann_Monument dbo_location var_a brack_close
+ask where brack_open dbr_Shaka_Memorial dbo_location dbr_Stanger brack_close
+select var_a where brack_open dbr_Admiral_David_G._Farragut_ par_open Ream_statue par_close dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Sheikh_Juneyd dbo_location var_a brack_close
+ask where brack_open dbr_Birth_of_the_New_World rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_South_African_War_Memorial_ par_open Toronto par_close dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Catacombs_of_Kom_el_Shoqafa || var_a = dbr_Statue_of_Lenin_in_Berdichev par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Monument_to_the_Liberator_Soldier_ par_open Kharkiv par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_National_Katyń_Memorial geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Bydgoszcz brack_close group by var_a
+select var_a where brack_open dbr_Valdivieso_advertising_sign dbo_abstract var_a brack_close
+select var_a where brack_open dbr_De_Viron_Castle dbo_location var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_MusicalWork sep_dot var_b [] var_a brack_close group by var_a order by desc par_open var_c
+select var_a where brack_open dbr_Torre_da_TV_Bandeirantes dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Obelisk_of_Axum dct_subject var_a brack_close
+ask where brack_open dbr_Farhad_and_Shirin_Monument dbo_location dbr_Ouakam brack_close
+select var_a where brack_open dbr_Perry_Monument_ par_open Cleveland par_close dbo_abstract var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Ujazdów_Avenue brack_close group by var_a
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Font-Romeu-Odeillo-Via sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_De_Viron_Castle dct_subject var_a brack_close
+select var_a where brack_open dbr_Mémorial_de_la_France_combattante dbp_complete var_a brack_close
+select var_a where brack_open dbr_General_Philip_Sheridan dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Bismarck_monument_ par_open Bremen par_close geo_lat var_a brack_close
+select var_a where brack_open dbr_Waltham_Forest_Town_Hall dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Victims_of_the_Wola_Massacre georss_point var_a brack_close
+select var_a where brack_open dbr_Dr._William_D._Young_Memorial dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_China sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Nagpur sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Natural_rubber var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Manon_Lescaut brack_close brack_close
+select var_a where brack_open dbr_Calamba_Claypot dbp_nativeName var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_Law_Enforcement_Officers_Memorial || var_a = dbr_Pointe-Claire_Windmill par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Chaitya_Bhoomi dct_subject var_a brack_close
+select var_a where brack_open dbr_Archdiocesan_Marian_Shrine dbo_location var_a brack_close
+select var_a where brack_open dbr_Qutb_Shahi_tombs dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Martyrs'_Mausoleum dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Genoese_Lighthouse dbp_complete var_a brack_close
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Taipei par_close dbp_complete var_a brack_close
+ask where brack_open dbr_Chiang_Kai-shek_Memorial_Hall dbo_location dbr_Ontario brack_close
+select var_a where brack_open dbr_Dante_Monument_ par_open Montreal par_close dbo_designer var_a brack_close
+select var_a where brack_open dbr_Mausoleum_of_Huseyn_Javid dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Berlin_Wall_Monument_ par_open Chicago par_close geo_lat var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Erdene,_Töv sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Zogu_I_Boulevard sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Papravand_Mausoleum dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Toronto sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+ask where brack_open dbr_Chinnakada_Clock_Tower dbo_location dbr_Chinnakada brack_close
+select var_a where brack_open dbr_Guishan_Guanyin_of_the_Thousand_Hands_and_Eyes dbp_nativeName var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Hallandale_Beach sep_dot var_a dbp_complete var_c brack_close order by var_c limit 1
+select var_a where brack_open dbr_Fermière_Monument_ par_open Montreal par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Roman_Dmowski_Monument,_Warsaw geo_lat var_a brack_close
+select var_a where brack_open dbr_Karl_Marx_Monument dbo_location var_a brack_close
+select var_a where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Benalmádena sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select var_a where brack_open dbr_Japanese_Lantern_Monument dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Prince_Józef_Poniatowski_in_Warsaw dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Târgu_Lăpuş brack_close group by var_a
+select var_a where brack_open dbr_Gumbaz,_Srirangapatna dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Khachin-Turbatli_Mausoleum dbp_complete var_a brack_close
+select var_a where brack_open dbr_Terry_Fox_Memorial_and_Lookout geo_long var_a brack_close
+select var_a where brack_open dbr_Royal_Naval_Division_Memorial dct_subject var_a brack_close
+select var_a where brack_open dbr_Monument_to_Feodor_Chaliapin geo_lat var_a brack_close
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_PopulatedPlace sep_dot var_b [] var_a brack_close group by var_a order by desc
+select var_a where brack_open dbr_Monument_to_the_Liberator_Soldier_ par_open Kharkiv par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Monument_to_Garibaldi_ par_open Rome par_close dct_subject var_a brack_close
+select var_a where brack_open dbr_Countess_Pillar dbp_complete var_a brack_close
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_India var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_India brack_close brack_close
+select var_a where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Chişinău sep_dot var_a dbp_complete var_c brack_close order by desc par_open var_c par_close limit 1
+select var_a where brack_open dbr_Urasoe_yōdore dct_subject var_a brack_close
+select var_a where brack_open dbr_Horse_Memorial geo_lat var_a brack_close
+select var_a where brack_open dbr_American_War_Memorial,_Gibraltar dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_National_Law_Enforcement_Officers_Memorial || var_a = dbr_John_the_Baptist_Monument par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Anıtkabir dbo_location var_a brack_close
+select var_a where brack_open dbr_Valdivieso_advertising_sign dct_subject var_a brack_close
+select var_a where brack_open dbr_Castillo_de_San_Andrés dct_subject var_a brack_close
+ask where brack_open dbr_Kościuszko_Infantry_Division_Memorial rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Vršac_Castle dbo_abstract var_a brack_close
+select var_a where brack_open dbr_Gibraltar_Cross_of_Sacrifice georss_point var_a brack_close
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Lateran_Obelisk dbo_location var_a brack_close
+select var_a where brack_open dbr_Genoese_Lighthouse dbp_complete var_a brack_close
+select var_a where brack_open dbr_War_Memorial_of_Montreal_West dct_subject var_a brack_close
+ask where brack_open dbr_Gamigaya_Petroglyphs dbo_location dbr_Azerbaijan brack_close
+select var_a where brack_open dbr_Sun_Yat-sen_Memorial_Hall_ par_open Guangzhou par_close dbo_location var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Wagha brack_close group by var_a
+select wildcard where brack_open brack_open dbr_Nelson's_Column,_Montreal var_a var_b sep_dot dbr_Transister var_a var_b brack_close UNION brack_open var_c var_d dbr_Nelson's_Column,_Montreal sep_dot var_c var_d dbr_Transister brack_close brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Río_Negro_Province brack_close group by var_a
+select var_a where brack_open dbr_Raymond's_Tomb dbp_nativeName var_a brack_close
+select var_a where brack_open dbr_Galata_Tower dct_subject var_a brack_close
+select var_a where brack_open var_a dbp_length var_b sep_dot FILTER par_open var_a = dbr_February_One || var_a = dbr_Monument_to_the_Polish_Underground_State_and_Home_Army par_close brack_close order by var_b limit 1
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Khojaly_Genocide_Memorial_ par_open The_Hague par_close || var_a = dbr_Monumental_Clock_of_Pachuca par_close brack_close order by var_b limit 1
+select var_a count par_open wildcard par_close as var_c where brack_open var_a rdf_type dbo_Place sep_dot var_b rdf_type dbo_Politician sep_dot var_b [] var_a brack_close group by var_a order by desc par_open var_c par_close
+select var_a where brack_open dbr_Monument_to_the_Polish_Underground_State_and_Home_Army dct_subject var_a brack_close
+select var_a where brack_open dbr_Sheboygan_Hmong_Memorial geo_long var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Queenston,_Ontario brack_close group by var_a
+select var_a where brack_open dbr_Despot_Stefan_Lazarević_Memorial dbo_location var_a brack_close
+select var_a where brack_open dbr_Statue_of_Michael_Jackson geo_lat var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Monumento_a_los_heroes_de_El_Polvorín_ par_open tomb par_close || var_a = dbr_Monument_to_Nicholas_I par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_Dupont_Circle_Fountain dbo_designer var_a brack_close
+select var_a where brack_open dbr_Voortrekker_Monument dbo_designer var_a brack_close
+select var_a where brack_open dbr_Basilica_in_Qum_village dbo_location var_a brack_close
+ask where brack_open dbr_National_Women's_Monument rdf_type dbo_Place brack_close
+select var_a where brack_open dbr_Black_Ćuprija georss_point var_a brack_close
+select var_a where brack_open dbr_Loyalty_ par_open monument par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Yeddi_Gumbaz_mausoleum dbo_location var_a brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Houston_Police_Officer's_Memorial || var_a = dbr_Monumental_Clock_of_Pachuca par_close brack_close order by var_b limit 1
+select var_a where brack_open dbr_White_Horse_at_Ebbsfleet dct_subject var_a brack_close
+ask where brack_open dbr_Nelson's_Column dbo_location dbr_Ganja_ par_open city par_close brack_close
+select var_a where brack_open dbr_Garden_of_the_Missing_in_Action dct_subject var_a brack_close
+select var_a where brack_open dbr_Juma_Mosque,_Ordubad dbo_designer var_a brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Place sep_dot var_a dbo_location dbr_Republic_of_Macedonia brack_close group by var_a
+select var_a where brack_open dbr_Bismarck_monument_ par_open Bremen par_close dbo_location var_a brack_close
+select var_a where brack_open dbr_Montreal_Botanical_Garden geo_lat var_a brack_close
+ask where brack_open dbr_Gumbaz,_Srirangapatna dbo_location dbr_Denmark brack_close
+select var_a where brack_open var_a dbp_height var_b sep_dot FILTER par_open var_a = dbr_Matthias_Corvinus_Monument || var_a = dbr_Georgia_Guidestones par_close brack_close order
+ask where brack_open dbr_De_Viron_Castle dbo_location dbr_Vršac brack_close
+ask where brack_open dbr_Prussian_National_Monument_for_the_Liberation_Wars rdf_type dbo_Monument brack_close
+select count par_open wildcard par_close where brack_open var_a rdf_type dbo_Monument sep_dot var_a dbo_location dbr_Nigeria brack_close group by var_a
+ask where brack_open dbr_Tomb_of_National_Heroes_ par_open Ljubljana par_close rdf_type dbo_Monument brack_close
+select var_a where brack_open dbr_Ramagrama_stupa dbo_abstract var_a brack_close
