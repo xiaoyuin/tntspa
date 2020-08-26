@@ -60,11 +60,11 @@ This paper contributes to filling this gap by evaluating the utilization of eigh
 
 ### Usages
 
-I downloaded them and have split them into the way I needed to train the models. The files ended with `*.en` (e.g. `dev.en`, `train.en`, `test.en`) contain English sentences, `*.sparql` files contain SPARQL queries. The ones with the same prefix name have 1-1 mapping that was used in the training as a English-SPARQL pair. `vocab.*` or `dict.` are vocabulary files. [fairseq](https://github.com/facebookresearch/fairseq) has its own special requirement of input files, therefore aforementioned files were not used directly by it but processed into binary formats stored in `/fairseq-data-bin` folder of each dataset.
+The files ended with `*.en` (e.g. `dev.en`, `train.en`, `test.en`) contain English sentences, `*.sparql` files contain SPARQL queries. The ones with the same prefix name have 1-1 mapping that was used in the training as a English-SPARQL pair. `vocab.*` or `dict.` are vocabulary files. [fairseq](https://github.com/facebookresearch/fairseq) has its own special requirement of input files, therefore aforementioned files were not used directly by it but processed into binary formats stored in `/fairseq-data-bin` folder of each dataset.
 
 ### Sources
 
-The datasets used in this paper were originally downloaded from Internet. The sources are listed as follows:
+The datasets used in this paper were originally downloaded from Internet. I downloaded them and have split them into the way I needed to train the models. The sources are listed as follows:
 - [Neural SPARQL Machines Monument dataset](https://github.com/AKSW/NSpM/blob/master/data/monument_600.zip)
 - [LC-QUAD](http://lc-quad.sda.tech/lcquad1.0.html) ([v2.0](http://lc-quad.sda.tech/index.html) is released! but we used 1.0)
 - [DBpedia Neural Question Answering (DBNQA) dataset](https://figshare.com/articles/Question-NSpM_SPARQL_dataset_EN_/6118505)
@@ -87,11 +87,11 @@ see in paper
 We kept the inference translations of each model and dataset which was used to generate BLEU scores, accuracy, and corresponding graphs in below sections. The results are saved in the format of `dev_output.txt` (validation set) & `test_output.txt` (test set) version and available [here (compat version)](results).
 > [Full version](results_raw) containing raw output of frameworks is also available
 
-### Training graphs
+### Training
 
-Plots of training perplexity for each models and datasets are available in a separate PDF [here](visualizations/graphs_perplexity_alldataset.pdf).
+> Plots of training perplexity for each models and datasets are available in a separate PDF [here](visualizations/graphs_perplexity_alldataset.pdf).
 
-### Test result graphs
+### Test results
 
 Table of BLEU scores for all models and validation and test sets
 ![Bleu scores](visualizations/best-bleu-scores.png)
@@ -99,6 +99,7 @@ Table of BLEU scores for all models and validation and test sets
 Table of Accuracy (in %) of syntactically correct generated SPARQL queries | F1 score
 ![accuracy](visualizations/accuracy-sparql-queries.png)
 
+> Please find more results and detailed explanations in the research paper and the thesis.
 
 
 ## Trained models
