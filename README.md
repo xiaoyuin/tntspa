@@ -35,7 +35,7 @@ This paper contributes to filling this gap by evaluating the utilization of eigh
 
 
 
-## Master thesis
+## Master Thesis
 
 *Title: Translating Natural language To SPARQL*
 
@@ -71,7 +71,7 @@ The datasets used in this paper were originally downloaded from Internet. I down
 
 
 
-## Exerimental setup
+## Experimental Setup
 
 ### Dataset splits and hyperparameters
 see in paper
@@ -102,7 +102,7 @@ Table of Accuracy (in %) of syntactically correct generated SPARQL queries | F1 
 > Please find more results and detailed explanations in the research paper and the thesis.
 
 
-## Trained models
+## Trained Models
 
 Because some models were so space-consuming (esp. GNMT4, GNMT8) after training for some sepecific datasets (esp. DBNQA), I didn't download all the models from the HPC server. This is an overview of the availablity of the trained models on [my drive](https://drive.google.com/drive/folders/1l80E6CGCwzMK2y0f8B1wJZye29aZcGij?usp=sharing):
 
@@ -119,7 +119,7 @@ Transformer | [yes](https://drive.google.com/open?id=12ebpHPxIgoJb_5ug60TKEDnF47
 
 
 
-## One more thing
+## One More Thing
 
 This paper and thesis couldn't have been completed without the help of my supervisors ([Dr. Dagmar Gromann](http://dagmargromann.com/), [Dr. Dmitrij Schlesinger](https://cvl.inf.tu-dresden.de/people/dmitrij-schlesinger/) and [Prof. Sebastian Rudolph](http://sebastian-rudolph.de/doku.php?id=home)) and those great open source projects. I send my sincere appreciation to  all of the people who have been working on this subject, and hopefully we will show the world its value in the near future.
 
