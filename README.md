@@ -51,12 +51,12 @@ This paper contributes to filling this gap by evaluating the utilization of eigh
 
 ## Datasets
 
-### Downloads ([Google drive]((https://drive.google.com/open?id=1MOkIYnElmdxr5lEFB6nzH0fQzXZ_fPrp)))
-- [Monument](https://drive.google.com/drive/folders/1gXgNlJPwdWBdM72Rogjhj9tCMnDD2jQ0?usp=sharing)
-- [Monument80](https://drive.google.com/drive/folders/1WyE8l8btiwQz59-F_jFXRQMcwT0THYvB?usp=sharing)
-- [Monument50](https://drive.google.com/drive/folders/1umvtkD0NkOe2Ly9OHe38FhBFMYBXtY8V?usp=sharing)
-- [LC-QUAD](https://drive.google.com/drive/folders/1hqaPXRX5Ip5bbbIuSng5-YBEvahFPw3q?usp=sharing)
-- [DBNQA](https://drive.google.com/drive/folders/18h8Reed4aO4Mkogp40uRyXeEXYmRV8Nx?usp=sharing)
+### Downloads ([Google drive]((https://drive.google.com/drive/folders/1V6c-y6tefKdZ4DfrNWhi_rlrDOngT1lS?usp=sharing)))
+- [Monument](https://drive.google.com/drive/folders/1ibgd3pGtQZJ8lPTOCJ7vf6lzz2MxKa-0?usp=sharing)
+- [Monument80](https://drive.google.com/drive/folders/18QF3avTHU8rD9C-hWAnD56QlP4yxhKDy?usp=sharing)
+- [Monument50](https://drive.google.com/drive/folders/1C-vFYKpEvxCN06bjUvrqZBUb7hXeM145?usp=sharing)
+- [LC-QUAD](https://drive.google.com/drive/folders/1LGk7a5aRKFQXWVsrdISz3jzzRD5TcdWb?usp=sharing)
+- [DBNQA](https://drive.google.com/drive/folders/1sSiwVn7aBUezYvM4u226zzq5MqhbaxIw?usp=sharing)
 
 ### Usages
 
@@ -104,18 +104,18 @@ Table of Accuracy (in %) of syntactically correct generated SPARQL queries | F1 
 
 ## Trained Models
 
-Because some models were so space-consuming (esp. GNMT4, GNMT8) after training for some sepecific datasets (esp. DBNQA), I didn't download all the models from the HPC server. This is an overview of the availablity of the trained models on [my drive](https://drive.google.com/drive/folders/1l80E6CGCwzMK2y0f8B1wJZye29aZcGij?usp=sharing):
+Because some models were so space-consuming (esp. GNMT4, GNMT8) after training for some sepecific datasets (esp. DBNQA), I didn't download all the models from the HPC server. This is an overview of the availablity of the trained models on [my drive](https://drive.google.com/drive/folders/1VuZrbFl3hgK-qWwGV_zI68qtZWKAKbTv?usp=sharing):
 
 . | Monument | Monument80 | Monument50 | LC-QUAD | DBNQA
 -- | -- | -- | -- | -- | --
-NSpM | [yes](https://drive.google.com/open?id=1DMAvcX7tS3Z0KUgP6vOgsmfQvPxRa6pW) | [yes](https://drive.google.com/open?id=1inFYg671UXW9Q1deAt0IchGFAOlxkIOI) | [yes](https://drive.google.com/open?id=14kbo6l9HTX5Kr0u-OHEXgb90-68spnwX) | [yes](https://drive.google.com/open?id=1dUzA8YOZ_wpkW-wz4W4VeKcG3LD_uWER) | [yes](https://drive.google.com/open?id=1A0Biq1yQOpmm8tWrzIVisPYY6qHPN13t)
-NSpM+Att1 | [yes](https://drive.google.com/open?id=1UiS1ZAPi8MoQOV5GS4LRa9tC_-cslq_C) | [yes](https://drive.google.com/open?id=1Flv5uWU7nz0baQVQZ2cL2uLHsEzD0jd-) | [yes](https://drive.google.com/open?id=1j7KA3wRSQtBcPQVQftSEf3yJ_kxizhti) | [yes](https://drive.google.com/open?id=1kfVWyZvyr9cdWglBYuCyx6k5b3edK6F2) | [yes](https://drive.google.com/open?id=1Xy7Ir-PUf4EiY9djOO69jv9_BwZLTnC5)
-NSpM+Att2 | [yes](https://drive.google.com/open?id=1X0NVtXK3Yb1924NpFOg605u8wGwttsX6) | [yes](https://drive.google.com/open?id=1eGB6XAKAR9SvRCS-qTfFEJ5I6hjDoE72) | [yes](https://drive.google.com/open?id=1U7Pd9MFDtmq0qsxX7EFsx0KVy9_C6LIl) | [yes](https://drive.google.com/open?id=1Sd6Hj3Pgk0loj71IeYSbfJ0iCOiB0p1O) | [yes](https://drive.google.com/open?id=10Fh3GNZfGG9c1xupd_hkJOchcMCOI2FY)
-GNMT4 | no | [yes](https://drive.google.com/open?id=1jZQVAO_quER4NQ1SPvK8-0TUS7F5Mo47) | no | no | no
+NSpM | [yes](https://drive.google.com/drive/folders/1Shb58SQIrmXiXStHMemRoNRineZUFFO-?usp=sharing) | [yes](https://drive.google.com/drive/folders/1c1aoLH8rkOYYUW_CQ12jhxWFnj_M7LWe?usp=sharing) | [yes](https://drive.google.com/drive/folders/1metc-Ma9bumdDCNbpgHOqyx3IYOXmKP3?usp=sharing) | [yes](https://drive.google.com/drive/folders/10kN_gdSDaLnJWfBC8-kZPpr2VZwmHP87?usp=sharing) | [yes](https://drive.google.com/drive/folders/1b55dwI6w2OEOirOrnppy1YXIWpqn1QOm?usp=sharing)
+NSpM+Att1 | [yes](https://drive.google.com/drive/folders/1E8gZ_eL-b4qf-Jog0tFT7gd1d8oU6vTi?usp=sharing) | [yes](https://drive.google.com/drive/folders/11M0HXt6YC8FKZKmgEeGoseQ7E4deSXp9?usp=sharing) | [yes](https://drive.google.com/drive/folders/1yMWLF0hSkeBEOSh1QI7Vme36lGAvig0H?usp=sharing) | [yes](https://drive.google.com/drive/folders/18vF_FWKRboHUmfDLIg90CYMzyy2OGo3c?usp=sharing) | [yes](https://drive.google.com/drive/folders/1r4vcHSqQlplrlcAERiMBS1BvAz7_yrUs?usp=sharing)
+NSpM+Att2 | [yes](https://drive.google.com/drive/folders/13X8yPV_2SRF7YzrwQI2Kymj7zTW2SDWR?usp=sharing) | [yes](https://drive.google.com/drive/folders/1uaTuBJS838kXVtxEEGC2n2winwu-4PyU?usp=sharing) | [yes](https://drive.google.com/drive/folders/1KPcbwqo_G00hUodKQhNi0K4MLo73zzOR?usp=sharing) | [yes](https://drive.google.com/drive/folders/1Ohkq58_D9gSYdgZjRe4kwDf2EtJvCgJ0?usp=sharing) | [yes](https://drive.google.com/drive/folders/1iV_GfAhBvtVjog4yspw_JfW4eePdhJD7?usp=sharing)
+GNMT4 | no | [yes](https://drive.google.com/drive/folders/14xi_4LYL1PD-WD_FPqJLzzY4jgDgHFYx?usp=sharing) | no | no | no
 GNMT8 | no | no | no | no | no
-LSTM_Luong | [yes](https://drive.google.com/open?id=1GSx15sWeiychLnrhzL4U0L7LURwMJQxs) | [yes](https://drive.google.com/open?id=1YgWNPgiTcQTO9x419tXZ2_YO7xr1AzaI) | [yes](https://drive.google.com/open?id=1EUfEch7iQTvviAJGAjmnHoq8jCLvevTZ) | [yes](https://drive.google.com/open?id=1OiI7fO1wZywynMMvS5VstfLLDjwL_ToC) | no
-ConvS2S | [yes](https://drive.google.com/open?id=1EGl_b9YtJ56K2ASsyXeAyjz5WhIqO77g) | [yes](https://drive.google.com/open?id=1OYcCr2OMGVpQ_lfWFdhcLPt88kBA5Lrm) | [yes](https://drive.google.com/open?id=1LxPX2RFIrXWF5BlHFHqZ6gf7cWM9FCAg) | [yes](https://drive.google.com/open?id=16pX_xn46nlT6jTIj5mBfx9wh4nFfFVka) | no
-Transformer | [yes](https://drive.google.com/open?id=12ebpHPxIgoJb_5ug60TKEDnF47qlpdt7) | [yes](https://drive.google.com/open?id=1NhFbT5Ctt5v7_sD7iD_J_lpnOhM2bv25) | [yes](https://drive.google.com/open?id=1Zj4v-ItbFvUvHbnFxiRhPHppz6ZCOBD2) | [yes](https://drive.google.com/open?id=1PDzIQ8_kh_Gw5Ovwxvfe_fZM_RKV30Sd) | no
+LSTM_Luong | [yes](https://drive.google.com/drive/folders/1KrEZIpE80lxBIMoV6r3J8G8xtaq27z_F?usp=sharing) | [yes](https://drive.google.com/drive/folders/1Asj8WCtcZcC8M58jIbrVRMwTGChtVVmy?usp=sharing) | [yes](https://drive.google.com/drive/folders/1pvnOPMKfYXLE6a99vy5J5_oettA_X4CI?usp=sharing) | [yes](https://drive.google.com/drive/folders/1XmL58DBjIpTUdfldZr7TPn2U5YGs7tPX?usp=sharing) | no
+ConvS2S | [yes](https://drive.google.com/drive/folders/1-PlqdxH6FlZckGkPWf_QLeSEaluHq81D?usp=sharing) | [yes](https://drive.google.com/drive/folders/19DvUk_Lh_rRYxSa9I7mb3dUAEHB4_1zA?usp=sharing) | [yes](https://drive.google.com/drive/folders/1NRiMMXCN9shMB25ZXqabVf8KOadvJ4GY?usp=sharing) | [yes](https://drive.google.com/drive/folders/1DBE4aOSyyuen4fU1eYo3QCDpOKNDuvZO?usp=sharing) | no
+Transformer | [yes](https://drive.google.com/drive/folders/1KrnbRQvwbMSx1lMvqn4k27ISmaqbqvki?usp=sharing) | [yes](https://drive.google.com/drive/folders/1vWM0UuKZlcSvz-fRk1GnFMKGJPq9mIFL?usp=sharing) | [yes](https://drive.google.com/drive/folders/172mg0sMNg-vOiiya26eaYT_LblMcoe-u?usp=sharing) | [yes](https://drive.google.com/drive/folders/1H8_qjb6Aa_YrOyL-WI6dabegSXNSFNTh?usp=sharing) | no
 
 
 
